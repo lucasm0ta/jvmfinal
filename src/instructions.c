@@ -3062,7 +3062,7 @@ void getfield(){
 	Object* object = (Object*) desempilhar_operando();
 
 	char* descriptor = buscar_descritor_metodo(frame_atual->constantPool, index);
-	uint64_t value = getObjectFieldValueByName(object, buscar_nome_metodo(frame_atual->constantPool, index));
+	uint64_t value = buscar_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index));
 
 	switch(descriptor[0]){
 		// variaveis normais
@@ -3101,7 +3101,7 @@ void putfield(){
 		case 'C': case 'F': case 'B': case 'I': case 'S': case 'Z': case 'L': case '[': {
 			uint32_t value = desempilhar_operando();
 			Object* object = (Object*) desempilhar_operando();
-			setObjectFieldValueByName(object, buscar_nome_metodo(frame_atual->constantPool, index), value);
+			set_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index), value);
 			break;
 		}
 		// variaveis categoria 2
@@ -3112,7 +3112,7 @@ void putfield(){
 			uint64_t aux = resultHigh;
 			aux <<= 32;
 			aux += resultLow;
-			setObjectFieldValueByName(object, buscar_nome_metodo(frame_atual->constantPool, index), aux);
+			set_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index), aux);
 			break;
 		}
 	}
@@ -3160,7 +3160,7 @@ void invokevirtual(){
 		Object* object = (Object*) desempilhar_operando();
 		fieldsArray[0] = (uint32_t) object;
 		// Retorna um estrutura de metodo do objeto para criar um frame
-		ObjectMethod method = getObjectMethodByName(object, methodName, className);
+		object_method method = buscar_object_method_by_name(object, methodName, className);
 		ClassFile* classFile = method.classFile;
 		Method_info* method_info = method.method_info;
 		empilhar_metodo(classFile, method_info);
@@ -3190,7 +3190,7 @@ void invokespecial(){
 	Object* object = (Object*) desempilhar_operando();
 	fieldsArray[0] = (uint32_t) object;
 	// Retorna um estrutura de metodo do objeto para criar um frame
-	ObjectMethod method = getObjectMethodByName(object, methodName, className);
+	object_method method = buscar_object_method_by_name(object, methodName, className);
 	ClassFile* classFile = method.classFile;
 	Method_info* method_info = method.method_info;
 	empilhar_metodo(classFile, method_info);
@@ -3246,7 +3246,7 @@ void invokeinterface(){
 	Object* object = (Object*) desempilhar_operando();
 	fieldsArray[0] = (uint32_t) object;
 	// Retorna um estrutura de metodo do objeto para criar um frame
-	ObjectMethod method = getObjectMethodByName(object, methodName, className);
+	object_method method = buscar_object_method_by_name(object, methodName, className);
 	ClassFile* classFile = method.classFile;
 	Method_info* method_info = method.method_info;
 	empilhar_metodo(classFile, method_info);
@@ -3270,7 +3270,7 @@ void ins_new(){
 	index = frame_atual->constantPool[index].info.class_info->name_index;
 
 	ClassFile* classFile = carregar_classe(frame_atual->constantPool[index].info.utf8_info->bytes);
-	Object* object = createObject(classFile);
+	Object* object = criar_objeto(classFile);
 	empilhar_operando((int32_t) object);
 
 	frame_atual->pc += 3;

@@ -3,35 +3,35 @@
 
 #include "classLoader.h"
 
-typedef struct ObjectField{
+typedef struct object_field{
 	char* 			name;
 	char*			descriptor;
 	uint16_t		access_flag;
-}ObjectField;
+}object_field;
 
-typedef struct ObjectMethod{
+typedef struct object_method{
 	ClassFile* 		classFile;
 	char* 			name;
 	char*			descriptor;
 	uint16_t		access_flag;
 	Method_info* 	method_info;
-}ObjectMethod;
+}object_method;
 
 typedef struct Object{
 	ClassFile* 		classFile;
 	uint16_t        fields_count;
-    ObjectField*    fields;
+    object_field*    fields;
 	uint16_t        methods_count;
-    ObjectMethod*   methods;
+    object_method*   methods;
     uint64_t*		variables_pointers;
 }Object;
 
 /**
  * Retorna uma instância da classe do classFile
- * @param  classFile struct do classFile que sera instanciado
+ * @param  class_file struct do classFile que sera instanciado
  * @return           referência para um objeto alocado
  */
-Object* createObject(ClassFile* classFile);
+Object* criar_objeto(ClassFile *class_file);
 
 /**
  * Retorna o field com nome "name" de um objeto
@@ -39,7 +39,7 @@ Object* createObject(ClassFile* classFile);
  * @param  name   nome do field desejado
  * @return        uma referência caso o field for um objeto/array, ou um valor do campo nos outros casos
  */
-uint64_t getObjectFieldValueByName(Object* object, char* name);
+uint64_t buscar_object_field_value_por_nome(Object *object, char *name);
 
 /**
  * Atribui o valor passado para um dos fields do objeto
@@ -47,16 +47,16 @@ uint64_t getObjectFieldValueByName(Object* object, char* name);
  * @param name   nome do field a ser modificado
  * @param value  valor a ser atribuido ao field, caso o field seja um objeto/array value é o endereço do objeto
  */
-void setObjectFieldValueByName(Object* object, char* name, uint64_t value);
+void set_object_field_value_por_nome(Object *object, char *name, uint64_t value);
 
 /**
  * Retorna um método de um objeto
  * @param  object     referência para o objeto
- * @param  methodName nome do método desejado
- * @param  className  classe do método desejado (para caso de métodos com mesmo nome, como construtores)
+ * @param  method_name nome do método desejado
+ * @param  class_name  classe do método desejado (para caso de métodos com mesmo nome, como construtores)
  * @return            refência para um objeto que contém informações do método
  */
-ObjectMethod getObjectMethodByName(Object* object, char* methodName, char* className);
+object_method buscar_object_method_by_name(Object *object, char *method_name, char *class_name);
 
 /**
  * Mostra uma lista do nome dos fields do objeto

@@ -46,13 +46,13 @@ void \hyperlink{object_manager_8h_a67b1c1ad28b2a4256155110a520e8091}{dump\+Objec
 \hypertarget{object_manager_8h_ab2e75939200ebbc8842f0f6e5fe8bcf9}{}\label{object_manager_8h_ab2e75939200ebbc8842f0f6e5fe8bcf9} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!Object\+Field@{Object\+Field}}
 \index{Object\+Field@{Object\+Field}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{Object\+Field}{ObjectField}}
+\subsubsection{\texorpdfstring{Object\+Field}{object_field}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_object_field}{Object\+Field} \hyperlink{struct_object_field}{Object\+Field}}
 
 \hypertarget{object_manager_8h_a201b9273b22688ae250ace069fba1705}{}\label{object_manager_8h_a201b9273b22688ae250ace069fba1705} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!Object\+Method@{Object\+Method}}
 \index{Object\+Method@{Object\+Method}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{Object\+Method}{ObjectMethod}}
+\subsubsection{\texorpdfstring{Object\+Method}{object_method}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_object_method}{Object\+Method} \hyperlink{struct_object_method}{Object\+Method}}
 
 
@@ -61,7 +61,7 @@ void \hyperlink{object_manager_8h_a67b1c1ad28b2a4256155110a520e8091}{dump\+Objec
 \hypertarget{object_manager_8h_acbb8929de342d56ed8d572fc5d690083}{}\label{object_manager_8h_acbb8929de342d56ed8d572fc5d690083} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!create\+Object@{create\+Object}}
 \index{create\+Object@{create\+Object}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{create\+Object()}{createObject()}}
+\subsubsection{\texorpdfstring{create\+Object()}{criar_objeto()}}
 {\footnotesize\ttfamily \hyperlink{struct_object}{Object}$\ast$ create\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
@@ -109,7 +109,7 @@ Mostra uma lista do nome dos métodos do objeto.
 \hypertarget{object_manager_8h_a4e0494b9f5b7b399e73e7b1da38e2d6c}{}\label{object_manager_8h_a4e0494b9f5b7b399e73e7b1da38e2d6c} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!get\+Object\+Field\+Value\+By\+Name@{get\+Object\+Field\+Value\+By\+Name}}
 \index{get\+Object\+Field\+Value\+By\+Name@{get\+Object\+Field\+Value\+By\+Name}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{get\+Object\+Field\+Value\+By\+Name()}{getObjectFieldValueByName()}}
+\subsubsection{\texorpdfstring{get\+Object\+Field\+Value\+By\+Name()}{buscar_object_field_value_por_nome()}}
 {\footnotesize\ttfamily uint64\+\_\+t get\+Object\+Field\+Value\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
 
@@ -129,7 +129,7 @@ uma referência caso o field for um objeto/array, ou um valor do campo nos outro
 \hypertarget{object_manager_8h_a82c9a8c25b0d7079e3f6289a5925c7e1}{}\label{object_manager_8h_a82c9a8c25b0d7079e3f6289a5925c7e1} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!get\+Object\+Method\+By\+Name@{get\+Object\+Method\+By\+Name}}
 \index{get\+Object\+Method\+By\+Name@{get\+Object\+Method\+By\+Name}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{get\+Object\+Method\+By\+Name()}{getObjectMethodByName()}}
+\subsubsection{\texorpdfstring{get\+Object\+Method\+By\+Name()}{buscar_object_method_by_name()}}
 {\footnotesize\ttfamily \hyperlink{struct_object_method}{Object\+Method} get\+Object\+Method\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{method\+Name,  }\item[{char $\ast$}]{class\+Name }\end{DoxyParamCaption})}
 
 
@@ -151,7 +151,7 @@ refência para um objeto que contém informações do método
 \hypertarget{object_manager_8h_aa894740a7d501f453ab07155c008557a}{}\label{object_manager_8h_aa894740a7d501f453ab07155c008557a} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!set\+Object\+Field\+Value\+By\+Name@{set\+Object\+Field\+Value\+By\+Name}}
 \index{set\+Object\+Field\+Value\+By\+Name@{set\+Object\+Field\+Value\+By\+Name}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{set\+Object\+Field\+Value\+By\+Name()}{setObjectFieldValueByName()}}
+\subsubsection{\texorpdfstring{set\+Object\+Field\+Value\+By\+Name()}{set_object_field_value_por_nome()}}
 {\footnotesize\ttfamily void set\+Object\+Field\+Value\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name,  }\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
