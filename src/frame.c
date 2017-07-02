@@ -4,7 +4,6 @@
 #include "classLoader.h"
 #include "instructionMapper.h"
 
-
 /**
  * Realiza a criacao do frame
  * @param cp     informacao do constantpool
@@ -65,7 +64,7 @@ void desempilhar_frame() {
       if(DEBUG) printf("Empilhando retorno cat 1: %d\n", valor_retorno);
       frame_atual = cabeca->next->node;
       empilhar_operando(valor_retorno);
-    } 
+    }
     else if(flag == 2) {
       int32_t lowValue = desempilhar_operando();
       int32_t highValue = desempilhar_operando();
@@ -130,7 +129,7 @@ int32_t desempilhar_operando() {
     return frame_atual->operandStack->operands[frame_atual->operandStack->depth];
 }
 /**
- * Roda os frames 
+ * Roda os frames
  */
 void executar_frame() {
   if(DEBUG) dumpStack(0);
@@ -153,7 +152,7 @@ void empilhar_metodo(ClassFile *classFile, Method_info *method) {
 
 /**
  * Sai do método
- * @param Flag para saida 
+ * @param Flag para saida
  */
 void dumpStack(int i){
   if (cabeca != NULL){

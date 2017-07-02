@@ -7,10 +7,10 @@
 #include "objectManager.h"
 
 /**
- * Função para leitura byte a byte do arquivo fp
- * @param  size quantidade de bytes a serem lidos
- * @param  fp   ponteiro para o arquivo
- * @return      Os 4 últimos bytes lidos (variável dde 32 bits)
+ * \brief Função para leitura byte a byte do arquivo fp
+ * \param size quantidade de bytes a serem lidos
+ * \param fp ponteiro para o arquivo
+ * \return Os 4 últimos bytes lidos (variável dde 32 bits)
  */
 uint32_t ler_bytes(int size, FILE *fp){
 	uint32_t retorno = 0;
@@ -23,10 +23,10 @@ uint32_t ler_bytes(int size, FILE *fp){
 }
 
 /**
- * Função que retorna uma string que representa o valor de uma das constantes do Constant Pool
- * @param  index         index da constante no Constant Pool
- * @param  constant_pool ponteiro para um Constant Pool
- * @return               ponteiro para uma string
+ * \brief Função que retorna uma string que representa o valor de uma das constantes do Constant Pool
+ * \param index Index da constante no Constant Pool
+ * \param constant_pool Ponteiro para um Constant Pool
+ * \return Ponteiro para uma string
  */
 uint8_t* acessar_constant_pool_entry(int index, Cp_info *constant_pool){
 	switch(constant_pool[index].tag){
@@ -63,13 +63,12 @@ uint8_t* acessar_constant_pool_entry(int index, Cp_info *constant_pool){
 	}
 }
 
-
 /**
  * Lê atributos no arquivo .class. É utilizado na função de leitura de outras estruturas, o readFields, readMethods e loadClass
- * @param  length        Quantidade de atributos
- * @param  constant_pool Ponteiro para o Constant Poll
- * @param  fp            Ponteiro para o arquivo, que deve estar apontando para onde começam os atributos
- * @return               Estrutura de atributos
+ * \param length Quantidade de atributos
+ * \param constant_pool Ponteiro para o Constant Poll
+ * \param fp Ponteiro para o arquivo, que deve estar apontando para onde começam os atributos
+ * \return Estrutura de atributos
  */
 Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 	int i, j, k;
@@ -81,8 +80,7 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 		if (strcmp(str, "ConstantValue") == 0){
 			retorno[i].info.constantValue_attribute = (ConstantValue_attribute*)malloc(sizeof(ConstantValue_attribute));
     		retorno[i].info.constantValue_attribute->constantvalue_index = ler_bytes(2, fp);
-		}
-		else if (strcmp(str, "Code") == 0){
+		} else if (strcmp(str, "Code") == 0){
 			retorno[i].info.code_attribute = (Code_attribute*)malloc(sizeof(Code_attribute));
 			retorno[i].info.code_attribute->max_stack = ler_bytes(2, fp);
 			retorno[i].info.code_attribute->max_locals = ler_bytes(2, fp);
@@ -102,16 +100,14 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 			retorno[i].info.code_attribute->attributes_count = ler_bytes(2, fp);
 			retorno[i].info.code_attribute->attributes = ler_atributos(retorno[i].info.code_attribute->attributes_count,
 																	  constant_pool, fp);
-		}
-		else if (strcmp(str, "Exceptions") == 0){
+		} else if (strcmp(str, "Exceptions") == 0){
 			retorno[i].info.exceptions_attribute = (Exceptions_attribute*)malloc(sizeof(Exceptions_attribute));
 			retorno[i].info.exceptions_attribute->number_of_exceptions = ler_bytes(2, fp);
 			retorno[i].info.exceptions_attribute->exception_index_table = (uint16_t*)malloc(retorno[i].info.exceptions_attribute->number_of_exceptions*sizeof(uint16_t));
 			for (j = 0; j < retorno[i].info.exceptions_attribute->number_of_exceptions; ++j){
 				retorno[i].info.exceptions_attribute->exception_index_table[j] = ler_bytes(2, fp);
 			}
-		}
-		else if (strcmp(str, "InnerClasses") == 0){
+		} else if (strcmp(str, "InnerClasses") == 0){
 			retorno[i].info.innerClasses_attribute = (InnerClasses_attribute*)malloc(sizeof(InnerClasses_attribute));
 			retorno[i].info.innerClasses_attribute->number_of_classes = ler_bytes(2, fp);
 			retorno[i].info.innerClasses_attribute->classes_ptr = (Classes*)malloc(retorno[i].info.innerClasses_attribute->number_of_classes*sizeof(Classes));
@@ -121,28 +117,22 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 			    retorno[i].info.innerClasses_attribute->classes_ptr[j].inner_name_index = ler_bytes(2, fp);
 			    retorno[i].info.innerClasses_attribute->classes_ptr[j].inner_class_access_flags = ler_bytes(2, fp);
 			}
-		}
-		else if (strcmp(str, "EnclosingMethod") == 0){
+		} else if (strcmp(str, "EnclosingMethod") == 0){
 			retorno[i].info.enclosingMethod_attribute = (EnclosingMethod_attribute*)malloc(sizeof(EnclosingMethod_attribute));
    			retorno[i].info.enclosingMethod_attribute->class_index = ler_bytes(2, fp);
    			retorno[i].info.enclosingMethod_attribute->method_index = ler_bytes(2, fp);
-		}
-		else if (strcmp(str, "Synthetic") == 0){
+		} else if (strcmp(str, "Synthetic") == 0){
 			retorno[i].info.synthetic_attribute = (Synthetic_attribute*)malloc(sizeof(Synthetic_attribute));
-		}
-		else if (strcmp(str, "Signature") == 0){
+		} else if (strcmp(str, "Signature") == 0){
 			retorno[i].info.signature_attribute = (Signature_attribute*)malloc(sizeof(Signature_attribute));
 			retorno[i].info.signature_attribute->signature_index = ler_bytes(2, fp);
-		}
-		else if (strcmp(str, "SourceFile") == 0){
+		} else if (strcmp(str, "SourceFile") == 0){
 			retorno[i].info.sourceFile_attribute = (SourceFile_attribute*)malloc(sizeof(SourceFile_attribute));
 			retorno[i].info.sourceFile_attribute->sourcefile_index = ler_bytes(2, fp);
-		}
-		else if (strcmp(str, "SourceDebugExtension") == 0){
+		} else if (strcmp(str, "SourceDebugExtension") == 0){
 			retorno[i].info.sourceDebugExtension_attribute = (SourceDebugExtension_attribute*)malloc(sizeof(SourceDebugExtension_attribute));
 			ler_bytes(retorno[i].attribute_length, fp);
-		}
-		else if (strcmp(str, "LineNumberTable") == 0){
+		} else if (strcmp(str, "LineNumberTable") == 0){
 			retorno[i].info.lineNumberTable_attribute = (LineNumberTable_attribute*)malloc(sizeof(LineNumberTable_attribute));
 			retorno[i].info.lineNumberTable_attribute->line_number_table_length = ler_bytes(2, fp);
 			retorno[i].info.lineNumberTable_attribute->line_number_table_ptr = (line_number_table*)malloc(retorno[i].info.lineNumberTable_attribute->line_number_table_length*sizeof(line_number_table));
@@ -150,8 +140,7 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 			    retorno[i].info.lineNumberTable_attribute->line_number_table_ptr[j].start_pc = ler_bytes(2, fp);
 			    retorno[i].info.lineNumberTable_attribute->line_number_table_ptr[j].line_number = ler_bytes(2, fp);
 			}
-		}
-		else if (strcmp(str, "LocalVariableTable") == 0){
+		} else if (strcmp(str, "LocalVariableTable") == 0){
 			retorno[i].info.localVariableTable_attribute = (LocalVariableTable_attribute*)malloc(sizeof(LocalVariableTable_attribute));
 			retorno[i].info.localVariableTable_attribute->local_variable_table_length = ler_bytes(2, fp);
 			retorno[i].info.localVariableTable_attribute->local_variable_table_ptr = (local_variable_table*)malloc(retorno[i].info.localVariableTable_attribute->local_variable_table_length*sizeof(local_variable_table));
@@ -163,8 +152,7 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 																													  fp);
 			    retorno[i].info.localVariableTable_attribute->local_variable_table_ptr[j].index = ler_bytes(2, fp);
 			}
-		}
-		else if (strcmp(str, "LocalVariableTypeTable") == 0){
+		} else if (strcmp(str, "LocalVariableTypeTable") == 0){
 			retorno[i].info.localVariableTypeTable_attribute = (LocalVariableTypeTable_attribute*)malloc(sizeof(LocalVariableTypeTable_attribute));
 			retorno[i].info.localVariableTypeTable_attribute->local_variable_type_table_length = ler_bytes(2, fp);
 			retorno[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr = (local_variable_type_table*)malloc(retorno[i].info.localVariableTypeTable_attribute->local_variable_type_table_length*sizeof(local_variable_type_table));
@@ -180,11 +168,9 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 			    retorno[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].index = ler_bytes(2,
 																													fp);
 			}
-		}
-		else if (strcmp(str, "Deprecated") == 0){
+		} else if (strcmp(str, "Deprecated") == 0){
 			retorno[i].info.deprecated_attribute = (Deprecated_attribute*)malloc(sizeof(Deprecated_attribute));
-		}
-		else if (strcmp(str, "BootstrapMethods") == 0){
+		} else if (strcmp(str, "BootstrapMethods") == 0){
 			retorno[i].info.bootstrapMethods_attribute = (BootstrapMethods_attribute*)malloc(sizeof(BootstrapMethods_attribute));
 			retorno[i].info.bootstrapMethods_attribute->num_bootstrap_methods = ler_bytes(2, fp);
 			retorno[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr = (bootstrap_methods*)malloc(retorno[i].info.bootstrapMethods_attribute->num_bootstrap_methods*sizeof(bootstrap_methods));
@@ -199,8 +185,7 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 							2, fp);
 				}
 			}
-		}
-		else{
+		} else {
 			ler_bytes(retorno[i].attribute_length, fp);
 		}
 	}
@@ -208,10 +193,10 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 }
 
 /**
- * Lê o Pool de constantes no arquivo .class.
- * @param  length Quantidade de contantes
- * @param  fp     Ponteiro para o arquivo, que deve estar apontando para onde começa o pool de constantes
- * @return        Referência para uma estrutura Pool de Constantes
+ * \brief Lê o Pool de constantes no arquivo .class.
+ * \param length Quantidade de contantes
+ * \param fp Ponteiro para o arquivo, que deve estar apontando para onde começa o pool de constantes
+ * \return Referência para uma estrutura Pool de Constantes
  */
 Cp_info* ler_constant_pool(int length, FILE *fp){
 	int i, j;
@@ -299,10 +284,10 @@ Cp_info* ler_constant_pool(int length, FILE *fp){
 }
 
 /**
- * Lê do arquivo .class os indices do contant pool que representam as interfaces da classe.
- * @param  length Quantidade de interfaces
- * @param  fp     Ponteiro para o arquivo, que deve estar apontando para onde começam os indices
- * @return        Referência para um vetor de indices do constant pool
+ * \brief Lê do arquivo .class os indices do contant pool que representam as interfaces da classe.
+ * \param length Quantidade de interfaces
+ * \param fp Ponteiro para o arquivo, que deve estar apontando para onde começam os indices
+ * \return Referência para um vetor de indices do constant pool
  */
 uint16_t* ler_interfaces(int length, FILE *fp){
 	int i;
@@ -314,11 +299,11 @@ uint16_t* ler_interfaces(int length, FILE *fp){
 }
 
 /**
- * Lê os fields de um arquivo .class.
- * @param  length        Quantidade de Fields
- * @param  constant_pool Referência para o constant pool da class que esta sendo lida
- * @param  fp            Ponteiro para o arquivo, que deve estar apontando para onde começam os fields
- * @return               Referência para um vetor de estruturas dos fields
+ * \brief Lê os fields de um arquivo .class.
+ * \param length Quantidade de Fields
+ * \param constant_pool Referência para o constant pool da class que esta sendo lida
+ * \param fp Ponteiro para o arquivo, que deve estar apontando para onde começam os fields
+ * \return Referência para um vetor de estruturas dos fields
  */
 Field_info* ler_fields(int length, Cp_info *constant_pool, FILE *fp){
 	int i;
@@ -334,11 +319,11 @@ Field_info* ler_fields(int length, Cp_info *constant_pool, FILE *fp){
 }
 
 /**
- * Lê os métodos de um arquivo .class.
- * @param  length        Quantidade de métodos
- * @param  constant_pool Referência para o constant pool da class que esta sendo lida
- * @param  fp            Ponteiro para o arquivo, que deve estar apontando para onde começam os métodos
- * @return               Referência para um vetor de estruturas dos métodos
+ * \brief Lê os métodos de um arquivo .class.
+ * \param length Quantidade de métodos
+ * \param constant_pool Referência para o constant pool da class que esta sendo lida
+ * \param fp Ponteiro para o arquivo, que deve estar apontando para onde começam os métodos
+ * \return Referência para um vetor de estruturas dos métodos
  */
 Method_info* ler_metodos(int length, Cp_info *constant_pool, FILE *fp){
 	int i;
@@ -354,10 +339,10 @@ Method_info* ler_metodos(int length, Cp_info *constant_pool, FILE *fp){
 }
 
 /**
- * Função principal que chama todas as outras funções de leitura para ler o .class inteiro
+ * \brief Função principal que chama todas as outras funções de leitura para ler o .class inteiro
  * Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada
- * @param  className Nome da classe a ser lida
- * @return           Referência para uma struct ClassFile
+ * \param className Nome da classe a ser lida
+ * \return Referência para uma struct ClassFile
  */
 ClassFile* carregar_classe(char *className){
 	// Veifica se o arquivo ja foi carregado alguma vez
@@ -410,22 +395,22 @@ ClassFile* carregar_classe(char *className){
 }
 
 /**
- * Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic
- * @param 	classFile 	Ponteiro para os dados do suposto .class
- * @return    1 para .class e 0 para nao .class
+ * \brief Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic
+ * \param classFile Ponteiro para os dados do suposto .class
+ * \return 1 para .class e 0 para nao .class
  */
 void verificar_magic_number(ClassFile *classFile){
 	if(classFile->magic != 0xCAFEBABE){
-		printf("Arquivo nao eh um .class.\n");
+		printf("Nao e .class.\n");
 		exit(1);
 	}
 }
 
 /**
- * Função verificacao, verificar se o nome da classe do .class bate com o do arquivo
- * @param 	classFile 	Ponteiro para os dados do .class
- * @param 	nomeArquivo 	Ponteiro o nome do arquivo
- * @return    1 para confere e 0 para nao confere
+ * \brief Função verificacao, verificar se o nome da classe do .class bate com o do arquivo
+ * \param classFile Ponteiro para os dados do .class
+ * \param nomeArquivo Ponteiro o nome do arquivo
+ * \return 1 para confere e 0 para nao confere
  */
 void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 	int i = 0;
@@ -433,18 +418,18 @@ void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 	char * nomeClassept = classFile->constant_pool[string_index].info.utf8_info->bytes;
 
 	//Verifica se nome da classe eh igual ao nome do arquivo
-	if(strcmp(nomeClassept, nomeArquivo)){
-		printf("Nome da classe (%s) e do arquivo (%s) nao conferem.\n", nomeClassept, nomeArquivo);
+	if (strcmp(nomeClassept, nomeArquivo)) {
+		printf("Nome da classe (%s) e do arquivo (%s) diferentes.\n", nomeClassept, nomeArquivo);
 		exit(1);//Nomes diferentes
 	}
 }
 
 /**
- * Função verificacao, verificar se a major version do .class é suportada pelo java 2
- * @param 	classFile 	Ponteiro para os dados do .class
- * @return    1 para suportada e 0 para nao .suportada
+ * \brief Função verificacao, verificar se a major version do .class é suportada pelo java 2
+ * \param classFile Ponteiro para os dados do .class
+ * \return 1 para suportada e 0 para nao .suportada
  */
-void verificar_versao(ClassFile *classFile){
+void verificar_versao(ClassFile *classFile) {
 //	if(classFile->major_version != 0x2e){
 //		printf("Versao nao suportada pelo java 2.\n");
 //		exit(1);

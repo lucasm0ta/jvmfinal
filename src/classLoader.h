@@ -1,7 +1,6 @@
 #ifndef CLASSLOADER_H
 #define CLASSLOADER_H
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -339,7 +338,7 @@ typedef struct ClassFile {
     uint16_t        interfaces_count;
     uint16_t*       interfaces;
     uint16_t        fields_count;
-    Field_info*     fields;	
+    Field_info*     fields;
     uint16_t        methods_count;
     Method_info*    methods;
     uint16_t        attributes_count;
@@ -357,4 +356,4 @@ void verificar_versao(ClassFile *classFile);
 #endif
 
 
-#endif 
+#endif

@@ -1,7 +1,3 @@
-//
-// Created by Henrique Faria on 11/17/16.
-//
-
 #include <stdlib.h>
 #include <string.h>
 #include "methodArea.h"
@@ -121,7 +117,7 @@ Method_info* findMainMethod(ClassFile* classFile) {
 				return &(classFile->methods[i]);
 		}
 	}
-  
+
   printf("Não foi possível encontrar o método main\n");
   exit(1);
 }

@@ -10,11 +10,12 @@ extern "C" {
 #include <stdlib.h>
 #include <string.h>
 
-#define INSTRUCTION_NAME 30
-#define INSTRUCTION_SIZE 256
+#define INSTRUCTION_NAME 30     // Nome das instruções
+#define INSTRUCTION_SIZE 256    // Tamanho das instruções
 typedef struct decoder {
-    //nome da instrucao
+    //nome da instruções
     char instruction[INSTRUCTION_NAME];
+
     //bytes de operandos que ela ocupa
     int bytes;
     int referencesCP;
@@ -30,6 +31,5 @@ decoder decode[INSTRUCTION_SIZE];
 #ifdef __cplusplus
 }
 #endif
-
 
 #endif
