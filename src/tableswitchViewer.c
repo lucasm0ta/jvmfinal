@@ -7,7 +7,7 @@
 
 #include "tableswitchViewer.h"
 
-void printTableswitch(TableswitchData data, char *space) {
+void imprimir_switch_table(TableswitchData data, char *space) {
     printf("\n%s     %d: %s {", space, data.position, data.name);
     printf("\n%s           default: %d", space, data.defaultBytes);
     printf("\n%s               min: %d", space, data.lowBytes);
@@ -20,7 +20,7 @@ void printTableswitch(TableswitchData data, char *space) {
     printf("\n%s     }", space);
 }
 
-TableswitchData makeTableswitchData(uint8_t *src, int pc) {
+TableswitchData montar_switch_table(uint8_t *src, int pc) {
     const int paddingOffset = makePaddingOffset(pc);
     const int indexOfLowBytes = paddingOffset + 4;
     const int indexOfHighBytes = paddingOffset + 8;

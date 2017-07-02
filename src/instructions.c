@@ -2954,7 +2954,7 @@ void tableswitch() {
     int compValue = popOperand();
 
 	uint8_t *src = currentFrame->code + currentFrame->pc + 1;
-	TableswitchData dt = makeTableswitchData(src, currentFrame->pc);
+	TableswitchData dt = montar_switch_table(src, currentFrame->pc);
 
 	if(compValue >= dt.lowBytes && compValue <= dt.highBytes) {
 		for(int i = 0; i < dt.sizeOfJumpOffsets; i++) {
@@ -2974,7 +2974,7 @@ void lookupswitch() {
   int compValue = popOperand();
 
     uint8_t *src = currentFrame->code + currentFrame->pc + 1;
-    LookupswitchData dt = makeLookupswitchData(src, currentFrame->pc);
+    LookupswitchData dt = montar_lookupswitch_data(src, currentFrame->pc);
 
     for(int i = 0; i <= dt.amountOfPairs; i += 2) {
         if(compValue == dt.keyOffsetPairs[i]) {

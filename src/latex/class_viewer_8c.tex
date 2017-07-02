@@ -30,7 +30,7 @@ void \hyperlink{class_viewer_8c_a0cede33779329cabaab5436aa69549a1}{print\+Class}
 \hypertarget{class_viewer_8c_a558ea67bd614cca0ffe991bd4e530fd8}{}\label{class_viewer_8c_a558ea67bd614cca0ffe991bd4e530fd8} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Attributes@{print\+Attributes}}
 \index{print\+Attributes@{print\+Attributes}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Attributes()}{printAttributes()}}
+\subsubsection{\texorpdfstring{print\+Attributes()}{imprimir_atributos()}}
 {\footnotesize\ttfamily void print\+Attributes (\begin{DoxyParamCaption}\item[{\hyperlink{struct_attribute__info}{Attribute\+\_\+info} $\ast$}]{attributes,  }\item[{uint16\+\_\+t}]{attributes\+\_\+count,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{int}]{tab }\end{DoxyParamCaption})}
 
 
@@ -51,7 +51,7 @@ W\+A\+R\+N\+I\+NG\+: G\+A\+M\+B\+I\+A\+R\+RA P\+A\+RA D\+AR OS T\+A\+BS C\+O\+R\
 \hypertarget{class_viewer_8c_a0cede33779329cabaab5436aa69549a1}{}\label{class_viewer_8c_a0cede33779329cabaab5436aa69549a1} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Class@{print\+Class}}
 \index{print\+Class@{print\+Class}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Class()}{printClass()}}
+\subsubsection{\texorpdfstring{print\+Class()}{imprimir_classe()}}
 {\footnotesize\ttfamily void print\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
@@ -66,13 +66,13 @@ Função que realiza os prints de acordo com cada item do Byte code Viewer.
 \hypertarget{class_viewer_8c_a6b4ea3b83a9a8ae80be3cd56890b8778}{}\label{class_viewer_8c_a6b4ea3b83a9a8ae80be3cd56890b8778} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Code@{print\+Code}}
 \index{print\+Code@{print\+Code}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Code()}{printCode()}}
+\subsubsection{\texorpdfstring{print\+Code()}{imprimir_code()}}
 {\footnotesize\ttfamily void print\+Code (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code\+Attribute,  }\item[{char $\ast$}]{space }\end{DoxyParamCaption})}
 
 \hypertarget{class_viewer_8c_a671376372bfc54d050e26bc6b5dacc2c}{}\label{class_viewer_8c_a671376372bfc54d050e26bc6b5dacc2c} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Constant\+Pool@{print\+Constant\+Pool}}
 \index{print\+Constant\+Pool@{print\+Constant\+Pool}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Constant\+Pool()}{printConstantPool()}}
+\subsubsection{\texorpdfstring{print\+Constant\+Pool()}{imprimir_constant_pool_completa()}}
 {\footnotesize\ttfamily void print\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
@@ -87,7 +87,7 @@ Função que realiza os prints de acordo com cada item do Byte code Viewer.
 \hypertarget{class_viewer_8c_a693c748265331baf97996cad6d456206}{}\label{class_viewer_8c_a693c748265331baf97996cad6d456206} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Constant\+Pool\+Entry@{print\+Constant\+Pool\+Entry}}
 \index{print\+Constant\+Pool\+Entry@{print\+Constant\+Pool\+Entry}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Constant\+Pool\+Entry()}{printConstantPoolEntry()}}
+\subsubsection{\texorpdfstring{print\+Constant\+Pool\+Entry()}{imprimir_constant_pool_inserida()}}
 {\footnotesize\ttfamily void print\+Constant\+Pool\+Entry (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool }\end{DoxyParamCaption})}
 
 
@@ -107,13 +107,13 @@ ponteiro para uma string
 \hypertarget{class_viewer_8c_ae67e0c3ff1c487a6bf118ee61dc50c82}{}\label{class_viewer_8c_ae67e0c3ff1c487a6bf118ee61dc50c82} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Default\+Instruction@{print\+Default\+Instruction}}
 \index{print\+Default\+Instruction@{print\+Default\+Instruction}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Default\+Instruction()}{printDefaultInstruction()}}
+\subsubsection{\texorpdfstring{print\+Default\+Instruction()}{imprimir_instrucao_padrao()}}
 {\footnotesize\ttfamily int print\+Default\+Instruction (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code\+Attribute,  }\item[{char $\ast$}]{space,  }\item[{\hyperlink{struct_mapper}{Mapper}}]{opcode\+Mapper,  }\item[{int}]{instr\+Pos }\end{DoxyParamCaption})}
 
 \hypertarget{class_viewer_8c_adbffb2d094b7945dba0bd0e5f7e0de26}{}\label{class_viewer_8c_adbffb2d094b7945dba0bd0e5f7e0de26} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Fields@{print\+Fields}}
 \index{print\+Fields@{print\+Fields}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Fields()}{printFields()}}
+\subsubsection{\texorpdfstring{print\+Fields()}{imprimir_fields()}}
 {\footnotesize\ttfamily void print\+Fields (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
@@ -128,7 +128,7 @@ ponteiro para uma string
 \hypertarget{class_viewer_8c_a6b6c6b60846c61858015aa8f264f4fc8}{}\label{class_viewer_8c_a6b6c6b60846c61858015aa8f264f4fc8} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+General\+Information@{print\+General\+Information}}
 \index{print\+General\+Information@{print\+General\+Information}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+General\+Information()}{printGeneralInformation()}}
+\subsubsection{\texorpdfstring{print\+General\+Information()}{imprimir_informacoes_classe()}}
 {\footnotesize\ttfamily void print\+General\+Information (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
@@ -143,7 +143,7 @@ ponteiro para uma string
 \hypertarget{class_viewer_8c_a1fadb45f52f010c9dc92806b28c8fa87}{}\label{class_viewer_8c_a1fadb45f52f010c9dc92806b28c8fa87} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Interfaces@{print\+Interfaces}}
 \index{print\+Interfaces@{print\+Interfaces}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Interfaces()}{printInterfaces()}}
+\subsubsection{\texorpdfstring{print\+Interfaces()}{imprimir_interfaces()}}
 {\footnotesize\ttfamily void print\+Interfaces (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
@@ -158,7 +158,7 @@ ponteiro para uma string
 \hypertarget{class_viewer_8c_ae68a78976a85a880b9e26b1889532de3}{}\label{class_viewer_8c_ae68a78976a85a880b9e26b1889532de3} 
 \index{class\+Viewer.\+c@{class\+Viewer.\+c}!print\+Methods@{print\+Methods}}
 \index{print\+Methods@{print\+Methods}!class\+Viewer.\+c@{class\+Viewer.\+c}}
-\subsubsection{\texorpdfstring{print\+Methods()}{printMethods()}}
+\subsubsection{\texorpdfstring{print\+Methods()}{imprimir_metodos()}}
 {\footnotesize\ttfamily void print\+Methods (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 

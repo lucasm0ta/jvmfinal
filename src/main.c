@@ -33,7 +33,7 @@ int main(int argc, char **argv){
     switch(opcao){
         case(1):
             initMapper();
-            printClass(classFile);
+            imprimir_classe(classFile);
             break;
         case(2):{
             DEBUG = 0;

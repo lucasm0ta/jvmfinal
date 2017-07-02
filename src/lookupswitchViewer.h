@@ -24,8 +24,8 @@ typedef struct {
     int totalSize;
 } LookupswitchData;
 
-LookupswitchData makeLookupswitchData(uint8_t *src, int pos);
-void printLookupswitch(LookupswitchData data, char *space);
+LookupswitchData montar_lookupswitch_data(uint8_t *src, int pos);
+void imprimir_Lookupswitch(LookupswitchData data, char *space);
 
 #ifdef __cplusplus
 }

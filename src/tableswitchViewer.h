@@ -25,8 +25,8 @@ typedef struct {
     int totalSize;
 } TableswitchData;
 
-TableswitchData makeTableswitchData(uint8_t *src, int pc);
-void printTableswitch(TableswitchData data, char *space);
+TableswitchData montar_switch_table(uint8_t *src, int pc);
+void imprimir_switch_table(TableswitchData data, char *space);
 
 
 #ifdef __cplusplus

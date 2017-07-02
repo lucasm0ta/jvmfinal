@@ -13,16 +13,17 @@ extern "C" {
 #include "lookupswitchViewer.h"
 
 
-void printGeneralInformation(ClassFile* classFile);
-void printConstantPool(ClassFile* classFile);
-void printInterfaces(ClassFile* classFile);
-void printFields(ClassFile* classFile);
-void printMethods(ClassFile* classFile);
-void printAttributes(Attribute_info* attributes, uint16_t attributes_count, Cp_info* constant_pool, int tab);
-void printClass(ClassFile* classfile);
-void printCode(Cp_info* constant_pool, Code_attribute* code_attribute, char* space);
-int printDefaultInstruction(Cp_info *constant_pool, Code_attribute *codeAttribute, char *space, Mapper opcodeMapper, int instrPos);
-void printConstantPoolEntry(int index, Cp_info* constant_pool);
+void imprimir_informacoes_classe(ClassFile *classFile);
+void imprimir_constant_pool_completa(ClassFile *classFile);
+void imprimir_interfaces(ClassFile *classFile);
+void imprimir_fields(ClassFile *classFile);
+void imprimir_metodos(ClassFile *classFile);
+void imprimir_atributos(Attribute_info *atributos, uint16_t contador_atributos, Cp_info *constant_pool, int tab);
+void imprimir_classe(ClassFile *classfile);
+void imprimir_code(Cp_info *constant_pool, Code_attribute *code_attribute, char *space);
+int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attribute, char *space, Mapper opcode_decod,
+                              int instr_pos);
+void imprimir_constant_pool_inserida(int index, Cp_info *constant_pool);
 
 #ifdef __cplusplus
 }

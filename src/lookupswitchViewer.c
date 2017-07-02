@@ -4,7 +4,7 @@
 
 #include "lookupswitchViewer.h"
 
-void printLookupswitch(LookupswitchData data, char *space) {
+void imprimir_Lookupswitch(LookupswitchData data, char *space) {
     printf("\n%s     %d: %s {", space, data.position, data.name);
     printf("\n%s           default: %d", space, data.defaultBytes);
     printf("\n%s             count: %d", space, data.amountOfPairs);
@@ -16,7 +16,7 @@ void printLookupswitch(LookupswitchData data, char *space) {
     printf("\n%s     }", space);
 }
 
-LookupswitchData makeLookupswitchData(uint8_t *src, int pos) {
+LookupswitchData montar_lookupswitch_data(uint8_t *src, int pos) {
     const int paddingOffset = makePaddingOffset(pos);
     const int indexOfKeyOffsetPairs = paddingOffset + 8;
 
