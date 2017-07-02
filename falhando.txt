@@ -1,0 +1,18 @@
+Testes Falhando:
+- Array 			-> TesteSimples.class
+- Arrays 			-> multi.class
+- Arrays 			-> multi_sem_string.class
+- Arrays 			-> testeArray.class
+- Arrays 			-> testeMultArray.class
+- Arrays 			-> vetor.class (2 linhas diferentes da saída padrão esperada)
+- Belote 			-> Belote.class (Object fail)
+- Control_transfer 	-> Teste04.class
+- Static			-> Teste static
+- Conversao 		-> ConvDouble.class
+- Outros			-> aconst_null.class
+- Init				-> TesteInit.class
+- Objeto			-> a porra toda
+- Objects			-> tudao
+- Invoke			-> tudin
+- Long				-> LongCast
+- Long 				-> Long_load
