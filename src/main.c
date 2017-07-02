@@ -6,9 +6,13 @@
 #include "frame.h"
 #include "methodArea.h"
 
+void cruzeiro();
+
+int menu (ClassFile* classFile);
+
 int main(int argc, char **argv){
     char nomeArquivo[69];
-
+    cruzeiro();
     //Argumento - se foi passado como parametro na execucao, utiliza-se do mesmo
     if(argc == 2) {
         strcpy(nomeArquivo, argv[1]);
@@ -16,21 +20,47 @@ int main(int argc, char **argv){
     
     //Se nome não for especificado
     else {
-        printf("Entre com o nome do arquivo:\n> ");
+        printf("Digite o nome do arquivo (sem o .class):\n>> ");
         scanf("%s", nomeArquivo);
     }
     
     //Carrega o .class    
     ClassFile* classFile = carregar_classe(nomeArquivo);
-    int opcao;
+    menu(classFile);
+
     
-    // Mostra o menu
-    printf("Escolha uma opcao :\n");
-    printf("1 - Exibir conteudo do .class\n");
-    printf("2 - Executar interpretador\n");
-    printf("3 - Executar interpretador com saidas para debug\n> ");
-    scanf("%d", &opcao);
-    switch(opcao){
+    return 0;
+}
+
+void cruzeiro() {
+    system("clear || cls");
+    printf("\t   _____                    _              _____                                       \n");
+    printf("\t  / ____|                  (_)            / ____|                                      \n");
+    printf("\t | |     _ __ _   _ _______ _ _ __ ___   | |     __ _ _ __ ___  _ __   ___  __ _  ___  \n");
+    printf("\t | |    | '__| | | |_  / _ \\ | '__/ _ \\  | |    / _` | '_ ` _ \\| '_ \\ / _ \\/ _` |/ _ \\ \n");
+    printf("\t | |____| |  | |_| |/ /  __/ | | | (_) | | |___| (_| | | | | | | |_) |  __/ (_| | (_) |\n");
+    printf("\t  \\_____|_|   \\__,_/___\\___|_|_|  \\___/   \\_____\\__,_|_| |_| |_| .__/ \\___|\\__,_|\\___/ \n");
+    printf("\t                                                               | |                     \n");
+    printf("\t                                                               |_|                     \n");
+    printf("pressione uma tecla para continuar");
+    getchar();
+
+    system("clear || cls");
+}
+
+int menu (ClassFile* classFile){
+    int opt = 0;
+    printf("\t===============================================\n");
+    printf("\t==================== MENU =====================\n");
+    printf("\t===============================================\n");
+    printf("\t======= 1) Mostrar conteúdo do .class =========\n");
+    printf("\t======= 2) Executar interpretador     =========\n");
+    printf("\t===============================================\n");
+    printf("\t===============================================\n");
+    printf("\t>>");
+    scanf("%d",&opt);
+
+    switch(opt){
         case(1):
             inicializar_decodificador();
             imprimir_classe(classFile);
@@ -53,6 +83,5 @@ int main(int argc, char **argv){
             break;
         }
     }
-    
-    return 0;
+
 }

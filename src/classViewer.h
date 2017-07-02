@@ -78,7 +78,7 @@ void imprimir_code(Cp_info *constant_pool, Code_attribute *code_attribute, char 
  * @param  instr_pos      Posicao da instrucao
  * @return                retorna posicao da instrucao
  */
-int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attribute, char *space, Mapper opcode_decod,
+int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attribute, char *space, decoder opcode_decod,
                               int instr_pos);
 
 /**
