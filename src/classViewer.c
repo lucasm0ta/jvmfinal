@@ -76,7 +76,7 @@ void imprimir_constant_pool_inserida
 
 
 void imprimir_constant_pool_completa(ClassFile *classFile){
-	uint16_t i, index;
+	u2 i, index;
 	int64_t aux;
 	Cp_info* constant_pool = classFile->constant_pool;
 	printf("CONSTANT POOL :\n\n");
@@ -220,9 +220,9 @@ void imprimir_interfaces(ClassFile *classFile){
 }
 
 
-void imprimir_atributos(Attribute_info *atributos, uint16_t contador_atributos, Cp_info *constant_pool, int tab){
+void imprimir_atributos(Attribute_info *atributos, u2 contador_atributos, Cp_info *constant_pool, int tab){
 	int i, j, k;
-	uint16_t index;
+	u2 index;
 	// Calcula tabs, máximo 2
 	char* space = (tab == 1) ? "     " : "";
 	space = (tab == 2) ? "          " : space;
@@ -337,7 +337,7 @@ void imprimir_atributos(Attribute_info *atributos, uint16_t contador_atributos, 
 			// for (j = 0; j < atributos[i].info.bootstrapMethods_attribute->num_bootstrap_methods; ++j){
 			//     atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_method_ref = ler_bytes(2, fp);
 			//     atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments = ler_bytes(2, fp);
-			//     atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments = (uint16_t*)malloc(atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments*sizeof(uint16_t));
+			//     atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments = (u2*)malloc(atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments*sizeof(u2));
 			// 	for (k = 0; k < atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments; ++k){
 			// 		atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments[k] = ler_bytes(2, fp);
 			// 	}
@@ -355,7 +355,7 @@ void imprimir_code(Cp_info *constant_pool, Code_attribute *codeAttribute, char *
 	printf("%s     Code length:      %d\n", space, codeAttribute->code_length);
 
 	for(i = 0; i < codeAttribute->code_length; i++) {
-		uint8_t opcode = codeAttribute->code[i];
+		u1 opcode = codeAttribute->code[i];
 		decoder opcode_decod = decode[opcode];
 
 		if(strcmp(opcode_decod.instruction, INSTR_TABLESWITCH) == 0) {
@@ -379,7 +379,7 @@ int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attri
 	int j;
 	for(j = 0; j < opcode_decod.bytes; j++) {
 		instr_pos++;
-		uint8_t opcodeData = code_attribute->code[instr_pos];
+		u1 opcodeData = code_attribute->code[instr_pos];
 		printf(" %d ", opcodeData);
 		if(opcodeData != 0 && opcode_decod.referencesCP) {
 			imprimir_constant_pool_inserida(opcodeData, constant_pool);
@@ -391,7 +391,7 @@ int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attri
 
 
 void imprimir_fields(ClassFile *classFile){
-	uint16_t i, index;
+	u2 i, index;
 	Field_info* fields = classFile->fields;
 	printf("FIELDS :\n\n");
 	for (i = 0; i < classFile->fields_count; ++i){
@@ -412,7 +412,7 @@ void imprimir_fields(ClassFile *classFile){
 
 
 void imprimir_metodos(ClassFile *classFile){
-	uint16_t i, index;
+	u2 i, index;
 	Method_info* methods = classFile->methods;
 	printf("METHODS :\n\n");
 	for (i = 0; i < classFile->methods_count; ++i){

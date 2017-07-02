@@ -54,7 +54,7 @@ void imprimir_metodos(ClassFile *classFile);
  * @param constant_pool    [description]
  * @param tab              quantidade de tabs que devem ser dados
  */
-void imprimir_atributos(Attribute_info *atributos, uint16_t contador_atributos, Cp_info *constant_pool, int tab);
+void imprimir_atributos(Attribute_info *atributos, u2 contador_atributos, Cp_info *constant_pool, int tab);
 
 /**
  * Função que realiza os prints de acordo com cada item do Byte code Viewer

@@ -12,8 +12,8 @@
  * \param fp ponteiro para o arquivo
  * \return Os 4 últimos bytes lidos (variável dde 32 bits)
  */
-uint32_t ler_bytes(int size, FILE *fp){
-	uint32_t retorno = 0;
+u4 ler_bytes(int size, FILE *fp){
+	u4 retorno = 0;
 	int i;
 	for (i = 0; i < size; ++i){
 		retorno <<= 8;
@@ -28,7 +28,7 @@ uint32_t ler_bytes(int size, FILE *fp){
  * \param constant_pool Ponteiro para um Constant Pool
  * \return Ponteiro para uma string
  */
-uint8_t* acessar_constant_pool_entry(int index, Cp_info *constant_pool){
+u1* acessar_constant_pool_entry(int index, Cp_info *constant_pool){
 	switch(constant_pool[index].tag){
 		case CONSTANT_Class:
 			return acessar_constant_pool_entry(constant_pool[index].info.class_info->name_index, constant_pool);
@@ -85,7 +85,7 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 			retorno[i].info.code_attribute->max_stack = ler_bytes(2, fp);
 			retorno[i].info.code_attribute->max_locals = ler_bytes(2, fp);
 			retorno[i].info.code_attribute->code_length = ler_bytes(4, fp);
-			retorno[i].info.code_attribute->code = (uint8_t*)malloc(retorno[i].info.code_attribute->code_length*sizeof(uint8_t));
+			retorno[i].info.code_attribute->code = (u1*)malloc(retorno[i].info.code_attribute->code_length*sizeof(u1));
 			for (j = 0; j < retorno[i].info.code_attribute->code_length; ++j){
 				retorno[i].info.code_attribute->code[j] = ler_bytes(1, fp);
 			}
@@ -103,7 +103,7 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 		} else if (strcmp(str, "Exceptions") == 0){
 			retorno[i].info.exceptions_attribute = (Exceptions_attribute*)malloc(sizeof(Exceptions_attribute));
 			retorno[i].info.exceptions_attribute->number_of_exceptions = ler_bytes(2, fp);
-			retorno[i].info.exceptions_attribute->exception_index_table = (uint16_t*)malloc(retorno[i].info.exceptions_attribute->number_of_exceptions*sizeof(uint16_t));
+			retorno[i].info.exceptions_attribute->exception_index_table = (u2*)malloc(retorno[i].info.exceptions_attribute->number_of_exceptions*sizeof(u2));
 			for (j = 0; j < retorno[i].info.exceptions_attribute->number_of_exceptions; ++j){
 				retorno[i].info.exceptions_attribute->exception_index_table[j] = ler_bytes(2, fp);
 			}
@@ -179,7 +179,7 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 																													 fp);
 			    retorno[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments = ler_bytes(
 						2, fp);
-			    retorno[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments = (uint16_t*)malloc(retorno[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments*sizeof(uint16_t));
+			    retorno[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments = (u2*)malloc(retorno[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments*sizeof(u2));
 				for (k = 0; k < retorno[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments; ++k){
 					retorno[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments[k] = ler_bytes(
 							2, fp);
@@ -255,7 +255,7 @@ Cp_info* ler_constant_pool(int length, FILE *fp){
 			case CONSTANT_Utf8:
 				retorno[i].info.utf8_info = (Utf8_info*)malloc(sizeof(Utf8_info));
 				retorno[i].info.utf8_info->length = ler_bytes(2, fp);
-				retorno[i].info.utf8_info->bytes = (uint8_t*)malloc((retorno[i].info.utf8_info->length+1)*sizeof(uint8_t));
+				retorno[i].info.utf8_info->bytes = (u1*)malloc((retorno[i].info.utf8_info->length+1)*sizeof(u1));
 				for (j = 0; j < retorno[i].info.utf8_info->length; ++j){
 					retorno[i].info.utf8_info->bytes[j] = ler_bytes(1, fp);
 				}
@@ -289,9 +289,9 @@ Cp_info* ler_constant_pool(int length, FILE *fp){
  * \param fp Ponteiro para o arquivo, que deve estar apontando para onde começam os indices
  * \return Referência para um vetor de indices do constant pool
  */
-uint16_t* ler_interfaces(int length, FILE *fp){
+u2* ler_interfaces(int length, FILE *fp){
 	int i;
-	uint16_t* retorno = (uint16_t*)malloc(length*sizeof(uint16_t));
+	u2* retorno = (u2*)malloc(length*sizeof(u2));
 	for (i = 0; i < length; ++i){
 		retorno[i] = ler_bytes(2, fp);
 	}

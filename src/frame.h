@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "classLoader.h"
 #include "instructions.h"
+#include "util.h"
 
 /**
  * Pilha de operandos. Cada frame tera um desses que sera usado
@@ -27,11 +28,11 @@ typedef struct frame {
 	int32_t* fields; //Local variables array
 	Cp_info* constantPool;
 	ClassFile* classe;
-	uint16_t max_stack;
-	uint16_t max_locals;
-	uint32_t code_length;
-	uint8_t* code; //Bytecode
-	uint32_t pc; //Program counter
+	u2 max_stack;
+	u2 max_locals;
+	u4 code_length;
+	u1* code; //Bytecode
+	u4 pc; //Program counter
 	operandStack* operandStack;
 }frame;
 

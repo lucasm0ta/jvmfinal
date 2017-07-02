@@ -43,10 +43,10 @@ void empilhar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code, struct
 	cabeca->node->code = code->code;
 
   //Aloca espaço para o array de var local
-	cabeca->node->fields = (uint32_t*) calloc(cabeca->node->max_locals, sizeof(uint32_t));
+	cabeca->node->fields = (u4*) calloc(cabeca->node->max_locals, sizeof(u4));
 
   cabeca->node->operandStack = (operandStack*) calloc(1, sizeof(operandStack));
-  cabeca->node->operandStack->operands = (uint32_t*) calloc(cabeca->node->max_stack, sizeof(uint32_t));
+  cabeca->node->operandStack->operands = (u4*) calloc(cabeca->node->max_stack, sizeof(u4));
   cabeca->node->operandStack->depth = 0; // inicialmente a pilha esta vazia
 
 	//Atualiza o frame_atual para o frame alocado agora.

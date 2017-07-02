@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include "util.h"
 
 /* array com as instruções que foram implementadas */
 void (*instrucao[256]) ();

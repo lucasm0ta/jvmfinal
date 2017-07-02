@@ -9,6 +9,7 @@ extern "C" {
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "util.h"
 
 #define INSTRUCTION_NAME 30     // Nome das instruções
 #define INSTRUCTION_SIZE 256    // Tamanho das instruções
