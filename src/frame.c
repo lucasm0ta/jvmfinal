@@ -21,14 +21,13 @@ void criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code) {
 
 /**
  * Coloca um frame na pilha de frames
- * @param cp     Informação do constantpool
+ * @param cp Informação do constantpool
  * @param classe Informação da classe, classfile
- * @param code   Atributo de codigo
- * @param pf     Ponteiro para o frame
+ * @param code Atributo de codigo
+ * @param pf Ponteiro para o frame
  */
 void empilhar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code, struct pilha_frame *pf) {
-
-  pf->next = cabeca;
+    pf->next = cabeca;
 	cabeca = pf;
 
   //Inicializa o pc.

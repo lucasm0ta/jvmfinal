@@ -25,7 +25,7 @@ typedef struct frame {
 	operandStack* operandStack;
 }frame;
 
-typedef struct stackFrame{
+typedef struct pilha_frame{
 	frame* node;
 	struct pilha_frame* next;
 }pilha_frame;
@@ -71,7 +71,7 @@ void empilhar_operando(int32_t);
 int32_t desempilhar_operando();
 
 /**
- * Roda os frames 
+ * Roda os frames
  */
 void executar_frame();
 /**
@@ -83,7 +83,7 @@ void empilhar_metodo(ClassFile *classe, Method_info *method);
 
 /**
  * Sai do método
- * @param Flag para saida 
+ * @param Flag para saida
  */
 void dumpStack(int i);
 #endif
