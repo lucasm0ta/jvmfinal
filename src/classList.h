@@ -1,30 +1,37 @@
+/**
+ *  Contains the structure and functions that handle the loaded class files
+ */
+
 #ifndef CLASSLIST_H
 #define CLASSLIST_H
 
 #include "classLoader.h"
 #include <stdlib.h>
 
+/**
+ * List that holds all of the loaded .class files
+ */
 typedef struct ClassList{
     ClassFile*			classFile;
     struct lista_classe*	next;
 }lista_classe;
 
 /**
- * Insere um classFile na lista de classFiles ja carregados
- * @param classFile referência para a estrutura classFile
+ * Shows the list of classes. Used for debugging
+ */
+void dumpClassList();
+
+/**
+ * Puts a new classList in the classFile list
+ * @param classFile classFile reference
  */
 void empilhar_classe(ClassFile *classFile);
 
 /**
- * Procura um classFile já carregado na lista de classFiles
- * @param  name nome da classe
+ * Gets a loaded classFile based on its name
+ * @param  name ClassFile name
  * @return      struct para class solicitada, NULL caso não encontre a class
  */
 ClassFile* buscar_classe(char *name);
-
-/**
- * Mostra a lista de classes ja carregadas
- */
-void dumpClassList();
 
 #endif 

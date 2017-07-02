@@ -1,3 +1,7 @@
+/**
+ * Contains structures and functions that handle Array objects. 
+ */
+
 #ifndef ARRAY_H
 #define ARRAY_H
 
@@ -5,7 +9,9 @@
 
 
 /**
- * estrutura para o array, serve para salvar tbm o tamanho do array
+ * Structure used to represent an array
+ * @arraySize Size of the array
+ * @reference Reference to the array itself
  */
 typedef struct array{	
 	uint32_t arraySize;
@@ -13,31 +19,33 @@ typedef struct array{
 }arrayType;
 
 /**
- * Dada uma referencia para arrayType devolve o ponteiro para o array propriamente dita
- * @param  array Estrutura a qual a referencia se encontra
- * @return       Referencia para o array
- */
-uint32_t get_referencia_array(arrayType *array);
-
-/**
- * Dada uma referencia para arrayType devolve o tamanho do array
- * @param  array Estrutura a qual a referencia se encontra
- * @return       Tamanho do array
- */
-uint32_t get_tamanho_array(arrayType *array);
-
-/**
- * Dada um ponteiro para um array e um para a estrutura de array coloca-o na estrutura
- * @param arrayRef Referencia a ser posta
- * @param array    Estrutura a ser posta a referencia
+ * Puts an Array reference inside an arrayType.
+ * @param arrayRef Reference to the array that will be put inside the arrayType
+ * @param array    Structure that will receive the new array
  */
 void put_referencia_array(uint32_t *arrayRef, arrayType *array);
 
 /**
- * //Dada um tamanho int um ponteiro para a estrutura de array coloca-o na estrutura	
- * @param size  Tamanho a ser posto na estrutura
- * @param array Estrutura a ser posto o tamanho
+ * Puts an array reference inside an arrayType  with it size
+ * @param size  Size of the array that will be pyt inside arrayType
+ * @param array The array Type
  */
 void put_tamanho_array(uint32_t size, arrayType *array);
+
+/**
+ * Given an arrayType structure, returns the pointer to the array itself
+ * @param  array Structure to array type
+ * @return       Reference to the array itself
+ */
+uint32_t get_referencia_array(arrayType *array);
+
+/**
+ * Returns arraySize from arrayType. Complexity O(1) since
+ * it updates the arraySize for every operation
+ * 
+ * @param  array Structure to array type
+ * @return       Array Size
+ */
+uint32_t get_tamanho_array(arrayType *array);
 
 #endif
