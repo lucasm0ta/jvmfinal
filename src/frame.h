@@ -6,13 +6,23 @@
 #include "classLoader.h"
 #include "instructions.h"
 
+/**
+ * Pilha de operandos. Cada frame tera um desses que sera usado
+ * por algumas instrucoes, principalmente as que fazem operacoes.
+ *
+ * @depth Tamanho do frame. Aponta para o ultimo elemento adicionado
+ * @operands O vetor de operandos que representa a pilha
+ */
 typedef struct operandStack {
-  // stack depth
   int depth;
-  // stack operands represented as an array
   int32_t* operands;
 } operandStack;
 
+/**
+ * Estrutura do frame. Contem um vetor de varaveis locais, um ponteiro
+ * para a constant_pool, um pilha de operandos e o codigo em si. Possui alguns
+ * outros elementos que sao usados no seu funcionamento.
+ */
 typedef struct frame {
 	int32_t* fields; //Local variables array
 	Cp_info* constantPool;
@@ -25,65 +35,73 @@ typedef struct frame {
 	operandStack* operandStack;
 }frame;
 
+/**
+ * Estrutura usada para empilhar frames
+ */
 typedef struct pilha_frame{
 	frame* node;
 	struct pilha_frame* next;
 }pilha_frame;
 
 
-//Flag para empilhar 1 slot ou 2(double e long).
+// Flags usadas para saber se o novo valor ocupa 1 ou 2 slots
 int8_t flag;
 int32_t returnValue;
 int32_t retHigh,retLow;
 
+// Ponteiro pro primeiro frame da pilha
 struct frame* frame_atual;
-//Refencia ao cabeca da pilha de frames. Essencial para Empilhar e desempilhar os frames.
 static struct pilha_frame* cabeca = NULL;
 
 /**
- * Realiza a criacao do frame
- * @param cp     informacao do constantpool
- * @param classe informacao do classfile
- * @param code   atributo de codigo
+ * Cria a estrutura do frame e faz empilha ela
+ * @param cp     Ponteiro para o constant_pool
+ * @param classe Estrutura do classFile
+ * @param code   Ponteiro para a estrutura do codigo
  */
 void criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code);
+
 /**
- * Coloca um frame na pilha de frames
- * @param cp     Informação do constantpool
- * @param classe Informação da classe, classfile
- * @param code   Atributo de codigo
- * @param sf     Ponteiro para o frame
+ * Empilha um frame na pilha
+ * @param cp     Ponteiro para o constant_pool
+ * @param classe Estrutura do classFile
+ * @param code   Ponteiro para a estrutura do codigo
+ * @param sf     Ponteiro para a pilha de frames
  */
 void empilhar_frame(Cp_info *, ClassFile *, Code_attribute *, struct pilha_frame *);
+
 /**
- * Retira um frame do topo da pilha, libera seu espaço de memoria
+ * Desempilha um frame, liberando toda a memoria usada por esse frame
  */
 void desempilhar_frame();
+
 /**
- * Coloca um operando na pilha de operandos do frame
- * @param value Valor a ser colocado na pilha
+ * Empilha um operando na pilha de openrados do frame atual
+ * @param value Valor que sera colocado na pilha
  */
 void empilhar_operando(int32_t);
+
 /**
- * Retira e devolve um valor armazenado na pilha de operandos
- * @return Valor antes armazenado na pilha de operandos
+ * Desempilha o valor da pilha e retorna esse valor
+ * @return Valor que foi desempilhado
  */
 int32_t desempilhar_operando();
 
 /**
- * Roda os frames
+ * Executa o codigo do atributo Code do frame
  */
 void executar_frame();
+
 /**
- * Chama um metodo criando um frame para ele
- * @param classFile Informação da classe deste método
- * @param method    Informação do metodo
+ * Cria um novo frame para o metodo chamado
+ * @param classFile Ponteiro para a estrutura da classe
+ * @param method    Ponteiro para o atributo metodo
  */
 void empilhar_metodo(ClassFile *classe, Method_info *method);
 
 /**
- * Sai do método
- * @param Flag para saida
+ * Saida do metodo atual, destruindo o flame
+ * @param i Flag para saber o q sera impresso
  */
 void dumpStack(int i);
 #endif
