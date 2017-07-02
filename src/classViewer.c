@@ -378,7 +378,7 @@ void imprimir_code(Cp_info *constant_pool, Code_attribute *codeAttribute, char *
 
 	for(i = 0; i < codeAttribute->code_length; i++) {
 		uint8_t opcode = codeAttribute->code[i];
-		Mapper opcode_decod = mapper[opcode];
+		decoder opcode_decod = decode[opcode];
 
 		if(strcmp(opcode_decod.instruction, INSTR_TABLESWITCH) == 0) {
 			TableswitchData data = montar_switch_table(codeAttribute->code + i + 1, i);
@@ -395,7 +395,7 @@ void imprimir_code(Cp_info *constant_pool, Code_attribute *codeAttribute, char *
 	printf("\n");
 }
 
-int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attribute, char *space, Mapper opcode_decod,
+int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attribute, char *space, decoder opcode_decod,
 							  int instr_pos) {
 	printf("\n%s     %d: %s", space, instr_pos, opcode_decod.instruction);
 	int j;

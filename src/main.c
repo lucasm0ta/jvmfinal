@@ -32,7 +32,7 @@ int main(int argc, char **argv){
     scanf("%d", &opcao);
     switch(opcao){
         case(1):
-            initMapper();
+            inicializar_decodificador();
             imprimir_classe(classFile);
             break;
         case(2):{
@@ -45,7 +45,7 @@ int main(int argc, char **argv){
         }
         case(3):{
             DEBUG = 1;
-            initMapper();
+            inicializar_decodificador();
             createInstructionsArray();
             Method_info* mainInfo = findMainMethod(classFile);
             empilhar_metodo(classFile, mainInfo);

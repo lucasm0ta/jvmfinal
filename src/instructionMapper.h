@@ -12,20 +12,20 @@ extern "C" {
 
 #define INSTRUCTION_NAME 30
 #define INSTRUCTION_SIZE 256
-typedef struct Mapper {
+typedef struct decoder {
     //nome da instrucao
     char instruction[INSTRUCTION_NAME];
     //bytes de operandos que ela ocupa
     int bytes;
     int referencesCP;
-} Mapper;
+} decoder;
 
 extern const char *INSTR_TABLESWITCH;
 extern const char *INSTR_LOOKUPSWITCH;
 
 // funcao que coloca o nome das strings no decodificador, juntamente com a qtd em bytes
-void initMapper();
-Mapper mapper[INSTRUCTION_SIZE];
+void inicializar_decodificador();
+decoder decode[INSTRUCTION_SIZE];
 
 #ifdef __cplusplus
 }

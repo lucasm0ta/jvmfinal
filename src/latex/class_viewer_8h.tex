@@ -3,7 +3,7 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}class\+Loader.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}instruction\+Mapper.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}instruction\+decoder.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}tableswitch\+Viewer.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}lookupswitch\+Viewer.\+h\char`\"{}}\newline
 \subsection*{Funções}
@@ -25,7 +25,7 @@ void \hyperlink{class_viewer_8h_aad5f27d7ff119831c147a4f595b4e530}{print\+Class}
 \begin{DoxyCompactList}\small\item\em Função que realiza os prints de acordo com cada item do Byte code Viewer. \end{DoxyCompactList}\item 
 void \hyperlink{class_viewer_8h_aafae20da7d25260debc46ff938e1639e}{print\+Code} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code\+\_\+attribute, char $\ast$space)
 \item 
-int \hyperlink{class_viewer_8h_ae67e0c3ff1c487a6bf118ee61dc50c82}{print\+Default\+Instruction} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code\+Attribute, char $\ast$space, \hyperlink{struct_mapper}{Mapper} opcode\+Mapper, int instr\+Pos)
+int \hyperlink{class_viewer_8h_ae67e0c3ff1c487a6bf118ee61dc50c82}{print\+Default\+Instruction} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code\+Attribute, char $\ast$space, \hyperlink{struct_mapper}{decoder} opcode\+decoder, int instr\+Pos)
 \item 
 void \hyperlink{class_viewer_8h_a693c748265331baf97996cad6d456206}{print\+Constant\+Pool\+Entry} (int index, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool)
 \begin{DoxyCompactList}\small\item\em Função que imprime uma string que representa o valor de uma das constantes do Constant Pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -113,7 +113,7 @@ ponteiro para uma string
 \index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Default\+Instruction@{print\+Default\+Instruction}}
 \index{print\+Default\+Instruction@{print\+Default\+Instruction}!class\+Viewer.\+h@{class\+Viewer.\+h}}
 \subsubsection{\texorpdfstring{print\+Default\+Instruction()}{imprimir_instrucao_padrao()}}
-{\footnotesize\ttfamily int print\+Default\+Instruction (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code\+Attribute,  }\item[{char $\ast$}]{space,  }\item[{\hyperlink{struct_mapper}{Mapper}}]{opcode\+Mapper,  }\item[{int}]{instr\+Pos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int print\+Default\+Instruction (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code\+Attribute,  }\item[{char $\ast$}]{space,  }\item[{\hyperlink{struct_mapper}{decoder}}]{opcode\+decoder,  }\item[{int}]{instr\+Pos }\end{DoxyParamCaption})}
 
 \hypertarget{class_viewer_8h_adbffb2d094b7945dba0bd0e5f7e0de26}{}\label{class_viewer_8h_adbffb2d094b7945dba0bd0e5f7e0de26} 
 \index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Fields@{print\+Fields}}
