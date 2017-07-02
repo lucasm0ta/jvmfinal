@@ -6,11 +6,12 @@
 
 int tamanho_tabela;
 
-void redimensionar_hashtable();
+// void redimensionar_hashtable();
 
 TypeInfo ** hashtable;
 int data_count = 0;
 
+/*
 void inicializar_hashtable(int tamanho_inicial) {
     tamanho_tabela = tamanho_inicial;
     hashtable = (TypeInfo **) malloc(tamanho_tabela * sizeof(TypeInfo *));
@@ -102,6 +103,8 @@ void imprimir_hashtable() {
     printf("\n");
 }
 
+*/
+
 Method_info* buscar_metodo_main(ClassFile *classFile) {
 
 	int i;
@@ -122,11 +125,6 @@ Method_info* buscar_metodo_main(ClassFile *classFile) {
   exit(1);
 }
 
-/**
- * [getSuperClass description]
- * @param  classFile [description]
- * @return           [description]
- */
 ClassFile* super_classe(ClassFile *classFile){
   if (classFile->super_class == 0){
     return NULL;
