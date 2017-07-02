@@ -27,17 +27,17 @@ typedef struct Object{
 }Object;
 
 /**
- * Retorna uma instância da classe do classFile
- * @param  class_file struct do classFile que sera instanciado
- * @return           referência para um objeto alocado
+ * Retorna uma instância da classe alocada
+ * @param  class_file estrutura do classFile que sera instanciada
+ * @return referência para um objeto alocado
  */
 Object* criar_objeto(ClassFile *class_file);
 
 /**
- * Retorna o field com nome "name" de um objeto
+ * Retorna o field que possuiu o mesmo nome do parâmetro informado
  * @param  object referência para o objeto
  * @param  name   nome do field desejado
- * @return        uma referência caso o field for um objeto/array, ou um valor do campo nos outros casos
+ * @return caso o field for um objeto/array retorna uma referência, ou um valor nos outros casos
  */
 uint64_t buscar_object_field_value_por_nome(Object *object, char *name);
 
