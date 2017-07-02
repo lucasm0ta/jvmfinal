@@ -352,7 +352,6 @@ ClassFile* carregar_classe(char *className){
 	// Concatena o .class no final do nome
 	char name[80];
 	strcpy(name, className);
-	strcat(name, ".class");
 
 	// Abre o arquivo
 	FILE* fp = NULL;
@@ -415,11 +414,34 @@ void verificar_magic_number(ClassFile *classFile){
 void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 	int i = 0;
 	int string_index = classFile->constant_pool[classFile->this_class].info.string_info->string_index;
-	char * nomeClassept = classFile->constant_pool[string_index].info.utf8_info->bytes;
+	char *nomeClassept = classFile->constant_pool[string_index].info.utf8_info->bytes;
 
 	//Verifica se nome da classe eh igual ao nome do arquivo
-	if (strcmp(nomeClassept, nomeArquivo)) {
-		printf("Nome da classe (%s) e do arquivo (%s) diferentes.\n", nomeClassept, nomeArquivo);
+	int pos = 0;
+	int last = 0;
+	while(nomeArquivo[pos] != '\0') {
+		if(nomeArquivo[pos] == '/')
+			last = pos;
+		pos++;
+	}
+	int size = pos - last - 7;
+	char *buff1 = malloc(sizeof(char) * size);
+	memcpy(buff1, &nomeArquivo[last+1], size);
+	buff1[size] = '\0';
+
+	pos = 0;
+	last = 0;
+	while(nomeClassept[pos] != '\0') {
+		if(nomeClassept[pos] == '/')
+			last = pos;
+		pos++;
+	}
+	size = pos - last;
+	char *buff2 = malloc(sizeof(char) * size);
+	memcpy(buff2, &nomeClassept[last+1], size);
+	buff2[size] = '\0';
+	if (strcmp(buff1, buff2)) {
+		printf("Nome da classe (%s) e do arquivo (%s) diferentes.\n", buff1, buff2);
 		exit(1);//Nomes diferentes
 	}
 }
