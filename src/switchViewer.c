@@ -1,11 +1,6 @@
-//
-// Created by Henrique Faria on 11/13/16.
-//
-
 #include "switchViewer.h"
 
 uint32_t *group_words(uint8_t *src, int size) {
-    //Gambiarra (malloc não está funcionando)
     static uint32_t words[256];
 
     for(int i = 0; i < size; i++) {

@@ -1,9 +1,5 @@
-//
-// Created by Henrique Faria on 11/13/16.
-//
-
-#ifndef JADIEL_VM_TABLESWITCHVIEWER_H
-#define JADIEL_VM_TABLESWITCHVIEWER_H
+#ifndef TABLESWITCHVIEWER_H
+#define TABLESWITCHVIEWER_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -28,10 +24,8 @@ typedef struct {
 TableswitchData montar_switch_table(uint8_t *src, int pc);
 void imprimir_switch_table(TableswitchData data, char *space);
 
-
 #ifdef __cplusplus
 }
 #endif
 
-
-#endif //JADIEL_VM_TABLESWITCHVIEWER_H
+#endif //TABLESWITCHVIEWER_H

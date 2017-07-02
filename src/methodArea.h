@@ -1,9 +1,5 @@
-//
-// Created by Henrique Faria on 11/17/16.
-//
-
-#ifndef JADIEL_VM_METHODAREA_H
-#define JADIEL_VM_METHODAREA_H
+#ifndef METHODAREA_H
+#define METHODAREA_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -15,7 +11,6 @@ extern "C" {
 
 typedef struct {
     char *name;
-
 } TypeInfo;
 
 void initHashtable(int initialSize);
@@ -25,8 +20,8 @@ void insert(TypeInfo dt);
 size_t hash(const char *str, size_t len);
 int indexOf(TypeInfo dt);
 
-
 Code_attribute* recuperar_code_attribute(ClassFile *classFile, Method_info *methodInfo);
+
 Method_info* findMainMethod(ClassFile* classFile);
 Method_info* findMethod(ClassFile* targetClass, ClassFile* originClass, uint16_t indice);
 char* findClassNameFromMethod(Cp_info* constantPool, int32_t methodIndex);
@@ -36,11 +31,8 @@ int32_t getParamsCount(char* bytes);
 TypeInfo *getItem(int index);
 ClassFile* getSuperClass(ClassFile* classFile);
 
-
-
 #ifdef __cplusplus
 }
 #endif
 
-
-#endif //JADIEL_VM_METHODAREA_H
+#endif //METHODAREA_H

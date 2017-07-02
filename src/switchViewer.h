@@ -1,9 +1,5 @@
-//
-// Created by Henrique Faria on 11/13/16.
-//
-
-#ifndef JADIEL_VM_SWITCHVIEWER_H
-#define JADIEL_VM_SWITCHVIEWER_H
+#ifndef SWITCHVIEWER_H
+#define SWITCHVIEWER_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -21,4 +17,4 @@ int makePaddingOffset(int pos);
 #endif
 
 
-#endif //JADIEL_VM_SWITCHVIEWER_H
+#endif //SWITCHVIEWER_H

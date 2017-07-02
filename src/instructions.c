@@ -1,4 +1,3 @@
-
 #include "instructions.h"
 #include "methodArea.h"
 #include "frame.h"
@@ -7,16 +6,14 @@
 #include "lookupswitchViewer.h"
 #include "array.h"
 
-
-
 #include <stdio.h>
 #include <math.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <float.h>
 
-
 extern struct frame* frame_atual;
+
 int16_t read2Bytes(uint8_t* data);
 void handlePrintInt();
 void handlePrintDouble();
@@ -516,7 +513,7 @@ void dload(){
 	frame_atual->pc += 2;
 }
 /**
- * Retira um indice do area de codigo do frame e com esse indice acha 
+ * Retira um indice do area de codigo do frame e com esse indice acha
  * uma variavel local na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -531,7 +528,7 @@ void aload(){
 	frame_atual->pc += 2;
 }
 /**
- * Com o indice 0 acha 
+ * Com o indice 0 acha
  * uma variavel local inteira na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -541,7 +538,7 @@ void iload_0(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 1 acha 
+ * Com o indice 1 acha
  * uma variavel local inteira na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -551,7 +548,7 @@ void iload_1(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 2 acha 
+ * Com o indice 2 acha
  * uma variavel local inteira na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -561,7 +558,7 @@ void iload_2(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 3 acha 
+ * Com o indice 3 acha
  * uma variavel local inteira na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -572,7 +569,7 @@ void iload_3(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 0 acha 
+ * Com o indice 0 acha
  * uma variavel local long na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -586,7 +583,7 @@ void lload_0(){
     frame_atual->pc++;
 }
 /**
- * Com o indice 1 acha 
+ * Com o indice 1 acha
  * uma variavel local long na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -599,7 +596,7 @@ void lload_1(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 2 acha 
+ * Com o indice 2 acha
  * uma variavel local long na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -613,7 +610,7 @@ void lload_2(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 3 acha 
+ * Com o indice 3 acha
  * uma variavel local long na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -626,7 +623,7 @@ void lload_3(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 0 acha 
+ * Com o indice 0 acha
  * uma variavel local float na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -637,7 +634,7 @@ void fload_0(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 1 acha 
+ * Com o indice 1 acha
  * uma variavel local float na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -648,7 +645,7 @@ void fload_1(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 2 acha 
+ * Com o indice 2 acha
  * uma variavel local float na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -659,7 +656,7 @@ void fload_2(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 3 acha 
+ * Com o indice 3 acha
  * uma variavel local float na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -670,7 +667,7 @@ void fload_3(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 0 acha 
+ * Com o indice 0 acha
  * uma variavel local double na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -683,7 +680,7 @@ void dload_0(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 1 acha 
+ * Com o indice 1 acha
  * uma variavel local double na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -696,7 +693,7 @@ void dload_1(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 2 acha 
+ * Com o indice 2 acha
  * uma variavel local double na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -710,7 +707,7 @@ void dload_2(){
 	frame_atual->pc++;
 }
 /**
- * Com o indice 3 acha 
+ * Com o indice 3 acha
  * uma variavel local double na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -723,7 +720,7 @@ void dload_3(){
 	frame_atual->pc++;
 }
 /**
- * Utilizando o indice 0 acha 
+ * Utilizando o indice 0 acha
  * uma variavel local na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -736,7 +733,7 @@ void aload_0(){
 	frame_atual->pc++;
 }
 /**
- * Utilizando o indice 1 acha 
+ * Utilizando o indice 1 acha
  * uma variavel local na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -750,7 +747,7 @@ void aload_1(){
 }
 
 /**
- * Utilizando o indice 2 acha 
+ * Utilizando o indice 2 acha
  * uma variavel local na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -763,7 +760,7 @@ void aload_2(){
 	frame_atual->pc++;
 }
 /**
- * Utilizando o indice 3 acha 
+ * Utilizando o indice 3 acha
  * uma variavel local na area de fields, coloca o valor dessa variavel
  * na pilha de operandos
  */
@@ -1431,7 +1428,7 @@ void dup_x2(){
 	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
 /**
- * Duplica o topo de um ou dois elementos da pilha de operandos 
+ * Duplica o topo de um ou dois elementos da pilha de operandos
  */
 void dup2(){
 
@@ -1444,8 +1441,8 @@ void dup2(){
 	frame_atual->pc++;
 }
 /**
- * Duplica o topo de um ou dois elementos da pilha de operandos 
- * e insere um ou dois valores 
+ * Duplica o topo de um ou dois elementos da pilha de operandos
+ * e insere um ou dois valores
  */
 void dup2_x1(){
 
@@ -1453,7 +1450,7 @@ void dup2_x1(){
 	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
 /**
- * Duplica o topo de um ou dois elementos da pilha de operandos 
+ * Duplica o topo de um ou dois elementos da pilha de operandos
  * e insere um ou dois ou três ou quatro valores
  */
 void dup2_x2(){
@@ -3337,7 +3334,7 @@ void newarray(){
 	frame_atual->pc += 2;
 }
 /**
- * Cria um novo array objeto 
+ * Cria um novo array objeto
  */
 void anewarray(){
 
@@ -3519,7 +3516,7 @@ void jsr_w(){
 }
 /**
  * Devolve apenas os 5 bytes menos significativos
- * @param  shift  
+ * @param  shift
  * @return shift       5 bytes menos significativos
  */
 int32_t shift5Bits(int32_t shift){
@@ -3528,7 +3525,7 @@ int32_t shift5Bits(int32_t shift){
 }
 /**
  * Devolve apenas os 5 bytes menos significativos
- * @param  shift 
+ * @param  shift
  * @return shift       6 bytes menos significativos
  */
 void shift6Bits(int32_t shift){
@@ -3536,8 +3533,8 @@ void shift6Bits(int32_t shift){
 }
 /**
  * Verifica dois longs para igualdade, maioridade e menororidade
- * @param long1 
- * @param long2 
+ * @param long1
+ * @param long2
  */
 void verifyLongs(long long1,long long2){
 	if(long1 == long2){
@@ -3550,8 +3547,8 @@ void verifyLongs(long long1,long long2){
 }
 /**
  * Verifica dois floats para igualdade, maioridade e menororidade
- * @param float1 
- * @param float2 
+ * @param float1
+ * @param float2
  */
 void verifyFloats(float float1,float float2){
 	if(float1 == float2){
@@ -3564,8 +3561,8 @@ void verifyFloats(float float1,float float2){
 }
 /**
  * Verifica dois doubles para igualdade, maioridade e menororidade
- * @param double1 
- * @param double2 
+ * @param double1
+ * @param double2
  */
 void verifyDoubles(double double1,double double2){
 	if(double1 == double2){

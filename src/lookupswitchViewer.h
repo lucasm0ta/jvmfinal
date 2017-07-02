@@ -1,9 +1,5 @@
-//
-// Created by Henrique Faria on 11/13/16.
-//
-
-#ifndef JADIEL_VM_LOOKUPSWITCHVIEWER_H
-#define JADIEL_VM_LOOKUPSWITCHVIEWER_H
+#ifndef LOOKUPSWITCHVIEWER_H
+#define LOOKUPSWITCHVIEWER_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -13,7 +9,6 @@ extern "C" {
 #include <stdio.h>
 #include "switchViewer.h"
 #include "instructionMapper.h"
-
 
 typedef struct {
     const char *name;
@@ -31,4 +26,4 @@ void imprimir_Lookupswitch(LookupswitchData data, char *space);
 }
 #endif
 
-#endif //JADIEL_VM_LOOKUPSWITCHVIEWER_H
+#endif //LOOKUPSWITCHVIEWER_H
