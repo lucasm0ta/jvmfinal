@@ -14,18 +14,6 @@
 
 extern struct frame* frame_atual;
 
-int16_t read2Bytes(u1* data);
-void tratar_impressao_int();
-void tratar_impressao_double();
-void tratar_impressao_char();
-void tratar_impressao_float();
-void tratar_impressao_long();
-void tratar_impressao_string();
-void tratar_impressao_boolean();
-
-/**
- * Cria o arrray de instruções para ser acessado
- */
 void criar_array_instrucoes(){
 
 	instrucao[0] = nop;
@@ -231,94 +219,70 @@ void criar_array_instrucoes(){
 	instrucao[200] = goto_w;
 	instrucao[201] = jsr_w;
 }
-/**
- * fazer nada
- */
+
 void nop(){
 	frame_atual->pc++;
 }
-/**
- * Coloca null na pilha de operandos
- */
+
 void aconst_null(){
 
 	empilhar_operando(0);
 	frame_atual->pc++;
 }
-/**
- * Coloca -1 na pilha
- */
+
 void iconst_m1(){
 
 	empilhar_operando((int32_t) -1);
 	frame_atual->pc++;
 }
-/**
- * Coloca -1 na pilha
- */
+
 void iconst_0(){
 	empilhar_operando((int32_t) 0);
 	frame_atual->pc++;
 }
-/**
- * Coloca 1 na pilha
- */
+
 void iconst_1(){
 
 	empilhar_operando((int32_t) 1);
 	frame_atual->pc++;
 }
-/**
- * Coloca 2 na pilha
- */
+
 void iconst_2(){
 	empilhar_operando((int32_t) 2);
 	frame_atual->pc++;
 }
-/**
- * Coloca 3 na pilha
- */
+
 void iconst_3(){
 
 	empilhar_operando((int32_t) 3);
 	frame_atual->pc++;
 }
-/**
- * Coloca 4 na pilha
- */
+
 void iconst_4(){
 
 	empilhar_operando((int32_t) 4);
 	frame_atual->pc++;
 }
-/**
- * Coloca 5 na pilha
- */
+
 void iconst_5(){
 
 	empilhar_operando((int32_t) 5);
 	frame_atual->pc++;
 }
-/**
- * Coloca uma constante 0 long na pilha
- */
+
 void lconst_0(){
 	empilhar_operando((int32_t) 0);
 	empilhar_operando((int32_t) 0);
 	frame_atual->pc++;
 }
-/**
- * Coloca uma constante 1 long na pilha
- */
+
 void lconst_1(){
 
 	empilhar_operando((int32_t) 0);
 	empilhar_operando((int32_t) 1);
 	frame_atual->pc++;
 }
-/**
- * Coloca uma constante 0 float na pilha
- */
+
 void fconst_0(){
 	float floatValue = 0.0;
 	int intValue;
@@ -326,9 +290,7 @@ void fconst_0(){
 	empilhar_operando(intValue);
 	frame_atual->pc++;
 }
-/**
- * Coloca uma constante 1 float na pilha
- */
+
 void fconst_1(){
 	float floatValue = 1.0;
 	int intValue;
@@ -337,9 +299,7 @@ void fconst_1(){
 	empilhar_operando((int32_t) 1);
 	frame_atual->pc++;
 }
-/**
- * Coloca uma constante 2 float na pilha
- */
+
 void fconst_2(){
 	float floatValue = 2.0;
 	int intValue;
@@ -347,18 +307,14 @@ void fconst_2(){
 	empilhar_operando(intValue);
 	frame_atual->pc++;
 }
-/**
- * Coloca uma constante 0 double na pilha
- */
+
 void dconst_0(){
 
 	empilhar_operando((int32_t) 0);
 	empilhar_operando((int32_t) 0);
 	frame_atual->pc++;
 }
-/**
- * Coloca uma constante 1 double na pilha
- */
+
 void dconst_1(){
 	double doubleValue = 1.0;
 	int64_t intValue;
@@ -369,9 +325,7 @@ void dconst_1(){
 	empilhar_operando(low);
 	frame_atual->pc++;
 }
-/**
- * Coloca um byte na pilha, tirado da area de codigo
- */
+
 void bipush(){
 
 	//push a byte onto the stack as an integer value
@@ -379,9 +333,7 @@ void bipush(){
 	empilhar_operando((int32_t) byte);
 	frame_atual->pc+= 2;
 }
-/**
- * Coloca um short na pilha, tirado da area de codigo
- */
+
 void sipush(){
 
 	//push a short onto the stack
@@ -389,86 +341,78 @@ void sipush(){
 	empilhar_operando((int32_t) shortValue);
 	frame_atual->pc += 3;
 }
-/**
- * Coloca um item na pilha retirado do constant pool
- */
+
 void ldc(){
 
 	// push a constant #index from a constant pool (String, int or float) onto the stack
 	int32_t index = frame_atual->code[frame_atual->pc+1];
-	u1 type = frame_atual->constantPool[index].tag;
+	uint8_t type = frame_atual->constantPool[index].tag;
 	if(type == 8){
 		//String
-		u4 string = frame_atual->constantPool[index].info.string_info->string_index;
+		uint32_t string = frame_atual->constantPool[index].info.string_info->string_index;
 		empilhar_operando(string);
 
 	} else if(type == 3){
 		//int
-		u4 bytes = frame_atual->constantPool[index].info.integer_info->bytes;;
+		uint32_t bytes = frame_atual->constantPool[index].info.integer_info->bytes;;
 		empilhar_operando(bytes);
 
 	} else if(type == 4){
 		//float
-		u4 bytes = frame_atual->constantPool[index].info.float_info->bytes;
+		uint32_t bytes = frame_atual->constantPool[index].info.float_info->bytes;
 
 		empilhar_operando(bytes);
 
 	}
 	frame_atual->pc += 2;
 }
-/**
- * Coloca um item na pilha retirado do constant pool indice de 16  bits
- */
+
 void ldc_w(){
 
 	//push a constant #index from a constant pool (String, int or float) onto the stack (wide index is constructed as indexbyte1 << 8 + indexbyte2)
 	int32_t offset = calculateOffset();
-	u1 type = frame_atual->constantPool[offset].tag;
+	uint8_t type = frame_atual->constantPool[offset].tag;
 	if(type == 8){
 		//String
-		u4 string = frame_atual->constantPool[offset].info.string_info->string_index;
+		uint32_t string = frame_atual->constantPool[offset].info.string_info->string_index;
 		empilhar_operando(string);
 
 	} else if(type == 3){
 		//int
-		u4 bytes = frame_atual->constantPool[offset].info.integer_info->bytes;;
+		uint32_t bytes = frame_atual->constantPool[offset].info.integer_info->bytes;;
 		empilhar_operando(bytes);
 
 	} else if(type == 4){
 		//float
-		u4 bytes = frame_atual->constantPool[offset].info.float_info->bytes;
+		uint32_t bytes = frame_atual->constantPool[offset].info.float_info->bytes;
 		empilhar_operando(bytes);
 
 	}
 	frame_atual->pc += 3;
 }
-/**
- * Coloca um item long ou double na pilha retirado do constant pool indice 16 bits
- */
+
 void ldc2_w(){
 
 	int32_t offset = calculateOffset();
-	u1 type = frame_atual->constantPool[offset].tag;
+	uint8_t type = frame_atual->constantPool[offset].tag;
 	if(type == 5){
 		//Long
-		u4 high = frame_atual->constantPool[offset].info.long_info->high_bytes;
-		u4 low = frame_atual->constantPool[offset].info.long_info->low_bytes;
+		uint32_t high = frame_atual->constantPool[offset].info.long_info->high_bytes;
+		uint32_t low = frame_atual->constantPool[offset].info.long_info->low_bytes;
 		empilhar_operando(high);
 		empilhar_operando(low);
 
 	} else if(type == 6){
 		//Double
-		u4 high = frame_atual->constantPool[offset].info.double_info->high_bytes;
-		u4 low = frame_atual->constantPool[offset].info.double_info->low_bytes;
+		uint32_t high = frame_atual->constantPool[offset].info.double_info->high_bytes;
+		uint32_t low = frame_atual->constantPool[offset].info.double_info->low_bytes;
 		empilhar_operando(high);
 		empilhar_operando(low);
 	}
 
 	frame_atual->pc += 3;
 }
-/**
- * Carrega um int na pilha a partir de um indice para as variaveis locais
- */
+
 void iload(){
 
 	int32_t index = frame_atual->code[frame_atual->pc+1];
@@ -476,9 +420,7 @@ void iload(){
 	empilhar_operando(value);
 	frame_atual->pc += 2;
 }
-/**
- * load a long value from a local variable #index
- */
+
 void lload(){
 
 	//load a long value from a local variable #index
@@ -490,9 +432,7 @@ void lload(){
 	empilhar_operando(value2);
 	frame_atual->pc += 2;
 }
-/**
- * load a float value from a local variable #index
- */
+
 void fload(){
 
 	int32_t index = frame_atual->code[frame_atual->pc+1];
@@ -500,9 +440,7 @@ void fload(){
 	empilhar_operando(value);
 	frame_atual->pc += 2;
 }
-/**
- * load a double value from a local variable #index
- */
+
 void dload(){
 
 	int32_t index = frame_atual->code[frame_atual->pc+1];
@@ -512,11 +450,7 @@ void dload(){
 	empilhar_operando(value2);
 	frame_atual->pc += 2;
 }
-/**
- * Retira um indice do area de codigo do frame e com esse indice acha
- * uma variavel local na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void aload(){
 	//pega o indice
 	int32_t index = frame_atual->code[frame_atual->pc+1];
@@ -527,52 +461,32 @@ void aload(){
 	empilhar_operando(value);
 	frame_atual->pc += 2;
 }
-/**
- * Com o indice 0 acha
- * uma variavel local inteira na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void iload_0(){
 	int32_t value = frame_atual->fields[0];
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 1 acha
- * uma variavel local inteira na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void iload_1(){
 	int32_t value = frame_atual->fields[1];
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 2 acha
- * uma variavel local inteira na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void iload_2(){
 	int32_t value = frame_atual->fields[2];
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 3 acha
- * uma variavel local inteira na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void iload_3(){
 
 	int32_t value = frame_atual->fields[3];
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 0 acha
- * uma variavel local long na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void lload_0(){
 
     int32_t high = frame_atual->fields[0 + 0];//sendo primeiro zero o indice e o segundo a posição
@@ -582,11 +496,7 @@ void lload_0(){
 
     frame_atual->pc++;
 }
-/**
- * Com o indice 1 acha
- * uma variavel local long na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void lload_1(){
 
 	int32_t high = frame_atual->fields[1 + 0];//sendo 1 o indice e o zero a posição
@@ -595,11 +505,7 @@ void lload_1(){
 	empilhar_operando(low);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 2 acha
- * uma variavel local long na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void lload_2(){
 
 	int32_t high = frame_atual->fields[2 + 0];//sendo dois o indice e o zero a posição
@@ -609,11 +515,7 @@ void lload_2(){
 
 	frame_atual->pc++;
 }
-/**
- * Com o indice 3 acha
- * uma variavel local long na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void lload_3(){
 
 	int32_t high = frame_atual->fields[3 + 0];//sendo tres o indice e o zero a posição
@@ -622,55 +524,35 @@ void lload_3(){
 	empilhar_operando(low);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 0 acha
- * uma variavel local float na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void fload_0(){
 
 	int32_t value = frame_atual->fields[0];
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 1 acha
- * uma variavel local float na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void fload_1(){
 
 	int32_t value = frame_atual->fields[1];
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 2 acha
- * uma variavel local float na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void fload_2(){
 
 	int32_t value = frame_atual->fields[2];
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 3 acha
- * uma variavel local float na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void fload_3(){
 
 	int32_t value = frame_atual->fields[3];
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 0 acha
- * uma variavel local double na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void dload_0(){
 
 	int32_t high = frame_atual->fields[0 + 0];//sendo primeiro zero o indice e o segundo a posição
@@ -679,11 +561,7 @@ void dload_0(){
 	empilhar_operando(low);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 1 acha
- * uma variavel local double na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void dload_1(){
 
 	int32_t high = frame_atual->fields[1 + 0];//sendo 1 o indice e o zero a posição
@@ -692,11 +570,7 @@ void dload_1(){
 	empilhar_operando(low);
 	frame_atual->pc++;
 }
-/**
- * Com o indice 2 acha
- * uma variavel local double na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void dload_2(){
 
 	int32_t high = frame_atual->fields[2 + 0];//sendo dois o indice e o zero a posição
@@ -706,11 +580,7 @@ void dload_2(){
 
 	frame_atual->pc++;
 }
-/**
- * Com o indice 3 acha
- * uma variavel local double na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void dload_3(){
 
 	int32_t high = frame_atual->fields[3 + 0];//sendo tres o indice e o zero a posição
@@ -719,11 +589,7 @@ void dload_3(){
 	empilhar_operando(low);
 	frame_atual->pc++;
 }
-/**
- * Utilizando o indice 0 acha
- * uma variavel local na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void aload_0(){
 	// usa o indice para achar a variavel local
 	int32_t value = frame_atual->fields[0];
@@ -732,11 +598,7 @@ void aload_0(){
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Utilizando o indice 1 acha
- * uma variavel local na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void aload_1(){
 	// usa o indice para achar a variavel local
 	int32_t value = frame_atual->fields[1];
@@ -746,11 +608,7 @@ void aload_1(){
 	frame_atual->pc++;
 }
 
-/**
- * Utilizando o indice 2 acha
- * uma variavel local na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void aload_2(){
 	// usa o indice para achar a variavel local
 	int32_t value = frame_atual->fields[2];
@@ -759,11 +617,7 @@ void aload_2(){
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Utilizando o indice 3 acha
- * uma variavel local na area de fields, coloca o valor dessa variavel
- * na pilha de operandos
- */
+
 void aload_3(){
 	// usa o indice para achar a variavel local
 	int32_t value = frame_atual->fields[3];
@@ -773,13 +627,11 @@ void aload_3(){
 	frame_atual->pc++;
 }
 
-/**
- * Load int from array e coloca na pilha
- */
+
 void iaload(){
 	//Load int from array
 	//Pega o indice
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
@@ -793,21 +645,19 @@ void iaload(){
 
 
 }
-/**
- * Load long from array e coloca na pilha
- */
+
 void laload(){
 	//Load long from array
 	//Pega o indice
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
+	uint64_t* arrayRef = (uint64_t*) get_referencia_array(arrayStruct);
 
 	//Divide os 64 bits em duas de 32
-	u4 highBits = (u4)(arrayRef[index] >> 32);
-	u4 lowBits = (u4)(arrayRef[index]);
+	uint32_t highBits = (uint32_t)(arrayRef[index] >> 32);
+	uint32_t lowBits = (uint32_t)(arrayRef[index]);
 
 	//Coloca na pilha os 32 bits mais significativos
 	empilhar_operando(highBits);
@@ -818,17 +668,15 @@ void laload(){
 
 	frame_atual->pc++;
 }
-/**
- * Load float from array e coloca na pilha
- */
+
 void faload(){
 	//Load float from array
 	//Pega o indice
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
+	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
 	//Coloca na pilha o float
 	empilhar_operando(arrayRef[index]);
 
@@ -836,21 +684,19 @@ void faload(){
 
 	frame_atual->pc++;
 }
-/**
- * Load double from array e coloca na pilha
- */
+
 void daload(){
 	//Load double from array
 	//Pega o indice
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito da estrutura
-	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
+	uint64_t* arrayRef = (uint64_t*) get_referencia_array(arrayStruct);
 
 	//Divide os 64 bits do double em duas de 32
-	u4 highBits = (u4)(arrayRef[index] >> 32);
-	u4 lowBits = (u4)(arrayRef[index]);
+	uint32_t highBits = (uint32_t)(arrayRef[index] >> 32);
+	uint32_t lowBits = (uint32_t)(arrayRef[index]);
 
 	//Coloca na pilha os 32 bits mais significativos
 	empilhar_operando(highBits);
@@ -862,36 +708,30 @@ void daload(){
 	frame_atual->pc++;
 }
 
-/**
- * Tira um index e um array da pilha de operandos e coloca na mesma
- * o valor que se encontra na posicao arrayRef[indice]
- */
+
 void aaload(){
 	//tira um index e um array da pilha e coloca na mesma o valor da pposicao
 	//Pega o indice da pilha
-	u4 indice = desempilhar_operando();
+	uint32_t indice = desempilhar_operando();
 	//Pegao array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
+	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
 
 	//Coloca na pilha
 	empilhar_operando(arrayRef[indice]);
 	frame_atual->pc++;
 }
-/**
- * Tira um index e um array da pilha de operandos e coloca na mesma
- * o byte que se encontra na posicao arrayRef[indice]
- */
+
 void baload(){
 	//Load byte from array
 	//Pega o indice
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	u1* arrayRef = (u1*) get_referencia_array(arrayStruct);
+	uint8_t* arrayRef = (uint8_t*) get_referencia_array(arrayStruct);
 	//Coloca na pilha o byte
 	empilhar_operando(arrayRef[index]);
 
@@ -900,18 +740,15 @@ void baload(){
 	frame_atual->pc++;
 
 }
-/**
- * Tira um index e um array da pilha de operandos e coloca na mesma
- * o char que se encontra na posicao arrayRef[indice]
- */
+
 void caload(){
 	//Load char from array
 	//Pega o indice
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	u2* arrayRef = (u2*) get_referencia_array(arrayStruct);
+	uint16_t* arrayRef = (uint16_t*) get_referencia_array(arrayStruct);
 	//Coloca na pilha o char
 	empilhar_operando(arrayRef[index]);
 
@@ -919,18 +756,15 @@ void caload(){
 
 	frame_atual->pc++;
 }
-/**
- * Tira um index e um array da pilha de operandos e coloca na mesma
- * o short que se encontra na posicao arrayRef[indice]
- */
+
 void saload(){
 	//Load short from array
 	//Pega o indice
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	u2* arrayRef = (u2*) get_referencia_array(arrayStruct);
+	uint16_t* arrayRef = (uint16_t*) get_referencia_array(arrayStruct);
 	//Coloca na pilha o short
 	empilhar_operando(arrayRef[index]);
 
@@ -939,9 +773,7 @@ void saload(){
 	frame_atual->pc++;
 }
 
-/**
- * store int value into variable #index
- */
+
 void istore(){
 
 	//store int value into variable #index
@@ -950,9 +782,7 @@ void istore(){
 	frame_atual->fields[index] = value;
 	frame_atual->pc += 2;
 }
-/**
- * store a long value in a local variable #index
- */
+
 void lstore(){
 
 	//store a long value in a local variable #index
@@ -966,9 +796,7 @@ void lstore(){
 	frame_atual->fields[index+1] = low;
 	frame_atual->pc += 2;
 }
-/**
- * store a float value into a local variable #index
- */
+
 void fstore(){
 
 	//store a float value into a local variable #index
@@ -979,9 +807,7 @@ void fstore(){
 	frame_atual->fields[index] = value;
 	frame_atual->pc += 2;
 }
-/**
- * store a double value into a local variable #index
- */
+
 void dstore(){
 
 	//store a double value into a local variable #index
@@ -994,10 +820,7 @@ void dstore(){
 
 	frame_atual->pc += 2;
 }
-/**
- * Coloca um valor tirado da pilha em uma posicao do array
- * de fields definida pelo operando tirado da area de codigo
- */
+
 void astore(){
 	//pega da pilha o cabeca
 	int32_t value = desempilhar_operando();
@@ -1008,44 +831,34 @@ void astore(){
 	frame_atual->fields[index] = value;
 	frame_atual->pc += 2;
 }
-/**
- * store int value into variable indice 0
- */
+
 void istore_0(){
 
 	int32_t value = desempilhar_operando();
 	frame_atual->fields[0] = value;
 	frame_atual->pc++;
 }
-/**
- * store int value into variable indice 1
- */
+
 void istore_1(){
 	int32_t value = desempilhar_operando();
 	frame_atual->fields[1] = value;
 	frame_atual->pc++;
 }
-/**
- * store int value into variable indice 2
- */
+
 void istore_2(){
 
 	int32_t value = desempilhar_operando();
 	frame_atual->fields[2] = value;
 	frame_atual->pc++;
 }
-/**
- * store int value into variable indice 3
- */
+
 void istore_3(){
 
 	int32_t value = desempilhar_operando();
 	frame_atual->fields[3] = value;
 	frame_atual->pc++;
 }
-/**
- * store a long value in a local variable indice 0
- */
+
 void lstore_0(){
 
 	int32_t low = desempilhar_operando();
@@ -1054,9 +867,7 @@ void lstore_0(){
 	frame_atual->fields[1] = high;
 	frame_atual->pc++;
 }
-/**
- * store a long value in a local variable indice 1
- */
+
 void lstore_1(){
 
 	int32_t low = desempilhar_operando();
@@ -1065,9 +876,7 @@ void lstore_1(){
 	frame_atual->fields[1] = high;
 	frame_atual->pc++;
 }
-/**
- * store a long value in a local variable indice 2
- */
+
 void lstore_2(){
 
 
@@ -1080,9 +889,7 @@ void lstore_2(){
 	value += low;
 	frame_atual->pc++;
 }
-/**
- * store a long value in a local variable indice 3
- */
+
 void lstore_3(){
 
 
@@ -1093,26 +900,20 @@ void lstore_3(){
 	frame_atual->fields[3] = high;
 	frame_atual->pc++;
 }
-/**
- * store a long value in a local variable indice 0
- */
+
 void fstore_0(){
 
 	int32_t value = desempilhar_operando();
 	frame_atual->fields[0] = value;
 	frame_atual->pc++;
 }
-/**
- * store a long value in a local variable indice 1
- */
+
 void fstore_1(){
 	int32_t value = desempilhar_operando();
 	frame_atual->fields[1] = value;
 	frame_atual->pc++;
 }
-/**
- * store a long value in a local variable indice 2
- */
+
 void fstore_2(){
 
 	int32_t value = desempilhar_operando();
@@ -1120,18 +921,14 @@ void fstore_2(){
 	frame_atual->pc++;
 
 }
-/**
- * store a long value in a local variable indice 3
- */
+
 void fstore_3(){
 
 	int32_t value = desempilhar_operando();
 	frame_atual->fields[3] = value;
 	frame_atual->pc++;
 }
-/**
- * store a double value in a local variable indice 0
- */
+
 void dstore_0(){
 
 	int32_t low = desempilhar_operando();
@@ -1140,9 +937,7 @@ void dstore_0(){
 	frame_atual->fields[0] = high;
 	frame_atual->pc++;
 }
-/**
- * store a double value in a local variable indice 1
- */
+
 void dstore_1(){
 
 	int32_t low = desempilhar_operando();
@@ -1151,9 +946,7 @@ void dstore_1(){
 	frame_atual->fields[1] = high;
 	frame_atual->pc++;
 }
-/**
- * store a double value in a local variable indice 2
- */
+
 void dstore_2(){
 
 	int32_t low = desempilhar_operando();
@@ -1162,9 +955,7 @@ void dstore_2(){
 	frame_atual->fields[2] = high;
 	frame_atual->pc++;
 }
-/**
- * store a double value in a local variable indice 3
- */
+
 void dstore_3(){
 
 	int32_t low = desempilhar_operando();
@@ -1173,9 +964,7 @@ void dstore_3(){
 	frame_atual->fields[3] = high;
 	frame_atual->pc++;
 }
-/**
- * store a value in a local variable indice 0
- */
+
 void astore_0(){
 	// tira o valor da pilha
 	int32_t value = desempilhar_operando();
@@ -1184,9 +973,7 @@ void astore_0(){
 	frame_atual->pc++;
 
 }
-/**
- * store a value in a local variable indice 1
- */
+
 void astore_1(){
 	// tira o valor da pilha
 	int32_t value = desempilhar_operando();
@@ -1196,9 +983,7 @@ void astore_1(){
 
 
 }
-/**
- * store a value in a local variable indice 2
- */
+
 void astore_2(){
 	// tira o valor da pilha
 	int32_t value = desempilhar_operando();
@@ -1206,9 +991,7 @@ void astore_2(){
 	frame_atual->fields[2] = value;
 	frame_atual->pc++;
 }
-/**
- * store a value in a local variable indice 3
- */
+
 void astore_3(){
 	// tira o valor da pilha
 	int32_t value = desempilhar_operando();
@@ -1217,193 +1000,171 @@ void astore_3(){
 	frame_atual->pc++;
 
 }
-/**
- * tira um inteiro um index e um array da pilha e coloca o valor na posicao definida pelo index
- */
+
 void iastore(){
 	//tira um inteiro um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o inteiro
 	int32_t value = desempilhar_operando();
 	//Pega o indice da pilha
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
+	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
 	frame_atual->pc++;
 }
-/**
- * tira um long um index e um array da pilha e coloca o valor na posicao definida pelo index
- */
+
 void lastore(){
 
 	//tira um long um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o inteiro
-	u4 lowBits = desempilhar_operando();
-	u4 highBits = desempilhar_operando();
+	uint32_t lowBits = desempilhar_operando();
+	uint32_t highBits = desempilhar_operando();
 
-	u8 value = ((u8)highBits << 32) | lowBits;
+	uint64_t value = ((uint64_t)highBits << 32) | lowBits;
 
 	//Pega o indice da pilha
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
+	uint64_t* arrayRef = (uint64_t*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
 	frame_atual->pc++;
 }
-/**
- * tira um float um index e um array da pilha e coloca o valor na posicao definida pelo index
- */
+
 void fastore(){
 
 	//tira um float um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o float
-	u4 value = desempilhar_operando();
+	uint32_t value = desempilhar_operando();
 	//Pega o indice da pilha
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
+	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
 	frame_atual->pc++;
 }
-/**
- * tira um double um index e um array da pilha e coloca o valor na posicao definida pelo index
- */
+
 void dastore(){
 	//tira um double um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o inteiro
-	u4 lowBits = desempilhar_operando();
-	u4 highBits = desempilhar_operando();
+	uint32_t lowBits = desempilhar_operando();
+	uint32_t highBits = desempilhar_operando();
 
-	u8 value = ((u8)highBits << 32) | lowBits;
+	uint64_t value = ((uint64_t)highBits << 32) | lowBits;
 
 	//Pega o indice da pilha
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
+	uint64_t* arrayRef = (uint64_t*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
 	frame_atual->pc++;
 }
-/**
- * tira um objeto um index e um array da pilha e coloca o valor na posicao definida pelo index
- */
+
 void aastore(){
 	//tira um valor um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o valor
-	u4 value = desempilhar_operando();
+	uint32_t value = desempilhar_operando();
 	//Pega o indice da pilha
-	u4 indice = desempilhar_operando();
+	uint32_t indice = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
+	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[indice] = value;
 	frame_atual->pc++;
 
 }
-/**
- * tira um byte um index e um array da pilha e coloca o valor na posicao definida pelo index
- */
+
 void bastore(){
 
 	//tira um byte um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o byte
-	u4 value = desempilhar_operando();
+	uint32_t value = desempilhar_operando();
 	//Pega o indice da pilha
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u1* arrayRef = (u1*) get_referencia_array(arrayStruct);
+	uint8_t* arrayRef = (uint8_t*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
 	frame_atual->pc++;
 
 }
-/**
- * tira um char um index e um array da pilha e coloca o valor na posicao definida pelo index
- */
+
 void castore(){
 
 	//tira um float um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o float
-	u4 value = desempilhar_operando();
+	uint32_t value = desempilhar_operando();
 	//Pega o indice da pilha
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u2* arrayRef = (u2*) get_referencia_array(arrayStruct);
+	uint16_t* arrayRef = (uint16_t*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
 	frame_atual->pc++;
 }
-/**
- * tira um short um index e um array da pilha e coloca o valor na posicao definida pelo index
- */
+
 void sastore(){
 
 	//tira um short um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o short
-	u4 value = desempilhar_operando();
+	uint32_t value = desempilhar_operando();
 	//Pega o indice da pilha
-	u4 index = desempilhar_operando();
+	uint32_t index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	u2* arrayRef = (u2*) get_referencia_array(arrayStruct);
+	uint16_t* arrayRef = (uint16_t*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
 	frame_atual->pc++;
 }
-/**
- * pop operand da pilha
- */
+
 void pop(){
 
 	desempilhar_operando();
 	frame_atual->pc++;
 }
-/**
- * Pop 2 operandos da pilha
- */
+
 void pop2(){
 
 	desempilhar_operando();
 	desempilhar_operando();
 	frame_atual->pc++;
 }
-/**
- * Daz um pop e com esse valor faz dois pushs
- */
+
 void dup(){
 
 	int32_t value = desempilhar_operando();
@@ -1411,25 +1172,19 @@ void dup(){
 	empilhar_operando(value);
 	frame_atual->pc++;
 }
-/**
- * Duplica o topo da pilha de operandos e insere dois valores
- */
+
 void dup_x1(){
 
 	//TODO
 	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
-/**
- * Duplica o topo da pilha de operandos e insere dois ou tres valores
- */
+
 void dup_x2(){
 
 	//TODO
 	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
-/**
- * Duplica o topo de um ou dois elementos da pilha de operandos
- */
+
 void dup2(){
 
 	int32_t top = desempilhar_operando();
@@ -1440,27 +1195,19 @@ void dup2(){
 	empilhar_operando(top);
 	frame_atual->pc++;
 }
-/**
- * Duplica o topo de um ou dois elementos da pilha de operandos
- * e insere um ou dois valores
- */
+
 void dup2_x1(){
 
 	//TODO
 	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
-/**
- * Duplica o topo de um ou dois elementos da pilha de operandos
- * e insere um ou dois ou três ou quatro valores
- */
+
 void dup2_x2(){
 
 	//TODO
 	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
-/**
- * Troca a ordem dos dois valores no topo da pilha de operandos
- */
+
 void swap(){
 
 	int32_t value1 = desempilhar_operando();
@@ -1469,9 +1216,7 @@ void swap(){
 	empilhar_operando(value2);
 	frame_atual->pc++;
 }
-/**
- * Soma os dois valores inteiros do topo da pilha e coloca na pilha o resultado
- */
+
 void iadd(){
 
 	int32_t operator1 = desempilhar_operando();
@@ -1480,9 +1225,7 @@ void iadd(){
 	empilhar_operando(result);
 	frame_atual->pc++;
 }
-/**
- * Soma os dois valores long do topo da pilha e coloca na pilha o resultado
- */
+
 void ladd(){
 
 	//construindo o primeiro operador
@@ -1516,9 +1259,7 @@ void ladd(){
 	frame_atual->pc++;
 
 }
-/**
- * Soma os dois valores float do topo da pilha e coloca na pilha o resultado
- */
+
 void fadd(){
 
 	int32_t int2 = desempilhar_operando();
@@ -1533,9 +1274,7 @@ void fadd(){
 	empilhar_operando(resultInt);
 	frame_atual->pc++;
 }
-/**
- * Soma os dois valores double do topo da pilha e coloca na pilha o resultado
- */
+
 void dadd(){
 
 	//construindo o primeiro operador
@@ -1581,9 +1320,7 @@ void dadd(){
 	//atualiza pc
 	frame_atual->pc++;
 }
-/**
- * Subtrai os dois valores inteiros do topo da pilha e coloca na pilha o resultado
- */
+
 void isub(){
 
 	int32_t operator2 = desempilhar_operando();
@@ -1592,9 +1329,7 @@ void isub(){
 	empilhar_operando(result);
 	frame_atual->pc++;
 }
-/**
- * Subtrai os dois valores long do topo da pilha e coloca na pilha o resultado
- */
+
 void lsub(){
 
 	//construindo o primeiro operador
@@ -1625,9 +1360,7 @@ void lsub(){
 	//atualiza pc
 	frame_atual->pc++;
 }
-/**
- * Subtrai os dois valores float do topo da pilha e coloca na pilha o resultado
- */
+
 void fsub(){
 
 	int32_t operator2 = desempilhar_operando();
@@ -1641,9 +1374,7 @@ void fsub(){
 	empilhar_operando(result);
 	frame_atual->pc++;
 }
-/**
- * Subtrai os dois valores double do topo da pilha e coloca na pilha o resultado
- */
+
 void dsub(){
 
 	//construindo o primeiro operador
@@ -1690,9 +1421,7 @@ void dsub(){
 	//atualiza pc
 	frame_atual->pc++;
 }
-/**
- * Multiplica os dois valores inteiros do topo da pilha e coloca na pilha o resultado
- */
+
 void imul(){
 
 	int32_t operator1 = desempilhar_operando();
@@ -1702,9 +1431,7 @@ void imul(){
 	frame_atual->pc++;
 
 }
-/**
- * Multiplica os dois valores long do topo da pilha e coloca na pilha o resultado
- */
+
 void lmul(){
 
 	//construindo o primeiro operador
@@ -1737,9 +1464,7 @@ void lmul(){
 	//atualiza pc
 	frame_atual->pc++;
 }
-/**
- * Multiplica os dois valores float do topo da pilha e coloca na pilha o resultado
- */
+
 void fmul(){
 
 	int32_t operator2 = desempilhar_operando();
@@ -1754,9 +1479,7 @@ void fmul(){
 	frame_atual->pc++;
 
 }
-/**
- * Multiplica os dois valores double do topo da pilha e coloca na pilha o resultado
- */
+
 void dmul(){
 
 	//construindo o primeiro operador
@@ -1802,9 +1525,7 @@ void dmul(){
 	//atualiza pc
 	frame_atual->pc++;
 }
-/**
- * Divide os dois valores inteiros do topo da pilha e coloca na pilha o resultado
- */
+
 void idiv(){
 
 	int32_t operator2 = desempilhar_operando();
@@ -1813,9 +1534,7 @@ void idiv(){
 	empilhar_operando(result);
 	frame_atual->pc++;
 }
-/**
- * Divide os dois valores longs do topo da pilha e coloca na pilha o resultado
- */
+
 void ins_ldiv(){
 	// 	divide two longs
 		//construindo o primeiro operador
@@ -1849,9 +1568,7 @@ void ins_ldiv(){
 	frame_atual->pc++;
 
 }
-/**
- * Divide os dois valores float do topo da pilha e coloca na pilha o resultado
- */
+
 void fdiv(){
 
 	int32_t operator2 = desempilhar_operando();
@@ -1866,9 +1583,7 @@ void fdiv(){
 	frame_atual->pc++;
 
 }
-/**
- * Divide os dois valores doble do topo da pilha e coloca na pilha o resultado
- */
+
 void ddiv(){
 
 	//construindo o primeiro operador
@@ -1914,9 +1629,7 @@ void ddiv(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o resto da divisao de dois inteiros
- */
+
 void irem(){
 
 	int32_t operator2 = desempilhar_operando();
@@ -1926,9 +1639,7 @@ void irem(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o resto da divisao de dois longs
- */
+
 void lrem(){
 
 	int32_t operator1Low = desempilhar_operando();
@@ -1954,9 +1665,7 @@ void lrem(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o resto da divisao de dois floats
- */
+
 void frem(){
 
 	int32_t operator2 = desempilhar_operando();
@@ -1971,9 +1680,7 @@ void frem(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o resto da divisao de dois doubles
- */
+
 void _drem(){
 
 	int32_t operator1Low = desempilhar_operando();
@@ -2006,9 +1713,7 @@ void _drem(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor negativo do inteiro
- */
+
 void ineg(){
 
 	int32_t operator = desempilhar_operando();
@@ -2017,9 +1722,7 @@ void ineg(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor negativo do long
- */
+
 void lneg(){
 
 	int32_t operatorLow = desempilhar_operando();
@@ -2046,9 +1749,7 @@ void lneg(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor negativo do float
- */
+
 void fneg(){
 
 	int32_t operator = desempilhar_operando();
@@ -2061,9 +1762,7 @@ void fneg(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor negativo do double
- */
+
 void dneg(){
 
 	int32_t low = desempilhar_operando();
@@ -2087,9 +1786,7 @@ void dneg(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor do shift left do int
- */
+
 void ishl(){
 
 	//int shift left
@@ -2101,9 +1798,7 @@ void ishl(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor do shift left do long
- */
+
 void lshl(){
 
 	//long shift left
@@ -2127,9 +1822,7 @@ void lshl(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor do shift right do int
- */
+
 void ishr(){
 
 	//int shift right
@@ -2142,9 +1835,6 @@ void ishr(){
 
 }
 
-/**
- * Calcula o valor do shift right do long
- */
 void lshr(){
 
 	//long shift left
@@ -2168,9 +1858,7 @@ void lshr(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor do shift right logico do int
- */
+
 void iushr(){
 
 	//int shift right
@@ -2183,9 +1871,7 @@ void iushr(){
 
 }
 
-/**
- * Calcula o valor do shift right logico do long
- */
+
 void lushr(){
 
 	//long shift left
@@ -2209,9 +1895,7 @@ void lushr(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor da operação logica and entre inteiros
- */
+
 void iand(){
 
 	int32_t operator1 = desempilhar_operando();
@@ -2220,9 +1904,7 @@ void iand(){
 	empilhar_operando(result);
 	frame_atual->pc++;
 }
-/**
- * Calcula o valor da operação logica and entre longs
- */
+
 void land(){
 
 	int32_t operator1Low = desempilhar_operando();
@@ -2247,9 +1929,7 @@ void land(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor da operação logica or entre inteiros
- */
+
 void ior(){
 
 	int32_t operator1 = desempilhar_operando();
@@ -2259,9 +1939,7 @@ void ior(){
 	frame_atual->pc++;
 }
 
-/**
- * Calcula o valor da operação logica or entre longs
- */
+
 void lor(){
 
 	int32_t operator1Low = desempilhar_operando();
@@ -2286,9 +1964,7 @@ void lor(){
 	frame_atual->pc++;
 
 }
-/**
- * Calcula o valor da operação logica xor entre interos
- */
+
 void ixor(){
 
 	int32_t operator1 = desempilhar_operando();
@@ -2297,9 +1973,7 @@ void ixor(){
 	empilhar_operando(result);
 	frame_atual->pc++;
 }
-/**
- * Calcula o valor da operação logica xor entre longs
- */
+
 void lxor(){
 
 	int32_t operator1Low = desempilhar_operando();
@@ -2324,18 +1998,14 @@ void lxor(){
 	frame_atual->pc++;
 
 }
-/**
- * Incrementa variavel local em uma constante
- */
+
 void iinc(){
-	u1 index = frame_atual->code[frame_atual->pc+1];
+	uint8_t index = frame_atual->code[frame_atual->pc+1];
 	int8_t value = frame_atual->code[frame_atual->pc+2];
 	frame_atual->fields[index]+=value;
 	frame_atual->pc+=3;
 }
-/**
- * Converte int para long
- */
+
 void i2l(){
 
 	// 	convert an int into a long
@@ -2354,9 +2024,7 @@ void i2l(){
 
 
 }
-/**
- * Converte int para float
- */
+
 void i2f(){
 
 	//convert an int into a float
@@ -2367,9 +2035,7 @@ void i2f(){
 	frame_atual->pc++;
 
 }
-/**
- * Converte int para double
- */
+
 void i2d(){
 
 	int32_t integer = desempilhar_operando();
@@ -2387,9 +2053,7 @@ void i2d(){
 	frame_atual->pc++;
 
 }
-/**
- * Converte long para int
- */
+
 void l2i(){
 
 	int32_t low = desempilhar_operando();
@@ -2402,9 +2066,7 @@ void l2i(){
 	frame_atual->pc++;
 
 }
-/**
- * Converte long para float
- */
+
 void l2f(){
 
 	int32_t low = desempilhar_operando();
@@ -2419,9 +2081,7 @@ void l2f(){
 	frame_atual->pc++;
 
 }
-/**
- * Converte long para double
- */
+
 void l2d(){
 
 	int32_t low = desempilhar_operando();
@@ -2436,9 +2096,7 @@ void l2d(){
 	frame_atual->pc++;
 
 }
-/**
- * Converte float para inteiro
- */
+
 void f2i(){
 
 	//convert an float into a int
@@ -2450,9 +2108,7 @@ void f2i(){
 	frame_atual->pc++;
 
 }
-/**
- * Converte float para long
- */
+
 void f2l(){
 
 	int32_t intValue = desempilhar_operando();
@@ -2468,9 +2124,7 @@ void f2l(){
 	frame_atual->pc++;
 
 }
-/**
- * Converte float para double
- */
+
 void f2d(){
 
 	int32_t intValue = desempilhar_operando();
@@ -2485,9 +2139,7 @@ void f2d(){
 	empilhar_operando(low);
 	frame_atual->pc++;
 }
-/**
- * COnverte double para inteiro
- */
+
 void d2i(){
 
 	int32_t low = desempilhar_operando();
@@ -2502,9 +2154,7 @@ void d2i(){
 	frame_atual->pc++;
 
 }
-/**
- * Converte double para long
- */
+
 void d2l(){
 
 	int32_t low = desempilhar_operando();
@@ -2522,9 +2172,7 @@ void d2l(){
 	frame_atual->pc++;
 
 }
-/**
- * COnverte double para float
- */
+
 void d2f(){
 
 	int32_t low = desempilhar_operando();
@@ -2542,9 +2190,7 @@ void d2f(){
 	frame_atual->pc++;
 
 }
-/**
- * COnverte int para byte
- */
+
 void i2b(){
 
 	int32_t integer = desempilhar_operando();
@@ -2553,20 +2199,16 @@ void i2b(){
 	frame_atual->pc++;
 
 }
-/**
- * COnverte int para char
- */
+
 void i2c(){
 
 	int32_t integer = desempilhar_operando();
-	u1 character = (u1) integer;
+	uint8_t character = (uint8_t) integer;
 	empilhar_operando((int32_t) character);
 	frame_atual->pc++;
 
 }
-/**
- * COnverte int para sshort
- */
+
 void i2s(){
 
 	int32_t integer = desempilhar_operando();
@@ -2577,9 +2219,7 @@ void i2s(){
 	frame_atual->pc++;
 
 }
-/**
- * COmpra longs
- */
+
 void lcmp(){
 
 	//push 0 if the two longs are the same, 1 if value1 is greater than value2, -1 otherwise
@@ -2609,9 +2249,7 @@ void lcmp(){
 	frame_atual->pc++;
 
 }
-/**
- * Compara dois floats (menor)
- */
+
 void fcmpl(){
 
 	//compare two floats
@@ -2629,9 +2267,7 @@ void fcmpl(){
 	frame_atual->pc++;
 
 }
-/**
- * COmpara floats (maior)
- */
+
 void fcmpg(){
 
 	//compare two floats
@@ -2649,9 +2285,7 @@ void fcmpg(){
 	frame_atual->pc++;
 
 }
-/**
- * Compara longs (menor)
- */
+
 void dcmpl(){
 
 	//double 1
@@ -2680,9 +2314,7 @@ void dcmpl(){
 	frame_atual->pc++;
 
 }
-/**
- * Compara doubles (maior)
- */
+
 void dcmpg(){
 
 	//double 1
@@ -2712,9 +2344,7 @@ void dcmpg(){
 	frame_atual->pc++;
 
 }
-/**
- * Se o valor for zero vai para instrução no branchoffset
- */
+
 void ifeq(){
 
 	//if value is 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2727,9 +2357,7 @@ void ifeq(){
 		frame_atual->pc += 3;
 	}
 }
-/**
- * Se o valor for diferente de zero vai para instrução no branchoffset
- */
+
 void ifne(){
 
 	//if value is not 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2742,9 +2370,7 @@ void ifne(){
 		frame_atual->pc += 3;
 	}
 }
-/**
- * Se o valor for menor que zero vai para instrução no branchoffset
- */
+
 void iflt(){
 
 	//if value is less than 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2757,9 +2383,7 @@ void iflt(){
 		frame_atual->pc += 3;
 	}
 }
-/**
- * Se o valor for maior que zero vai para instrução no branchoffset
- */
+
 void ifge(){
 
 	//if value is greater or equal than 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2773,9 +2397,7 @@ void ifge(){
 	}
 
 }
-/**
- * Se o valor for maior igual a zero vai para instrução no branchoffset
- */
+
 void ifgt(){
 
 	//if value is greater than 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2789,9 +2411,7 @@ void ifgt(){
 	}
 
 }
-/**
- * Se o valor for menor igual a zero vai para instrução no branchoffset
- */
+
 void ifle(){
 
 	//if value is less or equal than 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2805,9 +2425,7 @@ void ifle(){
 	}
 
 }
-/**
- * Realiza o salto se value1 = value2
- */
+
 void if_icmpeq(){
 
 	//if ints are equal, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2821,9 +2439,7 @@ void if_icmpeq(){
 		frame_atual->pc += 3;
 	}
 }
-/**
- * Realiza o salto se value1 != value2
- */
+
 void if_icmpne(){
 
 	//if ints are not equal, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2838,9 +2454,7 @@ void if_icmpne(){
 	}
 
 }
-/**
- * Realiza o salto se value1 < value2
- */
+
 void if_icmplt(){
 
 	//if value1 are less than value2, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2855,9 +2469,7 @@ void if_icmplt(){
 	}
 
 }
-/**
- * Realiza o salto se value1 >= value2
- */
+
 void if_icmpge(){
 
 	//if value1 are greater or equal than value2, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2872,9 +2484,7 @@ void if_icmpge(){
 	}
 
 }
-/**
- * Realiza o salto se value1 > value2
- */
+
 void if_icmpgt(){
 
 	//if value1 are greater than value2, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2889,9 +2499,7 @@ void if_icmpgt(){
 	}
 
 }
-/**
- * Realiza o salto se value1 <= value2
- */
+
 void if_icmple(){
 
 	//if value1 are less or equal than value2, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
@@ -2913,18 +2521,14 @@ void if_acmpeq(){
 void if_acmpne(){
 
 }
-/**
- * Realiza o salto para dado offset
- */
+
 void ins_goto(){
 
 	int32_t branchOffset = calculateOffset();
 	frame_atual->pc = frame_atual->pc + branchOffset;
 
 }
-/**
- * Realiza o salto para dado offset e coloca endereco de retorno na pilha
- */
+
 void jsr(){
 
 	//jump to subroutine at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2) and place the return address on the stack
@@ -2933,9 +2537,7 @@ void jsr(){
 	empilhar_operando(returnAdress);
 	frame_atual->pc = frame_atual->pc + branchOffset;
 }
-/**
- * Continuar execucao a partir de um endereço encontrado em uma variavel local
- */
+
 void ret(){
 
 	//continue execution from address taken from a local variable #index (the asymmetry with jsr is intentional)
@@ -2944,13 +2546,11 @@ void ret(){
 	frame_atual->pc = frame_atual->pc+offset;
 	frame_atual->pc += 2;
 }
-/**
- * Acessar a tabela de saltos pelo indice e realizar salto
- */
+
 void tableswitch() {
     int compValue = desempilhar_operando();
 
-	u1 *src = frame_atual->code + frame_atual->pc + 1;
+	uint8_t *src = frame_atual->code + frame_atual->pc + 1;
 	TableswitchData dt = montar_switch_table(src, frame_atual->pc);
 
 	if(compValue >= dt.lowBytes && compValue <= dt.highBytes) {
@@ -2964,13 +2564,11 @@ void tableswitch() {
 
 	frame_atual->pc += dt.defaultBytes;
 }
-/**
- * Acessar tabela de salto por chave e realizar salto
- */
+
 void lookupswitch() {
   int compValue = desempilhar_operando();
 
-    u1 *src = frame_atual->code + frame_atual->pc + 1;
+    uint8_t *src = frame_atual->code + frame_atual->pc + 1;
     LookupswitchData dt = montar_lookupswitch_data(src, frame_atual->pc);
 
     for(int i = 0; i <= dt.amountOfPairs; i += 2) {
@@ -2982,66 +2580,50 @@ void lookupswitch() {
 
     frame_atual->pc += dt.defaultBytes;
 }
-/**
- * Retornar int de um metodo
- */
+
 void ireturn(){
 	frame_atual->pc = frame_atual->code_length;
 	flag = 1;
 }
-/**
- * Retornar long de um metodo
- */
+
 void lreturn(){
 	frame_atual->pc = frame_atual->code_length;
 	flag = 2;
 }
-/**
- * Retornar float de um metodo
- */
+
 void freturn(){
 	frame_atual->pc = frame_atual->code_length;
 	flag = 1;
 }
-/**
- * Retornar double de um metodo
- */
+
 void dreturn(){
 	frame_atual->pc = frame_atual->code_length;
 	flag = 2;
 }
-/**
- * Retornar objeto de um metodo
- */
+
 void areturn(){
 	frame_atual->pc = frame_atual->code_length;
     flag = 1;
 }
-/**
- * Retornar void de um metodo
- */
+
 void void_return(){
 	frame_atual->pc = frame_atual->code_length;
 	flag = 0;
 }
-/**
- * Pegar um campo estatico a partir de uma classe
- */
+
 void getstatic(){
 	frame_atual->pc+=3;
 }
 
-/**
- * Colocar um campo estatico a partir de uma classe
- */
+
 void putstatic(){
 
 	//Acha indices para o constant pool
-	u1 indexByte1 = frame_atual->code[frame_atual->pc+1];
-	u1 indexByte2 = frame_atual->code[frame_atual->pc+2];
+	uint8_t indexByte1 = frame_atual->code[frame_atual->pc+1];
+	uint8_t indexByte2 = frame_atual->code[frame_atual->pc+2];
 
 	//junta os dois para encontrar o indice desejado
-	u2 index = (indexByte1 << 8) | indexByte2;
+	uint16_t index = (indexByte1 << 8) | indexByte2;
 
 	int indexField = frame_atual->constantPool[index].info.fieldref_info->name_and_type_index;
 
@@ -3051,31 +2633,29 @@ void putstatic(){
 
 
 }
-/**
- * Achar um campo a partir de um objeto
- */
+
 void getfield(){
-	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	// get name and type for field index
 	index = frame_atual->constantPool[index].info.fieldref_info->name_and_type_index;
 
 	Object* object = (Object*) desempilhar_operando();
 
 	char* descriptor = buscar_descritor_metodo(frame_atual->constantPool, index);
-	u8 value = buscar_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index));
+	uint64_t value = buscar_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index));
 
 	switch(descriptor[0]){
 		// variaveis normais
 		case 'C': case 'F': case 'B': case 'I': case 'S': case 'Z': case 'L': case '[': {
-			u4 aux = value & 0xffffffff;
+			uint32_t aux = value & 0xffffffff;
 			empilhar_operando(aux);
 			break;
 		}
 		// variaveis categoria 2
 		case 'J': case 'D':{
-			u4 resultHigh;
+			uint32_t resultHigh;
 			resultHigh = value >> 32;
-			u4 resultLow;
+			uint32_t resultLow;
 			resultLow = value & 0xffffffff;
 			//empilha resultado
 			empilhar_operando(resultHigh);
@@ -3086,11 +2666,9 @@ void getfield(){
 
 	frame_atual->pc += 3;
 }
-/**
- * Setar campo de objeto
- */
+
 void putfield(){
-	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	// get name and type for field index
 	index = frame_atual->constantPool[index].info.fieldref_info->name_and_type_index;
 
@@ -3099,17 +2677,17 @@ void putfield(){
 	switch(descriptor[0]){
 		// variaveis normais
 		case 'C': case 'F': case 'B': case 'I': case 'S': case 'Z': case 'L': case '[': {
-			u4 value = desempilhar_operando();
+			uint32_t value = desempilhar_operando();
 			Object* object = (Object*) desempilhar_operando();
 			set_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index), value);
 			break;
 		}
 		// variaveis categoria 2
 		case 'J': case 'D': {
-			u4 resultLow = desempilhar_operando();
-			u4 resultHigh = desempilhar_operando();
+			uint32_t resultLow = desempilhar_operando();
+			uint32_t resultHigh = desempilhar_operando();
 			Object* object = (Object*) desempilhar_operando();
-			u8 aux = resultHigh;
+			uint64_t aux = resultHigh;
 			aux <<= 32;
 			aux += resultLow;
 			set_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index), aux);
@@ -3118,12 +2696,10 @@ void putfield(){
 	}
 	frame_atual->pc += 3;
 }
-/**
- * Chamar metodo despachar baseado na classe
- */
+
 void invokevirtual(){
 	int i;
-	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
 	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 
@@ -3155,10 +2731,10 @@ void invokevirtual(){
 		// Calcula quantidade total de parametros na pilha
 		int32_t paramsCount = contador_de_parametros(methodDescriptor);
 		// Armazena os argumentos da pilha em um Array
-		u4 fieldsArray[paramsCount+1];
+		uint32_t fieldsArray[paramsCount+1];
 		for(i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());
 		Object* object = (Object*) desempilhar_operando();
-		fieldsArray[0] = (u4) object;
+		fieldsArray[0] = (uint32_t) object;
 		// Retorna um estrutura de metodo do objeto para criar um frame
 		object_method method = buscar_object_method_by_name(object, methodName, className);
 		ClassFile* classFile = method.classFile;
@@ -3172,11 +2748,9 @@ void invokevirtual(){
 	}
 	frame_atual->pc+=3;
 }
-/**
- * Invoca metodo com tratamento especial para superclass privite e metodos de incializacao de instancia
- */
+
 void invokespecial(){
-	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
 	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 	int32_t nameAndTypeIndex = frame_atual->constantPool[index].info.methodref_info->name_and_type_index;
@@ -3185,10 +2759,10 @@ void invokespecial(){
 	// Calcula quantidade total de parametros na pilha
 	int32_t paramsCount = contador_de_parametros(methodDescriptor);
 	// Armazena os argumentos da pilha em um Array
-	u4 fieldsArray[paramsCount+1];
+	uint32_t fieldsArray[paramsCount+1];
 	for(int i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());
 	Object* object = (Object*) desempilhar_operando();
-	fieldsArray[0] = (u4) object;
+	fieldsArray[0] = (uint32_t) object;
 	// Retorna um estrutura de metodo do objeto para criar um frame
 	object_method method = buscar_object_method_by_name(object, methodName, className);
 	ClassFile* classFile = method.classFile;
@@ -3201,12 +2775,10 @@ void invokespecial(){
 	executar_frame();
 	frame_atual->pc += 3;
 }
-/**
- * Invocar uma metodo estático de uma classe
- */
+
 void invokestatic(){
 	int i;
-	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
 	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 
@@ -3216,7 +2788,7 @@ void invokestatic(){
 	Method_info* invokedMethod = buscar_metodo(classFile, frame_atual->classe, nameAndTypeIndex);
 	int32_t paramsCount = contador_de_parametros(
 			classFile->constant_pool[invokedMethod->descriptor_index].info.utf8_info->bytes);
-	u4 fieldsArray[paramsCount];
+	uint32_t fieldsArray[paramsCount];
 
 	for(i = 0; i < paramsCount; fieldsArray[i++] = desempilhar_operando());
 
@@ -3228,11 +2800,9 @@ void invokestatic(){
 
 	frame_atual->pc += 3;
 }
-/**
- * Invocar interface metodo
- */
+
 void invokeinterface(){
-	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
 	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 	int32_t nameAndTypeIndex = frame_atual->constantPool[index].info.methodref_info->name_and_type_index;
@@ -3241,10 +2811,10 @@ void invokeinterface(){
 	// Calcula quantidade total de parametros na pilha
 	int32_t paramsCount = contador_de_parametros(methodDescriptor);
 	// Armazena os argumentos da pilha em um Array
-	u4 fieldsArray[paramsCount+1];
+	uint32_t fieldsArray[paramsCount+1];
 	for(int i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());
 	Object* object = (Object*) desempilhar_operando();
-	fieldsArray[0] = (u4) object;
+	fieldsArray[0] = (uint32_t) object;
 	// Retorna um estrutura de metodo do objeto para criar um frame
 	object_method method = buscar_object_method_by_name(object, methodName, className);
 	ClassFile* classFile = method.classFile;
@@ -3257,12 +2827,10 @@ void invokeinterface(){
 	executar_frame();
 	frame_atual->pc += 5;
 }
-/**
- * Carregar objeto na pilha utilizando de um indice para o constant pool como operando
- */
+
 void ins_new(){
 
-	u2 index = frame_atual->code[frame_atual->pc + 1];
+	uint16_t index = frame_atual->code[frame_atual->pc + 1];
 	// shifta pq sao 2 bytes de index
 	index <<= 8;
 	index += frame_atual->code[frame_atual->pc + 2];
@@ -3275,19 +2843,17 @@ void ins_new(){
 
 	frame_atual->pc += 3;
 }
-/**
- * Cria um novo array podendo ser de todos os possíveis tipos
- */
+
 void newarray(){
 	//instrucao que cria um novo array e coloca a referencia para a mesma na pilha
 
 	//Pega o parametro que define o tipo
-	u4 type = frame_atual->code[frame_atual->pc + 1];
+	uint32_t type = frame_atual->code[frame_atual->pc + 1];
 	//Numero de elementos para o array
-	u4 count = desempilhar_operando();
+	uint32_t count = desempilhar_operando();
 
 	//variavel para salvar o tamanho de cada elemento do array
-	u2 typeSize = 0;
+	uint16_t typeSize = 0;
 
 	//Define o tamanho do tipo
 	switch(type){
@@ -3330,29 +2896,27 @@ void newarray(){
 	// Coloca a referencia na pilha de operandos
     int32_t arrayTypeRef;
     memcpy(&arrayTypeRef, &array , sizeof(int32_t));
-	empilhar_operando((u4) array);
+	empilhar_operando((uint32_t) array);
 	//Incrementa o PC
 	frame_atual->pc += 2;
 }
-/**
- * Cria um novo array objeto
- */
+
 void anewarray(){
 
 	//retira da pilha o valor que vai corresponder ao tamanho do array a ser criado
-	u4 count = desempilhar_operando();
+	uint32_t count = desempilhar_operando();
 
 	//Acha indices para o constant pool
-	u1 indexByte1 = frame_atual->code[frame_atual->pc+1];
-	u1 indexByte2 = frame_atual->code[frame_atual->pc+2];
+	uint8_t indexByte1 = frame_atual->code[frame_atual->pc+1];
+	uint8_t indexByte2 = frame_atual->code[frame_atual->pc+2];
 
 	//junta os dois para encontrar o indice desejado
-	u2 index = (indexByte1 << 8) | indexByte2;
+	uint16_t index = (indexByte1 << 8) | indexByte2;
 
 	//TODO definir que tipo o array vai ser e pegar o tamanho desse tipo para a alocacao
 	//Na descricao eh dito para acessar o constant pool na posicao index e verificar se eh uma
 	//classe, array ou interface.
-	u2 sizeBytes = sizeof(frame_atual->constantPool[index]);
+	uint16_t sizeBytes = sizeof(frame_atual->constantPool[index]);
 
 	// Aloca o array
 
@@ -3365,21 +2929,19 @@ void anewarray(){
 	put_referencia_array(calloc(count, sizeBytes), array);
 
 	// Coloca a referencia na pilha de operandos
-	empilhar_operando((u4) array);
+	empilhar_operando((uint32_t) array);
 
 	//Atualiza o pc
 	frame_atual->pc+=3;
 }
-/**
- * Devolve o tamanho de dado array
- */
+
 void arraylength(){
 	//Encontra o tamanho do array que está na pilha
 
 	//Pega a referecia para o array.
 	arrayType* array = (arrayType*) desempilhar_operando();
 
-	u4 size = get_tamanho_array(array);
+	uint32_t size = get_tamanho_array(array);
 
 	// Coloca o tamanho na pilha
 	empilhar_operando(size);
@@ -3400,17 +2962,15 @@ void instanceof(){
 void wide(){
 
 }
-/**
- * Cria arrays multidimencionais de todos os possíveis tipos
- */
+
 void multianewarray(){
 
 
 	//Acha o numero de dimensoes
-	u1 dimensions = frame_atual->code[frame_atual->pc+3];
+	uint8_t dimensions = frame_atual->code[frame_atual->pc+3];
 
 	//cria um array para armazenar os valores do tamanho das dimencoes
-	u4 count[dimensions + 1];
+	uint32_t count[dimensions + 1];
 
 	//pega os counts (tamanho da dimensao) correspondente ao numero de dimencoes
 	for (int i = dimensions; i > 0; --i){
@@ -3419,19 +2979,19 @@ void multianewarray(){
 	}
 
 	//Acha indices para o constant pool
-	u1 indexByte1 = frame_atual->code[frame_atual->pc+1];
-	u1 indexByte2 = frame_atual->code[frame_atual->pc+2];
+	uint8_t indexByte1 = frame_atual->code[frame_atual->pc+1];
+	uint8_t indexByte2 = frame_atual->code[frame_atual->pc+2];
 
 	//junta os dois para encontrar o indice desejado
-	u2 index = (indexByte1 << 8) | indexByte2;
+	uint16_t index = (indexByte1 << 8) | indexByte2;
 
 	//Tamanho de cada elemento
-	u2 sizeBytes = 0;
+	uint16_t sizeBytes = 0;
 
 	//pega o indice para o utf8
 	index = frame_atual->constantPool[index].info.string_info->string_index;
 	//acha a descricao do tipo
-	u1* bytes = frame_atual->constantPool[index].info.utf8_info->bytes;
+	uint8_t* bytes = frame_atual->constantPool[index].info.utf8_info->bytes;
 
 	//boOlean
 	if(strstr(bytes, "Z") != NULL) sizeBytes = 1;
@@ -3453,12 +3013,12 @@ void multianewarray(){
 
 	// Aloca o array multidimencoes
 	//Aloca o array de ponteiros
-	u4 *mArrayRef = (u4 *)calloc(dimensions, sizeof(u4*));
+	uint32_t *mArrayRef = (uint32_t *)calloc(dimensions, sizeof(uint32_t*));
 
 	// Aloca o corpo do array multidimensoes
 	for(int i = 0; i < dimensions; i++){
 		if(count[i+1]){
-			mArrayRef[i] = (u4 )calloc(count[i+1], sizeBytes);
+			mArrayRef[i] = (uint32_t )calloc(count[i+1], sizeBytes);
 		}else{ //caso o count seja 0 nenhuma nova dimencao eh alocada
 			break;
 		}
@@ -3474,17 +3034,14 @@ void multianewarray(){
 	put_referencia_array(mArrayRef, array);
 
 	// Coloca a referencia na pilha de operandos
-	empilhar_operando((u4) array);
+	empilhar_operando((uint32_t) array);
 
 	//Atualiza o pc
 	frame_atual->pc+=3;
 }
-/**
- * Realiza salto se o valor na pilha de operandos for nulo
- */
+
 void ifnull(){
 
-	//if value is null, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t offset = calculateOffset();
 	int32_t value = desempilhar_operando();
 	if(value == 0){
@@ -3493,12 +3050,9 @@ void ifnull(){
 		frame_atual->pc++;
 	}
 }
-/**
- * Realiza salto se o valor na pilha de operandos não for nulo
- */
+
 void ifnonnull(){
 
-	//if value is not null, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t offset = calculateOffset();
 	int32_t value = desempilhar_operando();
 	if(value != 0){
@@ -3515,28 +3069,16 @@ void goto_w(){
 void jsr_w(){
 
 }
-/**
- * Devolve apenas os 5 bytes menos significativos
- * @param  shift
- * @return shift       5 bytes menos significativos
- */
+
 int32_t shift5Bits(int32_t shift){
 	shift = shift & 0x1f;
 	return shift;
 }
-/**
- * Devolve apenas os 5 bytes menos significativos
- * @param  shift
- * @return shift       6 bytes menos significativos
- */
+
 void shift6Bits(int32_t shift){
 	shift = shift & 0x3f;
 }
-/**
- * Verifica dois longs para igualdade, maioridade e menororidade
- * @param long1
- * @param long2
- */
+
 void verifyLongs(long long1,long long2){
 	if(long1 == long2){
 		empilhar_operando((int32_t) 0);
@@ -3546,11 +3088,8 @@ void verifyLongs(long long1,long long2){
 		empilhar_operando((int32_t) -1);
 	}
 }
-/**
- * Verifica dois floats para igualdade, maioridade e menororidade
- * @param float1
- * @param float2
- */
+
+
 void verifyFloats(float float1,float float2){
 	if(float1 == float2){
 		empilhar_operando((int32_t) 0);
@@ -3560,11 +3099,7 @@ void verifyFloats(float float1,float float2){
 		empilhar_operando((int32_t) -1);
 	}
 }
-/**
- * Verifica dois doubles para igualdade, maioridade e menororidade
- * @param double1
- * @param double2
- */
+
 void verifyDoubles(double double1,double double2){
 	if(double1 == double2){
 		empilhar_operando((int32_t) 0);
@@ -3574,44 +3109,34 @@ void verifyDoubles(double double1,double double2){
 		empilhar_operando((int32_t) -1);
 	}
 }
-/**
- * Calcula um offset a partir de dois 8bits retirados da area de codigo
- * @return Offset montado
- */
+
 int32_t calculateOffset(){
 
-	//calcula offset para salto
-	u1 branchOffset1 = frame_atual->code[frame_atual->pc + 1];
-	u1 branchOffset2 = frame_atual->code[frame_atual->pc + 2];
+	uint8_t branchOffset1 = frame_atual->code[frame_atual->pc + 1];
+	uint8_t branchOffset2 = frame_atual->code[frame_atual->pc + 2];
 	int16_t branchOffset = branchOffset1;
 	branchOffset <<= 8;
 	branchOffset += branchOffset2;
 	return branchOffset;
 
 }
-/**
- * Junta dois bytes a partir de um array
- * @param  data array de entrada
- * @return      valor 16bits
- */
-int16_t read2Bytes(u1* data) {
+
+int16_t read2Bytes(uint8_t* data) {
 	int16_t value = data[0];
 	value <<= 8;
 	value += data[1];
 	return value;
 }
-/**
- * Printa um inteiro
- */
+
+
 void tratar_impressao_int() {
 	printf("%d\n", desempilhar_operando());
 }
-/**
- * Printa um Long
- */
+
+
 void tratar_impressao_long() {
 
-	u8 value;
+	uint64_t value;
 	int32_t lowValue = desempilhar_operando();
 	int32_t highValue = desempilhar_operando();
 
@@ -3620,42 +3145,33 @@ void tratar_impressao_long() {
 	value |= lowValue;
 	printf("%ld\n", value);
 }
-/**
- * Printa um Char
- */
+
+
 void tratar_impressao_char() {
 	char value = (char) desempilhar_operando();
 	printf("%c\n", value);
 }
-/**
- * Printa um Float
- */
+
 void tratar_impressao_float() {
 	float floatValue;
 	int value = desempilhar_operando();
 	memcpy(&floatValue, &value, sizeof(int32_t));
 	printf("%.2f\n", floatValue);
 }
-/**
- * Printa um String
- */
+
 void tratar_impressao_string() {
 	printf("%s\n", frame_atual->constantPool[desempilhar_operando()].info.utf8_info->bytes);
 }
-/**
- * Printa um Boolean
- */
+
 void tratar_impressao_boolean() {
 	int value = desempilhar_operando();
 	value ? printf("TRUE\n") : printf("FALSE\n");
 }
-/**
- * Printa um Double
- */
+
 void tratar_impressao_double() {
     double doubleValue;
-    u8 low = desempilhar_operando();
-    u8 high = desempilhar_operando();
+    uint64_t low = desempilhar_operando();
+    uint64_t high = desempilhar_operando();
 		int64_t value;
 		value = high;
 		value <<=32;
