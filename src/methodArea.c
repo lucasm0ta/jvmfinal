@@ -121,8 +121,8 @@ Method_info* buscar_metodo_main(ClassFile *classFile) {
 		}
 	}
 
-  printf("Não foi possível encontrar o método main\n");
-  exit(1);
+    printf("Não foi possível encontrar o método main\n");
+    exit(1);
 }
 
 ClassFile* super_classe(ClassFile *classFile){
@@ -169,22 +169,15 @@ char* buscar_descritor_metodo(Cp_info *constant_pool, int16_t nameAndTypeIndex) 
 }
 
 Code_attribute* recuperar_code_attribute(ClassFile *classFile, Method_info *methodInfo) {
-  int i = 0;
-
-
-
-  for(; i < methodInfo->attributes_count; i++) {
-
-    char * name = classFile->constant_pool[methodInfo->attributes[i].attribute_name_index].info.utf8_info->bytes;
-    if(strcmp("Code", name) == 0) {
-      return methodInfo->attributes[i].info.code_attribute;
+    for(int i = 0; i < methodInfo->attributes_count; i++) {
+        char *name = classFile->constant_pool[methodInfo->attributes[i].attribute_name_index].info.utf8_info->bytes;
+        if (strcmp("Code", name) == 0) {
+            return methodInfo->attributes[i].info.code_attribute;
+        }
     }
-  }
-
 }
 
 int32_t contador_de_parametros(char *bytes) {
-
   int i = 1;
   int contador = 0;
   while(bytes[i] != ')') {

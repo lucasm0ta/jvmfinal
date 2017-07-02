@@ -1,19 +1,77 @@
 #include "classViewer.h"
 
+static void acesso_str(int access_flag) {
+	if(access_flag & 0x0001) {
+		printf("public; ");
+	}
+	if(access_flag & 0x0002) {
+		printf("private; ");
+	}
+	if(access_flag & 0x0004) {
+		printf("protected; ");
+	}
+	if(access_flag & 0x0008) {
+		printf("static; ");
+	}
+	if(access_flag & 0x0010) {
+		printf("final; ");
+	}
+	if(access_flag & 0x0020) {
+		printf("super; ");
+	}
+	if(access_flag & 0x0200) {
+		printf("interface; ");
+	}
+	if(access_flag & 0x0400) {
+		printf("abstract; ");
+	}
+	if(access_flag & 0x1000) {
+		printf("synthetic; ");
+	}
+	if(access_flag & 0x2000) {
+		printf("annotation; ");
+	}
+	if(access_flag & 0x4000) {
+		printf("enum; ");
+	}
+	printf("\n");
+}
+
+static void printUtf8String(Cp_info* cp, int index) {
+	int tag = cp[index].tag;
+	if(tag == 1) {
+		printf("<%s>", cp[index].info.utf8_info->bytes);
+	}
+	if(tag == 7) {
+		index = cp[index].info.class_info->name_index;
+		printUtf8String(cp, index);
+	}
+	if(tag == 12) {
+		index = cp[index].info.nameAndType_info->name_index;
+		printUtf8String(cp, index);
+		index = cp[index].info.nameAndType_info->descriptor_index;
+		printUtf8String(cp, index);
+	}
+}
 
 void imprimir_informacoes_classe(ClassFile *classFile){
-	printf("GENERAL INFORMATION :\n\n");
-	printf("Magic:                   0x%X\n", classFile->magic);
-	printf("Minor Version:           %d\n", classFile->minor_version);
-	printf("Major Version:           %d\n", classFile->major_version);
-	printf("Constant Pool Count:     %d\n", classFile->constant_pool_count);
-	printf("Access flags:            0x%.4X\n", classFile->access_flags);
-	printf("This class:              cp_info #%d\n", classFile->this_class);
-	printf("Super class:             cp_info #%d\n", classFile->super_class);
-	printf("Interfaces count:        %d\n", classFile->interfaces_count);
-	printf("Fields count:            %d\n", classFile->fields_count);
-	printf("Methods count:           %d\n", classFile->methods_count);
-	printf("Attributes count:        %d\n", classFile->attributes_count);
+	printf("\nINFORMACOES BASICAS:\n");
+	printf("\tMagic Number: 0x%X\n", classFile->magic);
+	printf("\tMinor Version: %d\n", classFile->minor_version);
+	printf("\tMajor Version: %d\n", classFile->major_version);
+	printf("\tConstant Pool Count: %d\n", classFile->constant_pool_count);
+	printf("\tAccess flags: 0x%.4X ", classFile->access_flags);
+	acesso_str(classFile->access_flags);
+	printf("\tThis class: cp_info #%d ", classFile->this_class);
+	printUtf8String(classFile->constant_pool, classFile->this_class);
+	printf("\n");
+	printf("\tSuper class: cp_info #%d ", classFile->super_class);
+	printUtf8String(classFile->constant_pool, classFile->super_class);
+	printf("\n");
+	printf("\tInterfaces count: %d\n", classFile->interfaces_count);
+	printf("\tFields count: %d\n", classFile->fields_count);
+	printf("\tMethods count: %d\n", classFile->methods_count);
+	printf("\tAttributes count: %d\n", classFile->attributes_count);
 	printf("\n");
 }
 
@@ -431,12 +489,23 @@ void imprimir_metodos(ClassFile *classFile){
 	}
 }
 
+static void limpar_buffer() {
+	int c;
+	while((c = getchar()) != '\n' && c != EOF);
+}
 
 void imprimir_classe(ClassFile *classFile){
 	imprimir_informacoes_classe(classFile);
+	limpar_buffer();
+	getchar();
 	imprimir_constant_pool_completa(classFile);
+	getchar();
 	imprimir_interfaces(classFile);
+	getchar();
 	imprimir_fields(classFile);
+	getchar();
 	imprimir_metodos(classFile);
+	getchar();
 	imprimir_atributos(classFile->attributes, classFile->attributes_count, classFile->constant_pool, 0);
+	getchar();
 }
