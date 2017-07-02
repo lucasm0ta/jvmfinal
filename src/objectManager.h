@@ -2,26 +2,27 @@
 #define OBJECTMANAGER_H
 
 #include "classLoader.h"
+#include "util.h"
 
 typedef struct object_field{
 	char* 			name;
 	char*			descriptor;
-	uint16_t		access_flag;
+	u2		access_flag;
 }object_field;
 
 typedef struct object_method{
 	ClassFile* 		classFile;
 	char* 			name;
 	char*			descriptor;
-	uint16_t		access_flag;
+	u2		access_flag;
 	Method_info* 	method_info;
 }object_method;
 
 typedef struct Object{
 	ClassFile* 		classFile;
-	uint16_t        fields_count;
+	u2        fields_count;
     object_field*    fields;
-	uint16_t        methods_count;
+	u2        methods_count;
     object_method*   methods;
     uint64_t*		variables_pointers;
 }Object;

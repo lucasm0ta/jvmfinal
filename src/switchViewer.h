@@ -7,9 +7,10 @@ extern "C" {
 
 #include <stdint.h>
 #include <stdio.h>
+#include "util.h"
 
-uint32_t *group_words(uint8_t *src, int size);
-uint32_t group_word(uint8_t * word);
+u4 *group_words(u1 *src, int size);
+u4 group_word(u1 * word);
 int iniciar_padding_offset(int pos);
 
 #ifdef __cplusplus

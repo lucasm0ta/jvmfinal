@@ -1,7 +1,7 @@
 #include "switchViewer.h"
 
-uint32_t *group_words(uint8_t *src, int size) {
-    static uint32_t words[256];
+u4 *group_words(u1 *src, int size) {
+    static u4 words[256];
 
     for(int i = 0; i < size; i++) {
         words[i] = group_word(src + (4 * i));
@@ -10,7 +10,7 @@ uint32_t *group_words(uint8_t *src, int size) {
     return words;
 }
 
-uint32_t group_word(uint8_t *word) {
+u4 group_word(u1 *word) {
     return word[0] << 24 | word[1] << 16 | word[2] << 8 | word[3];
 }
 

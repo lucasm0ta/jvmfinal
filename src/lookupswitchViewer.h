@@ -9,13 +9,14 @@ extern "C" {
 #include <stdio.h>
 #include "switchViewer.h"
 #include "instructionMapper.h"
+#include "util.h"
 
 typedef struct {
     const char *name;
     int position;
-    uint32_t defaultBytes;
-    uint32_t amountOfPairs;
-    uint32_t *keyOffsetPairs;
+    u4 defaultBytes;
+    u4 amountOfPairs;
+    u4 *keyOffsetPairs;
     int totalSize;
 } LookupswitchData;
 
@@ -25,7 +26,7 @@ typedef struct {
  * @param posição
  * @return struct com os dados
  */
-LookupswitchData montar_lookupswitch_data(uint8_t *src, int pos);
+LookupswitchData montar_lookupswitch_data(u1 *src, int pos);
 /*
  * imprime estrutura LookupswitchData
  * @param estrutura LookupswitchData

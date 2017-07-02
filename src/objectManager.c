@@ -6,10 +6,10 @@
 
 static Object* objectList;
 
-uint16_t gerar_object_field_count(ClassFile *classFile);
-object_field* gerar_object_field_array(ClassFile *class_file, uint16_t count);
-uint16_t gerar_object_method_count(ClassFile *class_file);
-object_method* gerar_object_method_array(ClassFile *class_file, uint16_t count);
+u2 gerar_object_field_count(ClassFile *classFile);
+object_field* gerar_object_field_array(ClassFile *class_file, u2 count);
+u2 gerar_object_method_count(ClassFile *class_file);
+object_method* gerar_object_method_array(ClassFile *class_file, u2 count);
 
 Object* criar_objeto(ClassFile *class_file){
 	Object* object = (Object*)malloc(sizeof(Object));
@@ -27,8 +27,8 @@ Object* criar_objeto(ClassFile *class_file){
 
 // Funcoes de metodos do objeto
 
-uint16_t gerar_object_method_count(ClassFile *class_file){
-	uint16_t count = 0;
+u2 gerar_object_method_count(ClassFile *class_file){
+	u2 count = 0;
 	do{
 		count += class_file->methods_count;
 		class_file = super_classe(class_file);
@@ -46,7 +46,7 @@ object_method gerar_object_method(ClassFile *class_file, Method_info *method_inf
 	return method;
 }
 
-object_method* gerar_object_method_array(ClassFile *class_file, uint16_t count){
+object_method* gerar_object_method_array(ClassFile *class_file, u2 count){
 	object_method* methods = (object_method*)malloc(count*sizeof(object_method));
 	count = 0;
 	do{
@@ -88,8 +88,8 @@ void dumpObjectMethods(Object* object){
 
 // Funcoes de fields do objeto
 
-uint16_t gerar_object_field_count(ClassFile *classFile){
-	uint16_t count = 0;
+u2 gerar_object_field_count(ClassFile *classFile){
+	u2 count = 0;
 	do{
 		count += classFile->fields_count;
 		classFile = super_classe(classFile);
@@ -105,7 +105,7 @@ object_field gerar_object_field(ClassFile *class_file, Field_info *field_info){
 	return field;
 }
 
-object_field* gerar_object_field_array(ClassFile *class_file, uint16_t count){
+object_field* gerar_object_field_array(ClassFile *class_file, u2 count){
 	object_field* fields = (object_field*)malloc(count*sizeof(object_field));
 	count = 0;
 	do{

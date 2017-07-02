@@ -8,6 +8,7 @@ extern "C" {
 #include <stdint.h>
 #include <stdio.h>
 #include "classLoader.h"
+#include "util.h"
 
 
 /**
@@ -79,7 +80,7 @@ Method_info* buscar_metodo_main(ClassFile *classFile);
  * @param  indice          Indice do metodo
  * @return                 Retorna o metodo encontrado na outra classe
  */
-Method_info* buscar_metodo(ClassFile *classe_desejada, ClassFile *classe_origem, uint16_t indice);
+Method_info* buscar_metodo(ClassFile *classe_desejada, ClassFile *classe_origem, u2 indice);
 
 /**
  * Retorna o nome da classe que contem o metodo pelo indice dele

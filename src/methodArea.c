@@ -132,7 +132,7 @@ ClassFile* super_classe(ClassFile *classFile){
   return carregar_classe(acessar_constant_pool_entry(classFile->super_class, classFile->constant_pool));
 }
 
-Method_info* buscar_metodo(ClassFile *classe_desejada, ClassFile *classe_origem, uint16_t indice) {
+Method_info* buscar_metodo(ClassFile *classe_desejada, ClassFile *classe_origem, u2 indice) {
 
     int nome_indice = classe_origem->constant_pool[indice].info.nameAndType_info->name_index;
     int desc_indice = classe_origem->constant_pool[indice].info.nameAndType_info->descriptor_index;

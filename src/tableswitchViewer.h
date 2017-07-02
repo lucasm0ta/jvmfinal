@@ -9,19 +9,20 @@ extern "C" {
 #include <stdio.h>
 #include "switchViewer.h"
 #include "instructionMapper.h"
+#include "util.h"
 
 typedef struct {
     const char *name;
     int position;
-    uint32_t defaultBytes;
-    uint32_t lowBytes;
-    uint32_t highBytes;
-    uint32_t *jumpOffsets;
+    u4 defaultBytes;
+    u4 lowBytes;
+    u4 highBytes;
+    u4 *jumpOffsets;
     int sizeOfJumpOffsets;
     int totalSize;
 } TableswitchData;
 
-TableswitchData montar_switch_table(uint8_t *src, int pc);
+TableswitchData montar_switch_table(u1 *src, int pc);
 void imprimir_switch_table(TableswitchData data, char *space);
 
 #ifdef __cplusplus
