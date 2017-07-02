@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de array.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">array.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="array_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ARRAY_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ARRAY_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structarray.html">   10</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structarray.html">array</a>{   </div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structarray.html#a37b6bcc87d0ba4ed993b40cbb64dac0c">   11</a></span>&#160;    uint32_t <a class="code" href="structarray.html#a37b6bcc87d0ba4ed993b40cbb64dac0c">arraySize</a>;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structarray.html#a9f6062e2b3af92c277365a823f7d2491">   12</a></span>&#160;    uint32_t <a class="code" href="structarray.html#a9f6062e2b3af92c277365a823f7d2491">reference</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}<a class="code" href="array_8h.html#abe1045a9cebd75e02c4669d55753caf1">arrayType</a>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;uint32_t <a class="code" href="array_8h.html#a9eee01abff040fec6a8376764a34066b">get_referencia_array</a>(<a class="code" href="structarray.html">arrayType</a> *<a class="code" href="structarray.html">array</a>);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;uint32_t <a class="code" href="array_8h.html#a9fa0894ba8eb99505d998ccd5ddb109f">get_tamanho_array</a>(<a class="code" href="structarray.html">arrayType</a> *<a class="code" href="structarray.html">array</a>);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="array_8h.html#a2d21eb874039abf599f7f2c170280da5">put_referencia_array</a>(uint32_t* arrayRef, <a class="code" href="structarray.html">arrayType</a> *<a class="code" href="structarray.html">array</a>);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="array_8h.html#a90196dac7d0605c067a591f93582344d">put_tamanho_array</a>(uint32_t size, <a class="code" href="structarray.html">arrayType</a> *<a class="code" href="structarray.html">array</a>);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="structarray_html_a37b6bcc87d0ba4ed993b40cbb64dac0c"><div class="ttname"><a href="structarray.html#a37b6bcc87d0ba4ed993b40cbb64dac0c">array::arraySize</a></div><div class="ttdeci">uint32_t arraySize</div><div class="ttdef"><b>Definition:</b> array.h:11</div></div>
+<div class="ttc" id="array_8h_html_abe1045a9cebd75e02c4669d55753caf1"><div class="ttname"><a href="array_8h.html#abe1045a9cebd75e02c4669d55753caf1">arrayType</a></div><div class="ttdeci">struct array arrayType</div><div class="ttdoc">estrutura para o array, serve para salvar tbm o tamanho do array </div></div>
+<div class="ttc" id="array_8h_html_a2d21eb874039abf599f7f2c170280da5"><div class="ttname"><a href="array_8h.html#a2d21eb874039abf599f7f2c170280da5">put_referencia_array</a></div><div class="ttdeci">void put_referencia_array(uint32_t *arrayRef, arrayType *array)</div><div class="ttdoc">Dada um ponteiro para um array e um para a estrutura de array coloca-o na estrutura. </div><div class="ttdef"><b>Definition:</b> array.c:27</div></div>
+<div class="ttc" id="structarray_html_a9f6062e2b3af92c277365a823f7d2491"><div class="ttname"><a href="structarray.html#a9f6062e2b3af92c277365a823f7d2491">array::reference</a></div><div class="ttdeci">uint32_t reference</div><div class="ttdef"><b>Definition:</b> array.h:12</div></div>
+<div class="ttc" id="array_8h_html_a9eee01abff040fec6a8376764a34066b"><div class="ttname"><a href="array_8h.html#a9eee01abff040fec6a8376764a34066b">get_referencia_array</a></div><div class="ttdeci">uint32_t get_referencia_array(arrayType *array)</div><div class="ttdoc">Dada uma referencia para arrayType devolve o ponteiro para o array propriamente dita. </div><div class="ttdef"><b>Definition:</b> array.c:9</div></div>
+<div class="ttc" id="array_8h_html_a90196dac7d0605c067a591f93582344d"><div class="ttname"><a href="array_8h.html#a90196dac7d0605c067a591f93582344d">put_tamanho_array</a></div><div class="ttdeci">void put_tamanho_array(uint32_t size, arrayType *array)</div><div class="ttdoc">//Dada um tamanho int um ponteiro para a estrutura de array coloca-o na estrutura ...</div><div class="ttdef"><b>Definition:</b> array.c:36</div></div>
+<div class="ttc" id="structarray_html"><div class="ttname"><a href="structarray.html">array</a></div><div class="ttdoc">estrutura para o array, serve para salvar tbm o tamanho do array </div><div class="ttdef"><b>Definition:</b> array.h:10</div></div>
+<div class="ttc" id="array_8h_html_a9fa0894ba8eb99505d998ccd5ddb109f"><div class="ttname"><a href="array_8h.html#a9fa0894ba8eb99505d998ccd5ddb109f">get_tamanho_array</a></div><div class="ttdeci">uint32_t get_tamanho_array(arrayType *array)</div><div class="ttdoc">Dada uma referencia para arrayType devolve o tamanho do array. </div><div class="ttdef"><b>Definition:</b> array.c:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

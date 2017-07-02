@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência ao ficheiro objectManager.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro objectManager.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="object_manager_8h_source.html">objectManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="class_loader_8h_source.html">classLoader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="method_area_8h_source.html">methodArea.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a08a07d51a8a7fe3bb9fb633a96374879"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#a08a07d51a8a7fe3bb9fb633a96374879">generateObjectFieldCount</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="separator:a08a07d51a8a7fe3bb9fb633a96374879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa30cac2463b0d9241c3e539e4f16b943"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_object_field.html">ObjectField</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#aa30cac2463b0d9241c3e539e4f16b943">generateObjectFieldArray</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, uint16_t count)</td></tr>
+<tr class="separator:aa30cac2463b0d9241c3e539e4f16b943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25ccf79158421f4aff17262096fb6e56"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#a25ccf79158421f4aff17262096fb6e56">generateObjectMethodCount</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="separator:a25ccf79158421f4aff17262096fb6e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a895e091fa6a03c003069ad221977d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_object_method.html">ObjectMethod</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#ae0a895e091fa6a03c003069ad221977d">generateObjectMethodArray</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, uint16_t count)</td></tr>
+<tr class="separator:ae0a895e091fa6a03c003069ad221977d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbb8929de342d56ed8d572fc5d690083"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#acbb8929de342d56ed8d572fc5d690083">createObject</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:acbb8929de342d56ed8d572fc5d690083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna uma instância da classe do classFile.  <a href="#acbb8929de342d56ed8d572fc5d690083">Mais...</a><br /></td></tr>
+<tr class="separator:acbb8929de342d56ed8d572fc5d690083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b10e3f17d5f25758caebedbe9ff866"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_object_method.html">ObjectMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#a51b10e3f17d5f25758caebedbe9ff866">generateObjectMethod</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, <a class="el" href="struct_method__info.html">Method_info</a> *method_info)</td></tr>
+<tr class="separator:a51b10e3f17d5f25758caebedbe9ff866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c9a8c25b0d7079e3f6289a5925c7e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_object_method.html">ObjectMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#a82c9a8c25b0d7079e3f6289a5925c7e1">getObjectMethodByName</a> (<a class="el" href="struct_object.html">Object</a> *object, char *methodName, char *className)</td></tr>
+<tr class="memdesc:a82c9a8c25b0d7079e3f6289a5925c7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna um método de um objeto.  <a href="#a82c9a8c25b0d7079e3f6289a5925c7e1">Mais...</a><br /></td></tr>
+<tr class="separator:a82c9a8c25b0d7079e3f6289a5925c7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b1c1ad28b2a4256155110a520e8091"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#a67b1c1ad28b2a4256155110a520e8091">dumpObjectMethods</a> (<a class="el" href="struct_object.html">Object</a> *object)</td></tr>
+<tr class="memdesc:a67b1c1ad28b2a4256155110a520e8091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra uma lista do nome dos métodos do objeto.  <a href="#a67b1c1ad28b2a4256155110a520e8091">Mais...</a><br /></td></tr>
+<tr class="separator:a67b1c1ad28b2a4256155110a520e8091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2e7a8b4f1cde3ba2e4b4e4fa4225ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_object_field.html">ObjectField</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#abb2e7a8b4f1cde3ba2e4b4e4fa4225ac">generateObjectField</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, <a class="el" href="struct_field__info.html">Field_info</a> *field_info)</td></tr>
+<tr class="separator:abb2e7a8b4f1cde3ba2e4b4e4fa4225ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0494b9f5b7b399e73e7b1da38e2d6c"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#a4e0494b9f5b7b399e73e7b1da38e2d6c">getObjectFieldValueByName</a> (<a class="el" href="struct_object.html">Object</a> *object, char *name)</td></tr>
+<tr class="memdesc:a4e0494b9f5b7b399e73e7b1da38e2d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o field com nome "name" de um objeto.  <a href="#a4e0494b9f5b7b399e73e7b1da38e2d6c">Mais...</a><br /></td></tr>
+<tr class="separator:a4e0494b9f5b7b399e73e7b1da38e2d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa894740a7d501f453ab07155c008557a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#aa894740a7d501f453ab07155c008557a">setObjectFieldValueByName</a> (<a class="el" href="struct_object.html">Object</a> *object, char *name, uint64_t value)</td></tr>
+<tr class="memdesc:aa894740a7d501f453ab07155c008557a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atribui o valor passado para um dos fields do objeto.  <a href="#aa894740a7d501f453ab07155c008557a">Mais...</a><br /></td></tr>
+<tr class="separator:aa894740a7d501f453ab07155c008557a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae74193bbad0147f2cc93813258fc88b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_manager_8c.html#aae74193bbad0147f2cc93813258fc88b">dumpObjectFields</a> (<a class="el" href="struct_object.html">Object</a> *object)</td></tr>
+<tr class="memdesc:aae74193bbad0147f2cc93813258fc88b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra uma lista do nome dos fields do objeto.  <a href="#aae74193bbad0147f2cc93813258fc88b">Mais...</a><br /></td></tr>
+<tr class="separator:aae74193bbad0147f2cc93813258fc88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="acbb8929de342d56ed8d572fc5d690083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb8929de342d56ed8d572fc5d690083">&sect;&nbsp;</a></span>createObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_object.html">Object</a>* createObject </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna uma instância da classe do classFile. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>struct do classFile que sera instanciado </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>referência para um objeto alocado </dd></dl>
+
+</div>
+</div>
+<a id="aae74193bbad0147f2cc93813258fc88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae74193bbad0147f2cc93813258fc88b">&sect;&nbsp;</a></span>dumpObjectFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dumpObjectFields </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra uma lista do nome dos fields do objeto. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>referênciaa para o objeto </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a67b1c1ad28b2a4256155110a520e8091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67b1c1ad28b2a4256155110a520e8091">&sect;&nbsp;</a></span>dumpObjectMethods()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dumpObjectMethods </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra uma lista do nome dos métodos do objeto. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>referênciaa para o objeto </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abb2e7a8b4f1cde3ba2e4b4e4fa4225ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb2e7a8b4f1cde3ba2e4b4e4fa4225ac">&sect;&nbsp;</a></span>generateObjectField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_object_field.html">ObjectField</a> generateObjectField </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_field__info.html">Field_info</a> *&#160;</td>
+          <td class="paramname"><em>field_info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa30cac2463b0d9241c3e539e4f16b943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30cac2463b0d9241c3e539e4f16b943">&sect;&nbsp;</a></span>generateObjectFieldArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_object_field.html">ObjectField</a> * generateObjectFieldArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08a07d51a8a7fe3bb9fb633a96374879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a07d51a8a7fe3bb9fb633a96374879">&sect;&nbsp;</a></span>generateObjectFieldCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t generateObjectFieldCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51b10e3f17d5f25758caebedbe9ff866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b10e3f17d5f25758caebedbe9ff866">&sect;&nbsp;</a></span>generateObjectMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_object_method.html">ObjectMethod</a> generateObjectMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_method__info.html">Method_info</a> *&#160;</td>
+          <td class="paramname"><em>method_info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0a895e091fa6a03c003069ad221977d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a895e091fa6a03c003069ad221977d">&sect;&nbsp;</a></span>generateObjectMethodArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_object_method.html">ObjectMethod</a> * generateObjectMethodArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25ccf79158421f4aff17262096fb6e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ccf79158421f4aff17262096fb6e56">&sect;&nbsp;</a></span>generateObjectMethodCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t generateObjectMethodCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e0494b9f5b7b399e73e7b1da38e2d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0494b9f5b7b399e73e7b1da38e2d6c">&sect;&nbsp;</a></span>getObjectFieldValueByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t getObjectFieldValueByName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna o field com nome "name" de um objeto. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>referência para o objeto </td></tr>
+    <tr><td class="paramname">name</td><td>nome do field desejado </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>uma referência caso o field for um objeto/array, ou um valor do campo nos outros casos </dd></dl>
+
+</div>
+</div>
+<a id="a82c9a8c25b0d7079e3f6289a5925c7e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c9a8c25b0d7079e3f6289a5925c7e1">&sect;&nbsp;</a></span>getObjectMethodByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_object_method.html">ObjectMethod</a> getObjectMethodByName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>methodName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>className</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retorna um método de um objeto. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>referência para o objeto </td></tr>
+    <tr><td class="paramname">methodName</td><td>nome do método desejado </td></tr>
+    <tr><td class="paramname">className</td><td>classe do método desejado (para caso de métodos com mesmo nome, como construtores) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>refência para um objeto que contém informações do método </dd></dl>
+
+</div>
+</div>
+<a id="aa894740a7d501f453ab07155c008557a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa894740a7d501f453ab07155c008557a">&sect;&nbsp;</a></span>setObjectFieldValueByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setObjectFieldValueByName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Atribui o valor passado para um dos fields do objeto. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>referência para o objeto </td></tr>
+    <tr><td class="paramname">name</td><td>nome do field a ser modificado </td></tr>
+    <tr><td class="paramname">value</td><td>valor a ser atribuido ao field, caso o field seja um objeto/array value é o endereço do objeto </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

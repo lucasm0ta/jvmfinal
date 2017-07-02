@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de instructionMapper.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">instructionMapper.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="instruction_mapper_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INSTRUCTIONMAPPER_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INSTRUCTIONMAPPER_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="instruction_mapper_8h.html#ab77522c65df7d18cddc66f4f74a47f29">   13</a></span>&#160;<span class="preprocessor">#define INSTRUCTION_NAME 30</span></div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="instruction_mapper_8h.html#af6ca297e66f1914309c97f36a8fc6e30">   14</a></span>&#160;<span class="preprocessor">#define INSTRUCTION_SIZE 256</span></div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_mapper.html">   15</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_mapper.html">Mapper</a> {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">//nome da instrucao</span></div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_mapper.html#accd08fb22057870b05be442ff0a4f580">   17</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="struct_mapper.html#accd08fb22057870b05be442ff0a4f580">instruction</a>[<a class="code" href="instruction_mapper_8h.html#ab77522c65df7d18cddc66f4f74a47f29">INSTRUCTION_NAME</a>];</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//bytes de operandos que ela ocupa</span></div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_mapper.html#a03ccd2444e65aa0b113fb0f97b73f6f6">   19</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_mapper.html#a03ccd2444e65aa0b113fb0f97b73f6f6">bytes</a>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_mapper.html#af2d2cc85289235cb8ba33cb807404241">   20</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_mapper.html#af2d2cc85289235cb8ba33cb807404241">referencesCP</a>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;} <a class="code" href="instruction_mapper_8h.html#ab52aa36e4f3bf319e72c9cfa9f401ec6">Mapper</a>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="instruction_mapper_8h.html#afc732bad7794930e83ddf10b7cb4ff1e">INSTR_TABLESWITCH</a>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="instruction_mapper_8h.html#a67970fbe42890e093354d473d8bea2ad">INSTR_LOOKUPSWITCH</a>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// funcao que coloca o nome das strings no decodificador, juntamente com a qtd em bytes</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="instruction_mapper_8h.html#a1f25bd91404d2dc339b284542a3a465e">initMapper</a>();</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="instruction_mapper_8h.html#ac018b1f227065eb4a56f3f804d969720">   28</a></span>&#160;<a class="code" href="struct_mapper.html">Mapper</a> <a class="code" href="instruction_mapper_8h.html#ac018b1f227065eb4a56f3f804d969720">mapper</a>[<a class="code" href="instruction_mapper_8h.html#af6ca297e66f1914309c97f36a8fc6e30">INSTRUCTION_SIZE</a>];</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="instruction_mapper_8h_html_a67970fbe42890e093354d473d8bea2ad"><div class="ttname"><a href="instruction_mapper_8h.html#a67970fbe42890e093354d473d8bea2ad">INSTR_LOOKUPSWITCH</a></div><div class="ttdeci">const char * INSTR_LOOKUPSWITCH</div><div class="ttdef"><b>Definition:</b> instructionMapper.c:4</div></div>
+<div class="ttc" id="instruction_mapper_8h_html_a1f25bd91404d2dc339b284542a3a465e"><div class="ttname"><a href="instruction_mapper_8h.html#a1f25bd91404d2dc339b284542a3a465e">initMapper</a></div><div class="ttdeci">void initMapper()</div><div class="ttdef"><b>Definition:</b> instructionMapper.c:6</div></div>
+<div class="ttc" id="instruction_mapper_8h_html_af6ca297e66f1914309c97f36a8fc6e30"><div class="ttname"><a href="instruction_mapper_8h.html#af6ca297e66f1914309c97f36a8fc6e30">INSTRUCTION_SIZE</a></div><div class="ttdeci">#define INSTRUCTION_SIZE</div><div class="ttdef"><b>Definition:</b> instructionMapper.h:14</div></div>
+<div class="ttc" id="struct_mapper_html_accd08fb22057870b05be442ff0a4f580"><div class="ttname"><a href="struct_mapper.html#accd08fb22057870b05be442ff0a4f580">Mapper::instruction</a></div><div class="ttdeci">char instruction[INSTRUCTION_NAME]</div><div class="ttdef"><b>Definition:</b> instructionMapper.h:17</div></div>
+<div class="ttc" id="instruction_mapper_8h_html_ab52aa36e4f3bf319e72c9cfa9f401ec6"><div class="ttname"><a href="instruction_mapper_8h.html#ab52aa36e4f3bf319e72c9cfa9f401ec6">Mapper</a></div><div class="ttdeci">struct Mapper Mapper</div></div>
+<div class="ttc" id="struct_mapper_html_a03ccd2444e65aa0b113fb0f97b73f6f6"><div class="ttname"><a href="struct_mapper.html#a03ccd2444e65aa0b113fb0f97b73f6f6">Mapper::bytes</a></div><div class="ttdeci">int bytes</div><div class="ttdef"><b>Definition:</b> instructionMapper.h:19</div></div>
+<div class="ttc" id="instruction_mapper_8h_html_ac018b1f227065eb4a56f3f804d969720"><div class="ttname"><a href="instruction_mapper_8h.html#ac018b1f227065eb4a56f3f804d969720">mapper</a></div><div class="ttdeci">Mapper mapper[INSTRUCTION_SIZE]</div><div class="ttdef"><b>Definition:</b> instructionMapper.h:28</div></div>
+<div class="ttc" id="instruction_mapper_8h_html_ab77522c65df7d18cddc66f4f74a47f29"><div class="ttname"><a href="instruction_mapper_8h.html#ab77522c65df7d18cddc66f4f74a47f29">INSTRUCTION_NAME</a></div><div class="ttdeci">#define INSTRUCTION_NAME</div><div class="ttdef"><b>Definition:</b> instructionMapper.h:13</div></div>
+<div class="ttc" id="instruction_mapper_8h_html_afc732bad7794930e83ddf10b7cb4ff1e"><div class="ttname"><a href="instruction_mapper_8h.html#afc732bad7794930e83ddf10b7cb4ff1e">INSTR_TABLESWITCH</a></div><div class="ttdeci">const char * INSTR_TABLESWITCH</div><div class="ttdef"><b>Definition:</b> instructionMapper.c:3</div></div>
+<div class="ttc" id="struct_mapper_html"><div class="ttname"><a href="struct_mapper.html">Mapper</a></div><div class="ttdef"><b>Definition:</b> instructionMapper.h:15</div></div>
+<div class="ttc" id="struct_mapper_html_af2d2cc85289235cb8ba33cb807404241"><div class="ttname"><a href="struct_mapper.html#af2d2cc85289235cb8ba33cb807404241">Mapper::referencesCP</a></div><div class="ttdeci">int referencesCP</div><div class="ttdef"><b>Definition:</b> instructionMapper.h:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

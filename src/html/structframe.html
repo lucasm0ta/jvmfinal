@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência à estrutura frame</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Atributos Públicos</a> &#124;
+<a href="structframe-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à estrutura frame</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="frame_8h_source.html">frame.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos Públicos</h2></td></tr>
+<tr class="memitem:abd74d70b2c953c57da3820ef8bfd152f"><td class="memItemLeft" align="right" valign="top">int32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#abd74d70b2c953c57da3820ef8bfd152f">fields</a></td></tr>
+<tr class="separator:abd74d70b2c953c57da3820ef8bfd152f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e472a4fefc83b9b6920b4c3d0c3b89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a40e472a4fefc83b9b6920b4c3d0c3b89">constantPool</a></td></tr>
+<tr class="separator:a40e472a4fefc83b9b6920b4c3d0c3b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac199820b516dd4d579068706cd43af95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#ac199820b516dd4d579068706cd43af95">classe</a></td></tr>
+<tr class="separator:ac199820b516dd4d579068706cd43af95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21004a70deb96c08f1dd6fd30f610b51"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a21004a70deb96c08f1dd6fd30f610b51">max_stack</a></td></tr>
+<tr class="separator:a21004a70deb96c08f1dd6fd30f610b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff6c0343d82c67273a7c92f582f7ba8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#afff6c0343d82c67273a7c92f582f7ba8">max_locals</a></td></tr>
+<tr class="separator:afff6c0343d82c67273a7c92f582f7ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a43626ab33a7b6ed584eb7a47fc93e8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a2a43626ab33a7b6ed584eb7a47fc93e8">code_length</a></td></tr>
+<tr class="separator:a2a43626ab33a7b6ed584eb7a47fc93e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248713b5b9384b4d3edd365ee82625b4"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a248713b5b9384b4d3edd365ee82625b4">code</a></td></tr>
+<tr class="separator:a248713b5b9384b4d3edd365ee82625b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5915ace0f09c12110a4571ac827baf44"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a5915ace0f09c12110a4571ac827baf44">pc</a></td></tr>
+<tr class="separator:a5915ace0f09c12110a4571ac827baf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2247e2a31594f7c5b3f6de0f6dc4ca18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structoperand_stack.html">operandStack</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a2247e2a31594f7c5b3f6de0f6dc4ca18">operandStack</a></td></tr>
+<tr class="separator:a2247e2a31594f7c5b3f6de0f6dc4ca18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="ac199820b516dd4d579068706cd43af95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac199820b516dd4d579068706cd43af95">&sect;&nbsp;</a></span>classe</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* frame::classe</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a248713b5b9384b4d3edd365ee82625b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248713b5b9384b4d3edd365ee82625b4">&sect;&nbsp;</a></span>code</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* frame::code</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a43626ab33a7b6ed584eb7a47fc93e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a43626ab33a7b6ed584eb7a47fc93e8">&sect;&nbsp;</a></span>code_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t frame::code_length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40e472a4fefc83b9b6920b4c3d0c3b89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e472a4fefc83b9b6920b4c3d0c3b89">&sect;&nbsp;</a></span>constantPool</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_cp__info.html">Cp_info</a>* frame::constantPool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd74d70b2c953c57da3820ef8bfd152f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd74d70b2c953c57da3820ef8bfd152f">&sect;&nbsp;</a></span>fields</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t* frame::fields</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afff6c0343d82c67273a7c92f582f7ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff6c0343d82c67273a7c92f582f7ba8">&sect;&nbsp;</a></span>max_locals</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t frame::max_locals</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21004a70deb96c08f1dd6fd30f610b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21004a70deb96c08f1dd6fd30f610b51">&sect;&nbsp;</a></span>max_stack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t frame::max_stack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2247e2a31594f7c5b3f6de0f6dc4ca18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2247e2a31594f7c5b3f6de0f6dc4ca18">&sect;&nbsp;</a></span>operandStack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structoperand_stack.html">operandStack</a>* frame::operandStack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5915ace0f09c12110a4571ac827baf44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5915ace0f09c12110a4571ac827baf44">&sect;&nbsp;</a></span>pc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t frame::pc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte ficheiro:<ul>
+<li><a class="el" href="frame_8h_source.html">frame.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

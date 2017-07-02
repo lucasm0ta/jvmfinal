@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência à estrutura Field_info</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Atributos Públicos</a> &#124;
+<a href="struct_field__info-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à estrutura Field_info</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="class_loader_8h_source.html">classLoader.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos Públicos</h2></td></tr>
+<tr class="memitem:aae40229e3067e9493535c259319e5782"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_field__info.html#aae40229e3067e9493535c259319e5782">access_flags</a></td></tr>
+<tr class="separator:aae40229e3067e9493535c259319e5782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab06ae42bbb051661509e6935932e3e6c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_field__info.html#ab06ae42bbb051661509e6935932e3e6c">name_index</a></td></tr>
+<tr class="separator:ab06ae42bbb051661509e6935932e3e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af108293f133b1cd3a98285694d1299dd"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_field__info.html#af108293f133b1cd3a98285694d1299dd">descriptor_index</a></td></tr>
+<tr class="separator:af108293f133b1cd3a98285694d1299dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba9e2147bd09cbcb686b223f1737a2e4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_field__info.html#aba9e2147bd09cbcb686b223f1737a2e4">attributes_count</a></td></tr>
+<tr class="separator:aba9e2147bd09cbcb686b223f1737a2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d5d1b1ba57dfc6b711072777d92894"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_attribute__info.html">Attribute_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_field__info.html#a82d5d1b1ba57dfc6b711072777d92894">attributes</a></td></tr>
+<tr class="separator:a82d5d1b1ba57dfc6b711072777d92894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="aae40229e3067e9493535c259319e5782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae40229e3067e9493535c259319e5782">&sect;&nbsp;</a></span>access_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Field_info::access_flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82d5d1b1ba57dfc6b711072777d92894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82d5d1b1ba57dfc6b711072777d92894">&sect;&nbsp;</a></span>attributes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_attribute__info.html">Attribute_info</a>* Field_info::attributes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba9e2147bd09cbcb686b223f1737a2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba9e2147bd09cbcb686b223f1737a2e4">&sect;&nbsp;</a></span>attributes_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Field_info::attributes_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af108293f133b1cd3a98285694d1299dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af108293f133b1cd3a98285694d1299dd">&sect;&nbsp;</a></span>descriptor_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Field_info::descriptor_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab06ae42bbb051661509e6935932e3e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab06ae42bbb051661509e6935932e3e6c">&sect;&nbsp;</a></span>name_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Field_info::name_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte ficheiro:<ul>
+<li><a class="el" href="class_loader_8h_source.html">classLoader.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

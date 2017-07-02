@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência à estrutura Object</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Atributos Públicos</a> &#124;
+<a href="struct_object-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à estrutura Object</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="object_manager_8h_source.html">objectManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos Públicos</h2></td></tr>
+<tr class="memitem:afd64a3d47458a977a78a3e8352bbadec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_object.html#afd64a3d47458a977a78a3e8352bbadec">classFile</a></td></tr>
+<tr class="separator:afd64a3d47458a977a78a3e8352bbadec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd66bddbfa4612c4b925f2ca09d7c383"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_object.html#afd66bddbfa4612c4b925f2ca09d7c383">fields_count</a></td></tr>
+<tr class="separator:afd66bddbfa4612c4b925f2ca09d7c383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5153b62d50690bf7dd91ff17af36ad41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_object_field.html">ObjectField</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_object.html#a5153b62d50690bf7dd91ff17af36ad41">fields</a></td></tr>
+<tr class="separator:a5153b62d50690bf7dd91ff17af36ad41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace96f6f6833031c2327e22f85f592347"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_object.html#ace96f6f6833031c2327e22f85f592347">methods_count</a></td></tr>
+<tr class="separator:ace96f6f6833031c2327e22f85f592347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd81fad0869e3f7263cc910cd16864a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_object_method.html">ObjectMethod</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_object.html#aecd81fad0869e3f7263cc910cd16864a">methods</a></td></tr>
+<tr class="separator:aecd81fad0869e3f7263cc910cd16864a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea1c3bc8e1735168f9b9175931420e3"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_object.html#a9ea1c3bc8e1735168f9b9175931420e3">variables_pointers</a></td></tr>
+<tr class="separator:a9ea1c3bc8e1735168f9b9175931420e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="afd64a3d47458a977a78a3e8352bbadec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd64a3d47458a977a78a3e8352bbadec">&sect;&nbsp;</a></span>classFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* Object::classFile</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5153b62d50690bf7dd91ff17af36ad41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5153b62d50690bf7dd91ff17af36ad41">&sect;&nbsp;</a></span>fields</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_object_field.html">ObjectField</a>* Object::fields</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd66bddbfa4612c4b925f2ca09d7c383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd66bddbfa4612c4b925f2ca09d7c383">&sect;&nbsp;</a></span>fields_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Object::fields_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aecd81fad0869e3f7263cc910cd16864a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecd81fad0869e3f7263cc910cd16864a">&sect;&nbsp;</a></span>methods</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_object_method.html">ObjectMethod</a>* Object::methods</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace96f6f6833031c2327e22f85f592347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace96f6f6833031c2327e22f85f592347">&sect;&nbsp;</a></span>methods_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Object::methods_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ea1c3bc8e1735168f9b9175931420e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ea1c3bc8e1735168f9b9175931420e3">&sect;&nbsp;</a></span>variables_pointers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t* Object::variables_pointers</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte ficheiro:<ul>
+<li><a class="el" href="object_manager_8h_source.html">objectManager.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

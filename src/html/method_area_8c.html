@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência ao ficheiro methodArea.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro methodArea.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="method_area_8h_source.html">methodArea.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ac840e339d028556f0b3a72ac72da9114"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#ac840e339d028556f0b3a72ac72da9114">resizeHashtable</a> ()</td></tr>
+<tr class="separator:ac840e339d028556f0b3a72ac72da9114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ae44b77b16013c871be6a97d199a1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a19ae44b77b16013c871be6a97d199a1d">initHashtable</a> (int initialSize)</td></tr>
+<tr class="separator:a19ae44b77b16013c871be6a97d199a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e73be7c11f9a5b4f7ad973a139390da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a3e73be7c11f9a5b4f7ad973a139390da">freeHashtable</a> ()</td></tr>
+<tr class="separator:a3e73be7c11f9a5b4f7ad973a139390da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f7a42c1e7218113c0858da92f1c940"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a12f7a42c1e7218113c0858da92f1c940">insert</a> (<a class="el" href="struct_type_info.html">TypeInfo</a> dt)</td></tr>
+<tr class="separator:a12f7a42c1e7218113c0858da92f1c940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196d26426bc56a6d60be28e24d816055"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a196d26426bc56a6d60be28e24d816055">indexOf</a> (<a class="el" href="struct_type_info.html">TypeInfo</a> dt)</td></tr>
+<tr class="separator:a196d26426bc56a6d60be28e24d816055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583698de25f50fb32eb5370c3a5f6b03"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a583698de25f50fb32eb5370c3a5f6b03">hash</a> (const char *str, size_t len)</td></tr>
+<tr class="separator:a583698de25f50fb32eb5370c3a5f6b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd517cca838b1d9944bce24e1ffd80c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_type_info.html">TypeInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#afbd517cca838b1d9944bce24e1ffd80c">getItem</a> (int index)</td></tr>
+<tr class="separator:afbd517cca838b1d9944bce24e1ffd80c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83646127fde5920c92966538d1c6524d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a83646127fde5920c92966538d1c6524d">printHashtable</a> ()</td></tr>
+<tr class="separator:a83646127fde5920c92966538d1c6524d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9606521b7bba5ee406052e296590d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_method__info.html">Method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#aae9606521b7bba5ee406052e296590d9">findMainMethod</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="separator:aae9606521b7bba5ee406052e296590d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c966fe67c58370645911bfdcc914af1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a0c966fe67c58370645911bfdcc914af1">getSuperClass</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:a0c966fe67c58370645911bfdcc914af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">[getSuperClass description]  <a href="#a0c966fe67c58370645911bfdcc914af1">Mais...</a><br /></td></tr>
+<tr class="separator:a0c966fe67c58370645911bfdcc914af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d469f4815ce19a8a5773632f8ff4b77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_method__info.html">Method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a3d469f4815ce19a8a5773632f8ff4b77">findMethod</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *targetClass, <a class="el" href="struct_class_file.html">ClassFile</a> *originClass, uint16_t indice)</td></tr>
+<tr class="separator:a3d469f4815ce19a8a5773632f8ff4b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d1cfa98c7ac5f82911e69ce2abf0a5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a11d1cfa98c7ac5f82911e69ce2abf0a5">findClassNameFromMethod</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *constantPool, int32_t methodIndex)</td></tr>
+<tr class="separator:a11d1cfa98c7ac5f82911e69ce2abf0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0cdfea6cf4f3a90664aec8412f0631"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#add0cdfea6cf4f3a90664aec8412f0631">findMethodName</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *constantPool, int16_t nameAndTypeIndex)</td></tr>
+<tr class="separator:add0cdfea6cf4f3a90664aec8412f0631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe471afc634337e4e4ebb3b44b11a9ef"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#abe471afc634337e4e4ebb3b44b11a9ef">findMethodDescriptor</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *constantPool, int16_t nameAndTypeIndex)</td></tr>
+<tr class="separator:abe471afc634337e4e4ebb3b44b11a9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a847deaa650d5b70dd9fe5e339b1ba0e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_code__attribute.html">Code_attribute</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a847deaa650d5b70dd9fe5e339b1ba0e7">getCodeAttribute</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, <a class="el" href="struct_method__info.html">Method_info</a> *methodInfo)</td></tr>
+<tr class="separator:a847deaa650d5b70dd9fe5e339b1ba0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4c88da8bd0289033b47b707f4964da"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a7d4c88da8bd0289033b47b707f4964da">getParamsCount</a> (char *bytes)</td></tr>
+<tr class="separator:a7d4c88da8bd0289033b47b707f4964da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a6ad1e8d3cf9f2f916f919948e24d7b38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a6ad1e8d3cf9f2f916f919948e24d7b38">tableSize</a></td></tr>
+<tr class="separator:a6ad1e8d3cf9f2f916f919948e24d7b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc39adb8112347fc94da83fc83a67b8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_type_info.html">TypeInfo</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#adc39adb8112347fc94da83fc83a67b8b">hashtable</a></td></tr>
+<tr class="separator:adc39adb8112347fc94da83fc83a67b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d26f5a0b7d7abec8b27bf0909d57df6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="method_area_8c.html#a8d26f5a0b7d7abec8b27bf0909d57df6">dataCount</a> = 0</td></tr>
+<tr class="separator:a8d26f5a0b7d7abec8b27bf0909d57df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a11d1cfa98c7ac5f82911e69ce2abf0a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d1cfa98c7ac5f82911e69ce2abf0a5">&sect;&nbsp;</a></span>findClassNameFromMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* findClassNameFromMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>methodIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae9606521b7bba5ee406052e296590d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9606521b7bba5ee406052e296590d9">&sect;&nbsp;</a></span>findMainMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_method__info.html">Method_info</a>* findMainMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d469f4815ce19a8a5773632f8ff4b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d469f4815ce19a8a5773632f8ff4b77">&sect;&nbsp;</a></span>findMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_method__info.html">Method_info</a>* findMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>targetClass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>originClass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>indice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe471afc634337e4e4ebb3b44b11a9ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe471afc634337e4e4ebb3b44b11a9ef">&sect;&nbsp;</a></span>findMethodDescriptor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* findMethodDescriptor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>nameAndTypeIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add0cdfea6cf4f3a90664aec8412f0631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add0cdfea6cf4f3a90664aec8412f0631">&sect;&nbsp;</a></span>findMethodName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* findMethodName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constantPool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>nameAndTypeIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e73be7c11f9a5b4f7ad973a139390da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e73be7c11f9a5b4f7ad973a139390da">&sect;&nbsp;</a></span>freeHashtable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeHashtable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a847deaa650d5b70dd9fe5e339b1ba0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847deaa650d5b70dd9fe5e339b1ba0e7">&sect;&nbsp;</a></span>getCodeAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_code__attribute.html">Code_attribute</a>* getCodeAttribute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_method__info.html">Method_info</a> *&#160;</td>
+          <td class="paramname"><em>methodInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbd517cca838b1d9944bce24e1ffd80c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd517cca838b1d9944bce24e1ffd80c">&sect;&nbsp;</a></span>getItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_type_info.html">TypeInfo</a>* getItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d4c88da8bd0289033b47b707f4964da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4c88da8bd0289033b47b707f4964da">&sect;&nbsp;</a></span>getParamsCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t getParamsCount </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>bytes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c966fe67c58370645911bfdcc914af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c966fe67c58370645911bfdcc914af1">&sect;&nbsp;</a></span>getSuperClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* getSuperClass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[getSuperClass description] </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>[description] </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>[description] </dd></dl>
+
+</div>
+</div>
+<a id="a583698de25f50fb32eb5370c3a5f6b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583698de25f50fb32eb5370c3a5f6b03">&sect;&nbsp;</a></span>hash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t hash </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a196d26426bc56a6d60be28e24d816055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196d26426bc56a6d60be28e24d816055">&sect;&nbsp;</a></span>indexOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int indexOf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_type_info.html">TypeInfo</a>&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19ae44b77b16013c871be6a97d199a1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19ae44b77b16013c871be6a97d199a1d">&sect;&nbsp;</a></span>initHashtable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initHashtable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>initialSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12f7a42c1e7218113c0858da92f1c940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f7a42c1e7218113c0858da92f1c940">&sect;&nbsp;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_type_info.html">TypeInfo</a>&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83646127fde5920c92966538d1c6524d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83646127fde5920c92966538d1c6524d">&sect;&nbsp;</a></span>printHashtable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printHashtable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac840e339d028556f0b3a72ac72da9114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac840e339d028556f0b3a72ac72da9114">&sect;&nbsp;</a></span>resizeHashtable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resizeHashtable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="a8d26f5a0b7d7abec8b27bf0909d57df6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d26f5a0b7d7abec8b27bf0909d57df6">&sect;&nbsp;</a></span>dataCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dataCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc39adb8112347fc94da83fc83a67b8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc39adb8112347fc94da83fc83a67b8b">&sect;&nbsp;</a></span>hashtable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_type_info.html">TypeInfo</a>** hashtable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ad1e8d3cf9f2f916f919948e24d7b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad1e8d3cf9f2f916f919948e24d7b38">&sect;&nbsp;</a></span>tableSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tableSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

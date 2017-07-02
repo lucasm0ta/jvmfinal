@@ -1,0 +1,257 @@
+\hypertarget{class_loader_8c}{}\section{Referência ao ficheiro class\+Loader.\+c}
+\label{class_loader_8c}\index{class\+Loader.\+c@{class\+Loader.\+c}}
+{\ttfamily \#include \char`\"{}class\+Loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}class\+List.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}method\+Area.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}instructions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}frame.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}array.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}object\+Manager.\+h\char`\"{}}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{class_loader_8c_a6d7c4f23b53b33130513cf1b28bb3a99}{read\+Bytes} (int size, F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Função para leitura byte a byte do arquivo fp. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \hyperlink{class_loader_8c_adbc64e22f2dcd5daae28f25cb3c6d2c3}{access\+Constant\+Pool\+Entry} (int index, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool)
+\begin{DoxyCompactList}\small\item\em Função que retorna uma string que representa o valor de uma das constantes do Constant Pool. \end{DoxyCompactList}\item 
+\hyperlink{struct_attribute__info}{Attribute\+\_\+info} $\ast$ \hyperlink{class_loader_8c_a1290351b9cf245484329af16a3871fda}{read\+Attributes} (int length, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Lê atributos no arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$ \hyperlink{class_loader_8c_adce3966a4bfce3cbdcd26863acf4e7f3}{read\+Constant\+Pool} (int length, F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Lê o Pool de constantes no arquivo .class. \end{DoxyCompactList}\item 
+uint16\+\_\+t $\ast$ \hyperlink{class_loader_8c_acab25cca7a3bd9da43398a321e209885}{read\+Interfaces} (int length, F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Lê do arquivo .class os indices do contant pool que representam as interfaces da classe. \end{DoxyCompactList}\item 
+\hyperlink{struct_field__info}{Field\+\_\+info} $\ast$ \hyperlink{class_loader_8c_a2df2cd4d7189c05a2690ebb85858634b}{read\+Fields} (int length, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Lê os fields de um arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$ \hyperlink{class_loader_8c_a1e8b04495c973881244ac782272b604f}{read\+Methods} (int length, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Lê os métodos de um arquivo .class. \end{DoxyCompactList}\item 
+\hyperlink{struct_class_file}{Class\+File} $\ast$ \hyperlink{class_loader_8c_a054f9d1d78ad324c23b67bb02a57dac6}{load\+Class} (char $\ast$class\+Name)
+\begin{DoxyCompactList}\small\item\em Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. \end{DoxyCompactList}\item 
+void \hyperlink{class_loader_8c_ae67054480a9f3874ba2f0196b60a4350}{class\+Formatchecker} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic. \end{DoxyCompactList}\item 
+void \hyperlink{class_loader_8c_af07fd265d4b963d7972e5a683e6c4050}{class\+Name\+Checker} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, char $\ast$nome\+Arquivo)
+\begin{DoxyCompactList}\small\item\em Função verificacao, verificar se o nome da classe do .class bate com o do arquivo. \end{DoxyCompactList}\item 
+void \hyperlink{class_loader_8c_a37e5445b741ed921d544e5fdd76f1dbc}{version\+Checker} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em Função verificacao, verificar se a major version do .class é suportada pelo java 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\hypertarget{class_loader_8c_adbc64e22f2dcd5daae28f25cb3c6d2c3}{}\label{class_loader_8c_adbc64e22f2dcd5daae28f25cb3c6d2c3} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!access\+Constant\+Pool\+Entry@{access\+Constant\+Pool\+Entry}}
+\index{access\+Constant\+Pool\+Entry@{access\+Constant\+Pool\+Entry}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{access\+Constant\+Pool\+Entry()}{accessConstantPoolEntry()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ access\+Constant\+Pool\+Entry (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool }\end{DoxyParamCaption})}
+
+
+
+Função que retorna uma string que representa o valor de uma das constantes do Constant Pool. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & index da constante no Constant Pool \\
+\hline
+{\em constant\+\_\+pool} & ponteiro para um Constant Pool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+ponteiro para uma string 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_ae67054480a9f3874ba2f0196b60a4350}{}\label{class_loader_8c_ae67054480a9f3874ba2f0196b60a4350} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!class\+Formatchecker@{class\+Formatchecker}}
+\index{class\+Formatchecker@{class\+Formatchecker}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{class\+Formatchecker()}{classFormatchecker()}}
+{\footnotesize\ttfamily void class\+Formatchecker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & Ponteiro para os dados do suposto .class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1 para .class e 0 para nao .class 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_af07fd265d4b963d7972e5a683e6c4050}{}\label{class_loader_8c_af07fd265d4b963d7972e5a683e6c4050} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!class\+Name\+Checker@{class\+Name\+Checker}}
+\index{class\+Name\+Checker@{class\+Name\+Checker}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{class\+Name\+Checker()}{classNameChecker()}}
+{\footnotesize\ttfamily void class\+Name\+Checker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
+
+
+
+Função verificacao, verificar se o nome da classe do .class bate com o do arquivo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & Ponteiro para os dados do .class \\
+\hline
+{\em nome\+Arquivo} & Ponteiro o nome do arquivo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1 para confere e 0 para nao confere 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_a054f9d1d78ad324c23b67bb02a57dac6}{}\label{class_loader_8c_a054f9d1d78ad324c23b67bb02a57dac6} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!load\+Class@{load\+Class}}
+\index{load\+Class@{load\+Class}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{load\+Class()}{loadClass()}}
+{\footnotesize\ttfamily \hyperlink{struct_class_file}{Class\+File}$\ast$ load\+Class (\begin{DoxyParamCaption}\item[{char $\ast$}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+Name} & Nome da classe a ser lida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Referência para uma struct \hyperlink{struct_class_file}{Class\+File} 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_a1290351b9cf245484329af16a3871fda}{}\label{class_loader_8c_a1290351b9cf245484329af16a3871fda} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Attributes@{read\+Attributes}}
+\index{read\+Attributes@{read\+Attributes}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{read\+Attributes()}{readAttributes()}}
+{\footnotesize\ttfamily \hyperlink{struct_attribute__info}{Attribute\+\_\+info}$\ast$ read\+Attributes (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Lê atributos no arquivo .class. 
+
+É utilizado na função de leitura de outras estruturas, o read\+Fields, read\+Methods e load\+Class 
+\begin{DoxyParams}{Parâmetros}
+{\em length} & Quantidade de atributos \\
+\hline
+{\em constant\+\_\+pool} & Ponteiro para o Constant Poll \\
+\hline
+{\em fp} & Ponteiro para o arquivo, que deve estar apontando para onde começam os atributos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura de atributos 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_a6d7c4f23b53b33130513cf1b28bb3a99}{}\label{class_loader_8c_a6d7c4f23b53b33130513cf1b28bb3a99} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Bytes@{read\+Bytes}}
+\index{read\+Bytes@{read\+Bytes}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{read\+Bytes()}{readBytes()}}
+{\footnotesize\ttfamily uint32\+\_\+t read\+Bytes (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Função para leitura byte a byte do arquivo fp. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em size} & quantidade de bytes a serem lidos \\
+\hline
+{\em fp} & ponteiro para o arquivo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Os 4 últimos bytes lidos (variável dde 32 bits) 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_adce3966a4bfce3cbdcd26863acf4e7f3}{}\label{class_loader_8c_adce3966a4bfce3cbdcd26863acf4e7f3} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Constant\+Pool@{read\+Constant\+Pool}}
+\index{read\+Constant\+Pool@{read\+Constant\+Pool}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{read\+Constant\+Pool()}{readConstantPool()}}
+{\footnotesize\ttfamily \hyperlink{struct_cp__info}{Cp\+\_\+info}$\ast$ read\+Constant\+Pool (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Lê o Pool de constantes no arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em length} & Quantidade de contantes \\
+\hline
+{\em fp} & Ponteiro para o arquivo, que deve estar apontando para onde começa o pool de constantes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Referência para uma estrutura Pool de Constantes 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_a2df2cd4d7189c05a2690ebb85858634b}{}\label{class_loader_8c_a2df2cd4d7189c05a2690ebb85858634b} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Fields@{read\+Fields}}
+\index{read\+Fields@{read\+Fields}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{read\+Fields()}{readFields()}}
+{\footnotesize\ttfamily \hyperlink{struct_field__info}{Field\+\_\+info}$\ast$ read\+Fields (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Lê os fields de um arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em length} & Quantidade de Fields \\
+\hline
+{\em constant\+\_\+pool} & Referência para o constant pool da class que esta sendo lida \\
+\hline
+{\em fp} & Ponteiro para o arquivo, que deve estar apontando para onde começam os fields \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Referência para um vetor de estruturas dos fields 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_acab25cca7a3bd9da43398a321e209885}{}\label{class_loader_8c_acab25cca7a3bd9da43398a321e209885} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Interfaces@{read\+Interfaces}}
+\index{read\+Interfaces@{read\+Interfaces}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{read\+Interfaces()}{readInterfaces()}}
+{\footnotesize\ttfamily uint16\+\_\+t$\ast$ read\+Interfaces (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Lê do arquivo .class os indices do contant pool que representam as interfaces da classe. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em length} & Quantidade de interfaces \\
+\hline
+{\em fp} & Ponteiro para o arquivo, que deve estar apontando para onde começam os indices \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Referência para um vetor de indices do constant pool 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_a1e8b04495c973881244ac782272b604f}{}\label{class_loader_8c_a1e8b04495c973881244ac782272b604f} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Methods@{read\+Methods}}
+\index{read\+Methods@{read\+Methods}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{read\+Methods()}{readMethods()}}
+{\footnotesize\ttfamily \hyperlink{struct_method__info}{Method\+\_\+info}$\ast$ read\+Methods (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Lê os métodos de um arquivo .class. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em length} & Quantidade de métodos \\
+\hline
+{\em constant\+\_\+pool} & Referência para o constant pool da class que esta sendo lida \\
+\hline
+{\em fp} & Ponteiro para o arquivo, que deve estar apontando para onde começam os métodos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Referência para um vetor de estruturas dos métodos 
+\end{DoxyReturn}
+\hypertarget{class_loader_8c_a37e5445b741ed921d544e5fdd76f1dbc}{}\label{class_loader_8c_a37e5445b741ed921d544e5fdd76f1dbc} 
+\index{class\+Loader.\+c@{class\+Loader.\+c}!version\+Checker@{version\+Checker}}
+\index{version\+Checker@{version\+Checker}!class\+Loader.\+c@{class\+Loader.\+c}}
+\subsubsection{\texorpdfstring{version\+Checker()}{versionChecker()}}
+{\footnotesize\ttfamily void version\+Checker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+Função verificacao, verificar se a major version do .class é suportada pelo java 2. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & Ponteiro para os dados do .class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+1 para suportada e 0 para nao .suportada 
+\end{DoxyReturn}

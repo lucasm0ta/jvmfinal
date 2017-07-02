@@ -1,0 +1,2497 @@
+\hypertarget{instructions_8h}{}\section{Referência ao ficheiro instructions.\+h}
+\label{instructions_8h}\index{instructions.\+h@{instructions.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{instructions_8h_a6f49bc744ceb7ed1619c53122a574e98}{create\+Instructions\+Array} ()
+\begin{DoxyCompactList}\small\item\em Cria o arrray de instruções para ser acessado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a9feb7476507383309c8e3ff2648016f3}{nop} ()
+\begin{DoxyCompactList}\small\item\em fazer nada \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_abe6dd55d61a71f86f8039f4e2d1d00c8}{aconst\+\_\+null} ()
+\begin{DoxyCompactList}\small\item\em Coloca null na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3d4fe47d548d6189745787177183c38c}{iconst\+\_\+m1} ()
+\begin{DoxyCompactList}\small\item\em Coloca -\/1 na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aea322ceba1bd8d3ef7f33273d58e6f0b}{iconst\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Coloca -\/1 na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad99980f3110041de270ec04c53107b8f}{iconst\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Coloca 1 na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ade068b77731b687d290ff8110b5111fb}{iconst\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em Coloca 2 na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa4de912d11b59f82deba1dc335d69123}{iconst\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em Coloca 3 na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a8c772a238a36dc3c353206ec51a65382}{iconst\+\_\+4} ()
+\begin{DoxyCompactList}\small\item\em Coloca 4 na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a2e5a16634b3e5c00d324b462ea77183b}{iconst\+\_\+5} ()
+\begin{DoxyCompactList}\small\item\em Coloca 5 na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a404bc01bc13afddc52495b6a77a2ff4d}{lconst\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Coloca uma constante 0 long na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a47ef909a27b1a683c8941d87f542b162}{lconst\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Coloca uma constante 1 long na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a86f714d43e3b969d5c30dbfdabd472bf}{fconst\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Coloca uma constante 0 float na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab87ae6df1b95fd3c3829af30ba899199}{fconst\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Coloca uma constante 1 float na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa2c5e3ce6d5b8daf54213367d7f02f25}{fconst\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em Coloca uma constante 2 float na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a06b623842362ff5bad4321bd3901c041}{dconst\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Coloca uma constante 0 double na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a7f89f5063a41ce732da654abce7f1c81}{dconst\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Coloca uma constante 1 double na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a63e60d614254aaf759e91850ce33be71}{bipush} ()
+\begin{DoxyCompactList}\small\item\em Coloca um byte na pilha, tirado da area de codigo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab232b871bc72922db8f077fc3f356348}{sipush} ()
+\begin{DoxyCompactList}\small\item\em Coloca um short na pilha, tirado da area de codigo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a05601922d5b1a9203cd26a1a21789255}{ldc} ()
+\begin{DoxyCompactList}\small\item\em Coloca um item na pilha retirado do constant pool. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a24bf1524b99a783375f26b5e4f79fb44}{ldc\+\_\+w} ()
+\begin{DoxyCompactList}\small\item\em Coloca um item na pilha retirado do constant pool indice de 16 bits. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ae507168e021393f8ee28cf11c80e5349}{ldc2\+\_\+w} ()
+\begin{DoxyCompactList}\small\item\em Coloca um item long ou double na pilha retirado do constant pool indice 16 bits. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a30a4061a47793773606ff72c0b81ddb1}{iload} ()
+\begin{DoxyCompactList}\small\item\em Carrega um int na pilha a partir de um indice para as variaveis locais. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a7226903dff59a80c04a44f84578cdad0}{lload} ()
+\begin{DoxyCompactList}\small\item\em load a long value from a local variable \#index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa3e85071d417a5fc35d9acca2deb91e2}{fload} ()
+\begin{DoxyCompactList}\small\item\em load a float value from a local variable \#index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aee02129130ae41bfde27b94ac97dbe80}{dload} ()
+\begin{DoxyCompactList}\small\item\em load a double value from a local variable \#index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a0612d86928db91f08031ee340d996be3}{aload} ()
+\begin{DoxyCompactList}\small\item\em Retira um indice do area de codigo do frame e com esse indice acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aca5ca79be27a14e2dba470ceb7f3654a}{iload\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 0 acha uma variavel local inteira na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a10fcbbe1a4c6ddec0bbe135218268af9}{iload\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 1 acha uma variavel local inteira na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3bd5260f8a2c829e158d7f49b1ef7e91}{iload\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 2 acha uma variavel local inteira na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a244c1eb8abc603a256a5e932beb9fa75}{iload\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 3 acha uma variavel local inteira na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_abeae105a6ead0eb87caedb8ad91a5770}{lload\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 0 acha uma variavel local long na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aadaebe19e5662365a33a9a0ab37b8335}{lload\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 1 acha uma variavel local long na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a772d2097155cfdbd5a8b3f897d84b7e2}{lload\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 2 acha uma variavel local long na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a4f6467c1c2e79085cc34fe84ad78f4f0}{lload\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 3 acha uma variavel local long na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_affe32f4da26138ad4c46dc734b979055}{fload\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 0 acha uma variavel local float na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a251c7799e471285cb5b69b2e24bd026e}{fload\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 1 acha uma variavel local float na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a78a3005be5f239e0fc162fc1351253a6}{fload\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 2 acha uma variavel local float na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3ca0cddbce6c71b1f1639b567d0a2e86}{fload\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 3 acha uma variavel local float na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a6aa7bf5ace90f3e13e42e817383f4581}{dload\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 0 acha uma variavel local double na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab2d4de89fe303e1aa1dd1b7686e696df}{dload\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 1 acha uma variavel local double na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ae229d0a441abd7b634e07ee3592e8954}{dload\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 2 acha uma variavel local double na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa1de1fc2a11431697fe3903f7a981707}{dload\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em Com o indice 3 acha uma variavel local double na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab051c3c6171f5785a9f6a6110a1807a0}{aload\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em Utilizando o indice 0 acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_add91003517acd6feeb58927db349a8b7}{aload\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em Utilizando o indice 1 acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a729776e357c33d581988d154e08ab529}{aload\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em Utilizando o indice 2 acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa3fb3edc54e4194c15765d605a701c04}{aload\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em Utilizando o indice 3 acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a8c45e9d93b9b4160fcf9273188c4aeb1}{iaload} ()
+\begin{DoxyCompactList}\small\item\em Load int from array e coloca na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab0c61415cc28b4f1f5c1452ffc0a3999}{laload} ()
+\begin{DoxyCompactList}\small\item\em Load long from array e coloca na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_abd45903905948ef0d3e850e9ffceb3b1}{faload} ()
+\begin{DoxyCompactList}\small\item\em Load float from array e coloca na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a6cfe8317c40137884e419d9c9e9259fd}{daload} ()
+\begin{DoxyCompactList}\small\item\em Load double from array e coloca na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_af128b8c4d595787ad11fd099014bd115}{aaload} ()
+\begin{DoxyCompactList}\small\item\em Tira um index e um array da pilha de operandos e coloca na mesma o valor que se encontra na posicao array\+Ref\mbox{[}indice\mbox{]}. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a0828de026525be2db57f3337f1dd1658}{baload} ()
+\begin{DoxyCompactList}\small\item\em Tira um index e um array da pilha de operandos e coloca na mesma o byte que se encontra na posicao array\+Ref\mbox{[}indice\mbox{]}. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad104cf0f51f7a706a07065b850707970}{caload} ()
+\begin{DoxyCompactList}\small\item\em Tira um index e um array da pilha de operandos e coloca na mesma o char que se encontra na posicao array\+Ref\mbox{[}indice\mbox{]}. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa65d7fecec2c6215ed40546f888c43bd}{saload} ()
+\begin{DoxyCompactList}\small\item\em Tira um index e um array da pilha de operandos e coloca na mesma o short que se encontra na posicao array\+Ref\mbox{[}indice\mbox{]}. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a28a80d06be99de713084ea98747681bd}{istore} ()
+\begin{DoxyCompactList}\small\item\em store int value into variable \#index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa74420d088939afdf32f52fe86d4b2f7}{lstore} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable \#index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3e8f01537767e49e052bc272c0922d9b}{fstore} ()
+\begin{DoxyCompactList}\small\item\em store a float value into a local variable \#index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a30732e79d714a9a8495378fa4c6f3873}{dstore} ()
+\begin{DoxyCompactList}\small\item\em store a double value into a local variable \#index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_afe6496edb460cb6871e9b7b5a50b52eb}{astore} ()
+\begin{DoxyCompactList}\small\item\em Coloca um valor tirado da pilha em uma posicao do array de fields definida pelo operando tirado da area de codigo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aedbdf11ae3fa8a748d1988f678f8962a}{istore\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em store int value into variable indice 0 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a120fd2a91d9c1474b620d367f0ee814a}{istore\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em store int value into variable indice 1 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab34a066338af6add5236ac1a93528e82}{istore\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em store int value into variable indice 2 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a0c2d8e314bca01ab20c2bc79c200ef2d}{istore\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em store int value into variable indice 3 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a34a9c4656c38f9051e0cd35fa49e12c4}{lstore\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable indice 0 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a2b3d118b1bbe7f6e326b33cf673f0a64}{lstore\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable indice 1 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_af43fe1c19bb5815c373fe5244286bada}{lstore\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable indice 2 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa06af1f01f065c77ea7911e72a633b38}{lstore\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable indice 3 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad2ea86eafe30b372311ca99e2f67bbeb}{fstore\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable indice 0 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a555a6c512008e55808c7b3d611a86127}{fstore\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable indice 1 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a4f559ad7d32c2e99eb1de0660e8cb87c}{fstore\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable indice 2 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_adbab062e831d9b905a4e18900f90203b}{fstore\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em store a long value in a local variable indice 3 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a2ac19bd147427d38595c6d932e9e376e}{dstore\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em store a double value in a local variable indice 0 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_abfef85d7b1e463849ddd2cf4c3116580}{dstore\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em store a double value in a local variable indice 1 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a5d24cd50387162de04f0cd7322ea94ff}{dstore\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em store a double value in a local variable indice 2 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad5ef3c987b259bc49a90d7983204e352}{dstore\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em store a double value in a local variable indice 3 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3741796e90bf158e7bc6d36433585447}{astore\+\_\+0} ()
+\begin{DoxyCompactList}\small\item\em store a value in a local variable indice 0 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad4b86f31027907c64e7b41fa3e988270}{astore\+\_\+1} ()
+\begin{DoxyCompactList}\small\item\em store a value in a local variable indice 1 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a5c56511c9767ba7649fefa08277e4add}{astore\+\_\+2} ()
+\begin{DoxyCompactList}\small\item\em store a value in a local variable indice 2 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3daa608a24f761018a2d8de2db63ac0e}{astore\+\_\+3} ()
+\begin{DoxyCompactList}\small\item\em store a value in a local variable indice 3 \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a0d893ebbdfed60a8891f9aa310adf3b5}{iastore} ()
+\begin{DoxyCompactList}\small\item\em tira um inteiro um index e um array da pilha e coloca o valor na posicao definida pelo index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a0d94f9666466006f4e1efba4565f9621}{lastore} ()
+\begin{DoxyCompactList}\small\item\em tira um long um index e um array da pilha e coloca o valor na posicao definida pelo index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a5a7dd5a2f85f7f7af987f0ce47732759}{fastore} ()
+\begin{DoxyCompactList}\small\item\em tira um float um index e um array da pilha e coloca o valor na posicao definida pelo index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad46084fcde36412f9c04aa49cbdab6e7}{dastore} ()
+\begin{DoxyCompactList}\small\item\em tira um double um index e um array da pilha e coloca o valor na posicao definida pelo index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_af88b9d0cf27555d24c3b3aec5267a339}{aastore} ()
+\begin{DoxyCompactList}\small\item\em tira um objeto um index e um array da pilha e coloca o valor na posicao definida pelo index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a8d34f3e2213e2ea0b7710c85b7595948}{bastore} ()
+\begin{DoxyCompactList}\small\item\em tira um byte um index e um array da pilha e coloca o valor na posicao definida pelo index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a969df3e32c8c5da5aba9ff9bc6830f6a}{castore} ()
+\begin{DoxyCompactList}\small\item\em tira um char um index e um array da pilha e coloca o valor na posicao definida pelo index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad22e5532f8579c296012e98d4762664b}{sastore} ()
+\begin{DoxyCompactList}\small\item\em tira um short um index e um array da pilha e coloca o valor na posicao definida pelo index \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a312e7f6c761a199c1369fbe651e084f0}{pop} ()
+\begin{DoxyCompactList}\small\item\em pop operand da pilha \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa0a7b0e8bd7b85b3befdf254b3e4aa2c}{pop2} ()
+\begin{DoxyCompactList}\small\item\em Pop 2 operandos da pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a841871e8e493d723fa32f6603e144474}{dup} ()
+\begin{DoxyCompactList}\small\item\em Daz um pop e com esse valor faz dois pushs. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_abbfa5a4140ca24d9147a451202ec0261}{dup\+\_\+x1} ()
+\begin{DoxyCompactList}\small\item\em Duplica o topo da pilha de operandos e insere dois valores. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_afa7ca353522d6f05cdee507bd8813ac4}{dup\+\_\+x2} ()
+\begin{DoxyCompactList}\small\item\em Duplica o topo da pilha de operandos e insere dois ou tres valores. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a21ee32e7ee90d02c99685ebfc4ba7d8b}{dup2} ()
+\begin{DoxyCompactList}\small\item\em Duplica o topo de um ou dois elementos da pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a7adc353e0c29565a46a94f892721a095}{dup2\+\_\+x1} ()
+\begin{DoxyCompactList}\small\item\em Duplica o topo de um ou dois elementos da pilha de operandos e insere um ou dois valores. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad05c56fb10efa03b1d08b45fcd249caf}{dup2\+\_\+x2} ()
+\begin{DoxyCompactList}\small\item\em Duplica o topo de um ou dois elementos da pilha de operandos e insere um ou dois ou três ou quatro valores. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a07bca8cc0cfca0e80cac16305cac9f13}{swap} ()
+\begin{DoxyCompactList}\small\item\em Troca a ordem dos dois valores no topo da pilha de operandos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ae37f8a1e267669e057f9e7917bd8ab39}{iadd} ()
+\begin{DoxyCompactList}\small\item\em Soma os dois valores inteiros do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a9f6b80c0262230eb9842d2378fc49cf4}{ladd} ()
+\begin{DoxyCompactList}\small\item\em Soma os dois valores long do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a8afa6d5e3d12fc3321017e05eab296dc}{fadd} ()
+\begin{DoxyCompactList}\small\item\em Soma os dois valores float do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a772d3b21584c912ca711a418ee1d6a36}{dadd} ()
+\begin{DoxyCompactList}\small\item\em Soma os dois valores double do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a01d07133e63f9ac7e86ee2d3ec9baf8f}{isub} ()
+\begin{DoxyCompactList}\small\item\em Subtrai os dois valores inteiros do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aaa1cc04476ac5a3a1ec66b5098169f91}{lsub} ()
+\begin{DoxyCompactList}\small\item\em Subtrai os dois valores long do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_acd60d95a83a959a7e4c1abdfb52909be}{fsub} ()
+\begin{DoxyCompactList}\small\item\em Subtrai os dois valores float do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_af38c889b73967d262c395af067071ba1}{dsub} ()
+\begin{DoxyCompactList}\small\item\em Subtrai os dois valores double do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a252b30e3c8b67c5dc8c2ad5b358e8c49}{imul} ()
+\begin{DoxyCompactList}\small\item\em Multiplica os dois valores inteiros do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a12d2fea9cb9a2ac29b655232f28b6a46}{lmul} ()
+\begin{DoxyCompactList}\small\item\em Multiplica os dois valores long do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a10d30f1e2fcb55284dcc2e4329121b7f}{fmul} ()
+\begin{DoxyCompactList}\small\item\em Multiplica os dois valores float do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a88c0605a1396c37313618a58e11623b6}{dmul} ()
+\begin{DoxyCompactList}\small\item\em Multiplica os dois valores double do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_abd1598e346574cb1143404c595f28d63}{idiv} ()
+\begin{DoxyCompactList}\small\item\em Divide os dois valores inteiros do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa44e50413a638ff669df97ac2223c526}{ins\+\_\+ldiv} ()
+\begin{DoxyCompactList}\small\item\em Divide os dois valores longs do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a36fe02badb66c831b9da05b448c489fc}{fdiv} ()
+\begin{DoxyCompactList}\small\item\em Divide os dois valores float do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad3b90ca72b51776459d43ea7ee1f44c9}{ddiv} ()
+\begin{DoxyCompactList}\small\item\em Divide os dois valores doble do topo da pilha e coloca na pilha o resultado. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ade3f7ae2b8bf66076ec711047118b210}{irem} ()
+\begin{DoxyCompactList}\small\item\em Calcula o resto da divisao de dois inteiros. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_afd8ef785713dfa57189029ec1ab9aac9}{lrem} ()
+\begin{DoxyCompactList}\small\item\em Calcula o resto da divisao de dois longs. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a1992d9a2a798b6e3e308fcd045f0ae6d}{frem} ()
+\begin{DoxyCompactList}\small\item\em Calcula o resto da divisao de dois floats. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a69b44df10a8a1148994306f61b6884fc}{\+\_\+drem} ()
+\begin{DoxyCompactList}\small\item\em Calcula o resto da divisao de dois doubles. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a0b9cbceea9fb0e139c0c671651e29f99}{ineg} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor negativo do inteiro. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa9bfa074a687ac1c23d0f36d9c39cedc}{lneg} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor negativo do long. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a92ded25cd53bb087b251b019a5babb53}{fneg} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor negativo do float. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ac8493828f03e41133fa33a860001321b}{dneg} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor negativo do double. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad1790bd7f7ba088526767d70579bdf6f}{ishl} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor do shift left do int. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a7609e2fa0a7b13871ed165268c517203}{lshl} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor do shift left do long. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a04ab90a481c69b7d1c67ed03a5672b6f}{ishr} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor do shift right do int. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a524e6f8741e8c2ab2bf194123341578d}{lshr} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor do shift right do long. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a07527b3c36aefdfa7c6aee9ed9c07dcd}{iushr} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor do shift right logico do int. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aa2f8be3fb4c164d1ed72c675a2319636}{lushr} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor do shift right logico do long. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a33c91ef3a786b39fdf213a29341d0f1c}{iand} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor da operação logica and entre inteiros. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3c29060e61e5ef8929d29158353dfa7e}{land} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor da operação logica and entre longs. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a1b61e8115820a72297d297484dc9072e}{ior} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor da operação logica or entre inteiros. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad4ea0c2e3bf8cd6f8fbaed5644ab1a33}{lor} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor da operação logica or entre longs. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a66dc9092c80d31e38c139d23ec632ad7}{ixor} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor da operação logica xor entre interos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad7f8e11c8b10535c5f00b02022d3019f}{lxor} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor da operação logica xor entre longs. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a9b9640224970ab26f3ed804039633737}{iinc} ()
+\begin{DoxyCompactList}\small\item\em Incrementa variavel local em uma constante. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab70d39ee70866a2332f7726860e7fbfc}{i2l} ()
+\begin{DoxyCompactList}\small\item\em Converte int para long. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aadc30d76e0798683a1f5579104f8feb8}{i2f} ()
+\begin{DoxyCompactList}\small\item\em Converte int para float. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a9d8deb8e5c5ebae898071e8cf7c6faa7}{i2d} ()
+\begin{DoxyCompactList}\small\item\em Converte int para double. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a5e86260d8dd517db67571c027d78dfed}{l2i} ()
+\begin{DoxyCompactList}\small\item\em Converte long para int. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a17f70bc1852fdbf3c93ee7686903f85b}{l2f} ()
+\begin{DoxyCompactList}\small\item\em Converte long para float. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a462cebd11df3daa816e0163289d3fa91}{l2d} ()
+\begin{DoxyCompactList}\small\item\em Converte long para double. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a40903a5dbcda012b0796b4129fb925cb}{f2i} ()
+\begin{DoxyCompactList}\small\item\em Converte float para inteiro. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a2f91c451a8e0a04530705828b3c7d239}{f2l} ()
+\begin{DoxyCompactList}\small\item\em Converte float para long. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a2db165b053ae60790ecf22be4e56b73f}{f2d} ()
+\begin{DoxyCompactList}\small\item\em Converte float para double. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a4568704d5ad58e1b2ff763db43253129}{d2i} ()
+\begin{DoxyCompactList}\small\item\em C\+Onverte double para inteiro. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a605e0390f8cb63718791a45cc8f653eb}{d2l} ()
+\begin{DoxyCompactList}\small\item\em Converte double para long. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a29f62ca82d2ff3ddb9d45638c5985706}{d2f} ()
+\begin{DoxyCompactList}\small\item\em C\+Onverte double para float. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a9cd69873779952a0573433f1108297ec}{i2b} ()
+\begin{DoxyCompactList}\small\item\em C\+Onverte int para byte. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a5ee7da12ed48a0ddf225dab90f545220}{i2c} ()
+\begin{DoxyCompactList}\small\item\em C\+Onverte int para char. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a03e39da403bc5933756defea4506b565}{i2s} ()
+\begin{DoxyCompactList}\small\item\em C\+Onverte int para sshort. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_acf8b8fe8a537ea0dbaf4eead0b4ae832}{lcmp} ()
+\begin{DoxyCompactList}\small\item\em C\+Ompra longs. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_afcdfba24673cba9a62b2bedd76282453}{fcmpl} ()
+\begin{DoxyCompactList}\small\item\em Compara dois floats (menor) \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a2dcaceab565c333a01b17268014b4c0a}{fcmpg} ()
+\begin{DoxyCompactList}\small\item\em C\+Ompara floats (maior) \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aac1321b58332c43f2b74e64a44004ff0}{dcmpl} ()
+\begin{DoxyCompactList}\small\item\em Compara longs (menor) \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a8c14a40e0041167b0e7bc715b89472f5}{dcmpg} ()
+\begin{DoxyCompactList}\small\item\em Compara doubles (maior) \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a00f7f2c7697351802eca88223c74ea3a}{ifeq} ()
+\begin{DoxyCompactList}\small\item\em Se o valor for zero vai para instrução no branchoffset. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a554aa695cd67a5d9487a72426bb08330}{ifne} ()
+\begin{DoxyCompactList}\small\item\em Se o valor for diferente de zero vai para instrução no branchoffset. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad77daa64120db9e391d82efd349e0db6}{iflt} ()
+\begin{DoxyCompactList}\small\item\em Se o valor for menor que zero vai para instrução no branchoffset. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a9866c2d4df3b46703dfc5d78b7ff1e94}{ifge} ()
+\begin{DoxyCompactList}\small\item\em Se o valor for maior que zero vai para instrução no branchoffset. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a6e4e8b89a51f6a116e9747c6ba6971ca}{ifgt} ()
+\begin{DoxyCompactList}\small\item\em Se o valor for maior igual a zero vai para instrução no branchoffset. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_afe217b1e83881dd72a69978bbaae1952}{ifle} ()
+\begin{DoxyCompactList}\small\item\em Se o valor for menor igual a zero vai para instrução no branchoffset. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a470c812834d9d9f0c320f565b1003009}{if\+\_\+icmpeq} ()
+\begin{DoxyCompactList}\small\item\em Realiza o salto se value1 = value2. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ad0175ab3a89f8a7bf5adfef314f1679f}{if\+\_\+icmpne} ()
+\begin{DoxyCompactList}\small\item\em Realiza o salto se value1 != value2. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a8b80858427afbf3aff075a379c37c213}{if\+\_\+icmplt} ()
+\begin{DoxyCompactList}\small\item\em Realiza o salto se value1 $<$ value2. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a875d15b6c1fa77a9f9e519e2d8822de3}{if\+\_\+icmpge} ()
+\begin{DoxyCompactList}\small\item\em Realiza o salto se value1 $>$= value2. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab92037e7bb9912bed634f84fb54cb62b}{if\+\_\+icmpgt} ()
+\begin{DoxyCompactList}\small\item\em Realiza o salto se value1 $>$ value2. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_af27093d4a440ae4ed4c141e7dc036e53}{if\+\_\+icmple} ()
+\begin{DoxyCompactList}\small\item\em Realiza o salto se value1 $<$= value2. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ab590f77ad4e7cefbfb932bbc0ebd828b}{if\+\_\+acmpeq} ()
+\item 
+void \hyperlink{instructions_8h_a9da2f76a2311bb18c095828a45d5e3b1}{if\+\_\+acmpne} ()
+\item 
+void \hyperlink{instructions_8h_a90fe5ed5390bbde442c25342f6634910}{ins\+\_\+goto} ()
+\begin{DoxyCompactList}\small\item\em Realiza o salto para dado offset. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a80622b913b8283b74fd2df62501af707}{jsr} ()
+\begin{DoxyCompactList}\small\item\em Realiza o salto para dado offset e coloca endereco de retorno na pilha. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aadd5fc114c0604b21457e1dca7c8fb87}{ret} ()
+\begin{DoxyCompactList}\small\item\em Continuar execucao a partir de um endereço encontrado em uma variavel local. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a346a4979f41279912f358424b8c9cdb8}{tableswitch} ()
+\begin{DoxyCompactList}\small\item\em Acessar a tabela de saltos pelo indice e realizar salto. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a2f88ead173d23c965568aea52b1a0768}{lookupswitch} ()
+\begin{DoxyCompactList}\small\item\em Acessar tabela de salto por chave e realizar salto. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3a8cf7689c78ddea746200743907f5a7}{ireturn} ()
+\begin{DoxyCompactList}\small\item\em Retornar int de um metodo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3619de9ed777231ca7783e97c4a3bbb8}{lreturn} ()
+\begin{DoxyCompactList}\small\item\em Retornar long de um metodo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a26a481f90473433e3602d5a98268bb2e}{freturn} ()
+\begin{DoxyCompactList}\small\item\em Retornar float de um metodo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a50018d2162d978eb4bc01ab41c6153ed}{dreturn} ()
+\begin{DoxyCompactList}\small\item\em Retornar double de um metodo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_abc27098abf8c7eb4db5be4034f0e5482}{areturn} ()
+\begin{DoxyCompactList}\small\item\em Retornar objeto de um metodo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a7e90f90c4e1a7803928a7f59a0fa6301}{void\+\_\+return} ()
+\begin{DoxyCompactList}\small\item\em Retornar void de um metodo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a83c0c1e57fa9474537180722bdaf65ec}{getstatic} ()
+\begin{DoxyCompactList}\small\item\em Pegar um campo estatico a partir de uma classe. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3b8d9e095398de486b1443bb15adc340}{putstatic} ()
+\begin{DoxyCompactList}\small\item\em Colocar um campo estatico a partir de uma classe. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a840f06b326362c8d7d80b20820618f81}{getfield} ()
+\begin{DoxyCompactList}\small\item\em Achar um campo a partir de um objeto. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ac99fc237dc3eb223fe72de3a325220f7}{putfield} ()
+\begin{DoxyCompactList}\small\item\em Setar campo de objeto. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a78801a57dd7317b58754d741e22607a7}{invokevirtual} ()
+\begin{DoxyCompactList}\small\item\em Chamar metodo despachar baseado na classe. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aea396d65920fd2046b81c2b5742f8fc2}{invokespecial} ()
+\begin{DoxyCompactList}\small\item\em Invoca metodo com tratamento especial para superclass privite e metodos de incializacao de instancia. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a99b74fdcaa5d59615718fc49f4cb1bf2}{invokestatic} ()
+\begin{DoxyCompactList}\small\item\em Invocar uma metodo estático de uma classe. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a04465c61aa4c123ce79dc562244e7af8}{invokeinterface} ()
+\begin{DoxyCompactList}\small\item\em Invocar interface metodo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a8b31d2a9b5f40beb9895de019f02e99d}{ins\+\_\+new} ()
+\begin{DoxyCompactList}\small\item\em Carregar objeto na pilha utilizando de um indice para o constant pool como operando. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ac3fba9efa00d7e123c76bb67ef1253e4}{newarray} ()
+\begin{DoxyCompactList}\small\item\em Cria um novo array podendo ser de todos os possíveis tipos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a48d28a45eb2f30e7a698c67305bb4b51}{anewarray} ()
+\begin{DoxyCompactList}\small\item\em Cria um novo array objeto. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a3e9152027bdb3f5d696e31f3fef4e55f}{arraylength} ()
+\begin{DoxyCompactList}\small\item\em Devolve o tamanho de dado array. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_abbc93f2c04b51d183a67b81ebb14379c}{checkcast} ()
+\item 
+void \hyperlink{instructions_8h_a4c4804ae17465674d489279d4f95da76}{instanceof} ()
+\item 
+void \hyperlink{instructions_8h_a296e4d798368b2136158a86aa0b74e4f}{wide} ()
+\item 
+void \hyperlink{instructions_8h_ae3250087ab8dbd608d14e21f1377cbde}{multianewarray} ()
+\begin{DoxyCompactList}\small\item\em Cria arrays multidimencionais de todos os possíveis tipos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a1fd103c7e18b630298192875914467fa}{ifnull} ()
+\begin{DoxyCompactList}\small\item\em Realiza salto se o valor na pilha de operandos for nulo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ae39581b0d862caf7323264596950cdd9}{ifnonnull} ()
+\begin{DoxyCompactList}\small\item\em Realiza salto se o valor na pilha de operandos não for nulo. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a644324ed1a37c333efbc3f9c2ef2efa3}{goto\+\_\+w} ()
+\item 
+void \hyperlink{instructions_8h_a2db60a7b925afb86257991907c127e99}{jsr\+\_\+w} ()
+\item 
+int32\+\_\+t \hyperlink{instructions_8h_a4002cee4795dbde6726f4d4ad0ddf846}{shift5\+Bits} (int32\+\_\+t shift)
+\begin{DoxyCompactList}\small\item\em Devolve apenas os 5 bytes menos significativos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a20703419433d46e6d96d6bbca085a69e}{shift6\+Bits} (int32\+\_\+t shift)
+\begin{DoxyCompactList}\small\item\em Devolve apenas os 5 bytes menos significativos. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_a75f6e28677803776816cf21f6f5d8bcf}{verify\+Longs} (long long1, long long2)
+\begin{DoxyCompactList}\small\item\em Verifica dois longs para igualdade, maioridade e menororidade. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_aadcccfbfe2595924666c7d2cc5c1c46d}{verify\+Floats} (float float1, float float2)
+\begin{DoxyCompactList}\small\item\em Verifica dois floats para igualdade, maioridade e menororidade. \end{DoxyCompactList}\item 
+void \hyperlink{instructions_8h_ae61276e4ba29e6e9bb3b8e3be945f49c}{verify\+Doubles} (double double1, double double2)
+\begin{DoxyCompactList}\small\item\em Verifica dois doubles para igualdade, maioridade e menororidade. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{instructions_8h_aa15efbaa0db71630c04e309b264cffee}{calculate\+Offset} ()
+\begin{DoxyCompactList}\small\item\em Calcula um offset a partir de dois 8bits retirados da area de codigo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \hyperlink{instructions_8h_ae29a00a62533888c4e630e694b3be0a2}{instruction} \mbox{[}256\mbox{]})()
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\hypertarget{instructions_8h_a69b44df10a8a1148994306f61b6884fc}{}\label{instructions_8h_a69b44df10a8a1148994306f61b6884fc} 
+\index{instructions.\+h@{instructions.\+h}!\+\_\+drem@{\+\_\+drem}}
+\index{\+\_\+drem@{\+\_\+drem}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+drem()}{\_drem()}}
+{\footnotesize\ttfamily void \+\_\+drem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o resto da divisao de dois doubles. 
+
+\hypertarget{instructions_8h_af128b8c4d595787ad11fd099014bd115}{}\label{instructions_8h_af128b8c4d595787ad11fd099014bd115} 
+\index{instructions.\+h@{instructions.\+h}!aaload@{aaload}}
+\index{aaload@{aaload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{aaload()}{aaload()}}
+{\footnotesize\ttfamily void aaload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tira um index e um array da pilha de operandos e coloca na mesma o valor que se encontra na posicao array\+Ref\mbox{[}indice\mbox{]}. 
+
+\hypertarget{instructions_8h_af88b9d0cf27555d24c3b3aec5267a339}{}\label{instructions_8h_af88b9d0cf27555d24c3b3aec5267a339} 
+\index{instructions.\+h@{instructions.\+h}!aastore@{aastore}}
+\index{aastore@{aastore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{aastore()}{aastore()}}
+{\footnotesize\ttfamily void aastore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tira um objeto um index e um array da pilha e coloca o valor na posicao definida pelo index 
+
+\hypertarget{instructions_8h_abe6dd55d61a71f86f8039f4e2d1d00c8}{}\label{instructions_8h_abe6dd55d61a71f86f8039f4e2d1d00c8} 
+\index{instructions.\+h@{instructions.\+h}!aconst\+\_\+null@{aconst\+\_\+null}}
+\index{aconst\+\_\+null@{aconst\+\_\+null}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{aconst\+\_\+null()}{aconst\_null()}}
+{\footnotesize\ttfamily void aconst\+\_\+null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca null na pilha de operandos. 
+
+\hypertarget{instructions_8h_a0612d86928db91f08031ee340d996be3}{}\label{instructions_8h_a0612d86928db91f08031ee340d996be3} 
+\index{instructions.\+h@{instructions.\+h}!aload@{aload}}
+\index{aload@{aload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{aload()}{aload()}}
+{\footnotesize\ttfamily void aload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retira um indice do area de codigo do frame e com esse indice acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_ab051c3c6171f5785a9f6a6110a1807a0}{}\label{instructions_8h_ab051c3c6171f5785a9f6a6110a1807a0} 
+\index{instructions.\+h@{instructions.\+h}!aload\+\_\+0@{aload\+\_\+0}}
+\index{aload\+\_\+0@{aload\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{aload\+\_\+0()}{aload\_0()}}
+{\footnotesize\ttfamily void aload\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Utilizando o indice 0 acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_add91003517acd6feeb58927db349a8b7}{}\label{instructions_8h_add91003517acd6feeb58927db349a8b7} 
+\index{instructions.\+h@{instructions.\+h}!aload\+\_\+1@{aload\+\_\+1}}
+\index{aload\+\_\+1@{aload\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{aload\+\_\+1()}{aload\_1()}}
+{\footnotesize\ttfamily void aload\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Utilizando o indice 1 acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a729776e357c33d581988d154e08ab529}{}\label{instructions_8h_a729776e357c33d581988d154e08ab529} 
+\index{instructions.\+h@{instructions.\+h}!aload\+\_\+2@{aload\+\_\+2}}
+\index{aload\+\_\+2@{aload\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{aload\+\_\+2()}{aload\_2()}}
+{\footnotesize\ttfamily void aload\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Utilizando o indice 2 acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_aa3fb3edc54e4194c15765d605a701c04}{}\label{instructions_8h_aa3fb3edc54e4194c15765d605a701c04} 
+\index{instructions.\+h@{instructions.\+h}!aload\+\_\+3@{aload\+\_\+3}}
+\index{aload\+\_\+3@{aload\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{aload\+\_\+3()}{aload\_3()}}
+{\footnotesize\ttfamily void aload\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Utilizando o indice 3 acha uma variavel local na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a48d28a45eb2f30e7a698c67305bb4b51}{}\label{instructions_8h_a48d28a45eb2f30e7a698c67305bb4b51} 
+\index{instructions.\+h@{instructions.\+h}!anewarray@{anewarray}}
+\index{anewarray@{anewarray}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{anewarray()}{anewarray()}}
+{\footnotesize\ttfamily void anewarray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria um novo array objeto. 
+
+\hypertarget{instructions_8h_abc27098abf8c7eb4db5be4034f0e5482}{}\label{instructions_8h_abc27098abf8c7eb4db5be4034f0e5482} 
+\index{instructions.\+h@{instructions.\+h}!areturn@{areturn}}
+\index{areturn@{areturn}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{areturn()}{areturn()}}
+{\footnotesize\ttfamily void areturn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retornar objeto de um metodo. 
+
+\hypertarget{instructions_8h_a3e9152027bdb3f5d696e31f3fef4e55f}{}\label{instructions_8h_a3e9152027bdb3f5d696e31f3fef4e55f} 
+\index{instructions.\+h@{instructions.\+h}!arraylength@{arraylength}}
+\index{arraylength@{arraylength}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{arraylength()}{arraylength()}}
+{\footnotesize\ttfamily void arraylength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devolve o tamanho de dado array. 
+
+\hypertarget{instructions_8h_afe6496edb460cb6871e9b7b5a50b52eb}{}\label{instructions_8h_afe6496edb460cb6871e9b7b5a50b52eb} 
+\index{instructions.\+h@{instructions.\+h}!astore@{astore}}
+\index{astore@{astore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{astore()}{astore()}}
+{\footnotesize\ttfamily void astore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca um valor tirado da pilha em uma posicao do array de fields definida pelo operando tirado da area de codigo. 
+
+\hypertarget{instructions_8h_a3741796e90bf158e7bc6d36433585447}{}\label{instructions_8h_a3741796e90bf158e7bc6d36433585447} 
+\index{instructions.\+h@{instructions.\+h}!astore\+\_\+0@{astore\+\_\+0}}
+\index{astore\+\_\+0@{astore\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{astore\+\_\+0()}{astore\_0()}}
+{\footnotesize\ttfamily void astore\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a value in a local variable indice 0 
+
+\hypertarget{instructions_8h_ad4b86f31027907c64e7b41fa3e988270}{}\label{instructions_8h_ad4b86f31027907c64e7b41fa3e988270} 
+\index{instructions.\+h@{instructions.\+h}!astore\+\_\+1@{astore\+\_\+1}}
+\index{astore\+\_\+1@{astore\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{astore\+\_\+1()}{astore\_1()}}
+{\footnotesize\ttfamily void astore\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a value in a local variable indice 1 
+
+\hypertarget{instructions_8h_a5c56511c9767ba7649fefa08277e4add}{}\label{instructions_8h_a5c56511c9767ba7649fefa08277e4add} 
+\index{instructions.\+h@{instructions.\+h}!astore\+\_\+2@{astore\+\_\+2}}
+\index{astore\+\_\+2@{astore\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{astore\+\_\+2()}{astore\_2()}}
+{\footnotesize\ttfamily void astore\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a value in a local variable indice 2 
+
+\hypertarget{instructions_8h_a3daa608a24f761018a2d8de2db63ac0e}{}\label{instructions_8h_a3daa608a24f761018a2d8de2db63ac0e} 
+\index{instructions.\+h@{instructions.\+h}!astore\+\_\+3@{astore\+\_\+3}}
+\index{astore\+\_\+3@{astore\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{astore\+\_\+3()}{astore\_3()}}
+{\footnotesize\ttfamily void astore\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a value in a local variable indice 3 
+
+\hypertarget{instructions_8h_a0828de026525be2db57f3337f1dd1658}{}\label{instructions_8h_a0828de026525be2db57f3337f1dd1658} 
+\index{instructions.\+h@{instructions.\+h}!baload@{baload}}
+\index{baload@{baload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{baload()}{baload()}}
+{\footnotesize\ttfamily void baload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tira um index e um array da pilha de operandos e coloca na mesma o byte que se encontra na posicao array\+Ref\mbox{[}indice\mbox{]}. 
+
+\hypertarget{instructions_8h_a8d34f3e2213e2ea0b7710c85b7595948}{}\label{instructions_8h_a8d34f3e2213e2ea0b7710c85b7595948} 
+\index{instructions.\+h@{instructions.\+h}!bastore@{bastore}}
+\index{bastore@{bastore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{bastore()}{bastore()}}
+{\footnotesize\ttfamily void bastore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tira um byte um index e um array da pilha e coloca o valor na posicao definida pelo index 
+
+\hypertarget{instructions_8h_a63e60d614254aaf759e91850ce33be71}{}\label{instructions_8h_a63e60d614254aaf759e91850ce33be71} 
+\index{instructions.\+h@{instructions.\+h}!bipush@{bipush}}
+\index{bipush@{bipush}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{bipush()}{bipush()}}
+{\footnotesize\ttfamily void bipush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca um byte na pilha, tirado da area de codigo. 
+
+\hypertarget{instructions_8h_aa15efbaa0db71630c04e309b264cffee}{}\label{instructions_8h_aa15efbaa0db71630c04e309b264cffee} 
+\index{instructions.\+h@{instructions.\+h}!calculate\+Offset@{calculate\+Offset}}
+\index{calculate\+Offset@{calculate\+Offset}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{calculate\+Offset()}{calculateOffset()}}
+{\footnotesize\ttfamily int32\+\_\+t calculate\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula um offset a partir de dois 8bits retirados da area de codigo. 
+
+\begin{DoxyReturn}{Retorna}
+Offset montado 
+\end{DoxyReturn}
+\hypertarget{instructions_8h_ad104cf0f51f7a706a07065b850707970}{}\label{instructions_8h_ad104cf0f51f7a706a07065b850707970} 
+\index{instructions.\+h@{instructions.\+h}!caload@{caload}}
+\index{caload@{caload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{caload()}{caload()}}
+{\footnotesize\ttfamily void caload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tira um index e um array da pilha de operandos e coloca na mesma o char que se encontra na posicao array\+Ref\mbox{[}indice\mbox{]}. 
+
+\hypertarget{instructions_8h_a969df3e32c8c5da5aba9ff9bc6830f6a}{}\label{instructions_8h_a969df3e32c8c5da5aba9ff9bc6830f6a} 
+\index{instructions.\+h@{instructions.\+h}!castore@{castore}}
+\index{castore@{castore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{castore()}{castore()}}
+{\footnotesize\ttfamily void castore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tira um char um index e um array da pilha e coloca o valor na posicao definida pelo index 
+
+\hypertarget{instructions_8h_abbc93f2c04b51d183a67b81ebb14379c}{}\label{instructions_8h_abbc93f2c04b51d183a67b81ebb14379c} 
+\index{instructions.\+h@{instructions.\+h}!checkcast@{checkcast}}
+\index{checkcast@{checkcast}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{checkcast()}{checkcast()}}
+{\footnotesize\ttfamily void checkcast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{instructions_8h_a6f49bc744ceb7ed1619c53122a574e98}{}\label{instructions_8h_a6f49bc744ceb7ed1619c53122a574e98} 
+\index{instructions.\+h@{instructions.\+h}!create\+Instructions\+Array@{create\+Instructions\+Array}}
+\index{create\+Instructions\+Array@{create\+Instructions\+Array}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{create\+Instructions\+Array()}{createInstructionsArray()}}
+{\footnotesize\ttfamily void create\+Instructions\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria o arrray de instruções para ser acessado. 
+
+\hypertarget{instructions_8h_a29f62ca82d2ff3ddb9d45638c5985706}{}\label{instructions_8h_a29f62ca82d2ff3ddb9d45638c5985706} 
+\index{instructions.\+h@{instructions.\+h}!d2f@{d2f}}
+\index{d2f@{d2f}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{d2f()}{d2f()}}
+{\footnotesize\ttfamily void d2f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+C\+Onverte double para float. 
+
+\hypertarget{instructions_8h_a4568704d5ad58e1b2ff763db43253129}{}\label{instructions_8h_a4568704d5ad58e1b2ff763db43253129} 
+\index{instructions.\+h@{instructions.\+h}!d2i@{d2i}}
+\index{d2i@{d2i}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{d2i()}{d2i()}}
+{\footnotesize\ttfamily void d2i (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+C\+Onverte double para inteiro. 
+
+\hypertarget{instructions_8h_a605e0390f8cb63718791a45cc8f653eb}{}\label{instructions_8h_a605e0390f8cb63718791a45cc8f653eb} 
+\index{instructions.\+h@{instructions.\+h}!d2l@{d2l}}
+\index{d2l@{d2l}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{d2l()}{d2l()}}
+{\footnotesize\ttfamily void d2l (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte double para long. 
+
+\hypertarget{instructions_8h_a772d3b21584c912ca711a418ee1d6a36}{}\label{instructions_8h_a772d3b21584c912ca711a418ee1d6a36} 
+\index{instructions.\+h@{instructions.\+h}!dadd@{dadd}}
+\index{dadd@{dadd}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dadd()}{dadd()}}
+{\footnotesize\ttfamily void dadd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Soma os dois valores double do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_a6cfe8317c40137884e419d9c9e9259fd}{}\label{instructions_8h_a6cfe8317c40137884e419d9c9e9259fd} 
+\index{instructions.\+h@{instructions.\+h}!daload@{daload}}
+\index{daload@{daload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{daload()}{daload()}}
+{\footnotesize\ttfamily void daload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Load double from array e coloca na pilha. 
+
+\hypertarget{instructions_8h_ad46084fcde36412f9c04aa49cbdab6e7}{}\label{instructions_8h_ad46084fcde36412f9c04aa49cbdab6e7} 
+\index{instructions.\+h@{instructions.\+h}!dastore@{dastore}}
+\index{dastore@{dastore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dastore()}{dastore()}}
+{\footnotesize\ttfamily void dastore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tira um double um index e um array da pilha e coloca o valor na posicao definida pelo index 
+
+\hypertarget{instructions_8h_a8c14a40e0041167b0e7bc715b89472f5}{}\label{instructions_8h_a8c14a40e0041167b0e7bc715b89472f5} 
+\index{instructions.\+h@{instructions.\+h}!dcmpg@{dcmpg}}
+\index{dcmpg@{dcmpg}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dcmpg()}{dcmpg()}}
+{\footnotesize\ttfamily void dcmpg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compara doubles (maior) 
+
+\hypertarget{instructions_8h_aac1321b58332c43f2b74e64a44004ff0}{}\label{instructions_8h_aac1321b58332c43f2b74e64a44004ff0} 
+\index{instructions.\+h@{instructions.\+h}!dcmpl@{dcmpl}}
+\index{dcmpl@{dcmpl}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dcmpl()}{dcmpl()}}
+{\footnotesize\ttfamily void dcmpl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compara longs (menor) 
+
+\hypertarget{instructions_8h_a06b623842362ff5bad4321bd3901c041}{}\label{instructions_8h_a06b623842362ff5bad4321bd3901c041} 
+\index{instructions.\+h@{instructions.\+h}!dconst\+\_\+0@{dconst\+\_\+0}}
+\index{dconst\+\_\+0@{dconst\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dconst\+\_\+0()}{dconst\_0()}}
+{\footnotesize\ttfamily void dconst\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca uma constante 0 double na pilha. 
+
+\hypertarget{instructions_8h_a7f89f5063a41ce732da654abce7f1c81}{}\label{instructions_8h_a7f89f5063a41ce732da654abce7f1c81} 
+\index{instructions.\+h@{instructions.\+h}!dconst\+\_\+1@{dconst\+\_\+1}}
+\index{dconst\+\_\+1@{dconst\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dconst\+\_\+1()}{dconst\_1()}}
+{\footnotesize\ttfamily void dconst\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca uma constante 1 double na pilha. 
+
+\hypertarget{instructions_8h_ad3b90ca72b51776459d43ea7ee1f44c9}{}\label{instructions_8h_ad3b90ca72b51776459d43ea7ee1f44c9} 
+\index{instructions.\+h@{instructions.\+h}!ddiv@{ddiv}}
+\index{ddiv@{ddiv}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ddiv()}{ddiv()}}
+{\footnotesize\ttfamily void ddiv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Divide os dois valores doble do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_aee02129130ae41bfde27b94ac97dbe80}{}\label{instructions_8h_aee02129130ae41bfde27b94ac97dbe80} 
+\index{instructions.\+h@{instructions.\+h}!dload@{dload}}
+\index{dload@{dload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dload()}{dload()}}
+{\footnotesize\ttfamily void dload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load a double value from a local variable \#index 
+
+\hypertarget{instructions_8h_a6aa7bf5ace90f3e13e42e817383f4581}{}\label{instructions_8h_a6aa7bf5ace90f3e13e42e817383f4581} 
+\index{instructions.\+h@{instructions.\+h}!dload\+\_\+0@{dload\+\_\+0}}
+\index{dload\+\_\+0@{dload\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dload\+\_\+0()}{dload\_0()}}
+{\footnotesize\ttfamily void dload\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 0 acha uma variavel local double na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_ab2d4de89fe303e1aa1dd1b7686e696df}{}\label{instructions_8h_ab2d4de89fe303e1aa1dd1b7686e696df} 
+\index{instructions.\+h@{instructions.\+h}!dload\+\_\+1@{dload\+\_\+1}}
+\index{dload\+\_\+1@{dload\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dload\+\_\+1()}{dload\_1()}}
+{\footnotesize\ttfamily void dload\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 1 acha uma variavel local double na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_ae229d0a441abd7b634e07ee3592e8954}{}\label{instructions_8h_ae229d0a441abd7b634e07ee3592e8954} 
+\index{instructions.\+h@{instructions.\+h}!dload\+\_\+2@{dload\+\_\+2}}
+\index{dload\+\_\+2@{dload\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dload\+\_\+2()}{dload\_2()}}
+{\footnotesize\ttfamily void dload\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 2 acha uma variavel local double na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_aa1de1fc2a11431697fe3903f7a981707}{}\label{instructions_8h_aa1de1fc2a11431697fe3903f7a981707} 
+\index{instructions.\+h@{instructions.\+h}!dload\+\_\+3@{dload\+\_\+3}}
+\index{dload\+\_\+3@{dload\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dload\+\_\+3()}{dload\_3()}}
+{\footnotesize\ttfamily void dload\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 3 acha uma variavel local double na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a88c0605a1396c37313618a58e11623b6}{}\label{instructions_8h_a88c0605a1396c37313618a58e11623b6} 
+\index{instructions.\+h@{instructions.\+h}!dmul@{dmul}}
+\index{dmul@{dmul}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dmul()}{dmul()}}
+{\footnotesize\ttfamily void dmul (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Multiplica os dois valores double do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_ac8493828f03e41133fa33a860001321b}{}\label{instructions_8h_ac8493828f03e41133fa33a860001321b} 
+\index{instructions.\+h@{instructions.\+h}!dneg@{dneg}}
+\index{dneg@{dneg}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dneg()}{dneg()}}
+{\footnotesize\ttfamily void dneg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor negativo do double. 
+
+\hypertarget{instructions_8h_a50018d2162d978eb4bc01ab41c6153ed}{}\label{instructions_8h_a50018d2162d978eb4bc01ab41c6153ed} 
+\index{instructions.\+h@{instructions.\+h}!dreturn@{dreturn}}
+\index{dreturn@{dreturn}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dreturn()}{dreturn()}}
+{\footnotesize\ttfamily void dreturn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retornar double de um metodo. 
+
+\hypertarget{instructions_8h_a30732e79d714a9a8495378fa4c6f3873}{}\label{instructions_8h_a30732e79d714a9a8495378fa4c6f3873} 
+\index{instructions.\+h@{instructions.\+h}!dstore@{dstore}}
+\index{dstore@{dstore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dstore()}{dstore()}}
+{\footnotesize\ttfamily void dstore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a double value into a local variable \#index 
+
+\hypertarget{instructions_8h_a2ac19bd147427d38595c6d932e9e376e}{}\label{instructions_8h_a2ac19bd147427d38595c6d932e9e376e} 
+\index{instructions.\+h@{instructions.\+h}!dstore\+\_\+0@{dstore\+\_\+0}}
+\index{dstore\+\_\+0@{dstore\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dstore\+\_\+0()}{dstore\_0()}}
+{\footnotesize\ttfamily void dstore\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a double value in a local variable indice 0 
+
+\hypertarget{instructions_8h_abfef85d7b1e463849ddd2cf4c3116580}{}\label{instructions_8h_abfef85d7b1e463849ddd2cf4c3116580} 
+\index{instructions.\+h@{instructions.\+h}!dstore\+\_\+1@{dstore\+\_\+1}}
+\index{dstore\+\_\+1@{dstore\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dstore\+\_\+1()}{dstore\_1()}}
+{\footnotesize\ttfamily void dstore\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a double value in a local variable indice 1 
+
+\hypertarget{instructions_8h_a5d24cd50387162de04f0cd7322ea94ff}{}\label{instructions_8h_a5d24cd50387162de04f0cd7322ea94ff} 
+\index{instructions.\+h@{instructions.\+h}!dstore\+\_\+2@{dstore\+\_\+2}}
+\index{dstore\+\_\+2@{dstore\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dstore\+\_\+2()}{dstore\_2()}}
+{\footnotesize\ttfamily void dstore\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a double value in a local variable indice 2 
+
+\hypertarget{instructions_8h_ad5ef3c987b259bc49a90d7983204e352}{}\label{instructions_8h_ad5ef3c987b259bc49a90d7983204e352} 
+\index{instructions.\+h@{instructions.\+h}!dstore\+\_\+3@{dstore\+\_\+3}}
+\index{dstore\+\_\+3@{dstore\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dstore\+\_\+3()}{dstore\_3()}}
+{\footnotesize\ttfamily void dstore\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a double value in a local variable indice 3 
+
+\hypertarget{instructions_8h_af38c889b73967d262c395af067071ba1}{}\label{instructions_8h_af38c889b73967d262c395af067071ba1} 
+\index{instructions.\+h@{instructions.\+h}!dsub@{dsub}}
+\index{dsub@{dsub}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dsub()}{dsub()}}
+{\footnotesize\ttfamily void dsub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Subtrai os dois valores double do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_a841871e8e493d723fa32f6603e144474}{}\label{instructions_8h_a841871e8e493d723fa32f6603e144474} 
+\index{instructions.\+h@{instructions.\+h}!dup@{dup}}
+\index{dup@{dup}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dup()}{dup()}}
+{\footnotesize\ttfamily void dup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Daz um pop e com esse valor faz dois pushs. 
+
+\hypertarget{instructions_8h_a21ee32e7ee90d02c99685ebfc4ba7d8b}{}\label{instructions_8h_a21ee32e7ee90d02c99685ebfc4ba7d8b} 
+\index{instructions.\+h@{instructions.\+h}!dup2@{dup2}}
+\index{dup2@{dup2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dup2()}{dup2()}}
+{\footnotesize\ttfamily void dup2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Duplica o topo de um ou dois elementos da pilha de operandos. 
+
+\hypertarget{instructions_8h_a7adc353e0c29565a46a94f892721a095}{}\label{instructions_8h_a7adc353e0c29565a46a94f892721a095} 
+\index{instructions.\+h@{instructions.\+h}!dup2\+\_\+x1@{dup2\+\_\+x1}}
+\index{dup2\+\_\+x1@{dup2\+\_\+x1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dup2\+\_\+x1()}{dup2\_x1()}}
+{\footnotesize\ttfamily void dup2\+\_\+x1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Duplica o topo de um ou dois elementos da pilha de operandos e insere um ou dois valores. 
+
+\hypertarget{instructions_8h_ad05c56fb10efa03b1d08b45fcd249caf}{}\label{instructions_8h_ad05c56fb10efa03b1d08b45fcd249caf} 
+\index{instructions.\+h@{instructions.\+h}!dup2\+\_\+x2@{dup2\+\_\+x2}}
+\index{dup2\+\_\+x2@{dup2\+\_\+x2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dup2\+\_\+x2()}{dup2\_x2()}}
+{\footnotesize\ttfamily void dup2\+\_\+x2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Duplica o topo de um ou dois elementos da pilha de operandos e insere um ou dois ou três ou quatro valores. 
+
+\hypertarget{instructions_8h_abbfa5a4140ca24d9147a451202ec0261}{}\label{instructions_8h_abbfa5a4140ca24d9147a451202ec0261} 
+\index{instructions.\+h@{instructions.\+h}!dup\+\_\+x1@{dup\+\_\+x1}}
+\index{dup\+\_\+x1@{dup\+\_\+x1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dup\+\_\+x1()}{dup\_x1()}}
+{\footnotesize\ttfamily void dup\+\_\+x1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Duplica o topo da pilha de operandos e insere dois valores. 
+
+\hypertarget{instructions_8h_afa7ca353522d6f05cdee507bd8813ac4}{}\label{instructions_8h_afa7ca353522d6f05cdee507bd8813ac4} 
+\index{instructions.\+h@{instructions.\+h}!dup\+\_\+x2@{dup\+\_\+x2}}
+\index{dup\+\_\+x2@{dup\+\_\+x2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{dup\+\_\+x2()}{dup\_x2()}}
+{\footnotesize\ttfamily void dup\+\_\+x2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Duplica o topo da pilha de operandos e insere dois ou tres valores. 
+
+\hypertarget{instructions_8h_a2db165b053ae60790ecf22be4e56b73f}{}\label{instructions_8h_a2db165b053ae60790ecf22be4e56b73f} 
+\index{instructions.\+h@{instructions.\+h}!f2d@{f2d}}
+\index{f2d@{f2d}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{f2d()}{f2d()}}
+{\footnotesize\ttfamily void f2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte float para double. 
+
+\hypertarget{instructions_8h_a40903a5dbcda012b0796b4129fb925cb}{}\label{instructions_8h_a40903a5dbcda012b0796b4129fb925cb} 
+\index{instructions.\+h@{instructions.\+h}!f2i@{f2i}}
+\index{f2i@{f2i}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{f2i()}{f2i()}}
+{\footnotesize\ttfamily void f2i (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte float para inteiro. 
+
+\hypertarget{instructions_8h_a2f91c451a8e0a04530705828b3c7d239}{}\label{instructions_8h_a2f91c451a8e0a04530705828b3c7d239} 
+\index{instructions.\+h@{instructions.\+h}!f2l@{f2l}}
+\index{f2l@{f2l}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{f2l()}{f2l()}}
+{\footnotesize\ttfamily void f2l (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte float para long. 
+
+\hypertarget{instructions_8h_a8afa6d5e3d12fc3321017e05eab296dc}{}\label{instructions_8h_a8afa6d5e3d12fc3321017e05eab296dc} 
+\index{instructions.\+h@{instructions.\+h}!fadd@{fadd}}
+\index{fadd@{fadd}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fadd()}{fadd()}}
+{\footnotesize\ttfamily void fadd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Soma os dois valores float do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_abd45903905948ef0d3e850e9ffceb3b1}{}\label{instructions_8h_abd45903905948ef0d3e850e9ffceb3b1} 
+\index{instructions.\+h@{instructions.\+h}!faload@{faload}}
+\index{faload@{faload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{faload()}{faload()}}
+{\footnotesize\ttfamily void faload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Load float from array e coloca na pilha. 
+
+\hypertarget{instructions_8h_a5a7dd5a2f85f7f7af987f0ce47732759}{}\label{instructions_8h_a5a7dd5a2f85f7f7af987f0ce47732759} 
+\index{instructions.\+h@{instructions.\+h}!fastore@{fastore}}
+\index{fastore@{fastore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fastore()}{fastore()}}
+{\footnotesize\ttfamily void fastore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tira um float um index e um array da pilha e coloca o valor na posicao definida pelo index 
+
+\hypertarget{instructions_8h_a2dcaceab565c333a01b17268014b4c0a}{}\label{instructions_8h_a2dcaceab565c333a01b17268014b4c0a} 
+\index{instructions.\+h@{instructions.\+h}!fcmpg@{fcmpg}}
+\index{fcmpg@{fcmpg}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fcmpg()}{fcmpg()}}
+{\footnotesize\ttfamily void fcmpg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+C\+Ompara floats (maior) 
+
+\hypertarget{instructions_8h_afcdfba24673cba9a62b2bedd76282453}{}\label{instructions_8h_afcdfba24673cba9a62b2bedd76282453} 
+\index{instructions.\+h@{instructions.\+h}!fcmpl@{fcmpl}}
+\index{fcmpl@{fcmpl}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fcmpl()}{fcmpl()}}
+{\footnotesize\ttfamily void fcmpl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compara dois floats (menor) 
+
+\hypertarget{instructions_8h_a86f714d43e3b969d5c30dbfdabd472bf}{}\label{instructions_8h_a86f714d43e3b969d5c30dbfdabd472bf} 
+\index{instructions.\+h@{instructions.\+h}!fconst\+\_\+0@{fconst\+\_\+0}}
+\index{fconst\+\_\+0@{fconst\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fconst\+\_\+0()}{fconst\_0()}}
+{\footnotesize\ttfamily void fconst\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca uma constante 0 float na pilha. 
+
+\hypertarget{instructions_8h_ab87ae6df1b95fd3c3829af30ba899199}{}\label{instructions_8h_ab87ae6df1b95fd3c3829af30ba899199} 
+\index{instructions.\+h@{instructions.\+h}!fconst\+\_\+1@{fconst\+\_\+1}}
+\index{fconst\+\_\+1@{fconst\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fconst\+\_\+1()}{fconst\_1()}}
+{\footnotesize\ttfamily void fconst\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca uma constante 1 float na pilha. 
+
+\hypertarget{instructions_8h_aa2c5e3ce6d5b8daf54213367d7f02f25}{}\label{instructions_8h_aa2c5e3ce6d5b8daf54213367d7f02f25} 
+\index{instructions.\+h@{instructions.\+h}!fconst\+\_\+2@{fconst\+\_\+2}}
+\index{fconst\+\_\+2@{fconst\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fconst\+\_\+2()}{fconst\_2()}}
+{\footnotesize\ttfamily void fconst\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca uma constante 2 float na pilha. 
+
+\hypertarget{instructions_8h_a36fe02badb66c831b9da05b448c489fc}{}\label{instructions_8h_a36fe02badb66c831b9da05b448c489fc} 
+\index{instructions.\+h@{instructions.\+h}!fdiv@{fdiv}}
+\index{fdiv@{fdiv}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fdiv()}{fdiv()}}
+{\footnotesize\ttfamily void fdiv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Divide os dois valores float do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_aa3e85071d417a5fc35d9acca2deb91e2}{}\label{instructions_8h_aa3e85071d417a5fc35d9acca2deb91e2} 
+\index{instructions.\+h@{instructions.\+h}!fload@{fload}}
+\index{fload@{fload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fload()}{fload()}}
+{\footnotesize\ttfamily void fload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load a float value from a local variable \#index 
+
+\hypertarget{instructions_8h_affe32f4da26138ad4c46dc734b979055}{}\label{instructions_8h_affe32f4da26138ad4c46dc734b979055} 
+\index{instructions.\+h@{instructions.\+h}!fload\+\_\+0@{fload\+\_\+0}}
+\index{fload\+\_\+0@{fload\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fload\+\_\+0()}{fload\_0()}}
+{\footnotesize\ttfamily void fload\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 0 acha uma variavel local float na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a251c7799e471285cb5b69b2e24bd026e}{}\label{instructions_8h_a251c7799e471285cb5b69b2e24bd026e} 
+\index{instructions.\+h@{instructions.\+h}!fload\+\_\+1@{fload\+\_\+1}}
+\index{fload\+\_\+1@{fload\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fload\+\_\+1()}{fload\_1()}}
+{\footnotesize\ttfamily void fload\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 1 acha uma variavel local float na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a78a3005be5f239e0fc162fc1351253a6}{}\label{instructions_8h_a78a3005be5f239e0fc162fc1351253a6} 
+\index{instructions.\+h@{instructions.\+h}!fload\+\_\+2@{fload\+\_\+2}}
+\index{fload\+\_\+2@{fload\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fload\+\_\+2()}{fload\_2()}}
+{\footnotesize\ttfamily void fload\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 2 acha uma variavel local float na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a3ca0cddbce6c71b1f1639b567d0a2e86}{}\label{instructions_8h_a3ca0cddbce6c71b1f1639b567d0a2e86} 
+\index{instructions.\+h@{instructions.\+h}!fload\+\_\+3@{fload\+\_\+3}}
+\index{fload\+\_\+3@{fload\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fload\+\_\+3()}{fload\_3()}}
+{\footnotesize\ttfamily void fload\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 3 acha uma variavel local float na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a10d30f1e2fcb55284dcc2e4329121b7f}{}\label{instructions_8h_a10d30f1e2fcb55284dcc2e4329121b7f} 
+\index{instructions.\+h@{instructions.\+h}!fmul@{fmul}}
+\index{fmul@{fmul}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fmul()}{fmul()}}
+{\footnotesize\ttfamily void fmul (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Multiplica os dois valores float do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_a92ded25cd53bb087b251b019a5babb53}{}\label{instructions_8h_a92ded25cd53bb087b251b019a5babb53} 
+\index{instructions.\+h@{instructions.\+h}!fneg@{fneg}}
+\index{fneg@{fneg}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fneg()}{fneg()}}
+{\footnotesize\ttfamily void fneg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor negativo do float. 
+
+\hypertarget{instructions_8h_a1992d9a2a798b6e3e308fcd045f0ae6d}{}\label{instructions_8h_a1992d9a2a798b6e3e308fcd045f0ae6d} 
+\index{instructions.\+h@{instructions.\+h}!frem@{frem}}
+\index{frem@{frem}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{frem()}{frem()}}
+{\footnotesize\ttfamily void frem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o resto da divisao de dois floats. 
+
+\hypertarget{instructions_8h_a26a481f90473433e3602d5a98268bb2e}{}\label{instructions_8h_a26a481f90473433e3602d5a98268bb2e} 
+\index{instructions.\+h@{instructions.\+h}!freturn@{freturn}}
+\index{freturn@{freturn}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{freturn()}{freturn()}}
+{\footnotesize\ttfamily void freturn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retornar float de um metodo. 
+
+\hypertarget{instructions_8h_a3e8f01537767e49e052bc272c0922d9b}{}\label{instructions_8h_a3e8f01537767e49e052bc272c0922d9b} 
+\index{instructions.\+h@{instructions.\+h}!fstore@{fstore}}
+\index{fstore@{fstore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fstore()}{fstore()}}
+{\footnotesize\ttfamily void fstore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a float value into a local variable \#index 
+
+\hypertarget{instructions_8h_ad2ea86eafe30b372311ca99e2f67bbeb}{}\label{instructions_8h_ad2ea86eafe30b372311ca99e2f67bbeb} 
+\index{instructions.\+h@{instructions.\+h}!fstore\+\_\+0@{fstore\+\_\+0}}
+\index{fstore\+\_\+0@{fstore\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fstore\+\_\+0()}{fstore\_0()}}
+{\footnotesize\ttfamily void fstore\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable indice 0 
+
+\hypertarget{instructions_8h_a555a6c512008e55808c7b3d611a86127}{}\label{instructions_8h_a555a6c512008e55808c7b3d611a86127} 
+\index{instructions.\+h@{instructions.\+h}!fstore\+\_\+1@{fstore\+\_\+1}}
+\index{fstore\+\_\+1@{fstore\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fstore\+\_\+1()}{fstore\_1()}}
+{\footnotesize\ttfamily void fstore\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable indice 1 
+
+\hypertarget{instructions_8h_a4f559ad7d32c2e99eb1de0660e8cb87c}{}\label{instructions_8h_a4f559ad7d32c2e99eb1de0660e8cb87c} 
+\index{instructions.\+h@{instructions.\+h}!fstore\+\_\+2@{fstore\+\_\+2}}
+\index{fstore\+\_\+2@{fstore\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fstore\+\_\+2()}{fstore\_2()}}
+{\footnotesize\ttfamily void fstore\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable indice 2 
+
+\hypertarget{instructions_8h_adbab062e831d9b905a4e18900f90203b}{}\label{instructions_8h_adbab062e831d9b905a4e18900f90203b} 
+\index{instructions.\+h@{instructions.\+h}!fstore\+\_\+3@{fstore\+\_\+3}}
+\index{fstore\+\_\+3@{fstore\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fstore\+\_\+3()}{fstore\_3()}}
+{\footnotesize\ttfamily void fstore\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable indice 3 
+
+\hypertarget{instructions_8h_acd60d95a83a959a7e4c1abdfb52909be}{}\label{instructions_8h_acd60d95a83a959a7e4c1abdfb52909be} 
+\index{instructions.\+h@{instructions.\+h}!fsub@{fsub}}
+\index{fsub@{fsub}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{fsub()}{fsub()}}
+{\footnotesize\ttfamily void fsub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Subtrai os dois valores float do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_a840f06b326362c8d7d80b20820618f81}{}\label{instructions_8h_a840f06b326362c8d7d80b20820618f81} 
+\index{instructions.\+h@{instructions.\+h}!getfield@{getfield}}
+\index{getfield@{getfield}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{getfield()}{getfield()}}
+{\footnotesize\ttfamily void getfield (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Achar um campo a partir de um objeto. 
+
+\hypertarget{instructions_8h_a83c0c1e57fa9474537180722bdaf65ec}{}\label{instructions_8h_a83c0c1e57fa9474537180722bdaf65ec} 
+\index{instructions.\+h@{instructions.\+h}!getstatic@{getstatic}}
+\index{getstatic@{getstatic}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{getstatic()}{getstatic()}}
+{\footnotesize\ttfamily void getstatic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pegar um campo estatico a partir de uma classe. 
+
+\hypertarget{instructions_8h_a644324ed1a37c333efbc3f9c2ef2efa3}{}\label{instructions_8h_a644324ed1a37c333efbc3f9c2ef2efa3} 
+\index{instructions.\+h@{instructions.\+h}!goto\+\_\+w@{goto\+\_\+w}}
+\index{goto\+\_\+w@{goto\+\_\+w}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{goto\+\_\+w()}{goto\_w()}}
+{\footnotesize\ttfamily void goto\+\_\+w (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{instructions_8h_a9cd69873779952a0573433f1108297ec}{}\label{instructions_8h_a9cd69873779952a0573433f1108297ec} 
+\index{instructions.\+h@{instructions.\+h}!i2b@{i2b}}
+\index{i2b@{i2b}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{i2b()}{i2b()}}
+{\footnotesize\ttfamily void i2b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+C\+Onverte int para byte. 
+
+\hypertarget{instructions_8h_a5ee7da12ed48a0ddf225dab90f545220}{}\label{instructions_8h_a5ee7da12ed48a0ddf225dab90f545220} 
+\index{instructions.\+h@{instructions.\+h}!i2c@{i2c}}
+\index{i2c@{i2c}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{i2c()}{i2c()}}
+{\footnotesize\ttfamily void i2c (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+C\+Onverte int para char. 
+
+\hypertarget{instructions_8h_a9d8deb8e5c5ebae898071e8cf7c6faa7}{}\label{instructions_8h_a9d8deb8e5c5ebae898071e8cf7c6faa7} 
+\index{instructions.\+h@{instructions.\+h}!i2d@{i2d}}
+\index{i2d@{i2d}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{i2d()}{i2d()}}
+{\footnotesize\ttfamily void i2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte int para double. 
+
+\hypertarget{instructions_8h_aadc30d76e0798683a1f5579104f8feb8}{}\label{instructions_8h_aadc30d76e0798683a1f5579104f8feb8} 
+\index{instructions.\+h@{instructions.\+h}!i2f@{i2f}}
+\index{i2f@{i2f}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{i2f()}{i2f()}}
+{\footnotesize\ttfamily void i2f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte int para float. 
+
+\hypertarget{instructions_8h_ab70d39ee70866a2332f7726860e7fbfc}{}\label{instructions_8h_ab70d39ee70866a2332f7726860e7fbfc} 
+\index{instructions.\+h@{instructions.\+h}!i2l@{i2l}}
+\index{i2l@{i2l}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{i2l()}{i2l()}}
+{\footnotesize\ttfamily void i2l (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte int para long. 
+
+\hypertarget{instructions_8h_a03e39da403bc5933756defea4506b565}{}\label{instructions_8h_a03e39da403bc5933756defea4506b565} 
+\index{instructions.\+h@{instructions.\+h}!i2s@{i2s}}
+\index{i2s@{i2s}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{i2s()}{i2s()}}
+{\footnotesize\ttfamily void i2s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+C\+Onverte int para sshort. 
+
+\hypertarget{instructions_8h_ae37f8a1e267669e057f9e7917bd8ab39}{}\label{instructions_8h_ae37f8a1e267669e057f9e7917bd8ab39} 
+\index{instructions.\+h@{instructions.\+h}!iadd@{iadd}}
+\index{iadd@{iadd}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iadd()}{iadd()}}
+{\footnotesize\ttfamily void iadd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Soma os dois valores inteiros do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_a8c45e9d93b9b4160fcf9273188c4aeb1}{}\label{instructions_8h_a8c45e9d93b9b4160fcf9273188c4aeb1} 
+\index{instructions.\+h@{instructions.\+h}!iaload@{iaload}}
+\index{iaload@{iaload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iaload()}{iaload()}}
+{\footnotesize\ttfamily void iaload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Load int from array e coloca na pilha. 
+
+\hypertarget{instructions_8h_a33c91ef3a786b39fdf213a29341d0f1c}{}\label{instructions_8h_a33c91ef3a786b39fdf213a29341d0f1c} 
+\index{instructions.\+h@{instructions.\+h}!iand@{iand}}
+\index{iand@{iand}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iand()}{iand()}}
+{\footnotesize\ttfamily void iand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor da operação logica and entre inteiros. 
+
+\hypertarget{instructions_8h_a0d893ebbdfed60a8891f9aa310adf3b5}{}\label{instructions_8h_a0d893ebbdfed60a8891f9aa310adf3b5} 
+\index{instructions.\+h@{instructions.\+h}!iastore@{iastore}}
+\index{iastore@{iastore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iastore()}{iastore()}}
+{\footnotesize\ttfamily void iastore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tira um inteiro um index e um array da pilha e coloca o valor na posicao definida pelo index 
+
+\hypertarget{instructions_8h_aea322ceba1bd8d3ef7f33273d58e6f0b}{}\label{instructions_8h_aea322ceba1bd8d3ef7f33273d58e6f0b} 
+\index{instructions.\+h@{instructions.\+h}!iconst\+\_\+0@{iconst\+\_\+0}}
+\index{iconst\+\_\+0@{iconst\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iconst\+\_\+0()}{iconst\_0()}}
+{\footnotesize\ttfamily void iconst\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca -\/1 na pilha. 
+
+\hypertarget{instructions_8h_ad99980f3110041de270ec04c53107b8f}{}\label{instructions_8h_ad99980f3110041de270ec04c53107b8f} 
+\index{instructions.\+h@{instructions.\+h}!iconst\+\_\+1@{iconst\+\_\+1}}
+\index{iconst\+\_\+1@{iconst\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iconst\+\_\+1()}{iconst\_1()}}
+{\footnotesize\ttfamily void iconst\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca 1 na pilha. 
+
+\hypertarget{instructions_8h_ade068b77731b687d290ff8110b5111fb}{}\label{instructions_8h_ade068b77731b687d290ff8110b5111fb} 
+\index{instructions.\+h@{instructions.\+h}!iconst\+\_\+2@{iconst\+\_\+2}}
+\index{iconst\+\_\+2@{iconst\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iconst\+\_\+2()}{iconst\_2()}}
+{\footnotesize\ttfamily void iconst\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca 2 na pilha. 
+
+\hypertarget{instructions_8h_aa4de912d11b59f82deba1dc335d69123}{}\label{instructions_8h_aa4de912d11b59f82deba1dc335d69123} 
+\index{instructions.\+h@{instructions.\+h}!iconst\+\_\+3@{iconst\+\_\+3}}
+\index{iconst\+\_\+3@{iconst\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iconst\+\_\+3()}{iconst\_3()}}
+{\footnotesize\ttfamily void iconst\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca 3 na pilha. 
+
+\hypertarget{instructions_8h_a8c772a238a36dc3c353206ec51a65382}{}\label{instructions_8h_a8c772a238a36dc3c353206ec51a65382} 
+\index{instructions.\+h@{instructions.\+h}!iconst\+\_\+4@{iconst\+\_\+4}}
+\index{iconst\+\_\+4@{iconst\+\_\+4}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iconst\+\_\+4()}{iconst\_4()}}
+{\footnotesize\ttfamily void iconst\+\_\+4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca 4 na pilha. 
+
+\hypertarget{instructions_8h_a2e5a16634b3e5c00d324b462ea77183b}{}\label{instructions_8h_a2e5a16634b3e5c00d324b462ea77183b} 
+\index{instructions.\+h@{instructions.\+h}!iconst\+\_\+5@{iconst\+\_\+5}}
+\index{iconst\+\_\+5@{iconst\+\_\+5}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iconst\+\_\+5()}{iconst\_5()}}
+{\footnotesize\ttfamily void iconst\+\_\+5 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca 5 na pilha. 
+
+\hypertarget{instructions_8h_a3d4fe47d548d6189745787177183c38c}{}\label{instructions_8h_a3d4fe47d548d6189745787177183c38c} 
+\index{instructions.\+h@{instructions.\+h}!iconst\+\_\+m1@{iconst\+\_\+m1}}
+\index{iconst\+\_\+m1@{iconst\+\_\+m1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iconst\+\_\+m1()}{iconst\_m1()}}
+{\footnotesize\ttfamily void iconst\+\_\+m1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca -\/1 na pilha. 
+
+\hypertarget{instructions_8h_abd1598e346574cb1143404c595f28d63}{}\label{instructions_8h_abd1598e346574cb1143404c595f28d63} 
+\index{instructions.\+h@{instructions.\+h}!idiv@{idiv}}
+\index{idiv@{idiv}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{idiv()}{idiv()}}
+{\footnotesize\ttfamily void idiv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Divide os dois valores inteiros do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_ab590f77ad4e7cefbfb932bbc0ebd828b}{}\label{instructions_8h_ab590f77ad4e7cefbfb932bbc0ebd828b} 
+\index{instructions.\+h@{instructions.\+h}!if\+\_\+acmpeq@{if\+\_\+acmpeq}}
+\index{if\+\_\+acmpeq@{if\+\_\+acmpeq}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{if\+\_\+acmpeq()}{if\_acmpeq()}}
+{\footnotesize\ttfamily void if\+\_\+acmpeq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{instructions_8h_a9da2f76a2311bb18c095828a45d5e3b1}{}\label{instructions_8h_a9da2f76a2311bb18c095828a45d5e3b1} 
+\index{instructions.\+h@{instructions.\+h}!if\+\_\+acmpne@{if\+\_\+acmpne}}
+\index{if\+\_\+acmpne@{if\+\_\+acmpne}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{if\+\_\+acmpne()}{if\_acmpne()}}
+{\footnotesize\ttfamily void if\+\_\+acmpne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{instructions_8h_a470c812834d9d9f0c320f565b1003009}{}\label{instructions_8h_a470c812834d9d9f0c320f565b1003009} 
+\index{instructions.\+h@{instructions.\+h}!if\+\_\+icmpeq@{if\+\_\+icmpeq}}
+\index{if\+\_\+icmpeq@{if\+\_\+icmpeq}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{if\+\_\+icmpeq()}{if\_icmpeq()}}
+{\footnotesize\ttfamily void if\+\_\+icmpeq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o salto se value1 = value2. 
+
+\hypertarget{instructions_8h_a875d15b6c1fa77a9f9e519e2d8822de3}{}\label{instructions_8h_a875d15b6c1fa77a9f9e519e2d8822de3} 
+\index{instructions.\+h@{instructions.\+h}!if\+\_\+icmpge@{if\+\_\+icmpge}}
+\index{if\+\_\+icmpge@{if\+\_\+icmpge}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{if\+\_\+icmpge()}{if\_icmpge()}}
+{\footnotesize\ttfamily void if\+\_\+icmpge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o salto se value1 $>$= value2. 
+
+\hypertarget{instructions_8h_ab92037e7bb9912bed634f84fb54cb62b}{}\label{instructions_8h_ab92037e7bb9912bed634f84fb54cb62b} 
+\index{instructions.\+h@{instructions.\+h}!if\+\_\+icmpgt@{if\+\_\+icmpgt}}
+\index{if\+\_\+icmpgt@{if\+\_\+icmpgt}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{if\+\_\+icmpgt()}{if\_icmpgt()}}
+{\footnotesize\ttfamily void if\+\_\+icmpgt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o salto se value1 $>$ value2. 
+
+\hypertarget{instructions_8h_af27093d4a440ae4ed4c141e7dc036e53}{}\label{instructions_8h_af27093d4a440ae4ed4c141e7dc036e53} 
+\index{instructions.\+h@{instructions.\+h}!if\+\_\+icmple@{if\+\_\+icmple}}
+\index{if\+\_\+icmple@{if\+\_\+icmple}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{if\+\_\+icmple()}{if\_icmple()}}
+{\footnotesize\ttfamily void if\+\_\+icmple (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o salto se value1 $<$= value2. 
+
+\hypertarget{instructions_8h_a8b80858427afbf3aff075a379c37c213}{}\label{instructions_8h_a8b80858427afbf3aff075a379c37c213} 
+\index{instructions.\+h@{instructions.\+h}!if\+\_\+icmplt@{if\+\_\+icmplt}}
+\index{if\+\_\+icmplt@{if\+\_\+icmplt}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{if\+\_\+icmplt()}{if\_icmplt()}}
+{\footnotesize\ttfamily void if\+\_\+icmplt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o salto se value1 $<$ value2. 
+
+\hypertarget{instructions_8h_ad0175ab3a89f8a7bf5adfef314f1679f}{}\label{instructions_8h_ad0175ab3a89f8a7bf5adfef314f1679f} 
+\index{instructions.\+h@{instructions.\+h}!if\+\_\+icmpne@{if\+\_\+icmpne}}
+\index{if\+\_\+icmpne@{if\+\_\+icmpne}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{if\+\_\+icmpne()}{if\_icmpne()}}
+{\footnotesize\ttfamily void if\+\_\+icmpne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o salto se value1 != value2. 
+
+\hypertarget{instructions_8h_a00f7f2c7697351802eca88223c74ea3a}{}\label{instructions_8h_a00f7f2c7697351802eca88223c74ea3a} 
+\index{instructions.\+h@{instructions.\+h}!ifeq@{ifeq}}
+\index{ifeq@{ifeq}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ifeq()}{ifeq()}}
+{\footnotesize\ttfamily void ifeq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Se o valor for zero vai para instrução no branchoffset. 
+
+\hypertarget{instructions_8h_a9866c2d4df3b46703dfc5d78b7ff1e94}{}\label{instructions_8h_a9866c2d4df3b46703dfc5d78b7ff1e94} 
+\index{instructions.\+h@{instructions.\+h}!ifge@{ifge}}
+\index{ifge@{ifge}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ifge()}{ifge()}}
+{\footnotesize\ttfamily void ifge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Se o valor for maior que zero vai para instrução no branchoffset. 
+
+\hypertarget{instructions_8h_a6e4e8b89a51f6a116e9747c6ba6971ca}{}\label{instructions_8h_a6e4e8b89a51f6a116e9747c6ba6971ca} 
+\index{instructions.\+h@{instructions.\+h}!ifgt@{ifgt}}
+\index{ifgt@{ifgt}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ifgt()}{ifgt()}}
+{\footnotesize\ttfamily void ifgt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Se o valor for maior igual a zero vai para instrução no branchoffset. 
+
+\hypertarget{instructions_8h_afe217b1e83881dd72a69978bbaae1952}{}\label{instructions_8h_afe217b1e83881dd72a69978bbaae1952} 
+\index{instructions.\+h@{instructions.\+h}!ifle@{ifle}}
+\index{ifle@{ifle}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ifle()}{ifle()}}
+{\footnotesize\ttfamily void ifle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Se o valor for menor igual a zero vai para instrução no branchoffset. 
+
+\hypertarget{instructions_8h_ad77daa64120db9e391d82efd349e0db6}{}\label{instructions_8h_ad77daa64120db9e391d82efd349e0db6} 
+\index{instructions.\+h@{instructions.\+h}!iflt@{iflt}}
+\index{iflt@{iflt}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iflt()}{iflt()}}
+{\footnotesize\ttfamily void iflt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Se o valor for menor que zero vai para instrução no branchoffset. 
+
+\hypertarget{instructions_8h_a554aa695cd67a5d9487a72426bb08330}{}\label{instructions_8h_a554aa695cd67a5d9487a72426bb08330} 
+\index{instructions.\+h@{instructions.\+h}!ifne@{ifne}}
+\index{ifne@{ifne}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ifne()}{ifne()}}
+{\footnotesize\ttfamily void ifne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Se o valor for diferente de zero vai para instrução no branchoffset. 
+
+\hypertarget{instructions_8h_ae39581b0d862caf7323264596950cdd9}{}\label{instructions_8h_ae39581b0d862caf7323264596950cdd9} 
+\index{instructions.\+h@{instructions.\+h}!ifnonnull@{ifnonnull}}
+\index{ifnonnull@{ifnonnull}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ifnonnull()}{ifnonnull()}}
+{\footnotesize\ttfamily void ifnonnull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza salto se o valor na pilha de operandos não for nulo. 
+
+\hypertarget{instructions_8h_a1fd103c7e18b630298192875914467fa}{}\label{instructions_8h_a1fd103c7e18b630298192875914467fa} 
+\index{instructions.\+h@{instructions.\+h}!ifnull@{ifnull}}
+\index{ifnull@{ifnull}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ifnull()}{ifnull()}}
+{\footnotesize\ttfamily void ifnull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza salto se o valor na pilha de operandos for nulo. 
+
+\hypertarget{instructions_8h_a9b9640224970ab26f3ed804039633737}{}\label{instructions_8h_a9b9640224970ab26f3ed804039633737} 
+\index{instructions.\+h@{instructions.\+h}!iinc@{iinc}}
+\index{iinc@{iinc}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iinc()}{iinc()}}
+{\footnotesize\ttfamily void iinc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Incrementa variavel local em uma constante. 
+
+\hypertarget{instructions_8h_a30a4061a47793773606ff72c0b81ddb1}{}\label{instructions_8h_a30a4061a47793773606ff72c0b81ddb1} 
+\index{instructions.\+h@{instructions.\+h}!iload@{iload}}
+\index{iload@{iload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iload()}{iload()}}
+{\footnotesize\ttfamily void iload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Carrega um int na pilha a partir de um indice para as variaveis locais. 
+
+\hypertarget{instructions_8h_aca5ca79be27a14e2dba470ceb7f3654a}{}\label{instructions_8h_aca5ca79be27a14e2dba470ceb7f3654a} 
+\index{instructions.\+h@{instructions.\+h}!iload\+\_\+0@{iload\+\_\+0}}
+\index{iload\+\_\+0@{iload\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iload\+\_\+0()}{iload\_0()}}
+{\footnotesize\ttfamily void iload\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 0 acha uma variavel local inteira na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a10fcbbe1a4c6ddec0bbe135218268af9}{}\label{instructions_8h_a10fcbbe1a4c6ddec0bbe135218268af9} 
+\index{instructions.\+h@{instructions.\+h}!iload\+\_\+1@{iload\+\_\+1}}
+\index{iload\+\_\+1@{iload\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iload\+\_\+1()}{iload\_1()}}
+{\footnotesize\ttfamily void iload\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 1 acha uma variavel local inteira na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a3bd5260f8a2c829e158d7f49b1ef7e91}{}\label{instructions_8h_a3bd5260f8a2c829e158d7f49b1ef7e91} 
+\index{instructions.\+h@{instructions.\+h}!iload\+\_\+2@{iload\+\_\+2}}
+\index{iload\+\_\+2@{iload\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iload\+\_\+2()}{iload\_2()}}
+{\footnotesize\ttfamily void iload\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 2 acha uma variavel local inteira na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a244c1eb8abc603a256a5e932beb9fa75}{}\label{instructions_8h_a244c1eb8abc603a256a5e932beb9fa75} 
+\index{instructions.\+h@{instructions.\+h}!iload\+\_\+3@{iload\+\_\+3}}
+\index{iload\+\_\+3@{iload\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iload\+\_\+3()}{iload\_3()}}
+{\footnotesize\ttfamily void iload\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 3 acha uma variavel local inteira na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a252b30e3c8b67c5dc8c2ad5b358e8c49}{}\label{instructions_8h_a252b30e3c8b67c5dc8c2ad5b358e8c49} 
+\index{instructions.\+h@{instructions.\+h}!imul@{imul}}
+\index{imul@{imul}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{imul()}{imul()}}
+{\footnotesize\ttfamily void imul (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Multiplica os dois valores inteiros do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_a0b9cbceea9fb0e139c0c671651e29f99}{}\label{instructions_8h_a0b9cbceea9fb0e139c0c671651e29f99} 
+\index{instructions.\+h@{instructions.\+h}!ineg@{ineg}}
+\index{ineg@{ineg}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ineg()}{ineg()}}
+{\footnotesize\ttfamily void ineg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor negativo do inteiro. 
+
+\hypertarget{instructions_8h_a90fe5ed5390bbde442c25342f6634910}{}\label{instructions_8h_a90fe5ed5390bbde442c25342f6634910} 
+\index{instructions.\+h@{instructions.\+h}!ins\+\_\+goto@{ins\+\_\+goto}}
+\index{ins\+\_\+goto@{ins\+\_\+goto}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ins\+\_\+goto()}{ins\_goto()}}
+{\footnotesize\ttfamily void ins\+\_\+goto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o salto para dado offset. 
+
+\hypertarget{instructions_8h_aa44e50413a638ff669df97ac2223c526}{}\label{instructions_8h_aa44e50413a638ff669df97ac2223c526} 
+\index{instructions.\+h@{instructions.\+h}!ins\+\_\+ldiv@{ins\+\_\+ldiv}}
+\index{ins\+\_\+ldiv@{ins\+\_\+ldiv}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ins\+\_\+ldiv()}{ins\_ldiv()}}
+{\footnotesize\ttfamily void ins\+\_\+ldiv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Divide os dois valores longs do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_a8b31d2a9b5f40beb9895de019f02e99d}{}\label{instructions_8h_a8b31d2a9b5f40beb9895de019f02e99d} 
+\index{instructions.\+h@{instructions.\+h}!ins\+\_\+new@{ins\+\_\+new}}
+\index{ins\+\_\+new@{ins\+\_\+new}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ins\+\_\+new()}{ins\_new()}}
+{\footnotesize\ttfamily void ins\+\_\+new (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Carregar objeto na pilha utilizando de um indice para o constant pool como operando. 
+
+\hypertarget{instructions_8h_a4c4804ae17465674d489279d4f95da76}{}\label{instructions_8h_a4c4804ae17465674d489279d4f95da76} 
+\index{instructions.\+h@{instructions.\+h}!instanceof@{instanceof}}
+\index{instanceof@{instanceof}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{instanceof()}{instanceof()}}
+{\footnotesize\ttfamily void instanceof (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{instructions_8h_a04465c61aa4c123ce79dc562244e7af8}{}\label{instructions_8h_a04465c61aa4c123ce79dc562244e7af8} 
+\index{instructions.\+h@{instructions.\+h}!invokeinterface@{invokeinterface}}
+\index{invokeinterface@{invokeinterface}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{invokeinterface()}{invokeinterface()}}
+{\footnotesize\ttfamily void invokeinterface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Invocar interface metodo. 
+
+\hypertarget{instructions_8h_aea396d65920fd2046b81c2b5742f8fc2}{}\label{instructions_8h_aea396d65920fd2046b81c2b5742f8fc2} 
+\index{instructions.\+h@{instructions.\+h}!invokespecial@{invokespecial}}
+\index{invokespecial@{invokespecial}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{invokespecial()}{invokespecial()}}
+{\footnotesize\ttfamily void invokespecial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Invoca metodo com tratamento especial para superclass privite e metodos de incializacao de instancia. 
+
+\hypertarget{instructions_8h_a99b74fdcaa5d59615718fc49f4cb1bf2}{}\label{instructions_8h_a99b74fdcaa5d59615718fc49f4cb1bf2} 
+\index{instructions.\+h@{instructions.\+h}!invokestatic@{invokestatic}}
+\index{invokestatic@{invokestatic}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{invokestatic()}{invokestatic()}}
+{\footnotesize\ttfamily void invokestatic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Invocar uma metodo estático de uma classe. 
+
+\hypertarget{instructions_8h_a78801a57dd7317b58754d741e22607a7}{}\label{instructions_8h_a78801a57dd7317b58754d741e22607a7} 
+\index{instructions.\+h@{instructions.\+h}!invokevirtual@{invokevirtual}}
+\index{invokevirtual@{invokevirtual}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{invokevirtual()}{invokevirtual()}}
+{\footnotesize\ttfamily void invokevirtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Chamar metodo despachar baseado na classe. 
+
+\hypertarget{instructions_8h_a1b61e8115820a72297d297484dc9072e}{}\label{instructions_8h_a1b61e8115820a72297d297484dc9072e} 
+\index{instructions.\+h@{instructions.\+h}!ior@{ior}}
+\index{ior@{ior}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ior()}{ior()}}
+{\footnotesize\ttfamily void ior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor da operação logica or entre inteiros. 
+
+\hypertarget{instructions_8h_ade3f7ae2b8bf66076ec711047118b210}{}\label{instructions_8h_ade3f7ae2b8bf66076ec711047118b210} 
+\index{instructions.\+h@{instructions.\+h}!irem@{irem}}
+\index{irem@{irem}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{irem()}{irem()}}
+{\footnotesize\ttfamily void irem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o resto da divisao de dois inteiros. 
+
+\hypertarget{instructions_8h_a3a8cf7689c78ddea746200743907f5a7}{}\label{instructions_8h_a3a8cf7689c78ddea746200743907f5a7} 
+\index{instructions.\+h@{instructions.\+h}!ireturn@{ireturn}}
+\index{ireturn@{ireturn}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ireturn()}{ireturn()}}
+{\footnotesize\ttfamily void ireturn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retornar int de um metodo. 
+
+\hypertarget{instructions_8h_ad1790bd7f7ba088526767d70579bdf6f}{}\label{instructions_8h_ad1790bd7f7ba088526767d70579bdf6f} 
+\index{instructions.\+h@{instructions.\+h}!ishl@{ishl}}
+\index{ishl@{ishl}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ishl()}{ishl()}}
+{\footnotesize\ttfamily void ishl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor do shift left do int. 
+
+\hypertarget{instructions_8h_a04ab90a481c69b7d1c67ed03a5672b6f}{}\label{instructions_8h_a04ab90a481c69b7d1c67ed03a5672b6f} 
+\index{instructions.\+h@{instructions.\+h}!ishr@{ishr}}
+\index{ishr@{ishr}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ishr()}{ishr()}}
+{\footnotesize\ttfamily void ishr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor do shift right do int. 
+
+\hypertarget{instructions_8h_a28a80d06be99de713084ea98747681bd}{}\label{instructions_8h_a28a80d06be99de713084ea98747681bd} 
+\index{instructions.\+h@{instructions.\+h}!istore@{istore}}
+\index{istore@{istore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{istore()}{istore()}}
+{\footnotesize\ttfamily void istore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store int value into variable \#index 
+
+\hypertarget{instructions_8h_aedbdf11ae3fa8a748d1988f678f8962a}{}\label{instructions_8h_aedbdf11ae3fa8a748d1988f678f8962a} 
+\index{instructions.\+h@{instructions.\+h}!istore\+\_\+0@{istore\+\_\+0}}
+\index{istore\+\_\+0@{istore\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{istore\+\_\+0()}{istore\_0()}}
+{\footnotesize\ttfamily void istore\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store int value into variable indice 0 
+
+\hypertarget{instructions_8h_a120fd2a91d9c1474b620d367f0ee814a}{}\label{instructions_8h_a120fd2a91d9c1474b620d367f0ee814a} 
+\index{instructions.\+h@{instructions.\+h}!istore\+\_\+1@{istore\+\_\+1}}
+\index{istore\+\_\+1@{istore\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{istore\+\_\+1()}{istore\_1()}}
+{\footnotesize\ttfamily void istore\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store int value into variable indice 1 
+
+\hypertarget{instructions_8h_ab34a066338af6add5236ac1a93528e82}{}\label{instructions_8h_ab34a066338af6add5236ac1a93528e82} 
+\index{instructions.\+h@{instructions.\+h}!istore\+\_\+2@{istore\+\_\+2}}
+\index{istore\+\_\+2@{istore\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{istore\+\_\+2()}{istore\_2()}}
+{\footnotesize\ttfamily void istore\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store int value into variable indice 2 
+
+\hypertarget{instructions_8h_a0c2d8e314bca01ab20c2bc79c200ef2d}{}\label{instructions_8h_a0c2d8e314bca01ab20c2bc79c200ef2d} 
+\index{instructions.\+h@{instructions.\+h}!istore\+\_\+3@{istore\+\_\+3}}
+\index{istore\+\_\+3@{istore\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{istore\+\_\+3()}{istore\_3()}}
+{\footnotesize\ttfamily void istore\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store int value into variable indice 3 
+
+\hypertarget{instructions_8h_a01d07133e63f9ac7e86ee2d3ec9baf8f}{}\label{instructions_8h_a01d07133e63f9ac7e86ee2d3ec9baf8f} 
+\index{instructions.\+h@{instructions.\+h}!isub@{isub}}
+\index{isub@{isub}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{isub()}{isub()}}
+{\footnotesize\ttfamily void isub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Subtrai os dois valores inteiros do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_a07527b3c36aefdfa7c6aee9ed9c07dcd}{}\label{instructions_8h_a07527b3c36aefdfa7c6aee9ed9c07dcd} 
+\index{instructions.\+h@{instructions.\+h}!iushr@{iushr}}
+\index{iushr@{iushr}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{iushr()}{iushr()}}
+{\footnotesize\ttfamily void iushr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor do shift right logico do int. 
+
+\hypertarget{instructions_8h_a66dc9092c80d31e38c139d23ec632ad7}{}\label{instructions_8h_a66dc9092c80d31e38c139d23ec632ad7} 
+\index{instructions.\+h@{instructions.\+h}!ixor@{ixor}}
+\index{ixor@{ixor}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ixor()}{ixor()}}
+{\footnotesize\ttfamily void ixor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor da operação logica xor entre interos. 
+
+\hypertarget{instructions_8h_a80622b913b8283b74fd2df62501af707}{}\label{instructions_8h_a80622b913b8283b74fd2df62501af707} 
+\index{instructions.\+h@{instructions.\+h}!jsr@{jsr}}
+\index{jsr@{jsr}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{jsr()}{jsr()}}
+{\footnotesize\ttfamily void jsr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o salto para dado offset e coloca endereco de retorno na pilha. 
+
+\hypertarget{instructions_8h_a2db60a7b925afb86257991907c127e99}{}\label{instructions_8h_a2db60a7b925afb86257991907c127e99} 
+\index{instructions.\+h@{instructions.\+h}!jsr\+\_\+w@{jsr\+\_\+w}}
+\index{jsr\+\_\+w@{jsr\+\_\+w}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{jsr\+\_\+w()}{jsr\_w()}}
+{\footnotesize\ttfamily void jsr\+\_\+w (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{instructions_8h_a462cebd11df3daa816e0163289d3fa91}{}\label{instructions_8h_a462cebd11df3daa816e0163289d3fa91} 
+\index{instructions.\+h@{instructions.\+h}!l2d@{l2d}}
+\index{l2d@{l2d}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{l2d()}{l2d()}}
+{\footnotesize\ttfamily void l2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte long para double. 
+
+\hypertarget{instructions_8h_a17f70bc1852fdbf3c93ee7686903f85b}{}\label{instructions_8h_a17f70bc1852fdbf3c93ee7686903f85b} 
+\index{instructions.\+h@{instructions.\+h}!l2f@{l2f}}
+\index{l2f@{l2f}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{l2f()}{l2f()}}
+{\footnotesize\ttfamily void l2f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte long para float. 
+
+\hypertarget{instructions_8h_a5e86260d8dd517db67571c027d78dfed}{}\label{instructions_8h_a5e86260d8dd517db67571c027d78dfed} 
+\index{instructions.\+h@{instructions.\+h}!l2i@{l2i}}
+\index{l2i@{l2i}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{l2i()}{l2i()}}
+{\footnotesize\ttfamily void l2i (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converte long para int. 
+
+\hypertarget{instructions_8h_a9f6b80c0262230eb9842d2378fc49cf4}{}\label{instructions_8h_a9f6b80c0262230eb9842d2378fc49cf4} 
+\index{instructions.\+h@{instructions.\+h}!ladd@{ladd}}
+\index{ladd@{ladd}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ladd()}{ladd()}}
+{\footnotesize\ttfamily void ladd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Soma os dois valores long do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_ab0c61415cc28b4f1f5c1452ffc0a3999}{}\label{instructions_8h_ab0c61415cc28b4f1f5c1452ffc0a3999} 
+\index{instructions.\+h@{instructions.\+h}!laload@{laload}}
+\index{laload@{laload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{laload()}{laload()}}
+{\footnotesize\ttfamily void laload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Load long from array e coloca na pilha. 
+
+\hypertarget{instructions_8h_a3c29060e61e5ef8929d29158353dfa7e}{}\label{instructions_8h_a3c29060e61e5ef8929d29158353dfa7e} 
+\index{instructions.\+h@{instructions.\+h}!land@{land}}
+\index{land@{land}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{land()}{land()}}
+{\footnotesize\ttfamily void land (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor da operação logica and entre longs. 
+
+\hypertarget{instructions_8h_a0d94f9666466006f4e1efba4565f9621}{}\label{instructions_8h_a0d94f9666466006f4e1efba4565f9621} 
+\index{instructions.\+h@{instructions.\+h}!lastore@{lastore}}
+\index{lastore@{lastore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lastore()}{lastore()}}
+{\footnotesize\ttfamily void lastore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tira um long um index e um array da pilha e coloca o valor na posicao definida pelo index 
+
+\hypertarget{instructions_8h_acf8b8fe8a537ea0dbaf4eead0b4ae832}{}\label{instructions_8h_acf8b8fe8a537ea0dbaf4eead0b4ae832} 
+\index{instructions.\+h@{instructions.\+h}!lcmp@{lcmp}}
+\index{lcmp@{lcmp}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lcmp()}{lcmp()}}
+{\footnotesize\ttfamily void lcmp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+C\+Ompra longs. 
+
+\hypertarget{instructions_8h_a404bc01bc13afddc52495b6a77a2ff4d}{}\label{instructions_8h_a404bc01bc13afddc52495b6a77a2ff4d} 
+\index{instructions.\+h@{instructions.\+h}!lconst\+\_\+0@{lconst\+\_\+0}}
+\index{lconst\+\_\+0@{lconst\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lconst\+\_\+0()}{lconst\_0()}}
+{\footnotesize\ttfamily void lconst\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca uma constante 0 long na pilha. 
+
+\hypertarget{instructions_8h_a47ef909a27b1a683c8941d87f542b162}{}\label{instructions_8h_a47ef909a27b1a683c8941d87f542b162} 
+\index{instructions.\+h@{instructions.\+h}!lconst\+\_\+1@{lconst\+\_\+1}}
+\index{lconst\+\_\+1@{lconst\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lconst\+\_\+1()}{lconst\_1()}}
+{\footnotesize\ttfamily void lconst\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca uma constante 1 long na pilha. 
+
+\hypertarget{instructions_8h_a05601922d5b1a9203cd26a1a21789255}{}\label{instructions_8h_a05601922d5b1a9203cd26a1a21789255} 
+\index{instructions.\+h@{instructions.\+h}!ldc@{ldc}}
+\index{ldc@{ldc}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ldc()}{ldc()}}
+{\footnotesize\ttfamily void ldc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca um item na pilha retirado do constant pool. 
+
+\hypertarget{instructions_8h_ae507168e021393f8ee28cf11c80e5349}{}\label{instructions_8h_ae507168e021393f8ee28cf11c80e5349} 
+\index{instructions.\+h@{instructions.\+h}!ldc2\+\_\+w@{ldc2\+\_\+w}}
+\index{ldc2\+\_\+w@{ldc2\+\_\+w}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ldc2\+\_\+w()}{ldc2\_w()}}
+{\footnotesize\ttfamily void ldc2\+\_\+w (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca um item long ou double na pilha retirado do constant pool indice 16 bits. 
+
+\hypertarget{instructions_8h_a24bf1524b99a783375f26b5e4f79fb44}{}\label{instructions_8h_a24bf1524b99a783375f26b5e4f79fb44} 
+\index{instructions.\+h@{instructions.\+h}!ldc\+\_\+w@{ldc\+\_\+w}}
+\index{ldc\+\_\+w@{ldc\+\_\+w}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ldc\+\_\+w()}{ldc\_w()}}
+{\footnotesize\ttfamily void ldc\+\_\+w (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca um item na pilha retirado do constant pool indice de 16 bits. 
+
+\hypertarget{instructions_8h_a7226903dff59a80c04a44f84578cdad0}{}\label{instructions_8h_a7226903dff59a80c04a44f84578cdad0} 
+\index{instructions.\+h@{instructions.\+h}!lload@{lload}}
+\index{lload@{lload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lload()}{lload()}}
+{\footnotesize\ttfamily void lload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load a long value from a local variable \#index 
+
+\hypertarget{instructions_8h_abeae105a6ead0eb87caedb8ad91a5770}{}\label{instructions_8h_abeae105a6ead0eb87caedb8ad91a5770} 
+\index{instructions.\+h@{instructions.\+h}!lload\+\_\+0@{lload\+\_\+0}}
+\index{lload\+\_\+0@{lload\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lload\+\_\+0()}{lload\_0()}}
+{\footnotesize\ttfamily void lload\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 0 acha uma variavel local long na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_aadaebe19e5662365a33a9a0ab37b8335}{}\label{instructions_8h_aadaebe19e5662365a33a9a0ab37b8335} 
+\index{instructions.\+h@{instructions.\+h}!lload\+\_\+1@{lload\+\_\+1}}
+\index{lload\+\_\+1@{lload\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lload\+\_\+1()}{lload\_1()}}
+{\footnotesize\ttfamily void lload\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 1 acha uma variavel local long na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a772d2097155cfdbd5a8b3f897d84b7e2}{}\label{instructions_8h_a772d2097155cfdbd5a8b3f897d84b7e2} 
+\index{instructions.\+h@{instructions.\+h}!lload\+\_\+2@{lload\+\_\+2}}
+\index{lload\+\_\+2@{lload\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lload\+\_\+2()}{lload\_2()}}
+{\footnotesize\ttfamily void lload\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 2 acha uma variavel local long na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a4f6467c1c2e79085cc34fe84ad78f4f0}{}\label{instructions_8h_a4f6467c1c2e79085cc34fe84ad78f4f0} 
+\index{instructions.\+h@{instructions.\+h}!lload\+\_\+3@{lload\+\_\+3}}
+\index{lload\+\_\+3@{lload\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lload\+\_\+3()}{lload\_3()}}
+{\footnotesize\ttfamily void lload\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Com o indice 3 acha uma variavel local long na area de fields, coloca o valor dessa variavel na pilha de operandos. 
+
+\hypertarget{instructions_8h_a12d2fea9cb9a2ac29b655232f28b6a46}{}\label{instructions_8h_a12d2fea9cb9a2ac29b655232f28b6a46} 
+\index{instructions.\+h@{instructions.\+h}!lmul@{lmul}}
+\index{lmul@{lmul}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lmul()}{lmul()}}
+{\footnotesize\ttfamily void lmul (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Multiplica os dois valores long do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_aa9bfa074a687ac1c23d0f36d9c39cedc}{}\label{instructions_8h_aa9bfa074a687ac1c23d0f36d9c39cedc} 
+\index{instructions.\+h@{instructions.\+h}!lneg@{lneg}}
+\index{lneg@{lneg}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lneg()}{lneg()}}
+{\footnotesize\ttfamily void lneg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor negativo do long. 
+
+\hypertarget{instructions_8h_a2f88ead173d23c965568aea52b1a0768}{}\label{instructions_8h_a2f88ead173d23c965568aea52b1a0768} 
+\index{instructions.\+h@{instructions.\+h}!lookupswitch@{lookupswitch}}
+\index{lookupswitch@{lookupswitch}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lookupswitch()}{lookupswitch()}}
+{\footnotesize\ttfamily void lookupswitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Acessar tabela de salto por chave e realizar salto. 
+
+\hypertarget{instructions_8h_ad4ea0c2e3bf8cd6f8fbaed5644ab1a33}{}\label{instructions_8h_ad4ea0c2e3bf8cd6f8fbaed5644ab1a33} 
+\index{instructions.\+h@{instructions.\+h}!lor@{lor}}
+\index{lor@{lor}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lor()}{lor()}}
+{\footnotesize\ttfamily void lor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor da operação logica or entre longs. 
+
+\hypertarget{instructions_8h_afd8ef785713dfa57189029ec1ab9aac9}{}\label{instructions_8h_afd8ef785713dfa57189029ec1ab9aac9} 
+\index{instructions.\+h@{instructions.\+h}!lrem@{lrem}}
+\index{lrem@{lrem}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lrem()}{lrem()}}
+{\footnotesize\ttfamily void lrem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o resto da divisao de dois longs. 
+
+\hypertarget{instructions_8h_a3619de9ed777231ca7783e97c4a3bbb8}{}\label{instructions_8h_a3619de9ed777231ca7783e97c4a3bbb8} 
+\index{instructions.\+h@{instructions.\+h}!lreturn@{lreturn}}
+\index{lreturn@{lreturn}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lreturn()}{lreturn()}}
+{\footnotesize\ttfamily void lreturn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retornar long de um metodo. 
+
+\hypertarget{instructions_8h_a7609e2fa0a7b13871ed165268c517203}{}\label{instructions_8h_a7609e2fa0a7b13871ed165268c517203} 
+\index{instructions.\+h@{instructions.\+h}!lshl@{lshl}}
+\index{lshl@{lshl}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lshl()}{lshl()}}
+{\footnotesize\ttfamily void lshl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor do shift left do long. 
+
+\hypertarget{instructions_8h_a524e6f8741e8c2ab2bf194123341578d}{}\label{instructions_8h_a524e6f8741e8c2ab2bf194123341578d} 
+\index{instructions.\+h@{instructions.\+h}!lshr@{lshr}}
+\index{lshr@{lshr}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lshr()}{lshr()}}
+{\footnotesize\ttfamily void lshr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor do shift right do long. 
+
+\hypertarget{instructions_8h_aa74420d088939afdf32f52fe86d4b2f7}{}\label{instructions_8h_aa74420d088939afdf32f52fe86d4b2f7} 
+\index{instructions.\+h@{instructions.\+h}!lstore@{lstore}}
+\index{lstore@{lstore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lstore()}{lstore()}}
+{\footnotesize\ttfamily void lstore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable \#index 
+
+\hypertarget{instructions_8h_a34a9c4656c38f9051e0cd35fa49e12c4}{}\label{instructions_8h_a34a9c4656c38f9051e0cd35fa49e12c4} 
+\index{instructions.\+h@{instructions.\+h}!lstore\+\_\+0@{lstore\+\_\+0}}
+\index{lstore\+\_\+0@{lstore\+\_\+0}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lstore\+\_\+0()}{lstore\_0()}}
+{\footnotesize\ttfamily void lstore\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable indice 0 
+
+\hypertarget{instructions_8h_a2b3d118b1bbe7f6e326b33cf673f0a64}{}\label{instructions_8h_a2b3d118b1bbe7f6e326b33cf673f0a64} 
+\index{instructions.\+h@{instructions.\+h}!lstore\+\_\+1@{lstore\+\_\+1}}
+\index{lstore\+\_\+1@{lstore\+\_\+1}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lstore\+\_\+1()}{lstore\_1()}}
+{\footnotesize\ttfamily void lstore\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable indice 1 
+
+\hypertarget{instructions_8h_af43fe1c19bb5815c373fe5244286bada}{}\label{instructions_8h_af43fe1c19bb5815c373fe5244286bada} 
+\index{instructions.\+h@{instructions.\+h}!lstore\+\_\+2@{lstore\+\_\+2}}
+\index{lstore\+\_\+2@{lstore\+\_\+2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lstore\+\_\+2()}{lstore\_2()}}
+{\footnotesize\ttfamily void lstore\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable indice 2 
+
+\hypertarget{instructions_8h_aa06af1f01f065c77ea7911e72a633b38}{}\label{instructions_8h_aa06af1f01f065c77ea7911e72a633b38} 
+\index{instructions.\+h@{instructions.\+h}!lstore\+\_\+3@{lstore\+\_\+3}}
+\index{lstore\+\_\+3@{lstore\+\_\+3}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lstore\+\_\+3()}{lstore\_3()}}
+{\footnotesize\ttfamily void lstore\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+store a long value in a local variable indice 3 
+
+\hypertarget{instructions_8h_aaa1cc04476ac5a3a1ec66b5098169f91}{}\label{instructions_8h_aaa1cc04476ac5a3a1ec66b5098169f91} 
+\index{instructions.\+h@{instructions.\+h}!lsub@{lsub}}
+\index{lsub@{lsub}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lsub()}{lsub()}}
+{\footnotesize\ttfamily void lsub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Subtrai os dois valores long do topo da pilha e coloca na pilha o resultado. 
+
+\hypertarget{instructions_8h_aa2f8be3fb4c164d1ed72c675a2319636}{}\label{instructions_8h_aa2f8be3fb4c164d1ed72c675a2319636} 
+\index{instructions.\+h@{instructions.\+h}!lushr@{lushr}}
+\index{lushr@{lushr}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lushr()}{lushr()}}
+{\footnotesize\ttfamily void lushr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor do shift right logico do long. 
+
+\hypertarget{instructions_8h_ad7f8e11c8b10535c5f00b02022d3019f}{}\label{instructions_8h_ad7f8e11c8b10535c5f00b02022d3019f} 
+\index{instructions.\+h@{instructions.\+h}!lxor@{lxor}}
+\index{lxor@{lxor}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{lxor()}{lxor()}}
+{\footnotesize\ttfamily void lxor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula o valor da operação logica xor entre longs. 
+
+\hypertarget{instructions_8h_ae3250087ab8dbd608d14e21f1377cbde}{}\label{instructions_8h_ae3250087ab8dbd608d14e21f1377cbde} 
+\index{instructions.\+h@{instructions.\+h}!multianewarray@{multianewarray}}
+\index{multianewarray@{multianewarray}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{multianewarray()}{multianewarray()}}
+{\footnotesize\ttfamily void multianewarray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria arrays multidimencionais de todos os possíveis tipos. 
+
+\hypertarget{instructions_8h_ac3fba9efa00d7e123c76bb67ef1253e4}{}\label{instructions_8h_ac3fba9efa00d7e123c76bb67ef1253e4} 
+\index{instructions.\+h@{instructions.\+h}!newarray@{newarray}}
+\index{newarray@{newarray}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{newarray()}{newarray()}}
+{\footnotesize\ttfamily void newarray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria um novo array podendo ser de todos os possíveis tipos. 
+
+\hypertarget{instructions_8h_a9feb7476507383309c8e3ff2648016f3}{}\label{instructions_8h_a9feb7476507383309c8e3ff2648016f3} 
+\index{instructions.\+h@{instructions.\+h}!nop@{nop}}
+\index{nop@{nop}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{nop()}{nop()}}
+{\footnotesize\ttfamily void nop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+fazer nada 
+
+\hypertarget{instructions_8h_a312e7f6c761a199c1369fbe651e084f0}{}\label{instructions_8h_a312e7f6c761a199c1369fbe651e084f0} 
+\index{instructions.\+h@{instructions.\+h}!pop@{pop}}
+\index{pop@{pop}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily void pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+pop operand da pilha 
+
+\hypertarget{instructions_8h_aa0a7b0e8bd7b85b3befdf254b3e4aa2c}{}\label{instructions_8h_aa0a7b0e8bd7b85b3befdf254b3e4aa2c} 
+\index{instructions.\+h@{instructions.\+h}!pop2@{pop2}}
+\index{pop2@{pop2}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{pop2()}{pop2()}}
+{\footnotesize\ttfamily void pop2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pop 2 operandos da pilha. 
+
+\hypertarget{instructions_8h_ac99fc237dc3eb223fe72de3a325220f7}{}\label{instructions_8h_ac99fc237dc3eb223fe72de3a325220f7} 
+\index{instructions.\+h@{instructions.\+h}!putfield@{putfield}}
+\index{putfield@{putfield}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{putfield()}{putfield()}}
+{\footnotesize\ttfamily void putfield (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Setar campo de objeto. 
+
+\hypertarget{instructions_8h_a3b8d9e095398de486b1443bb15adc340}{}\label{instructions_8h_a3b8d9e095398de486b1443bb15adc340} 
+\index{instructions.\+h@{instructions.\+h}!putstatic@{putstatic}}
+\index{putstatic@{putstatic}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{putstatic()}{putstatic()}}
+{\footnotesize\ttfamily void putstatic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Colocar um campo estatico a partir de uma classe. 
+
+\hypertarget{instructions_8h_aadd5fc114c0604b21457e1dca7c8fb87}{}\label{instructions_8h_aadd5fc114c0604b21457e1dca7c8fb87} 
+\index{instructions.\+h@{instructions.\+h}!ret@{ret}}
+\index{ret@{ret}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{ret()}{ret()}}
+{\footnotesize\ttfamily void ret (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Continuar execucao a partir de um endereço encontrado em uma variavel local. 
+
+\hypertarget{instructions_8h_aa65d7fecec2c6215ed40546f888c43bd}{}\label{instructions_8h_aa65d7fecec2c6215ed40546f888c43bd} 
+\index{instructions.\+h@{instructions.\+h}!saload@{saload}}
+\index{saload@{saload}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{saload()}{saload()}}
+{\footnotesize\ttfamily void saload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tira um index e um array da pilha de operandos e coloca na mesma o short que se encontra na posicao array\+Ref\mbox{[}indice\mbox{]}. 
+
+\hypertarget{instructions_8h_ad22e5532f8579c296012e98d4762664b}{}\label{instructions_8h_ad22e5532f8579c296012e98d4762664b} 
+\index{instructions.\+h@{instructions.\+h}!sastore@{sastore}}
+\index{sastore@{sastore}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{sastore()}{sastore()}}
+{\footnotesize\ttfamily void sastore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tira um short um index e um array da pilha e coloca o valor na posicao definida pelo index 
+
+\hypertarget{instructions_8h_a4002cee4795dbde6726f4d4ad0ddf846}{}\label{instructions_8h_a4002cee4795dbde6726f4d4ad0ddf846} 
+\index{instructions.\+h@{instructions.\+h}!shift5\+Bits@{shift5\+Bits}}
+\index{shift5\+Bits@{shift5\+Bits}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{shift5\+Bits()}{shift5Bits()}}
+{\footnotesize\ttfamily int32\+\_\+t shift5\+Bits (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{shift }\end{DoxyParamCaption})}
+
+
+
+Devolve apenas os 5 bytes menos significativos. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em shift} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+shift 5 bytes menos significativos 
+\end{DoxyReturn}
+\hypertarget{instructions_8h_a20703419433d46e6d96d6bbca085a69e}{}\label{instructions_8h_a20703419433d46e6d96d6bbca085a69e} 
+\index{instructions.\+h@{instructions.\+h}!shift6\+Bits@{shift6\+Bits}}
+\index{shift6\+Bits@{shift6\+Bits}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{shift6\+Bits()}{shift6Bits()}}
+{\footnotesize\ttfamily void shift6\+Bits (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{shift }\end{DoxyParamCaption})}
+
+
+
+Devolve apenas os 5 bytes menos significativos. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em shift} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+shift 6 bytes menos significativos 
+\end{DoxyReturn}
+\hypertarget{instructions_8h_ab232b871bc72922db8f077fc3f356348}{}\label{instructions_8h_ab232b871bc72922db8f077fc3f356348} 
+\index{instructions.\+h@{instructions.\+h}!sipush@{sipush}}
+\index{sipush@{sipush}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{sipush()}{sipush()}}
+{\footnotesize\ttfamily void sipush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coloca um short na pilha, tirado da area de codigo. 
+
+\hypertarget{instructions_8h_a07bca8cc0cfca0e80cac16305cac9f13}{}\label{instructions_8h_a07bca8cc0cfca0e80cac16305cac9f13} 
+\index{instructions.\+h@{instructions.\+h}!swap@{swap}}
+\index{swap@{swap}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Troca a ordem dos dois valores no topo da pilha de operandos. 
+
+\hypertarget{instructions_8h_a346a4979f41279912f358424b8c9cdb8}{}\label{instructions_8h_a346a4979f41279912f358424b8c9cdb8} 
+\index{instructions.\+h@{instructions.\+h}!tableswitch@{tableswitch}}
+\index{tableswitch@{tableswitch}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{tableswitch()}{tableswitch()}}
+{\footnotesize\ttfamily void tableswitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Acessar a tabela de saltos pelo indice e realizar salto. 
+
+\hypertarget{instructions_8h_ae61276e4ba29e6e9bb3b8e3be945f49c}{}\label{instructions_8h_ae61276e4ba29e6e9bb3b8e3be945f49c} 
+\index{instructions.\+h@{instructions.\+h}!verify\+Doubles@{verify\+Doubles}}
+\index{verify\+Doubles@{verify\+Doubles}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{verify\+Doubles()}{verifyDoubles()}}
+{\footnotesize\ttfamily void verify\+Doubles (\begin{DoxyParamCaption}\item[{double}]{double1,  }\item[{double}]{double2 }\end{DoxyParamCaption})}
+
+
+
+Verifica dois doubles para igualdade, maioridade e menororidade. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em double1} & \\
+\hline
+{\em double2} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{instructions_8h_aadcccfbfe2595924666c7d2cc5c1c46d}{}\label{instructions_8h_aadcccfbfe2595924666c7d2cc5c1c46d} 
+\index{instructions.\+h@{instructions.\+h}!verify\+Floats@{verify\+Floats}}
+\index{verify\+Floats@{verify\+Floats}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{verify\+Floats()}{verifyFloats()}}
+{\footnotesize\ttfamily void verify\+Floats (\begin{DoxyParamCaption}\item[{float}]{float1,  }\item[{float}]{float2 }\end{DoxyParamCaption})}
+
+
+
+Verifica dois floats para igualdade, maioridade e menororidade. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em float1} & \\
+\hline
+{\em float2} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{instructions_8h_a75f6e28677803776816cf21f6f5d8bcf}{}\label{instructions_8h_a75f6e28677803776816cf21f6f5d8bcf} 
+\index{instructions.\+h@{instructions.\+h}!verify\+Longs@{verify\+Longs}}
+\index{verify\+Longs@{verify\+Longs}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{verify\+Longs()}{verifyLongs()}}
+{\footnotesize\ttfamily void verify\+Longs (\begin{DoxyParamCaption}\item[{long}]{long1,  }\item[{long}]{long2 }\end{DoxyParamCaption})}
+
+
+
+Verifica dois longs para igualdade, maioridade e menororidade. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em long1} & \\
+\hline
+{\em long2} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{instructions_8h_a7e90f90c4e1a7803928a7f59a0fa6301}{}\label{instructions_8h_a7e90f90c4e1a7803928a7f59a0fa6301} 
+\index{instructions.\+h@{instructions.\+h}!void\+\_\+return@{void\+\_\+return}}
+\index{void\+\_\+return@{void\+\_\+return}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{void\+\_\+return()}{void\_return()}}
+{\footnotesize\ttfamily void void\+\_\+return (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retornar void de um metodo. 
+
+\hypertarget{instructions_8h_a296e4d798368b2136158a86aa0b74e4f}{}\label{instructions_8h_a296e4d798368b2136158a86aa0b74e4f} 
+\index{instructions.\+h@{instructions.\+h}!wide@{wide}}
+\index{wide@{wide}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{wide()}{wide()}}
+{\footnotesize\ttfamily void wide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Documentação das variáveis}
+\hypertarget{instructions_8h_ae29a00a62533888c4e630e694b3be0a2}{}\label{instructions_8h_ae29a00a62533888c4e630e694b3be0a2} 
+\index{instructions.\+h@{instructions.\+h}!instruction@{instruction}}
+\index{instruction@{instruction}!instructions.\+h@{instructions.\+h}}
+\subsubsection{\texorpdfstring{instruction}{instruction}}
+{\footnotesize\ttfamily void($\ast$ instruction\mbox{[}256\mbox{]})()}
+

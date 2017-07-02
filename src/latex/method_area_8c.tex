@@ -1,0 +1,181 @@
+\hypertarget{method_area_8c}{}\section{Referência ao ficheiro method\+Area.\+c}
+\label{method_area_8c}\index{method\+Area.\+c@{method\+Area.\+c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}method\+Area.\+h\char`\"{}}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{method_area_8c_ac840e339d028556f0b3a72ac72da9114}{resize\+Hashtable} ()
+\item 
+void \hyperlink{method_area_8c_a19ae44b77b16013c871be6a97d199a1d}{init\+Hashtable} (int initial\+Size)
+\item 
+void \hyperlink{method_area_8c_a3e73be7c11f9a5b4f7ad973a139390da}{free\+Hashtable} ()
+\item 
+void \hyperlink{method_area_8c_a12f7a42c1e7218113c0858da92f1c940}{insert} (\hyperlink{struct_type_info}{Type\+Info} dt)
+\item 
+int \hyperlink{method_area_8c_a196d26426bc56a6d60be28e24d816055}{index\+Of} (\hyperlink{struct_type_info}{Type\+Info} dt)
+\item 
+size\+\_\+t \hyperlink{method_area_8c_a583698de25f50fb32eb5370c3a5f6b03}{hash} (const char $\ast$str, size\+\_\+t len)
+\item 
+\hyperlink{struct_type_info}{Type\+Info} $\ast$ \hyperlink{method_area_8c_afbd517cca838b1d9944bce24e1ffd80c}{get\+Item} (int index)
+\item 
+void \hyperlink{method_area_8c_a83646127fde5920c92966538d1c6524d}{print\+Hashtable} ()
+\item 
+\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$ \hyperlink{method_area_8c_aae9606521b7bba5ee406052e296590d9}{find\+Main\+Method} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\item 
+\hyperlink{struct_class_file}{Class\+File} $\ast$ \hyperlink{method_area_8c_a0c966fe67c58370645911bfdcc914af1}{get\+Super\+Class} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}get\+Super\+Class description\mbox{]} \end{DoxyCompactList}\item 
+\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$ \hyperlink{method_area_8c_a3d469f4815ce19a8a5773632f8ff4b77}{find\+Method} (\hyperlink{struct_class_file}{Class\+File} $\ast$target\+Class, \hyperlink{struct_class_file}{Class\+File} $\ast$origin\+Class, uint16\+\_\+t indice)
+\item 
+char $\ast$ \hyperlink{method_area_8c_a11d1cfa98c7ac5f82911e69ce2abf0a5}{find\+Class\+Name\+From\+Method} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int32\+\_\+t method\+Index)
+\item 
+char $\ast$ \hyperlink{method_area_8c_add0cdfea6cf4f3a90664aec8412f0631}{find\+Method\+Name} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int16\+\_\+t name\+And\+Type\+Index)
+\item 
+char $\ast$ \hyperlink{method_area_8c_abe471afc634337e4e4ebb3b44b11a9ef}{find\+Method\+Descriptor} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+Pool, int16\+\_\+t name\+And\+Type\+Index)
+\item 
+\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$ \hyperlink{method_area_8c_a847deaa650d5b70dd9fe5e339b1ba0e7}{get\+Code\+Attribute} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, \hyperlink{struct_method__info}{Method\+\_\+info} $\ast$method\+Info)
+\item 
+int32\+\_\+t \hyperlink{method_area_8c_a7d4c88da8bd0289033b47b707f4964da}{get\+Params\+Count} (char $\ast$bytes)
+\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{method_area_8c_a6ad1e8d3cf9f2f916f919948e24d7b38}{table\+Size}
+\item 
+\hyperlink{struct_type_info}{Type\+Info} $\ast$$\ast$ \hyperlink{method_area_8c_adc39adb8112347fc94da83fc83a67b8b}{hashtable}
+\item 
+int \hyperlink{method_area_8c_a8d26f5a0b7d7abec8b27bf0909d57df6}{data\+Count} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\hypertarget{method_area_8c_a11d1cfa98c7ac5f82911e69ce2abf0a5}{}\label{method_area_8c_a11d1cfa98c7ac5f82911e69ce2abf0a5} 
+\index{method\+Area.\+c@{method\+Area.\+c}!find\+Class\+Name\+From\+Method@{find\+Class\+Name\+From\+Method}}
+\index{find\+Class\+Name\+From\+Method@{find\+Class\+Name\+From\+Method}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{find\+Class\+Name\+From\+Method()}{findClassNameFromMethod()}}
+{\footnotesize\ttfamily char$\ast$ find\+Class\+Name\+From\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int32\+\_\+t}]{method\+Index }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_aae9606521b7bba5ee406052e296590d9}{}\label{method_area_8c_aae9606521b7bba5ee406052e296590d9} 
+\index{method\+Area.\+c@{method\+Area.\+c}!find\+Main\+Method@{find\+Main\+Method}}
+\index{find\+Main\+Method@{find\+Main\+Method}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{find\+Main\+Method()}{findMainMethod()}}
+{\footnotesize\ttfamily \hyperlink{struct_method__info}{Method\+\_\+info}$\ast$ find\+Main\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a3d469f4815ce19a8a5773632f8ff4b77}{}\label{method_area_8c_a3d469f4815ce19a8a5773632f8ff4b77} 
+\index{method\+Area.\+c@{method\+Area.\+c}!find\+Method@{find\+Method}}
+\index{find\+Method@{find\+Method}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{find\+Method()}{findMethod()}}
+{\footnotesize\ttfamily \hyperlink{struct_method__info}{Method\+\_\+info}$\ast$ find\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{target\+Class,  }\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{origin\+Class,  }\item[{uint16\+\_\+t}]{indice }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_abe471afc634337e4e4ebb3b44b11a9ef}{}\label{method_area_8c_abe471afc634337e4e4ebb3b44b11a9ef} 
+\index{method\+Area.\+c@{method\+Area.\+c}!find\+Method\+Descriptor@{find\+Method\+Descriptor}}
+\index{find\+Method\+Descriptor@{find\+Method\+Descriptor}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{find\+Method\+Descriptor()}{findMethodDescriptor()}}
+{\footnotesize\ttfamily char$\ast$ find\+Method\+Descriptor (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int16\+\_\+t}]{name\+And\+Type\+Index }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_add0cdfea6cf4f3a90664aec8412f0631}{}\label{method_area_8c_add0cdfea6cf4f3a90664aec8412f0631} 
+\index{method\+Area.\+c@{method\+Area.\+c}!find\+Method\+Name@{find\+Method\+Name}}
+\index{find\+Method\+Name@{find\+Method\+Name}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{find\+Method\+Name()}{findMethodName()}}
+{\footnotesize\ttfamily char$\ast$ find\+Method\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+Pool,  }\item[{int16\+\_\+t}]{name\+And\+Type\+Index }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a3e73be7c11f9a5b4f7ad973a139390da}{}\label{method_area_8c_a3e73be7c11f9a5b4f7ad973a139390da} 
+\index{method\+Area.\+c@{method\+Area.\+c}!free\+Hashtable@{free\+Hashtable}}
+\index{free\+Hashtable@{free\+Hashtable}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{free\+Hashtable()}{freeHashtable()}}
+{\footnotesize\ttfamily void free\+Hashtable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a847deaa650d5b70dd9fe5e339b1ba0e7}{}\label{method_area_8c_a847deaa650d5b70dd9fe5e339b1ba0e7} 
+\index{method\+Area.\+c@{method\+Area.\+c}!get\+Code\+Attribute@{get\+Code\+Attribute}}
+\index{get\+Code\+Attribute@{get\+Code\+Attribute}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{get\+Code\+Attribute()}{getCodeAttribute()}}
+{\footnotesize\ttfamily \hyperlink{struct_code__attribute}{Code\+\_\+attribute}$\ast$ get\+Code\+Attribute (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$}]{method\+Info }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_afbd517cca838b1d9944bce24e1ffd80c}{}\label{method_area_8c_afbd517cca838b1d9944bce24e1ffd80c} 
+\index{method\+Area.\+c@{method\+Area.\+c}!get\+Item@{get\+Item}}
+\index{get\+Item@{get\+Item}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{get\+Item()}{getItem()}}
+{\footnotesize\ttfamily \hyperlink{struct_type_info}{Type\+Info}$\ast$ get\+Item (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a7d4c88da8bd0289033b47b707f4964da}{}\label{method_area_8c_a7d4c88da8bd0289033b47b707f4964da} 
+\index{method\+Area.\+c@{method\+Area.\+c}!get\+Params\+Count@{get\+Params\+Count}}
+\index{get\+Params\+Count@{get\+Params\+Count}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{get\+Params\+Count()}{getParamsCount()}}
+{\footnotesize\ttfamily int32\+\_\+t get\+Params\+Count (\begin{DoxyParamCaption}\item[{char $\ast$}]{bytes }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a0c966fe67c58370645911bfdcc914af1}{}\label{method_area_8c_a0c966fe67c58370645911bfdcc914af1} 
+\index{method\+Area.\+c@{method\+Area.\+c}!get\+Super\+Class@{get\+Super\+Class}}
+\index{get\+Super\+Class@{get\+Super\+Class}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{get\+Super\+Class()}{getSuperClass()}}
+{\footnotesize\ttfamily \hyperlink{struct_class_file}{Class\+File}$\ast$ get\+Super\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}get\+Super\+Class description\mbox{]} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\mbox{[}description\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{method_area_8c_a583698de25f50fb32eb5370c3a5f6b03}{}\label{method_area_8c_a583698de25f50fb32eb5370c3a5f6b03} 
+\index{method\+Area.\+c@{method\+Area.\+c}!hash@{hash}}
+\index{hash@{hash}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily size\+\_\+t hash (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a196d26426bc56a6d60be28e24d816055}{}\label{method_area_8c_a196d26426bc56a6d60be28e24d816055} 
+\index{method\+Area.\+c@{method\+Area.\+c}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{index\+Of()}{indexOf()}}
+{\footnotesize\ttfamily int index\+Of (\begin{DoxyParamCaption}\item[{\hyperlink{struct_type_info}{Type\+Info}}]{dt }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a19ae44b77b16013c871be6a97d199a1d}{}\label{method_area_8c_a19ae44b77b16013c871be6a97d199a1d} 
+\index{method\+Area.\+c@{method\+Area.\+c}!init\+Hashtable@{init\+Hashtable}}
+\index{init\+Hashtable@{init\+Hashtable}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{init\+Hashtable()}{initHashtable()}}
+{\footnotesize\ttfamily void init\+Hashtable (\begin{DoxyParamCaption}\item[{int}]{initial\+Size }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a12f7a42c1e7218113c0858da92f1c940}{}\label{method_area_8c_a12f7a42c1e7218113c0858da92f1c940} 
+\index{method\+Area.\+c@{method\+Area.\+c}!insert@{insert}}
+\index{insert@{insert}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{\hyperlink{struct_type_info}{Type\+Info}}]{dt }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_a83646127fde5920c92966538d1c6524d}{}\label{method_area_8c_a83646127fde5920c92966538d1c6524d} 
+\index{method\+Area.\+c@{method\+Area.\+c}!print\+Hashtable@{print\+Hashtable}}
+\index{print\+Hashtable@{print\+Hashtable}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{print\+Hashtable()}{printHashtable()}}
+{\footnotesize\ttfamily void print\+Hashtable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{method_area_8c_ac840e339d028556f0b3a72ac72da9114}{}\label{method_area_8c_ac840e339d028556f0b3a72ac72da9114} 
+\index{method\+Area.\+c@{method\+Area.\+c}!resize\+Hashtable@{resize\+Hashtable}}
+\index{resize\+Hashtable@{resize\+Hashtable}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{resize\+Hashtable()}{resizeHashtable()}}
+{\footnotesize\ttfamily void resize\+Hashtable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Documentação das variáveis}
+\hypertarget{method_area_8c_a8d26f5a0b7d7abec8b27bf0909d57df6}{}\label{method_area_8c_a8d26f5a0b7d7abec8b27bf0909d57df6} 
+\index{method\+Area.\+c@{method\+Area.\+c}!data\+Count@{data\+Count}}
+\index{data\+Count@{data\+Count}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{data\+Count}{dataCount}}
+{\footnotesize\ttfamily int data\+Count = 0}
+
+\hypertarget{method_area_8c_adc39adb8112347fc94da83fc83a67b8b}{}\label{method_area_8c_adc39adb8112347fc94da83fc83a67b8b} 
+\index{method\+Area.\+c@{method\+Area.\+c}!hashtable@{hashtable}}
+\index{hashtable@{hashtable}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{hashtable}{hashtable}}
+{\footnotesize\ttfamily \hyperlink{struct_type_info}{Type\+Info}$\ast$$\ast$ hashtable}
+
+\hypertarget{method_area_8c_a6ad1e8d3cf9f2f916f919948e24d7b38}{}\label{method_area_8c_a6ad1e8d3cf9f2f916f919948e24d7b38} 
+\index{method\+Area.\+c@{method\+Area.\+c}!table\+Size@{table\+Size}}
+\index{table\+Size@{table\+Size}!method\+Area.\+c@{method\+Area.\+c}}
+\subsubsection{\texorpdfstring{table\+Size}{tableSize}}
+{\footnotesize\ttfamily int table\+Size}
+

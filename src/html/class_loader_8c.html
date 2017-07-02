@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência ao ficheiro classLoader.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro classLoader.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="class_loader_8h_source.html">classLoader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="class_list_8h_source.html">classList.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="method_area_8h_source.html">methodArea.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="instructions_8h_source.html">instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="frame_8h_source.html">frame.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="array_8h_source.html">array.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="object_manager_8h_source.html">objectManager.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a6d7c4f23b53b33130513cf1b28bb3a99"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a6d7c4f23b53b33130513cf1b28bb3a99">readBytes</a> (int size, FILE *fp)</td></tr>
+<tr class="memdesc:a6d7c4f23b53b33130513cf1b28bb3a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para leitura byte a byte do arquivo fp.  <a href="#a6d7c4f23b53b33130513cf1b28bb3a99">Mais...</a><br /></td></tr>
+<tr class="separator:a6d7c4f23b53b33130513cf1b28bb3a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#adbc64e22f2dcd5daae28f25cb3c6d2c3">accessConstantPoolEntry</a> (int index, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool)</td></tr>
+<tr class="memdesc:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que retorna uma string que representa o valor de uma das constantes do Constant Pool.  <a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">Mais...</a><br /></td></tr>
+<tr class="separator:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1290351b9cf245484329af16a3871fda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_attribute__info.html">Attribute_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a1290351b9cf245484329af16a3871fda">readAttributes</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
+<tr class="memdesc:a1290351b9cf245484329af16a3871fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê atributos no arquivo .class.  <a href="#a1290351b9cf245484329af16a3871fda">Mais...</a><br /></td></tr>
+<tr class="separator:a1290351b9cf245484329af16a3871fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce3966a4bfce3cbdcd26863acf4e7f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#adce3966a4bfce3cbdcd26863acf4e7f3">readConstantPool</a> (int length, FILE *fp)</td></tr>
+<tr class="memdesc:adce3966a4bfce3cbdcd26863acf4e7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê o Pool de constantes no arquivo .class.  <a href="#adce3966a4bfce3cbdcd26863acf4e7f3">Mais...</a><br /></td></tr>
+<tr class="separator:adce3966a4bfce3cbdcd26863acf4e7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab25cca7a3bd9da43398a321e209885"><td class="memItemLeft" align="right" valign="top">uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#acab25cca7a3bd9da43398a321e209885">readInterfaces</a> (int length, FILE *fp)</td></tr>
+<tr class="memdesc:acab25cca7a3bd9da43398a321e209885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê do arquivo .class os indices do contant pool que representam as interfaces da classe.  <a href="#acab25cca7a3bd9da43398a321e209885">Mais...</a><br /></td></tr>
+<tr class="separator:acab25cca7a3bd9da43398a321e209885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df2cd4d7189c05a2690ebb85858634b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_field__info.html">Field_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a2df2cd4d7189c05a2690ebb85858634b">readFields</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
+<tr class="memdesc:a2df2cd4d7189c05a2690ebb85858634b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os fields de um arquivo .class.  <a href="#a2df2cd4d7189c05a2690ebb85858634b">Mais...</a><br /></td></tr>
+<tr class="separator:a2df2cd4d7189c05a2690ebb85858634b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e8b04495c973881244ac782272b604f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_method__info.html">Method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a1e8b04495c973881244ac782272b604f">readMethods</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
+<tr class="memdesc:a1e8b04495c973881244ac782272b604f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os métodos de um arquivo .class.  <a href="#a1e8b04495c973881244ac782272b604f">Mais...</a><br /></td></tr>
+<tr class="separator:a1e8b04495c973881244ac782272b604f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a054f9d1d78ad324c23b67bb02a57dac6">loadClass</a> (char *className)</td></tr>
+<tr class="memdesc:a054f9d1d78ad324c23b67bb02a57dac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada.  <a href="#a054f9d1d78ad324c23b67bb02a57dac6">Mais...</a><br /></td></tr>
+<tr class="separator:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67054480a9f3874ba2f0196b60a4350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#ae67054480a9f3874ba2f0196b60a4350">classFormatchecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:ae67054480a9f3874ba2f0196b60a4350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic.  <a href="#ae67054480a9f3874ba2f0196b60a4350">Mais...</a><br /></td></tr>
+<tr class="separator:ae67054480a9f3874ba2f0196b60a4350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07fd265d4b963d7972e5a683e6c4050"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#af07fd265d4b963d7972e5a683e6c4050">classNameChecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, char *nomeArquivo)</td></tr>
+<tr class="memdesc:af07fd265d4b963d7972e5a683e6c4050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o nome da classe do .class bate com o do arquivo.  <a href="#af07fd265d4b963d7972e5a683e6c4050">Mais...</a><br /></td></tr>
+<tr class="separator:af07fd265d4b963d7972e5a683e6c4050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a37e5445b741ed921d544e5fdd76f1dbc">versionChecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:a37e5445b741ed921d544e5fdd76f1dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se a major version do .class é suportada pelo java 2.  <a href="#a37e5445b741ed921d544e5fdd76f1dbc">Mais...</a><br /></td></tr>
+<tr class="separator:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="adbc64e22f2dcd5daae28f25cb3c6d2c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">&sect;&nbsp;</a></span>accessConstantPoolEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* accessConstantPoolEntry </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constant_pool</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que retorna uma string que representa o valor de uma das constantes do Constant Pool. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>index da constante no Constant Pool </td></tr>
+    <tr><td class="paramname">constant_pool</td><td>ponteiro para um Constant Pool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>ponteiro para uma string </dd></dl>
+
+</div>
+</div>
+<a id="ae67054480a9f3874ba2f0196b60a4350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67054480a9f3874ba2f0196b60a4350">&sect;&nbsp;</a></span>classFormatchecker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void classFormatchecker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do suposto .class </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 para .class e 0 para nao .class </dd></dl>
+
+</div>
+</div>
+<a id="af07fd265d4b963d7972e5a683e6c4050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07fd265d4b963d7972e5a683e6c4050">&sect;&nbsp;</a></span>classNameChecker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void classNameChecker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nomeArquivo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função verificacao, verificar se o nome da classe do .class bate com o do arquivo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do .class </td></tr>
+    <tr><td class="paramname">nomeArquivo</td><td>Ponteiro o nome do arquivo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 para confere e 0 para nao confere </dd></dl>
+
+</div>
+</div>
+<a id="a054f9d1d78ad324c23b67bb02a57dac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054f9d1d78ad324c23b67bb02a57dac6">&sect;&nbsp;</a></span>loadClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* loadClass </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>className</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td>Nome da classe a ser lida </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Referência para uma struct <a class="el" href="struct_class_file.html">ClassFile</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1290351b9cf245484329af16a3871fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1290351b9cf245484329af16a3871fda">&sect;&nbsp;</a></span>readAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_attribute__info.html">Attribute_info</a>* readAttributes </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constant_pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê atributos no arquivo .class. </p>
+<p>É utilizado na função de leitura de outras estruturas, o readFields, readMethods e loadClass </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Quantidade de atributos </td></tr>
+    <tr><td class="paramname">constant_pool</td><td>Ponteiro para o Constant Poll </td></tr>
+    <tr><td class="paramname">fp</td><td>Ponteiro para o arquivo, que deve estar apontando para onde começam os atributos </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Estrutura de atributos </dd></dl>
+
+</div>
+</div>
+<a id="a6d7c4f23b53b33130513cf1b28bb3a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d7c4f23b53b33130513cf1b28bb3a99">&sect;&nbsp;</a></span>readBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t readBytes </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para leitura byte a byte do arquivo fp. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>quantidade de bytes a serem lidos </td></tr>
+    <tr><td class="paramname">fp</td><td>ponteiro para o arquivo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Os 4 últimos bytes lidos (variável dde 32 bits) </dd></dl>
+
+</div>
+</div>
+<a id="adce3966a4bfce3cbdcd26863acf4e7f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adce3966a4bfce3cbdcd26863acf4e7f3">&sect;&nbsp;</a></span>readConstantPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_cp__info.html">Cp_info</a>* readConstantPool </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê o Pool de constantes no arquivo .class. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Quantidade de contantes </td></tr>
+    <tr><td class="paramname">fp</td><td>Ponteiro para o arquivo, que deve estar apontando para onde começa o pool de constantes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Referência para uma estrutura Pool de Constantes </dd></dl>
+
+</div>
+</div>
+<a id="a2df2cd4d7189c05a2690ebb85858634b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df2cd4d7189c05a2690ebb85858634b">&sect;&nbsp;</a></span>readFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_field__info.html">Field_info</a>* readFields </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constant_pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê os fields de um arquivo .class. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Quantidade de Fields </td></tr>
+    <tr><td class="paramname">constant_pool</td><td>Referência para o constant pool da class que esta sendo lida </td></tr>
+    <tr><td class="paramname">fp</td><td>Ponteiro para o arquivo, que deve estar apontando para onde começam os fields </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Referência para um vetor de estruturas dos fields </dd></dl>
+
+</div>
+</div>
+<a id="acab25cca7a3bd9da43398a321e209885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab25cca7a3bd9da43398a321e209885">&sect;&nbsp;</a></span>readInterfaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t* readInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê do arquivo .class os indices do contant pool que representam as interfaces da classe. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Quantidade de interfaces </td></tr>
+    <tr><td class="paramname">fp</td><td>Ponteiro para o arquivo, que deve estar apontando para onde começam os indices </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Referência para um vetor de indices do constant pool </dd></dl>
+
+</div>
+</div>
+<a id="a1e8b04495c973881244ac782272b604f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e8b04495c973881244ac782272b604f">&sect;&nbsp;</a></span>readMethods()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_method__info.html">Method_info</a>* readMethods </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constant_pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê os métodos de um arquivo .class. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Quantidade de métodos </td></tr>
+    <tr><td class="paramname">constant_pool</td><td>Referência para o constant pool da class que esta sendo lida </td></tr>
+    <tr><td class="paramname">fp</td><td>Ponteiro para o arquivo, que deve estar apontando para onde começam os métodos </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Referência para um vetor de estruturas dos métodos </dd></dl>
+
+</div>
+</div>
+<a id="a37e5445b741ed921d544e5fdd76f1dbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e5445b741ed921d544e5fdd76f1dbc">&sect;&nbsp;</a></span>versionChecker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void versionChecker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função verificacao, verificar se a major version do .class é suportada pelo java 2. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do .class </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 para suportada e 0 para nao .suportada </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

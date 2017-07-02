@@ -1,0 +1,1316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência ao ficheiro classLoader.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro classLoader.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div>
+<p><a href="class_loader_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_class__info.html">Class_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_fieldref__info.html">Fieldref_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_methodref__info.html">Methodref_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_interface_methodref__info.html">InterfaceMethodref_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_string__info.html">String_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_integer__info.html">Integer_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_float__info.html">Float_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_long__info.html">Long_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_double__info.html">Double_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_name_and_type__info.html">NameAndType_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_utf8__info.html">Utf8_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_method_handle__info.html">MethodHandle_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_method_type__info.html">MethodType_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_invoke_dynamic__info.html">InvokeDynamic_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unioninfo__pointer.html">info_pointer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cp__info.html">Cp_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_constant_value__attribute.html">ConstantValue_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_constant_value__attribute.html" title="ConstantValue_attribute. ">ConstantValue_attribute</a>.  <a href="struct_constant_value__attribute.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structexception__table.html">exception_table</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_code__attribute.html">Code_attribute</a>.  <a href="structexception__table.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_code__attribute.html">Code_attribute</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_exceptions__attribute.html">Exceptions_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_exceptions__attribute.html" title="Exceptions_attribute. ">Exceptions_attribute</a>.  <a href="struct_exceptions__attribute.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_classes.html">Classes</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_inner_classes__attribute.html">InnerClasses_attribute</a>.  <a href="struct_classes.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_inner_classes__attribute.html">InnerClasses_attribute</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_enclosing_method__attribute.html">EnclosingMethod_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_enclosing_method__attribute.html" title="EnclosingMethod_attribute. ">EnclosingMethod_attribute</a>.  <a href="struct_enclosing_method__attribute.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_synthetic__attribute.html">Synthetic_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_synthetic__attribute.html" title="Synthetic_attribute. ">Synthetic_attribute</a>.  <a href="struct_synthetic__attribute.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_signature__attribute.html">Signature_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_signature__attribute.html" title="Signature_attribute. ">Signature_attribute</a>.  <a href="struct_signature__attribute.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_source_file__attribute.html">SourceFile_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_source_file__attribute.html" title="SourceFile_attribute. ">SourceFile_attribute</a>.  <a href="struct_source_file__attribute.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_source_debug_extension__attribute.html">SourceDebugExtension_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_source_debug_extension__attribute.html" title="SourceDebugExtension_attribute. ">SourceDebugExtension_attribute</a>.  <a href="struct_source_debug_extension__attribute.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structline__number__table.html">line_number_table</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_line_number_table__attribute.html">LineNumberTable_attribute</a>.  <a href="structline__number__table.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_line_number_table__attribute.html">LineNumberTable_attribute</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlocal__variable__table.html">local_variable_table</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_local_variable_table__attribute.html">LocalVariableTable_attribute</a>.  <a href="structlocal__variable__table.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_local_variable_table__attribute.html">LocalVariableTable_attribute</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlocal__variable__type__table.html">local_variable_type_table</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_local_variable_type_table__attribute.html">LocalVariableTypeTable_attribute</a>.  <a href="structlocal__variable__type__table.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_local_variable_type_table__attribute.html">LocalVariableTypeTable_attribute</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_deprecated__attribute.html">Deprecated_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_deprecated__attribute.html" title="Deprecated_attribute. ">Deprecated_attribute</a>.  <a href="struct_deprecated__attribute.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbootstrap__methods.html">bootstrap_methods</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_bootstrap_methods__attribute.html">BootstrapMethods_attribute</a>.  <a href="structbootstrap__methods.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bootstrap_methods__attribute.html">BootstrapMethods_attribute</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionattribute__pointer.html">attribute_pointer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_attribute__info.html">Attribute_info</a>.  <a href="unionattribute__pointer.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_attribute__info.html">Attribute_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_field__info.html">Field_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_method__info.html">Method_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_class_file.html">ClassFile</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a72b5b534aa409975da610a36f648fa0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a72b5b534aa409975da610a36f648fa0a">CONSTANT_Class</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a72b5b534aa409975da610a36f648fa0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a008d43478c2e2973e7413f5d1c48095d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a008d43478c2e2973e7413f5d1c48095d">CONSTANT_Fieldref</a>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:a008d43478c2e2973e7413f5d1c48095d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a179cf178ea867c6ab1700508c269dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a2a179cf178ea867c6ab1700508c269dd">CONSTANT_Methodref</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a2a179cf178ea867c6ab1700508c269dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e92044d246c6e4d691116f89a70ebb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ac0e92044d246c6e4d691116f89a70ebb">CONSTANT_InterfaceMethodref</a>&#160;&#160;&#160;11</td></tr>
+<tr class="separator:ac0e92044d246c6e4d691116f89a70ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7acbe175de56072a2f0a1a051418e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a0a7acbe175de56072a2f0a1a051418e1">CONSTANT_String</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a0a7acbe175de56072a2f0a1a051418e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856a6553a55d721970ca5450eb1ccd2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a856a6553a55d721970ca5450eb1ccd2c">CONSTANT_Integer</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a856a6553a55d721970ca5450eb1ccd2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab914627ce5b25c4acfc98f2eacb78473"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ab914627ce5b25c4acfc98f2eacb78473">CONSTANT_Float</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:ab914627ce5b25c4acfc98f2eacb78473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426ca017b895fc522671a561d460be7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a426ca017b895fc522671a561d460be7a">CONSTANT_Long</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a426ca017b895fc522671a561d460be7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49341c3b4ade4bfa1a64be8d2f73ae1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ab49341c3b4ade4bfa1a64be8d2f73ae1">CONSTANT_Double</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:ab49341c3b4ade4bfa1a64be8d2f73ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6ba749976ae61415983ca0b890c91a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a5b6ba749976ae61415983ca0b890c91a">CONSTANT_NameAndType</a>&#160;&#160;&#160;12</td></tr>
+<tr class="separator:a5b6ba749976ae61415983ca0b890c91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc46559a7d3f7baf519fc183c2fad2b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#afc46559a7d3f7baf519fc183c2fad2b4">CONSTANT_Utf8</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:afc46559a7d3f7baf519fc183c2fad2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb3c84f82163f217ab7f8fa0258d80ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#adb3c84f82163f217ab7f8fa0258d80ce">CONSTANT_MethodHandle</a>&#160;&#160;&#160;15</td></tr>
+<tr class="separator:adb3c84f82163f217ab7f8fa0258d80ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991ba557d63f94e2cdf05c9f80630a6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a991ba557d63f94e2cdf05c9f80630a6f">CONSTANT_MethodType</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a991ba557d63f94e2cdf05c9f80630a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127046386d755d4a91c71aa9b453a8bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a127046386d755d4a91c71aa9b453a8bb">CONSTANT_InvokeDynamic</a>&#160;&#160;&#160;18</td></tr>
+<tr class="separator:a127046386d755d4a91c71aa9b453a8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a3360f51937b6ef3bac71814699e546b2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_class__info.html">Class_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a3360f51937b6ef3bac71814699e546b2">Class_info</a></td></tr>
+<tr class="separator:a3360f51937b6ef3bac71814699e546b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a6c96ea384c06448120bd2414d52335"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_fieldref__info.html">Fieldref_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a1a6c96ea384c06448120bd2414d52335">Fieldref_info</a></td></tr>
+<tr class="separator:a1a6c96ea384c06448120bd2414d52335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d14a49ad2aa3c665807b93cef897646"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_methodref__info.html">Methodref_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a9d14a49ad2aa3c665807b93cef897646">Methodref_info</a></td></tr>
+<tr class="separator:a9d14a49ad2aa3c665807b93cef897646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2cad31056620602dae325294154df5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_interface_methodref__info.html">InterfaceMethodref_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a9b2cad31056620602dae325294154df5">InterfaceMethodref_info</a></td></tr>
+<tr class="separator:a9b2cad31056620602dae325294154df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765681bbc37bea14a966a81a950027b1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_string__info.html">String_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a765681bbc37bea14a966a81a950027b1">String_info</a></td></tr>
+<tr class="separator:a765681bbc37bea14a966a81a950027b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc5a3e36ee075d2a192259b6674829f7"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_integer__info.html">Integer_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#acc5a3e36ee075d2a192259b6674829f7">Integer_info</a></td></tr>
+<tr class="separator:acc5a3e36ee075d2a192259b6674829f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13bcd7f88efd0679c6d72324ac0136bd"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_float__info.html">Float_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a13bcd7f88efd0679c6d72324ac0136bd">Float_info</a></td></tr>
+<tr class="separator:a13bcd7f88efd0679c6d72324ac0136bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc76c98ba6a31aa6cc8fd9c7cc45deb"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_long__info.html">Long_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a3fc76c98ba6a31aa6cc8fd9c7cc45deb">Long_info</a></td></tr>
+<tr class="separator:a3fc76c98ba6a31aa6cc8fd9c7cc45deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7e6a5a324d048f51433494c5085deb5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_double__info.html">Double_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#aa7e6a5a324d048f51433494c5085deb5">Double_info</a></td></tr>
+<tr class="separator:aa7e6a5a324d048f51433494c5085deb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d921ff7200111aa8127e56ea4259300"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_name_and_type__info.html">NameAndType_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a0d921ff7200111aa8127e56ea4259300">NameAndType_info</a></td></tr>
+<tr class="separator:a0d921ff7200111aa8127e56ea4259300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc076fd8628f664b7c6bc6fa48c4fed1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_utf8__info.html">Utf8_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#adc076fd8628f664b7c6bc6fa48c4fed1">Utf8_info</a></td></tr>
+<tr class="separator:adc076fd8628f664b7c6bc6fa48c4fed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad3ff9facfe09ba4edcd0743cd5ebf6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_method_handle__info.html">MethodHandle_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#acad3ff9facfe09ba4edcd0743cd5ebf6">MethodHandle_info</a></td></tr>
+<tr class="separator:acad3ff9facfe09ba4edcd0743cd5ebf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f569353b0286c20aa69c0f7c83b7f42"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_method_type__info.html">MethodType_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a2f569353b0286c20aa69c0f7c83b7f42">MethodType_info</a></td></tr>
+<tr class="separator:a2f569353b0286c20aa69c0f7c83b7f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f54cdbe2c57e640e3126d6f0a21d1b6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_invoke_dynamic__info.html">InvokeDynamic_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a3f54cdbe2c57e640e3126d6f0a21d1b6">InvokeDynamic_info</a></td></tr>
+<tr class="separator:a3f54cdbe2c57e640e3126d6f0a21d1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4d0fe894d6eefdb230a2b0283b13d6"><td class="memItemLeft" align="right" valign="top">typedef union <a class="el" href="unioninfo__pointer.html">info_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a7d4d0fe894d6eefdb230a2b0283b13d6">info_pointer</a></td></tr>
+<tr class="separator:a7d4d0fe894d6eefdb230a2b0283b13d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff61ddfad9e520371345eb5736e3976"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_cp__info.html">Cp_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a3ff61ddfad9e520371345eb5736e3976">Cp_info</a></td></tr>
+<tr class="separator:a3ff61ddfad9e520371345eb5736e3976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212a9d4aa2f66b9e1f5e13a35cbadacb"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_attribute__info.html">Attribute_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a212a9d4aa2f66b9e1f5e13a35cbadacb">Attribute_info</a></td></tr>
+<tr class="separator:a212a9d4aa2f66b9e1f5e13a35cbadacb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636712c88fb34aa4a0faeff41223844c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_constant_value__attribute.html">ConstantValue_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a636712c88fb34aa4a0faeff41223844c">ConstantValue_attribute</a></td></tr>
+<tr class="memdesc:a636712c88fb34aa4a0faeff41223844c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_constant_value__attribute.html" title="ConstantValue_attribute. ">ConstantValue_attribute</a>.  <a href="#a636712c88fb34aa4a0faeff41223844c">Mais...</a><br /></td></tr>
+<tr class="separator:a636712c88fb34aa4a0faeff41223844c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a221b9693e220df24ce3b6a3df1e70605"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structexception__table.html">exception_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a221b9693e220df24ce3b6a3df1e70605">exception_table</a></td></tr>
+<tr class="memdesc:a221b9693e220df24ce3b6a3df1e70605"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_code__attribute.html">Code_attribute</a>.  <a href="#a221b9693e220df24ce3b6a3df1e70605">Mais...</a><br /></td></tr>
+<tr class="separator:a221b9693e220df24ce3b6a3df1e70605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9fcfc552a29567bbd53aeb83e864118"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_code__attribute.html">Code_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#aa9fcfc552a29567bbd53aeb83e864118">Code_attribute</a></td></tr>
+<tr class="separator:aa9fcfc552a29567bbd53aeb83e864118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac330bf061900eb51490c00a1d573f0ee"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_exceptions__attribute.html">Exceptions_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ac330bf061900eb51490c00a1d573f0ee">Exceptions_attribute</a></td></tr>
+<tr class="memdesc:ac330bf061900eb51490c00a1d573f0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_exceptions__attribute.html" title="Exceptions_attribute. ">Exceptions_attribute</a>.  <a href="#ac330bf061900eb51490c00a1d573f0ee">Mais...</a><br /></td></tr>
+<tr class="separator:ac330bf061900eb51490c00a1d573f0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d8d7581fd08212fad9c390183f1b1b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_classes.html">Classes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a08d8d7581fd08212fad9c390183f1b1b">Classes</a></td></tr>
+<tr class="memdesc:a08d8d7581fd08212fad9c390183f1b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_inner_classes__attribute.html">InnerClasses_attribute</a>.  <a href="#a08d8d7581fd08212fad9c390183f1b1b">Mais...</a><br /></td></tr>
+<tr class="separator:a08d8d7581fd08212fad9c390183f1b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ead007231e060b83061b50d2dcdf1cf"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_inner_classes__attribute.html">InnerClasses_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a7ead007231e060b83061b50d2dcdf1cf">InnerClasses_attribute</a></td></tr>
+<tr class="separator:a7ead007231e060b83061b50d2dcdf1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd90bb2bf92f4158e0644e61b5d36c1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_enclosing_method__attribute.html">EnclosingMethod_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a6cd90bb2bf92f4158e0644e61b5d36c1">EnclosingMethod_attribute</a></td></tr>
+<tr class="memdesc:a6cd90bb2bf92f4158e0644e61b5d36c1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_enclosing_method__attribute.html" title="EnclosingMethod_attribute. ">EnclosingMethod_attribute</a>.  <a href="#a6cd90bb2bf92f4158e0644e61b5d36c1">Mais...</a><br /></td></tr>
+<tr class="separator:a6cd90bb2bf92f4158e0644e61b5d36c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae00366bbab014ac22f3427dc33a60694"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_synthetic__attribute.html">Synthetic_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ae00366bbab014ac22f3427dc33a60694">Synthetic_attribute</a></td></tr>
+<tr class="memdesc:ae00366bbab014ac22f3427dc33a60694"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_synthetic__attribute.html" title="Synthetic_attribute. ">Synthetic_attribute</a>.  <a href="#ae00366bbab014ac22f3427dc33a60694">Mais...</a><br /></td></tr>
+<tr class="separator:ae00366bbab014ac22f3427dc33a60694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3573119d158fcaa25656263b29c49942"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_signature__attribute.html">Signature_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a3573119d158fcaa25656263b29c49942">Signature_attribute</a></td></tr>
+<tr class="memdesc:a3573119d158fcaa25656263b29c49942"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_signature__attribute.html" title="Signature_attribute. ">Signature_attribute</a>.  <a href="#a3573119d158fcaa25656263b29c49942">Mais...</a><br /></td></tr>
+<tr class="separator:a3573119d158fcaa25656263b29c49942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb8b65b933bdd949b533fe0dc8ddd31e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_source_file__attribute.html">SourceFile_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#acb8b65b933bdd949b533fe0dc8ddd31e">SourceFile_attribute</a></td></tr>
+<tr class="memdesc:acb8b65b933bdd949b533fe0dc8ddd31e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_source_file__attribute.html" title="SourceFile_attribute. ">SourceFile_attribute</a>.  <a href="#acb8b65b933bdd949b533fe0dc8ddd31e">Mais...</a><br /></td></tr>
+<tr class="separator:acb8b65b933bdd949b533fe0dc8ddd31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a90fcc47c8fb1ef36bc1bdcf38fc4ed"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_source_debug_extension__attribute.html">SourceDebugExtension_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a1a90fcc47c8fb1ef36bc1bdcf38fc4ed">SourceDebugExtension_attribute</a></td></tr>
+<tr class="memdesc:a1a90fcc47c8fb1ef36bc1bdcf38fc4ed"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_source_debug_extension__attribute.html" title="SourceDebugExtension_attribute. ">SourceDebugExtension_attribute</a>.  <a href="#a1a90fcc47c8fb1ef36bc1bdcf38fc4ed">Mais...</a><br /></td></tr>
+<tr class="separator:a1a90fcc47c8fb1ef36bc1bdcf38fc4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc39fcd2453b9af80360841c9e5a56bc"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structline__number__table.html">line_number_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#adc39fcd2453b9af80360841c9e5a56bc">line_number_table</a></td></tr>
+<tr class="memdesc:adc39fcd2453b9af80360841c9e5a56bc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_line_number_table__attribute.html">LineNumberTable_attribute</a>.  <a href="#adc39fcd2453b9af80360841c9e5a56bc">Mais...</a><br /></td></tr>
+<tr class="separator:adc39fcd2453b9af80360841c9e5a56bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0428e8301bb51ca96ca465f181d4bb56"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_line_number_table__attribute.html">LineNumberTable_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a0428e8301bb51ca96ca465f181d4bb56">LineNumberTable_attribute</a></td></tr>
+<tr class="separator:a0428e8301bb51ca96ca465f181d4bb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae045ac5cb4d68040806388e1ee9bb9d2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structlocal__variable__table.html">local_variable_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ae045ac5cb4d68040806388e1ee9bb9d2">local_variable_table</a></td></tr>
+<tr class="memdesc:ae045ac5cb4d68040806388e1ee9bb9d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_local_variable_table__attribute.html">LocalVariableTable_attribute</a>.  <a href="#ae045ac5cb4d68040806388e1ee9bb9d2">Mais...</a><br /></td></tr>
+<tr class="separator:ae045ac5cb4d68040806388e1ee9bb9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26868272c9eb00b00cf0307459b29e5f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_local_variable_table__attribute.html">LocalVariableTable_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a26868272c9eb00b00cf0307459b29e5f">LocalVariableTable_attribute</a></td></tr>
+<tr class="separator:a26868272c9eb00b00cf0307459b29e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a340f38fdc660476ae6372860917f127f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structlocal__variable__type__table.html">local_variable_type_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a340f38fdc660476ae6372860917f127f">local_variable_type_table</a></td></tr>
+<tr class="memdesc:a340f38fdc660476ae6372860917f127f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_local_variable_type_table__attribute.html">LocalVariableTypeTable_attribute</a>.  <a href="#a340f38fdc660476ae6372860917f127f">Mais...</a><br /></td></tr>
+<tr class="separator:a340f38fdc660476ae6372860917f127f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358acf4a1763e6f1b39072db67c258c9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_local_variable_type_table__attribute.html">LocalVariableTypeTable_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a358acf4a1763e6f1b39072db67c258c9">LocalVariableTypeTable_attribute</a></td></tr>
+<tr class="separator:a358acf4a1763e6f1b39072db67c258c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef134ca7805a6ebce7bf1e49361eb767"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_deprecated__attribute.html">Deprecated_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#aef134ca7805a6ebce7bf1e49361eb767">Deprecated_attribute</a></td></tr>
+<tr class="memdesc:aef134ca7805a6ebce7bf1e49361eb767"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_deprecated__attribute.html" title="Deprecated_attribute. ">Deprecated_attribute</a>.  <a href="#aef134ca7805a6ebce7bf1e49361eb767">Mais...</a><br /></td></tr>
+<tr class="separator:aef134ca7805a6ebce7bf1e49361eb767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14884605a91c8b411791bd95a7636f5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structbootstrap__methods.html">bootstrap_methods</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ac14884605a91c8b411791bd95a7636f5">bootstrap_methods</a></td></tr>
+<tr class="memdesc:ac14884605a91c8b411791bd95a7636f5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_bootstrap_methods__attribute.html">BootstrapMethods_attribute</a>.  <a href="#ac14884605a91c8b411791bd95a7636f5">Mais...</a><br /></td></tr>
+<tr class="separator:ac14884605a91c8b411791bd95a7636f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fef54220191eb558ae91be5fa0fd2b5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_bootstrap_methods__attribute.html">BootstrapMethods_attribute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a2fef54220191eb558ae91be5fa0fd2b5">BootstrapMethods_attribute</a></td></tr>
+<tr class="separator:a2fef54220191eb558ae91be5fa0fd2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b0a5eb3797bef0dd32802591c04323"><td class="memItemLeft" align="right" valign="top">typedef union <a class="el" href="unionattribute__pointer.html">attribute_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ae0b0a5eb3797bef0dd32802591c04323">attribute_pointer</a></td></tr>
+<tr class="memdesc:ae0b0a5eb3797bef0dd32802591c04323"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_attribute__info.html">Attribute_info</a>.  <a href="#ae0b0a5eb3797bef0dd32802591c04323">Mais...</a><br /></td></tr>
+<tr class="separator:ae0b0a5eb3797bef0dd32802591c04323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01068f3927029a2624e7fc1a146da360"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_field__info.html">Field_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a01068f3927029a2624e7fc1a146da360">Field_info</a></td></tr>
+<tr class="separator:a01068f3927029a2624e7fc1a146da360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02eb286fc0a21e8d1754026aba939b3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_method__info.html">Method_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#aa02eb286fc0a21e8d1754026aba939b3">Method_info</a></td></tr>
+<tr class="separator:aa02eb286fc0a21e8d1754026aba939b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2722eac638126419cda16ab0a201376"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_class_file.html">ClassFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#aa2722eac638126419cda16ab0a201376">ClassFile</a></td></tr>
+<tr class="separator:aa2722eac638126419cda16ab0a201376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a054f9d1d78ad324c23b67bb02a57dac6">loadClass</a> (char *className)</td></tr>
+<tr class="memdesc:a054f9d1d78ad324c23b67bb02a57dac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada.  <a href="#a054f9d1d78ad324c23b67bb02a57dac6">Mais...</a><br /></td></tr>
+<tr class="separator:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#adbc64e22f2dcd5daae28f25cb3c6d2c3">accessConstantPoolEntry</a> (int index, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool)</td></tr>
+<tr class="memdesc:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que retorna uma string que representa o valor de uma das constantes do Constant Pool.  <a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">Mais...</a><br /></td></tr>
+<tr class="separator:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67054480a9f3874ba2f0196b60a4350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ae67054480a9f3874ba2f0196b60a4350">classFormatchecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:ae67054480a9f3874ba2f0196b60a4350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic.  <a href="#ae67054480a9f3874ba2f0196b60a4350">Mais...</a><br /></td></tr>
+<tr class="separator:ae67054480a9f3874ba2f0196b60a4350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07fd265d4b963d7972e5a683e6c4050"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#af07fd265d4b963d7972e5a683e6c4050">classNameChecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, char *nomeArquivo)</td></tr>
+<tr class="memdesc:af07fd265d4b963d7972e5a683e6c4050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o nome da classe do .class bate com o do arquivo.  <a href="#af07fd265d4b963d7972e5a683e6c4050">Mais...</a><br /></td></tr>
+<tr class="separator:af07fd265d4b963d7972e5a683e6c4050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a37e5445b741ed921d544e5fdd76f1dbc">versionChecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:a37e5445b741ed921d544e5fdd76f1dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se a major version do .class é suportada pelo java 2.  <a href="#a37e5445b741ed921d544e5fdd76f1dbc">Mais...</a><br /></td></tr>
+<tr class="separator:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a48f76a8c0dc23567f303ed6aa221e078"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a48f76a8c0dc23567f303ed6aa221e078">DEBUG</a></td></tr>
+<tr class="separator:a48f76a8c0dc23567f303ed6aa221e078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="a72b5b534aa409975da610a36f648fa0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72b5b534aa409975da610a36f648fa0a">&sect;&nbsp;</a></span>CONSTANT_Class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_Class&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab49341c3b4ade4bfa1a64be8d2f73ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49341c3b4ade4bfa1a64be8d2f73ae1">&sect;&nbsp;</a></span>CONSTANT_Double</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_Double&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a008d43478c2e2973e7413f5d1c48095d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a008d43478c2e2973e7413f5d1c48095d">&sect;&nbsp;</a></span>CONSTANT_Fieldref</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_Fieldref&#160;&#160;&#160;9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab914627ce5b25c4acfc98f2eacb78473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab914627ce5b25c4acfc98f2eacb78473">&sect;&nbsp;</a></span>CONSTANT_Float</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_Float&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a856a6553a55d721970ca5450eb1ccd2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856a6553a55d721970ca5450eb1ccd2c">&sect;&nbsp;</a></span>CONSTANT_Integer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_Integer&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0e92044d246c6e4d691116f89a70ebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e92044d246c6e4d691116f89a70ebb">&sect;&nbsp;</a></span>CONSTANT_InterfaceMethodref</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_InterfaceMethodref&#160;&#160;&#160;11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a127046386d755d4a91c71aa9b453a8bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127046386d755d4a91c71aa9b453a8bb">&sect;&nbsp;</a></span>CONSTANT_InvokeDynamic</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_InvokeDynamic&#160;&#160;&#160;18</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a426ca017b895fc522671a561d460be7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a426ca017b895fc522671a561d460be7a">&sect;&nbsp;</a></span>CONSTANT_Long</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_Long&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb3c84f82163f217ab7f8fa0258d80ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb3c84f82163f217ab7f8fa0258d80ce">&sect;&nbsp;</a></span>CONSTANT_MethodHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_MethodHandle&#160;&#160;&#160;15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a179cf178ea867c6ab1700508c269dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a179cf178ea867c6ab1700508c269dd">&sect;&nbsp;</a></span>CONSTANT_Methodref</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_Methodref&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a991ba557d63f94e2cdf05c9f80630a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991ba557d63f94e2cdf05c9f80630a6f">&sect;&nbsp;</a></span>CONSTANT_MethodType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_MethodType&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b6ba749976ae61415983ca0b890c91a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b6ba749976ae61415983ca0b890c91a">&sect;&nbsp;</a></span>CONSTANT_NameAndType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_NameAndType&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a7acbe175de56072a2f0a1a051418e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7acbe175de56072a2f0a1a051418e1">&sect;&nbsp;</a></span>CONSTANT_String</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_String&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc46559a7d3f7baf519fc183c2fad2b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc46559a7d3f7baf519fc183c2fad2b4">&sect;&nbsp;</a></span>CONSTANT_Utf8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONSTANT_Utf8&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a212a9d4aa2f66b9e1f5e13a35cbadacb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a212a9d4aa2f66b9e1f5e13a35cbadacb">&sect;&nbsp;</a></span>Attribute_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_attribute__info.html">Attribute_info</a> <a class="el" href="struct_attribute__info.html">Attribute_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0b0a5eb3797bef0dd32802591c04323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b0a5eb3797bef0dd32802591c04323">&sect;&nbsp;</a></span>attribute_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef union <a class="el" href="unionattribute__pointer.html">attribute_pointer</a> <a class="el" href="unionattribute__pointer.html">attribute_pointer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_attribute__info.html">Attribute_info</a>. </p>
+
+</div>
+</div>
+<a id="ac14884605a91c8b411791bd95a7636f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14884605a91c8b411791bd95a7636f5">&sect;&nbsp;</a></span>bootstrap_methods</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structbootstrap__methods.html">bootstrap_methods</a> <a class="el" href="structbootstrap__methods.html">bootstrap_methods</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_bootstrap_methods__attribute.html">BootstrapMethods_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a2fef54220191eb558ae91be5fa0fd2b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fef54220191eb558ae91be5fa0fd2b5">&sect;&nbsp;</a></span>BootstrapMethods_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_bootstrap_methods__attribute.html">BootstrapMethods_attribute</a> <a class="el" href="struct_bootstrap_methods__attribute.html">BootstrapMethods_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3360f51937b6ef3bac71814699e546b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3360f51937b6ef3bac71814699e546b2">&sect;&nbsp;</a></span>Class_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_class__info.html">Class_info</a> <a class="el" href="struct_class__info.html">Class_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08d8d7581fd08212fad9c390183f1b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d8d7581fd08212fad9c390183f1b1b">&sect;&nbsp;</a></span>Classes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_classes.html">Classes</a> <a class="el" href="struct_classes.html">Classes</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_inner_classes__attribute.html">InnerClasses_attribute</a>. </p>
+
+</div>
+</div>
+<a id="aa2722eac638126419cda16ab0a201376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2722eac638126419cda16ab0a201376">&sect;&nbsp;</a></span>ClassFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_class_file.html">ClassFile</a>  <a class="el" href="struct_class_file.html">ClassFile</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa9fcfc552a29567bbd53aeb83e864118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fcfc552a29567bbd53aeb83e864118">&sect;&nbsp;</a></span>Code_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_code__attribute.html">Code_attribute</a> <a class="el" href="struct_code__attribute.html">Code_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a636712c88fb34aa4a0faeff41223844c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636712c88fb34aa4a0faeff41223844c">&sect;&nbsp;</a></span>ConstantValue_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_constant_value__attribute.html">ConstantValue_attribute</a> <a class="el" href="struct_constant_value__attribute.html">ConstantValue_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_constant_value__attribute.html" title="ConstantValue_attribute. ">ConstantValue_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a3ff61ddfad9e520371345eb5736e3976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff61ddfad9e520371345eb5736e3976">&sect;&nbsp;</a></span>Cp_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_cp__info.html">Cp_info</a> <a class="el" href="struct_cp__info.html">Cp_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef134ca7805a6ebce7bf1e49361eb767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef134ca7805a6ebce7bf1e49361eb767">&sect;&nbsp;</a></span>Deprecated_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_deprecated__attribute.html">Deprecated_attribute</a> <a class="el" href="struct_deprecated__attribute.html">Deprecated_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_deprecated__attribute.html" title="Deprecated_attribute. ">Deprecated_attribute</a>. </p>
+
+</div>
+</div>
+<a id="aa7e6a5a324d048f51433494c5085deb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7e6a5a324d048f51433494c5085deb5">&sect;&nbsp;</a></span>Double_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_double__info.html">Double_info</a> <a class="el" href="struct_double__info.html">Double_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6cd90bb2bf92f4158e0644e61b5d36c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd90bb2bf92f4158e0644e61b5d36c1">&sect;&nbsp;</a></span>EnclosingMethod_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_enclosing_method__attribute.html">EnclosingMethod_attribute</a> <a class="el" href="struct_enclosing_method__attribute.html">EnclosingMethod_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_enclosing_method__attribute.html" title="EnclosingMethod_attribute. ">EnclosingMethod_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a221b9693e220df24ce3b6a3df1e70605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221b9693e220df24ce3b6a3df1e70605">&sect;&nbsp;</a></span>exception_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structexception__table.html">exception_table</a> <a class="el" href="structexception__table.html">exception_table</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_code__attribute.html">Code_attribute</a>. </p>
+
+</div>
+</div>
+<a id="ac330bf061900eb51490c00a1d573f0ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac330bf061900eb51490c00a1d573f0ee">&sect;&nbsp;</a></span>Exceptions_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_exceptions__attribute.html">Exceptions_attribute</a> <a class="el" href="struct_exceptions__attribute.html">Exceptions_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_exceptions__attribute.html" title="Exceptions_attribute. ">Exceptions_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a01068f3927029a2624e7fc1a146da360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01068f3927029a2624e7fc1a146da360">&sect;&nbsp;</a></span>Field_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_field__info.html">Field_info</a> <a class="el" href="struct_field__info.html">Field_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a6c96ea384c06448120bd2414d52335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6c96ea384c06448120bd2414d52335">&sect;&nbsp;</a></span>Fieldref_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_fieldref__info.html">Fieldref_info</a> <a class="el" href="struct_fieldref__info.html">Fieldref_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13bcd7f88efd0679c6d72324ac0136bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13bcd7f88efd0679c6d72324ac0136bd">&sect;&nbsp;</a></span>Float_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_float__info.html">Float_info</a> <a class="el" href="struct_float__info.html">Float_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d4d0fe894d6eefdb230a2b0283b13d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4d0fe894d6eefdb230a2b0283b13d6">&sect;&nbsp;</a></span>info_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef union <a class="el" href="unioninfo__pointer.html">info_pointer</a> <a class="el" href="unioninfo__pointer.html">info_pointer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ead007231e060b83061b50d2dcdf1cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ead007231e060b83061b50d2dcdf1cf">&sect;&nbsp;</a></span>InnerClasses_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_inner_classes__attribute.html">InnerClasses_attribute</a> <a class="el" href="struct_inner_classes__attribute.html">InnerClasses_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc5a3e36ee075d2a192259b6674829f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5a3e36ee075d2a192259b6674829f7">&sect;&nbsp;</a></span>Integer_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_integer__info.html">Integer_info</a> <a class="el" href="struct_integer__info.html">Integer_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b2cad31056620602dae325294154df5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b2cad31056620602dae325294154df5">&sect;&nbsp;</a></span>InterfaceMethodref_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_interface_methodref__info.html">InterfaceMethodref_info</a> <a class="el" href="struct_interface_methodref__info.html">InterfaceMethodref_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f54cdbe2c57e640e3126d6f0a21d1b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f54cdbe2c57e640e3126d6f0a21d1b6">&sect;&nbsp;</a></span>InvokeDynamic_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_invoke_dynamic__info.html">InvokeDynamic_info</a> <a class="el" href="struct_invoke_dynamic__info.html">InvokeDynamic_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc39fcd2453b9af80360841c9e5a56bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc39fcd2453b9af80360841c9e5a56bc">&sect;&nbsp;</a></span>line_number_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structline__number__table.html">line_number_table</a> <a class="el" href="structline__number__table.html">line_number_table</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_line_number_table__attribute.html">LineNumberTable_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a0428e8301bb51ca96ca465f181d4bb56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0428e8301bb51ca96ca465f181d4bb56">&sect;&nbsp;</a></span>LineNumberTable_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_line_number_table__attribute.html">LineNumberTable_attribute</a> <a class="el" href="struct_line_number_table__attribute.html">LineNumberTable_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae045ac5cb4d68040806388e1ee9bb9d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae045ac5cb4d68040806388e1ee9bb9d2">&sect;&nbsp;</a></span>local_variable_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structlocal__variable__table.html">local_variable_table</a> <a class="el" href="structlocal__variable__table.html">local_variable_table</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_local_variable_table__attribute.html">LocalVariableTable_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a340f38fdc660476ae6372860917f127f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a340f38fdc660476ae6372860917f127f">&sect;&nbsp;</a></span>local_variable_type_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structlocal__variable__type__table.html">local_variable_type_table</a> <a class="el" href="structlocal__variable__type__table.html">local_variable_type_table</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_local_variable_type_table__attribute.html">LocalVariableTypeTable_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a26868272c9eb00b00cf0307459b29e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26868272c9eb00b00cf0307459b29e5f">&sect;&nbsp;</a></span>LocalVariableTable_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_local_variable_table__attribute.html">LocalVariableTable_attribute</a> <a class="el" href="struct_local_variable_table__attribute.html">LocalVariableTable_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a358acf4a1763e6f1b39072db67c258c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358acf4a1763e6f1b39072db67c258c9">&sect;&nbsp;</a></span>LocalVariableTypeTable_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_local_variable_type_table__attribute.html">LocalVariableTypeTable_attribute</a> <a class="el" href="struct_local_variable_type_table__attribute.html">LocalVariableTypeTable_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3fc76c98ba6a31aa6cc8fd9c7cc45deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc76c98ba6a31aa6cc8fd9c7cc45deb">&sect;&nbsp;</a></span>Long_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_long__info.html">Long_info</a> <a class="el" href="struct_long__info.html">Long_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa02eb286fc0a21e8d1754026aba939b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02eb286fc0a21e8d1754026aba939b3">&sect;&nbsp;</a></span>Method_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_method__info.html">Method_info</a> <a class="el" href="struct_method__info.html">Method_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acad3ff9facfe09ba4edcd0743cd5ebf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad3ff9facfe09ba4edcd0743cd5ebf6">&sect;&nbsp;</a></span>MethodHandle_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_method_handle__info.html">MethodHandle_info</a> <a class="el" href="struct_method_handle__info.html">MethodHandle_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d14a49ad2aa3c665807b93cef897646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d14a49ad2aa3c665807b93cef897646">&sect;&nbsp;</a></span>Methodref_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_methodref__info.html">Methodref_info</a> <a class="el" href="struct_methodref__info.html">Methodref_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f569353b0286c20aa69c0f7c83b7f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f569353b0286c20aa69c0f7c83b7f42">&sect;&nbsp;</a></span>MethodType_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_method_type__info.html">MethodType_info</a> <a class="el" href="struct_method_type__info.html">MethodType_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d921ff7200111aa8127e56ea4259300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d921ff7200111aa8127e56ea4259300">&sect;&nbsp;</a></span>NameAndType_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_name_and_type__info.html">NameAndType_info</a> <a class="el" href="struct_name_and_type__info.html">NameAndType_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3573119d158fcaa25656263b29c49942"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3573119d158fcaa25656263b29c49942">&sect;&nbsp;</a></span>Signature_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_signature__attribute.html">Signature_attribute</a> <a class="el" href="struct_signature__attribute.html">Signature_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_signature__attribute.html" title="Signature_attribute. ">Signature_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a1a90fcc47c8fb1ef36bc1bdcf38fc4ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a90fcc47c8fb1ef36bc1bdcf38fc4ed">&sect;&nbsp;</a></span>SourceDebugExtension_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_source_debug_extension__attribute.html">SourceDebugExtension_attribute</a> <a class="el" href="struct_source_debug_extension__attribute.html">SourceDebugExtension_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_source_debug_extension__attribute.html" title="SourceDebugExtension_attribute. ">SourceDebugExtension_attribute</a>. </p>
+
+</div>
+</div>
+<a id="acb8b65b933bdd949b533fe0dc8ddd31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb8b65b933bdd949b533fe0dc8ddd31e">&sect;&nbsp;</a></span>SourceFile_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_source_file__attribute.html">SourceFile_attribute</a> <a class="el" href="struct_source_file__attribute.html">SourceFile_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_source_file__attribute.html" title="SourceFile_attribute. ">SourceFile_attribute</a>. </p>
+
+</div>
+</div>
+<a id="a765681bbc37bea14a966a81a950027b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765681bbc37bea14a966a81a950027b1">&sect;&nbsp;</a></span>String_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_string__info.html">String_info</a> <a class="el" href="struct_string__info.html">String_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae00366bbab014ac22f3427dc33a60694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00366bbab014ac22f3427dc33a60694">&sect;&nbsp;</a></span>Synthetic_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_synthetic__attribute.html">Synthetic_attribute</a> <a class="el" href="struct_synthetic__attribute.html">Synthetic_attribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_synthetic__attribute.html" title="Synthetic_attribute. ">Synthetic_attribute</a>. </p>
+
+</div>
+</div>
+<a id="adc076fd8628f664b7c6bc6fa48c4fed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc076fd8628f664b7c6bc6fa48c4fed1">&sect;&nbsp;</a></span>Utf8_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_utf8__info.html">Utf8_info</a> <a class="el" href="struct_utf8__info.html">Utf8_info</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="adbc64e22f2dcd5daae28f25cb3c6d2c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">&sect;&nbsp;</a></span>accessConstantPoolEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* accessConstantPoolEntry </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
+          <td class="paramname"><em>constant_pool</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que retorna uma string que representa o valor de uma das constantes do Constant Pool. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>index da constante no Constant Pool </td></tr>
+    <tr><td class="paramname">constant_pool</td><td>ponteiro para um Constant Pool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>ponteiro para uma string </dd></dl>
+
+</div>
+</div>
+<a id="ae67054480a9f3874ba2f0196b60a4350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67054480a9f3874ba2f0196b60a4350">&sect;&nbsp;</a></span>classFormatchecker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void classFormatchecker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do suposto .class </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 para .class e 0 para nao .class </dd></dl>
+
+</div>
+</div>
+<a id="af07fd265d4b963d7972e5a683e6c4050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07fd265d4b963d7972e5a683e6c4050">&sect;&nbsp;</a></span>classNameChecker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void classNameChecker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nomeArquivo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função verificacao, verificar se o nome da classe do .class bate com o do arquivo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do .class </td></tr>
+    <tr><td class="paramname">nomeArquivo</td><td>Ponteiro o nome do arquivo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 para confere e 0 para nao confere </dd></dl>
+
+</div>
+</div>
+<a id="a054f9d1d78ad324c23b67bb02a57dac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054f9d1d78ad324c23b67bb02a57dac6">&sect;&nbsp;</a></span>loadClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* loadClass </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>className</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td>Nome da classe a ser lida </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Referência para uma struct <a class="el" href="struct_class_file.html">ClassFile</a> </dd></dl>
+
+</div>
+</div>
+<a id="a37e5445b741ed921d544e5fdd76f1dbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e5445b741ed921d544e5fdd76f1dbc">&sect;&nbsp;</a></span>versionChecker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void versionChecker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função verificacao, verificar se a major version do .class é suportada pelo java 2. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do .class </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 para suportada e 0 para nao .suportada </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="a48f76a8c0dc23567f303ed6aa221e078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f76a8c0dc23567f303ed6aa221e078">&sect;&nbsp;</a></span>DEBUG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DEBUG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

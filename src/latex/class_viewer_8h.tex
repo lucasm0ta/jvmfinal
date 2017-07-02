@@ -1,0 +1,177 @@
+\hypertarget{class_viewer_8h}{}\section{Referência ao ficheiro class\+Viewer.\+h}
+\label{class_viewer_8h}\index{class\+Viewer.\+h@{class\+Viewer.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}class\+Loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}instruction\+Mapper.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tableswitch\+Viewer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lookupswitch\+Viewer.\+h\char`\"{}}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_viewer_8h_a6b6c6b60846c61858015aa8f264f4fc8}{print\+General\+Information} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}print\+General\+Information description\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{class_viewer_8h_a671376372bfc54d050e26bc6b5dacc2c}{print\+Constant\+Pool} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}print\+Constant\+Pool description\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{class_viewer_8h_a1fadb45f52f010c9dc92806b28c8fa87}{print\+Interfaces} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}print\+Interfaces description\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{class_viewer_8h_adbffb2d094b7945dba0bd0e5f7e0de26}{print\+Fields} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}print\+Fields description\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{class_viewer_8h_ae68a78976a85a880b9e26b1889532de3}{print\+Methods} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em \mbox{[}print\+Methods description\mbox{]} \end{DoxyCompactList}\item 
+void \hyperlink{class_viewer_8h_a558ea67bd614cca0ffe991bd4e530fd8}{print\+Attributes} (\hyperlink{struct_attribute__info}{Attribute\+\_\+info} $\ast$attributes, uint16\+\_\+t attributes\+\_\+count, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, int tab)
+\begin{DoxyCompactList}\small\item\em W\+A\+R\+N\+I\+NG\+: G\+A\+M\+B\+I\+A\+R\+RA P\+A\+RA D\+AR OS T\+A\+BS C\+O\+R\+R\+E\+T\+OS (Q\+U\+A\+N\+DO UM A\+T\+R\+I\+B\+U\+TO E\+S\+TA D\+E\+N\+T\+RO DO O\+U\+T\+RO) P\+OR I\+S\+SO Q\+UE T\+EM UM s NA F\+R\+E\+N\+TE DE T\+O\+D\+OS OS P\+R\+I\+N\+TS. \end{DoxyCompactList}\item 
+void \hyperlink{class_viewer_8h_aad5f27d7ff119831c147a4f595b4e530}{print\+Class} (\hyperlink{struct_class_file}{Class\+File} $\ast$classfile)
+\begin{DoxyCompactList}\small\item\em Função que realiza os prints de acordo com cada item do Byte code Viewer. \end{DoxyCompactList}\item 
+void \hyperlink{class_viewer_8h_aafae20da7d25260debc46ff938e1639e}{print\+Code} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code\+\_\+attribute, char $\ast$space)
+\item 
+int \hyperlink{class_viewer_8h_ae67e0c3ff1c487a6bf118ee61dc50c82}{print\+Default\+Instruction} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code\+Attribute, char $\ast$space, \hyperlink{struct_mapper}{Mapper} opcode\+Mapper, int instr\+Pos)
+\item 
+void \hyperlink{class_viewer_8h_a693c748265331baf97996cad6d456206}{print\+Constant\+Pool\+Entry} (int index, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool)
+\begin{DoxyCompactList}\small\item\em Função que imprime uma string que representa o valor de uma das constantes do Constant Pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\hypertarget{class_viewer_8h_a558ea67bd614cca0ffe991bd4e530fd8}{}\label{class_viewer_8h_a558ea67bd614cca0ffe991bd4e530fd8} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Attributes@{print\+Attributes}}
+\index{print\+Attributes@{print\+Attributes}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Attributes()}{printAttributes()}}
+{\footnotesize\ttfamily void print\+Attributes (\begin{DoxyParamCaption}\item[{\hyperlink{struct_attribute__info}{Attribute\+\_\+info} $\ast$}]{attributes,  }\item[{uint16\+\_\+t}]{attributes\+\_\+count,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{int}]{tab }\end{DoxyParamCaption})}
+
+
+
+W\+A\+R\+N\+I\+NG\+: G\+A\+M\+B\+I\+A\+R\+RA P\+A\+RA D\+AR OS T\+A\+BS C\+O\+R\+R\+E\+T\+OS (Q\+U\+A\+N\+DO UM A\+T\+R\+I\+B\+U\+TO E\+S\+TA D\+E\+N\+T\+RO DO O\+U\+T\+RO) P\+OR I\+S\+SO Q\+UE T\+EM UM s NA F\+R\+E\+N\+TE DE T\+O\+D\+OS OS P\+R\+I\+N\+TS. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em attributes} & \mbox{[}description\mbox{]} \\
+\hline
+{\em attributes\+\_\+count} & \mbox{[}description\mbox{]} \\
+\hline
+{\em constant\+\_\+pool} & \mbox{[}description\mbox{]} \\
+\hline
+{\em tab} & quantidade de tabs que devem ser dados \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_viewer_8h_aad5f27d7ff119831c147a4f595b4e530}{}\label{class_viewer_8h_aad5f27d7ff119831c147a4f595b4e530} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Class@{print\+Class}}
+\index{print\+Class@{print\+Class}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Class()}{printClass()}}
+{\footnotesize\ttfamily void print\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+Função que realiza os prints de acordo com cada item do Byte code Viewer. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_viewer_8h_aafae20da7d25260debc46ff938e1639e}{}\label{class_viewer_8h_aafae20da7d25260debc46ff938e1639e} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Code@{print\+Code}}
+\index{print\+Code@{print\+Code}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Code()}{printCode()}}
+{\footnotesize\ttfamily void print\+Code (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code\+\_\+attribute,  }\item[{char $\ast$}]{space }\end{DoxyParamCaption})}
+
+\hypertarget{class_viewer_8h_a671376372bfc54d050e26bc6b5dacc2c}{}\label{class_viewer_8h_a671376372bfc54d050e26bc6b5dacc2c} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Constant\+Pool@{print\+Constant\+Pool}}
+\index{print\+Constant\+Pool@{print\+Constant\+Pool}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Constant\+Pool()}{printConstantPool()}}
+{\footnotesize\ttfamily void print\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}print\+Constant\+Pool description\mbox{]} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_viewer_8h_a693c748265331baf97996cad6d456206}{}\label{class_viewer_8h_a693c748265331baf97996cad6d456206} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Constant\+Pool\+Entry@{print\+Constant\+Pool\+Entry}}
+\index{print\+Constant\+Pool\+Entry@{print\+Constant\+Pool\+Entry}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Constant\+Pool\+Entry()}{printConstantPoolEntry()}}
+{\footnotesize\ttfamily void print\+Constant\+Pool\+Entry (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool }\end{DoxyParamCaption})}
+
+
+
+Função que imprime uma string que representa o valor de uma das constantes do Constant Pool. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & index da constante no Constant Pool \\
+\hline
+{\em constant\+\_\+pool} & ponteiro para um Constant Pool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+ponteiro para uma string 
+\end{DoxyReturn}
+\hypertarget{class_viewer_8h_ae67e0c3ff1c487a6bf118ee61dc50c82}{}\label{class_viewer_8h_ae67e0c3ff1c487a6bf118ee61dc50c82} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Default\+Instruction@{print\+Default\+Instruction}}
+\index{print\+Default\+Instruction@{print\+Default\+Instruction}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Default\+Instruction()}{printDefaultInstruction()}}
+{\footnotesize\ttfamily int print\+Default\+Instruction (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code\+Attribute,  }\item[{char $\ast$}]{space,  }\item[{\hyperlink{struct_mapper}{Mapper}}]{opcode\+Mapper,  }\item[{int}]{instr\+Pos }\end{DoxyParamCaption})}
+
+\hypertarget{class_viewer_8h_adbffb2d094b7945dba0bd0e5f7e0de26}{}\label{class_viewer_8h_adbffb2d094b7945dba0bd0e5f7e0de26} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Fields@{print\+Fields}}
+\index{print\+Fields@{print\+Fields}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Fields()}{printFields()}}
+{\footnotesize\ttfamily void print\+Fields (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}print\+Fields description\mbox{]} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_viewer_8h_a6b6c6b60846c61858015aa8f264f4fc8}{}\label{class_viewer_8h_a6b6c6b60846c61858015aa8f264f4fc8} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+General\+Information@{print\+General\+Information}}
+\index{print\+General\+Information@{print\+General\+Information}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+General\+Information()}{printGeneralInformation()}}
+{\footnotesize\ttfamily void print\+General\+Information (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}print\+General\+Information description\mbox{]} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_viewer_8h_a1fadb45f52f010c9dc92806b28c8fa87}{}\label{class_viewer_8h_a1fadb45f52f010c9dc92806b28c8fa87} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Interfaces@{print\+Interfaces}}
+\index{print\+Interfaces@{print\+Interfaces}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Interfaces()}{printInterfaces()}}
+{\footnotesize\ttfamily void print\+Interfaces (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}print\+Interfaces description\mbox{]} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_viewer_8h_ae68a78976a85a880b9e26b1889532de3}{}\label{class_viewer_8h_ae68a78976a85a880b9e26b1889532de3} 
+\index{class\+Viewer.\+h@{class\+Viewer.\+h}!print\+Methods@{print\+Methods}}
+\index{print\+Methods@{print\+Methods}!class\+Viewer.\+h@{class\+Viewer.\+h}}
+\subsubsection{\texorpdfstring{print\+Methods()}{printMethods()}}
+{\footnotesize\ttfamily void print\+Methods (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}print\+Methods description\mbox{]} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}

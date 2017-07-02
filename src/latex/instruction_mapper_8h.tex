@@ -1,0 +1,91 @@
+\hypertarget{instruction_mapper_8h}{}\section{Referência ao ficheiro instruction\+Mapper.\+h}
+\label{instruction_mapper_8h}\index{instruction\+Mapper.\+h@{instruction\+Mapper.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_mapper}{Mapper}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{instruction_mapper_8h_ab77522c65df7d18cddc66f4f74a47f29}{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+N\+A\+ME}~30
+\item 
+\#define \hyperlink{instruction_mapper_8h_af6ca297e66f1914309c97f36a8fc6e30}{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE}~256
+\end{DoxyCompactItemize}
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_mapper}{Mapper} \hyperlink{instruction_mapper_8h_ab52aa36e4f3bf319e72c9cfa9f401ec6}{Mapper}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{instruction_mapper_8h_a1f25bd91404d2dc339b284542a3a465e}{init\+Mapper} ()
+\end{DoxyCompactItemize}
+\subsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{instruction_mapper_8h_afc732bad7794930e83ddf10b7cb4ff1e}{I\+N\+S\+T\+R\+\_\+\+T\+A\+B\+L\+E\+S\+W\+I\+T\+CH}
+\item 
+const char $\ast$ \hyperlink{instruction_mapper_8h_a67970fbe42890e093354d473d8bea2ad}{I\+N\+S\+T\+R\+\_\+\+L\+O\+O\+K\+U\+P\+S\+W\+I\+T\+CH}
+\item 
+\hyperlink{struct_mapper}{Mapper} \hyperlink{instruction_mapper_8h_ac018b1f227065eb4a56f3f804d969720}{mapper} \mbox{[}\hyperlink{instruction_mapper_8h_af6ca297e66f1914309c97f36a8fc6e30}{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das macros}
+\hypertarget{instruction_mapper_8h_ab77522c65df7d18cddc66f4f74a47f29}{}\label{instruction_mapper_8h_ab77522c65df7d18cddc66f4f74a47f29} 
+\index{instruction\+Mapper.\+h@{instruction\+Mapper.\+h}!I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+N\+A\+ME@{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+N\+A\+ME}}
+\index{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+N\+A\+ME@{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+N\+A\+ME}!instruction\+Mapper.\+h@{instruction\+Mapper.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+N\+A\+ME}{INSTRUCTION\_NAME}}
+{\footnotesize\ttfamily \#define I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+N\+A\+ME~30}
+
+\hypertarget{instruction_mapper_8h_af6ca297e66f1914309c97f36a8fc6e30}{}\label{instruction_mapper_8h_af6ca297e66f1914309c97f36a8fc6e30} 
+\index{instruction\+Mapper.\+h@{instruction\+Mapper.\+h}!I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE@{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE}}
+\index{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE@{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE}!instruction\+Mapper.\+h@{instruction\+Mapper.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE}{INSTRUCTION\_SIZE}}
+{\footnotesize\ttfamily \#define I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE~256}
+
+
+
+\subsection{Documentação dos tipos}
+\hypertarget{instruction_mapper_8h_ab52aa36e4f3bf319e72c9cfa9f401ec6}{}\label{instruction_mapper_8h_ab52aa36e4f3bf319e72c9cfa9f401ec6} 
+\index{instruction\+Mapper.\+h@{instruction\+Mapper.\+h}!Mapper@{Mapper}}
+\index{Mapper@{Mapper}!instruction\+Mapper.\+h@{instruction\+Mapper.\+h}}
+\subsubsection{\texorpdfstring{Mapper}{Mapper}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_mapper}{Mapper}  \hyperlink{struct_mapper}{Mapper}}
+
+
+
+\subsection{Documentação das funções}
+\hypertarget{instruction_mapper_8h_a1f25bd91404d2dc339b284542a3a465e}{}\label{instruction_mapper_8h_a1f25bd91404d2dc339b284542a3a465e} 
+\index{instruction\+Mapper.\+h@{instruction\+Mapper.\+h}!init\+Mapper@{init\+Mapper}}
+\index{init\+Mapper@{init\+Mapper}!instruction\+Mapper.\+h@{instruction\+Mapper.\+h}}
+\subsubsection{\texorpdfstring{init\+Mapper()}{initMapper()}}
+{\footnotesize\ttfamily void init\+Mapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Documentação das variáveis}
+\hypertarget{instruction_mapper_8h_a67970fbe42890e093354d473d8bea2ad}{}\label{instruction_mapper_8h_a67970fbe42890e093354d473d8bea2ad} 
+\index{instruction\+Mapper.\+h@{instruction\+Mapper.\+h}!I\+N\+S\+T\+R\+\_\+\+L\+O\+O\+K\+U\+P\+S\+W\+I\+T\+CH@{I\+N\+S\+T\+R\+\_\+\+L\+O\+O\+K\+U\+P\+S\+W\+I\+T\+CH}}
+\index{I\+N\+S\+T\+R\+\_\+\+L\+O\+O\+K\+U\+P\+S\+W\+I\+T\+CH@{I\+N\+S\+T\+R\+\_\+\+L\+O\+O\+K\+U\+P\+S\+W\+I\+T\+CH}!instruction\+Mapper.\+h@{instruction\+Mapper.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+S\+T\+R\+\_\+\+L\+O\+O\+K\+U\+P\+S\+W\+I\+T\+CH}{INSTR\_LOOKUPSWITCH}}
+{\footnotesize\ttfamily const char$\ast$ I\+N\+S\+T\+R\+\_\+\+L\+O\+O\+K\+U\+P\+S\+W\+I\+T\+CH}
+
+\hypertarget{instruction_mapper_8h_afc732bad7794930e83ddf10b7cb4ff1e}{}\label{instruction_mapper_8h_afc732bad7794930e83ddf10b7cb4ff1e} 
+\index{instruction\+Mapper.\+h@{instruction\+Mapper.\+h}!I\+N\+S\+T\+R\+\_\+\+T\+A\+B\+L\+E\+S\+W\+I\+T\+CH@{I\+N\+S\+T\+R\+\_\+\+T\+A\+B\+L\+E\+S\+W\+I\+T\+CH}}
+\index{I\+N\+S\+T\+R\+\_\+\+T\+A\+B\+L\+E\+S\+W\+I\+T\+CH@{I\+N\+S\+T\+R\+\_\+\+T\+A\+B\+L\+E\+S\+W\+I\+T\+CH}!instruction\+Mapper.\+h@{instruction\+Mapper.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+S\+T\+R\+\_\+\+T\+A\+B\+L\+E\+S\+W\+I\+T\+CH}{INSTR\_TABLESWITCH}}
+{\footnotesize\ttfamily const char$\ast$ I\+N\+S\+T\+R\+\_\+\+T\+A\+B\+L\+E\+S\+W\+I\+T\+CH}
+
+\hypertarget{instruction_mapper_8h_ac018b1f227065eb4a56f3f804d969720}{}\label{instruction_mapper_8h_ac018b1f227065eb4a56f3f804d969720} 
+\index{instruction\+Mapper.\+h@{instruction\+Mapper.\+h}!mapper@{mapper}}
+\index{mapper@{mapper}!instruction\+Mapper.\+h@{instruction\+Mapper.\+h}}
+\subsubsection{\texorpdfstring{mapper}{mapper}}
+{\footnotesize\ttfamily \hyperlink{struct_mapper}{Mapper} mapper\mbox{[}\hyperlink{instruction_mapper_8h_af6ca297e66f1914309c97f36a8fc6e30}{I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+N\+\_\+\+S\+I\+ZE}\mbox{]}}
+

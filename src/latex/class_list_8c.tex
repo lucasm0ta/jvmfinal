@@ -1,0 +1,74 @@
+\hypertarget{class_list_8c}{}\section{Referência ao ficheiro class\+List.\+c}
+\label{class_list_8c}\index{class\+List.\+c@{class\+List.\+c}}
+{\ttfamily \#include \char`\"{}class\+List.\+h\char`\"{}}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_class_list}{Class\+List} $\ast$ \hyperlink{class_list_8c_a229db536fd75ed3d4c3ac4d194b0462f}{create\+Class\+List} ()
+\item 
+void \hyperlink{class_list_8c_a03c1e21fcd68a670f71b895083efd0b6}{init\+Class\+List} ()
+\item 
+void \hyperlink{class_list_8c_adcf9e45d59dc906899b488554b8b19d0}{push\+Class} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\begin{DoxyCompactList}\small\item\em Insere um class\+File na lista de class\+Files ja carregados. \end{DoxyCompactList}\item 
+\hyperlink{struct_class_file}{Class\+File} $\ast$ \hyperlink{class_list_8c_a40ba52db77a833241187663ae6163200}{search\+Class} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Procura um class\+File já carregado na lista de class\+Files. \end{DoxyCompactList}\item 
+void \hyperlink{class_list_8c_ac35a0d56e10b0c15c4f351a4fe07f2ca}{dump\+Class\+List} ()
+\begin{DoxyCompactList}\small\item\em Mostra a lista de classes ja carregadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das funções}
+\hypertarget{class_list_8c_a229db536fd75ed3d4c3ac4d194b0462f}{}\label{class_list_8c_a229db536fd75ed3d4c3ac4d194b0462f} 
+\index{class\+List.\+c@{class\+List.\+c}!create\+Class\+List@{create\+Class\+List}}
+\index{create\+Class\+List@{create\+Class\+List}!class\+List.\+c@{class\+List.\+c}}
+\subsubsection{\texorpdfstring{create\+Class\+List()}{createClassList()}}
+{\footnotesize\ttfamily \hyperlink{struct_class_list}{Class\+List}$\ast$ create\+Class\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{class_list_8c_ac35a0d56e10b0c15c4f351a4fe07f2ca}{}\label{class_list_8c_ac35a0d56e10b0c15c4f351a4fe07f2ca} 
+\index{class\+List.\+c@{class\+List.\+c}!dump\+Class\+List@{dump\+Class\+List}}
+\index{dump\+Class\+List@{dump\+Class\+List}!class\+List.\+c@{class\+List.\+c}}
+\subsubsection{\texorpdfstring{dump\+Class\+List()}{dumpClassList()}}
+{\footnotesize\ttfamily void dump\+Class\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mostra a lista de classes ja carregadas. 
+
+\hypertarget{class_list_8c_a03c1e21fcd68a670f71b895083efd0b6}{}\label{class_list_8c_a03c1e21fcd68a670f71b895083efd0b6} 
+\index{class\+List.\+c@{class\+List.\+c}!init\+Class\+List@{init\+Class\+List}}
+\index{init\+Class\+List@{init\+Class\+List}!class\+List.\+c@{class\+List.\+c}}
+\subsubsection{\texorpdfstring{init\+Class\+List()}{initClassList()}}
+{\footnotesize\ttfamily void init\+Class\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{class_list_8c_adcf9e45d59dc906899b488554b8b19d0}{}\label{class_list_8c_adcf9e45d59dc906899b488554b8b19d0} 
+\index{class\+List.\+c@{class\+List.\+c}!push\+Class@{push\+Class}}
+\index{push\+Class@{push\+Class}!class\+List.\+c@{class\+List.\+c}}
+\subsubsection{\texorpdfstring{push\+Class()}{pushClass()}}
+{\footnotesize\ttfamily void push\+Class (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+
+
+
+Insere um class\+File na lista de class\+Files ja carregados. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+File} & referência para a estrutura class\+File \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_list_8c_a40ba52db77a833241187663ae6163200}{}\label{class_list_8c_a40ba52db77a833241187663ae6163200} 
+\index{class\+List.\+c@{class\+List.\+c}!search\+Class@{search\+Class}}
+\index{search\+Class@{search\+Class}!class\+List.\+c@{class\+List.\+c}}
+\subsubsection{\texorpdfstring{search\+Class()}{searchClass()}}
+{\footnotesize\ttfamily \hyperlink{struct_class_file}{Class\+File}$\ast$ search\+Class (\begin{DoxyParamCaption}\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Procura um class\+File já carregado na lista de class\+Files. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em name} & nome da classe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+struct para class solicitada, N\+U\+LL caso não encontre a class 
+\end{DoxyReturn}

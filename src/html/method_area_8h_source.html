@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de methodArea.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+   <div id="projectbrief">Implementação em C de uma JVM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">methodArea.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="method_area_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by Henrique Faria on 11/17/16.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef JADIEL_VM_METHODAREA_H</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define JADIEL_VM_METHODAREA_H</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="class_loader_8h.html">classLoader.h</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_type_info.html">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_type_info.html#ac1577516ffc54df13b02b23bd50ed5b4">   17</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="struct_type_info.html#ac1577516ffc54df13b02b23bd50ed5b4">name</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;} <a class="code" href="struct_type_info.html">TypeInfo</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="method_area_8h.html#a19ae44b77b16013c871be6a97d199a1d">initHashtable</a>(<span class="keywordtype">int</span> initialSize);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="method_area_8h.html#a83646127fde5920c92966538d1c6524d">printHashtable</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="method_area_8h.html#a3e73be7c11f9a5b4f7ad973a139390da">freeHashtable</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="method_area_8h.html#a12f7a42c1e7218113c0858da92f1c940">insert</a>(<a class="code" href="struct_type_info.html">TypeInfo</a> dt);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="method_area_8h.html#a583698de25f50fb32eb5370c3a5f6b03">hash</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, <span class="keywordtype">size_t</span> len);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">int</span> <a class="code" href="method_area_8h.html#a196d26426bc56a6d60be28e24d816055">indexOf</a>(<a class="code" href="struct_type_info.html">TypeInfo</a> dt);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="struct_code__attribute.html">Code_attribute</a>* <a class="code" href="method_area_8h.html#a847deaa650d5b70dd9fe5e339b1ba0e7">getCodeAttribute</a>(<a class="code" href="struct_class_file.html">ClassFile</a>* classFile, <a class="code" href="struct_method__info.html">Method_info</a>* methodInfo);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="struct_method__info.html">Method_info</a>* <a class="code" href="method_area_8h.html#aae9606521b7bba5ee406052e296590d9">findMainMethod</a>(<a class="code" href="struct_class_file.html">ClassFile</a>* classFile);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="struct_method__info.html">Method_info</a>* <a class="code" href="method_area_8h.html#a3d469f4815ce19a8a5773632f8ff4b77">findMethod</a>(<a class="code" href="struct_class_file.html">ClassFile</a>* targetClass, <a class="code" href="struct_class_file.html">ClassFile</a>* originClass, uint16_t indice);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="method_area_8h.html#a11d1cfa98c7ac5f82911e69ce2abf0a5">findClassNameFromMethod</a>(<a class="code" href="struct_cp__info.html">Cp_info</a>* constantPool, int32_t methodIndex);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="method_area_8h.html#add0cdfea6cf4f3a90664aec8412f0631">findMethodName</a>(<a class="code" href="struct_cp__info.html">Cp_info</a>* constantPool, int16_t nameAndTypeIndex);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="method_area_8h.html#abe471afc634337e4e4ebb3b44b11a9ef">findMethodDescriptor</a>(<a class="code" href="struct_cp__info.html">Cp_info</a>* constantPool, int16_t nameAndTypeIndex);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;int32_t <a class="code" href="method_area_8h.html#a7d4c88da8bd0289033b47b707f4964da">getParamsCount</a>(<span class="keywordtype">char</span>* bytes);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="struct_type_info.html">TypeInfo</a> *<a class="code" href="method_area_8h.html#afbd517cca838b1d9944bce24e1ffd80c">getItem</a>(<span class="keywordtype">int</span> index);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="struct_class_file.html">ClassFile</a>* <a class="code" href="method_area_8h.html#a0c966fe67c58370645911bfdcc914af1">getSuperClass</a>(<a class="code" href="struct_class_file.html">ClassFile</a>* classFile);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif //JADIEL_VM_METHODAREA_H</span></div><div class="ttc" id="method_area_8h_html_a19ae44b77b16013c871be6a97d199a1d"><div class="ttname"><a href="method_area_8h.html#a19ae44b77b16013c871be6a97d199a1d">initHashtable</a></div><div class="ttdeci">void initHashtable(int initialSize)</div><div class="ttdef"><b>Definition:</b> methodArea.c:18</div></div>
+<div class="ttc" id="method_area_8h_html_a11d1cfa98c7ac5f82911e69ce2abf0a5"><div class="ttname"><a href="method_area_8h.html#a11d1cfa98c7ac5f82911e69ce2abf0a5">findClassNameFromMethod</a></div><div class="ttdeci">char * findClassNameFromMethod(Cp_info *constantPool, int32_t methodIndex)</div><div class="ttdef"><b>Definition:</b> methodArea.c:162</div></div>
+<div class="ttc" id="struct_type_info_html_ac1577516ffc54df13b02b23bd50ed5b4"><div class="ttname"><a href="struct_type_info.html#ac1577516ffc54df13b02b23bd50ed5b4">TypeInfo::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> methodArea.h:17</div></div>
+<div class="ttc" id="method_area_8h_html_afbd517cca838b1d9944bce24e1ffd80c"><div class="ttname"><a href="method_area_8h.html#afbd517cca838b1d9944bce24e1ffd80c">getItem</a></div><div class="ttdeci">TypeInfo * getItem(int index)</div><div class="ttdef"><b>Definition:</b> methodArea.c:93</div></div>
+<div class="ttc" id="method_area_8h_html_a12f7a42c1e7218113c0858da92f1c940"><div class="ttname"><a href="method_area_8h.html#a12f7a42c1e7218113c0858da92f1c940">insert</a></div><div class="ttdeci">void insert(TypeInfo dt)</div><div class="ttdef"><b>Definition:</b> methodArea.c:48</div></div>
+<div class="ttc" id="method_area_8h_html_a0c966fe67c58370645911bfdcc914af1"><div class="ttname"><a href="method_area_8h.html#a0c966fe67c58370645911bfdcc914af1">getSuperClass</a></div><div class="ttdeci">ClassFile * getSuperClass(ClassFile *classFile)</div><div class="ttdoc">[getSuperClass description] </div><div class="ttdef"><b>Definition:</b> methodArea.c:134</div></div>
+<div class="ttc" id="method_area_8h_html_aae9606521b7bba5ee406052e296590d9"><div class="ttname"><a href="method_area_8h.html#aae9606521b7bba5ee406052e296590d9">findMainMethod</a></div><div class="ttdeci">Method_info * findMainMethod(ClassFile *classFile)</div><div class="ttdef"><b>Definition:</b> methodArea.c:109</div></div>
+<div class="ttc" id="method_area_8h_html_a847deaa650d5b70dd9fe5e339b1ba0e7"><div class="ttname"><a href="method_area_8h.html#a847deaa650d5b70dd9fe5e339b1ba0e7">getCodeAttribute</a></div><div class="ttdeci">Code_attribute * getCodeAttribute(ClassFile *classFile, Method_info *methodInfo)</div><div class="ttdef"><b>Definition:</b> methodArea.c:177</div></div>
+<div class="ttc" id="struct_cp__info_html"><div class="ttname"><a href="struct_cp__info.html">Cp_info</a></div><div class="ttdef"><b>Definition:</b> classLoader.h:119</div></div>
+<div class="ttc" id="method_area_8h_html_a3e73be7c11f9a5b4f7ad973a139390da"><div class="ttname"><a href="method_area_8h.html#a3e73be7c11f9a5b4f7ad973a139390da">freeHashtable</a></div><div class="ttdeci">void freeHashtable()</div><div class="ttdef"><b>Definition:</b> methodArea.c:29</div></div>
+<div class="ttc" id="method_area_8h_html_a196d26426bc56a6d60be28e24d816055"><div class="ttname"><a href="method_area_8h.html#a196d26426bc56a6d60be28e24d816055">indexOf</a></div><div class="ttdeci">int indexOf(TypeInfo dt)</div><div class="ttdef"><b>Definition:</b> methodArea.c:64</div></div>
+<div class="ttc" id="method_area_8h_html_a583698de25f50fb32eb5370c3a5f6b03"><div class="ttname"><a href="method_area_8h.html#a583698de25f50fb32eb5370c3a5f6b03">hash</a></div><div class="ttdeci">size_t hash(const char *str, size_t len)</div><div class="ttdef"><b>Definition:</b> methodArea.c:80</div></div>
+<div class="ttc" id="method_area_8h_html_abe471afc634337e4e4ebb3b44b11a9ef"><div class="ttname"><a href="method_area_8h.html#abe471afc634337e4e4ebb3b44b11a9ef">findMethodDescriptor</a></div><div class="ttdeci">char * findMethodDescriptor(Cp_info *constantPool, int16_t nameAndTypeIndex)</div><div class="ttdef"><b>Definition:</b> methodArea.c:172</div></div>
+<div class="ttc" id="class_loader_8h_html"><div class="ttname"><a href="class_loader_8h.html">classLoader.h</a></div></div>
+<div class="ttc" id="struct_class_file_html"><div class="ttname"><a href="struct_class_file.html">ClassFile</a></div><div class="ttdef"><b>Definition:</b> classLoader.h:330</div></div>
+<div class="ttc" id="method_area_8h_html_a83646127fde5920c92966538d1c6524d"><div class="ttname"><a href="method_area_8h.html#a83646127fde5920c92966538d1c6524d">printHashtable</a></div><div class="ttdeci">void printHashtable()</div><div class="ttdef"><b>Definition:</b> methodArea.c:98</div></div>
+<div class="ttc" id="method_area_8h_html_a7d4c88da8bd0289033b47b707f4964da"><div class="ttname"><a href="method_area_8h.html#a7d4c88da8bd0289033b47b707f4964da">getParamsCount</a></div><div class="ttdeci">int32_t getParamsCount(char *bytes)</div><div class="ttdef"><b>Definition:</b> methodArea.c:192</div></div>
+<div class="ttc" id="method_area_8h_html_add0cdfea6cf4f3a90664aec8412f0631"><div class="ttname"><a href="method_area_8h.html#add0cdfea6cf4f3a90664aec8412f0631">findMethodName</a></div><div class="ttdeci">char * findMethodName(Cp_info *constantPool, int16_t nameAndTypeIndex)</div><div class="ttdef"><b>Definition:</b> methodArea.c:167</div></div>
+<div class="ttc" id="struct_code__attribute_html"><div class="ttname"><a href="struct_code__attribute.html">Code_attribute</a></div><div class="ttdef"><b>Definition:</b> classLoader.h:147</div></div>
+<div class="ttc" id="struct_type_info_html"><div class="ttname"><a href="struct_type_info.html">TypeInfo</a></div><div class="ttdef"><b>Definition:</b> methodArea.h:16</div></div>
+<div class="ttc" id="method_area_8h_html_a3d469f4815ce19a8a5773632f8ff4b77"><div class="ttname"><a href="method_area_8h.html#a3d469f4815ce19a8a5773632f8ff4b77">findMethod</a></div><div class="ttdeci">Method_info * findMethod(ClassFile *targetClass, ClassFile *originClass, uint16_t indice)</div><div class="ttdef"><b>Definition:</b> methodArea.c:141</div></div>
+<div class="ttc" id="struct_method__info_html"><div class="ttname"><a href="struct_method__info.html">Method_info</a></div><div class="ttdef"><b>Definition:</b> classLoader.h:321</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

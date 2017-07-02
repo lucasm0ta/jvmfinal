@@ -1,0 +1,242 @@
+\documentclass[twoside]{book}
+
+% Packages required by doxygen
+\usepackage{fixltx2e}
+\usepackage{calc}
+\usepackage{doxygen}
+\usepackage[export]{adjustbox} % also loads graphicx
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
+\usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
+\usepackage[table]{xcolor}
+
+% NLS support packages
+Portuguese
+% Font selection
+\usepackage[T1]{fontenc}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\renewcommand{\DoxyLabelFont}{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+
+% Page & text layout
+\usepackage{geometry}
+\geometry{%
+  a4paper,%
+  top=2.5cm,%
+  bottom=2.5cm,%
+  left=2.5cm,%
+  right=2.5cm%
+}
+\tolerance=750
+\hfuzz=15pt
+\hbadness=750
+\setlength{\emergencystretch}{15pt}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{3ex plus 2ex minus 2ex}
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@parafont%
+  }%
+}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@subparafont%
+  }%
+}
+\makeatother
+
+% Headers & footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead[LE]{\fancyplain{}{\bfseries\thepage}}
+\fancyhead[CE]{\fancyplain{}{}}
+\fancyhead[RE]{\fancyplain{}{\bfseries\leftmark}}
+\fancyhead[LO]{\fancyplain{}{\bfseries\rightmark}}
+\fancyhead[CO]{\fancyplain{}{}}
+\fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
+\fancyfoot[LE]{\fancyplain{}{}}
+\fancyfoot[CE]{\fancyplain{}{}}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Gerado por Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Gerado por Doxygen }}
+\fancyfoot[CO]{\fancyplain{}{}}
+\fancyfoot[RO]{\fancyplain{}{}}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}%
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}%
+}
+
+% Indices & bibliography
+\usepackage{natbib}
+\usepackage[titles]{tocloft}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{5}
+\makeindex
+
+% Hyperlinks (required, but should be loaded last)
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex,pagebackref=true]{hyperref}
+\else
+  \usepackage[ps2pdf,pagebackref=true]{hyperref}
+\fi
+\hypersetup{%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  unicode%
+}
+
+% Custom commands
+\newcommand{\clearemptydoublepage}{%
+  \newpage{\pagestyle{empty}\cleardoublepage}%
+}
+
+\usepackage{caption}
+\captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+
+%===== C O N T E N T S =====
+
+\begin{document}
+
+% Titlepage & ToC
+\hypersetup{pageanchor=false,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
+\pagenumbering{alph}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}%
+{\Large J\+VM }\\
+\vspace*{1cm}
+{\large Gerado por Doxygen 1.8.12}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+%--- Begin generated contents ---
+\chapter{J\+VM}
+\label{md__r_e_a_d_m_e}
+\hypertarget{md__r_e_a_d_m_e}{}
+\input{md__r_e_a_d_m_e}
+\chapter{Índice dos componentes}
+\input{annotated}
+\chapter{Índice dos ficheiros}
+\input{files}
+\chapter{Documentação da classe}
+\input{structarray}
+\input{struct_attribute__info}
+\input{unionattribute__pointer}
+\input{structbootstrap__methods}
+\input{struct_bootstrap_methods__attribute}
+\input{struct_class__info}
+\input{struct_classes}
+\input{struct_class_file}
+\input{struct_class_list}
+\input{struct_code__attribute}
+\input{struct_constant_value__attribute}
+\input{struct_cp__info}
+\input{struct_deprecated__attribute}
+\input{struct_double__info}
+\input{struct_enclosing_method__attribute}
+\input{structexception__table}
+\input{struct_exceptions__attribute}
+\input{struct_field__info}
+\input{struct_fieldref__info}
+\input{struct_float__info}
+\input{structframe}
+\input{unioninfo__pointer}
+\input{struct_inner_classes__attribute}
+\input{struct_integer__info}
+\input{struct_interface_methodref__info}
+\input{struct_invoke_dynamic__info}
+\input{structline__number__table}
+\input{struct_line_number_table__attribute}
+\input{structlocal__variable__table}
+\input{structlocal__variable__type__table}
+\input{struct_local_variable_table__attribute}
+\input{struct_local_variable_type_table__attribute}
+\input{struct_long__info}
+\input{struct_lookupswitch_data}
+\input{struct_mapper}
+\input{struct_method__info}
+\input{struct_method_handle__info}
+\input{struct_methodref__info}
+\input{struct_method_type__info}
+\input{struct_name_and_type__info}
+\input{struct_object}
+\input{struct_object_field}
+\input{struct_object_method}
+\input{structoperand_stack}
+\input{struct_signature__attribute}
+\input{struct_source_debug_extension__attribute}
+\input{struct_source_file__attribute}
+\input{structstack_frame}
+\input{struct_string__info}
+\input{struct_synthetic__attribute}
+\input{struct_tableswitch_data}
+\input{struct_type_info}
+\input{struct_utf8__info}
+\chapter{Documentação do ficheiro}
+\input{array_8c}
+\input{array_8h}
+\input{class_list_8c}
+\input{class_list_8h}
+\input{class_loader_8c}
+\input{class_loader_8h}
+\input{class_viewer_8c}
+\input{class_viewer_8h}
+\input{frame_8c}
+\input{frame_8h}
+\input{instruction_mapper_8c}
+\input{instruction_mapper_8h}
+\input{instructions_8c}
+\input{instructions_8h}
+\input{lookupswitch_viewer_8c}
+\input{lookupswitch_viewer_8h}
+\input{main_8c}
+\input{method_area_8c}
+\input{method_area_8h}
+\input{object_manager_8c}
+\input{object_manager_8h}
+\input{_r_e_a_d_m_e_8md}
+\input{switch_viewer_8c}
+\input{switch_viewer_8h}
+\input{tableswitch_viewer_8c}
+\input{tableswitch_viewer_8h}
+%--- End generated contents ---
+
+% Index
+\backmatter
+\newpage
+\phantomsection
+\clearemptydoublepage
+\addcontentsline{toc}{chapter}{Índice}
+\printindex
+
+\end{document}
