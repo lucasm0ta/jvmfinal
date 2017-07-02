@@ -346,20 +346,20 @@ void ldc(){
 
 	// push a constant #index from a constant pool (String, int or float) onto the stack
 	int32_t index = frame_atual->code[frame_atual->pc+1];
-	uint8_t type = frame_atual->constantPool[index].tag;
+	u1 type = frame_atual->constantPool[index].tag;
 	if(type == 8){
 		//String
-		uint32_t string = frame_atual->constantPool[index].info.string_info->string_index;
+		u4 string = frame_atual->constantPool[index].info.string_info->string_index;
 		empilhar_operando(string);
 
 	} else if(type == 3){
 		//int
-		uint32_t bytes = frame_atual->constantPool[index].info.integer_info->bytes;;
+		u4 bytes = frame_atual->constantPool[index].info.integer_info->bytes;;
 		empilhar_operando(bytes);
 
 	} else if(type == 4){
 		//float
-		uint32_t bytes = frame_atual->constantPool[index].info.float_info->bytes;
+		u4 bytes = frame_atual->constantPool[index].info.float_info->bytes;
 
 		empilhar_operando(bytes);
 
@@ -371,20 +371,20 @@ void ldc_w(){
 
 	//push a constant #index from a constant pool (String, int or float) onto the stack (wide index is constructed as indexbyte1 << 8 + indexbyte2)
 	int32_t offset = calculateOffset();
-	uint8_t type = frame_atual->constantPool[offset].tag;
+	u1 type = frame_atual->constantPool[offset].tag;
 	if(type == 8){
 		//String
-		uint32_t string = frame_atual->constantPool[offset].info.string_info->string_index;
+		u4 string = frame_atual->constantPool[offset].info.string_info->string_index;
 		empilhar_operando(string);
 
 	} else if(type == 3){
 		//int
-		uint32_t bytes = frame_atual->constantPool[offset].info.integer_info->bytes;;
+		u4 bytes = frame_atual->constantPool[offset].info.integer_info->bytes;;
 		empilhar_operando(bytes);
 
 	} else if(type == 4){
 		//float
-		uint32_t bytes = frame_atual->constantPool[offset].info.float_info->bytes;
+		u4 bytes = frame_atual->constantPool[offset].info.float_info->bytes;
 		empilhar_operando(bytes);
 
 	}
@@ -394,18 +394,18 @@ void ldc_w(){
 void ldc2_w(){
 
 	int32_t offset = calculateOffset();
-	uint8_t type = frame_atual->constantPool[offset].tag;
+	u1 type = frame_atual->constantPool[offset].tag;
 	if(type == 5){
 		//Long
-		uint32_t high = frame_atual->constantPool[offset].info.long_info->high_bytes;
-		uint32_t low = frame_atual->constantPool[offset].info.long_info->low_bytes;
+		u4 high = frame_atual->constantPool[offset].info.long_info->high_bytes;
+		u4 low = frame_atual->constantPool[offset].info.long_info->low_bytes;
 		empilhar_operando(high);
 		empilhar_operando(low);
 
 	} else if(type == 6){
 		//Double
-		uint32_t high = frame_atual->constantPool[offset].info.double_info->high_bytes;
-		uint32_t low = frame_atual->constantPool[offset].info.double_info->low_bytes;
+		u4 high = frame_atual->constantPool[offset].info.double_info->high_bytes;
+		u4 low = frame_atual->constantPool[offset].info.double_info->low_bytes;
 		empilhar_operando(high);
 		empilhar_operando(low);
 	}
@@ -631,7 +631,7 @@ void aload_3(){
 void iaload(){
 	//Load int from array
 	//Pega o indice
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
@@ -649,15 +649,15 @@ void iaload(){
 void laload(){
 	//Load long from array
 	//Pega o indice
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	uint64_t* arrayRef = (uint64_t*) get_referencia_array(arrayStruct);
+	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
 
 	//Divide os 64 bits em duas de 32
-	uint32_t highBits = (uint32_t)(arrayRef[index] >> 32);
-	uint32_t lowBits = (uint32_t)(arrayRef[index]);
+	u4 highBits = (u4)(arrayRef[index] >> 32);
+	u4 lowBits = (u4)(arrayRef[index]);
 
 	//Coloca na pilha os 32 bits mais significativos
 	empilhar_operando(highBits);
@@ -672,11 +672,11 @@ void laload(){
 void faload(){
 	//Load float from array
 	//Pega o indice
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
+	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
 	//Coloca na pilha o float
 	empilhar_operando(arrayRef[index]);
 
@@ -688,15 +688,15 @@ void faload(){
 void daload(){
 	//Load double from array
 	//Pega o indice
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito da estrutura
-	uint64_t* arrayRef = (uint64_t*) get_referencia_array(arrayStruct);
+	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
 
 	//Divide os 64 bits do double em duas de 32
-	uint32_t highBits = (uint32_t)(arrayRef[index] >> 32);
-	uint32_t lowBits = (uint32_t)(arrayRef[index]);
+	u4 highBits = (u4)(arrayRef[index] >> 32);
+	u4 lowBits = (u4)(arrayRef[index]);
 
 	//Coloca na pilha os 32 bits mais significativos
 	empilhar_operando(highBits);
@@ -712,12 +712,12 @@ void daload(){
 void aaload(){
 	//tira um index e um array da pilha e coloca na mesma o valor da pposicao
 	//Pega o indice da pilha
-	uint32_t indice = desempilhar_operando();
+	u4 indice = desempilhar_operando();
 	//Pegao array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
+	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
 
 	//Coloca na pilha
 	empilhar_operando(arrayRef[indice]);
@@ -727,11 +727,11 @@ void aaload(){
 void baload(){
 	//Load byte from array
 	//Pega o indice
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	uint8_t* arrayRef = (uint8_t*) get_referencia_array(arrayStruct);
+	u1* arrayRef = (u1*) get_referencia_array(arrayStruct);
 	//Coloca na pilha o byte
 	empilhar_operando(arrayRef[index]);
 
@@ -744,11 +744,11 @@ void baload(){
 void caload(){
 	//Load char from array
 	//Pega o indice
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	uint16_t* arrayRef = (uint16_t*) get_referencia_array(arrayStruct);
+	u2* arrayRef = (u2*) get_referencia_array(arrayStruct);
 	//Coloca na pilha o char
 	empilhar_operando(arrayRef[index]);
 
@@ -760,11 +760,11 @@ void caload(){
 void saload(){
 	//Load short from array
 	//Pega o indice
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega a estrutura com o array
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
-	uint16_t* arrayRef = (uint16_t*) get_referencia_array(arrayStruct);
+	u2* arrayRef = (u2*) get_referencia_array(arrayStruct);
 	//Coloca na pilha o short
 	empilhar_operando(arrayRef[index]);
 
@@ -1006,12 +1006,12 @@ void iastore(){
 	//tira o inteiro
 	int32_t value = desempilhar_operando();
 	//Pega o indice da pilha
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
+	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
@@ -1022,18 +1022,18 @@ void lastore(){
 
 	//tira um long um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o inteiro
-	uint32_t lowBits = desempilhar_operando();
-	uint32_t highBits = desempilhar_operando();
+	u4 lowBits = desempilhar_operando();
+	u4 highBits = desempilhar_operando();
 
-	uint64_t value = ((uint64_t)highBits << 32) | lowBits;
+	u8 value = ((u8)highBits << 32) | lowBits;
 
 	//Pega o indice da pilha
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint64_t* arrayRef = (uint64_t*) get_referencia_array(arrayStruct);
+	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
@@ -1044,14 +1044,14 @@ void fastore(){
 
 	//tira um float um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o float
-	uint32_t value = desempilhar_operando();
+	u4 value = desempilhar_operando();
 	//Pega o indice da pilha
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
+	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
@@ -1061,18 +1061,18 @@ void fastore(){
 void dastore(){
 	//tira um double um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o inteiro
-	uint32_t lowBits = desempilhar_operando();
-	uint32_t highBits = desempilhar_operando();
+	u4 lowBits = desempilhar_operando();
+	u4 highBits = desempilhar_operando();
 
-	uint64_t value = ((uint64_t)highBits << 32) | lowBits;
+	u8 value = ((u8)highBits << 32) | lowBits;
 
 	//Pega o indice da pilha
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint64_t* arrayRef = (uint64_t*) get_referencia_array(arrayStruct);
+	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
@@ -1082,14 +1082,14 @@ void dastore(){
 void aastore(){
 	//tira um valor um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o valor
-	uint32_t value = desempilhar_operando();
+	u4 value = desempilhar_operando();
 	//Pega o indice da pilha
-	uint32_t indice = desempilhar_operando();
+	u4 indice = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint32_t* arrayRef = (uint32_t*) get_referencia_array(arrayStruct);
+	u4* arrayRef = (u4*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[indice] = value;
@@ -1101,14 +1101,14 @@ void bastore(){
 
 	//tira um byte um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o byte
-	uint32_t value = desempilhar_operando();
+	u4 value = desempilhar_operando();
 	//Pega o indice da pilha
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint8_t* arrayRef = (uint8_t*) get_referencia_array(arrayStruct);
+	u1* arrayRef = (u1*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
@@ -1120,14 +1120,14 @@ void castore(){
 
 	//tira um float um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o float
-	uint32_t value = desempilhar_operando();
+	u4 value = desempilhar_operando();
 	//Pega o indice da pilha
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint16_t* arrayRef = (uint16_t*) get_referencia_array(arrayStruct);
+	u2* arrayRef = (u2*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
@@ -1138,14 +1138,14 @@ void sastore(){
 
 	//tira um short um index e um array da pilha e coloca o valor na posicao definida pelo index
 	//tira o short
-	uint32_t value = desempilhar_operando();
+	u4 value = desempilhar_operando();
 	//Pega o indice da pilha
-	uint32_t index = desempilhar_operando();
+	u4 index = desempilhar_operando();
 	//Pega array
 	arrayType * arrayStruct = (arrayType*) desempilhar_operando();
 
 	//Pega a referencia de dentro da estrutura de array (pois a estrutura soh contem tbm o tamanho)
-	uint16_t* arrayRef = (uint16_t*) get_referencia_array(arrayStruct);
+	u2* arrayRef = (u2*) get_referencia_array(arrayStruct);
 
 	//Coloca no vetor
 	arrayRef[index] = value;
@@ -2000,7 +2000,7 @@ void lxor(){
 }
 
 void iinc(){
-	uint8_t index = frame_atual->code[frame_atual->pc+1];
+	u1 index = frame_atual->code[frame_atual->pc+1];
 	int8_t value = frame_atual->code[frame_atual->pc+2];
 	frame_atual->fields[index]+=value;
 	frame_atual->pc+=3;
@@ -2203,7 +2203,7 @@ void i2b(){
 void i2c(){
 
 	int32_t integer = desempilhar_operando();
-	uint8_t character = (uint8_t) integer;
+	u1 character = (u1) integer;
 	empilhar_operando((int32_t) character);
 	frame_atual->pc++;
 
@@ -2550,7 +2550,7 @@ void ret(){
 void tableswitch() {
     int compValue = desempilhar_operando();
 
-	uint8_t *src = frame_atual->code + frame_atual->pc + 1;
+	u1 *src = frame_atual->code + frame_atual->pc + 1;
 	TableswitchData dt = montar_switch_table(src, frame_atual->pc);
 
 	if(compValue >= dt.lowBytes && compValue <= dt.highBytes) {
@@ -2568,7 +2568,7 @@ void tableswitch() {
 void lookupswitch() {
   int compValue = desempilhar_operando();
 
-    uint8_t *src = frame_atual->code + frame_atual->pc + 1;
+    u1 *src = frame_atual->code + frame_atual->pc + 1;
     LookupswitchData dt = montar_lookupswitch_data(src, frame_atual->pc);
 
     for(int i = 0; i <= dt.amountOfPairs; i += 2) {
@@ -2619,11 +2619,11 @@ void getstatic(){
 void putstatic(){
 
 	//Acha indices para o constant pool
-	uint8_t indexByte1 = frame_atual->code[frame_atual->pc+1];
-	uint8_t indexByte2 = frame_atual->code[frame_atual->pc+2];
+	u1 indexByte1 = frame_atual->code[frame_atual->pc+1];
+	u1 indexByte2 = frame_atual->code[frame_atual->pc+2];
 
 	//junta os dois para encontrar o indice desejado
-	uint16_t index = (indexByte1 << 8) | indexByte2;
+	u2 index = (indexByte1 << 8) | indexByte2;
 
 	int indexField = frame_atual->constantPool[index].info.fieldref_info->name_and_type_index;
 
@@ -2635,27 +2635,27 @@ void putstatic(){
 }
 
 void getfield(){
-	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	// get name and type for field index
 	index = frame_atual->constantPool[index].info.fieldref_info->name_and_type_index;
 
 	Object* object = (Object*) desempilhar_operando();
 
 	char* descriptor = buscar_descritor_metodo(frame_atual->constantPool, index);
-	uint64_t value = buscar_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index));
+	u8 value = buscar_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index));
 
 	switch(descriptor[0]){
 		// variaveis normais
 		case 'C': case 'F': case 'B': case 'I': case 'S': case 'Z': case 'L': case '[': {
-			uint32_t aux = value & 0xffffffff;
+			u4 aux = value & 0xffffffff;
 			empilhar_operando(aux);
 			break;
 		}
 		// variaveis categoria 2
 		case 'J': case 'D':{
-			uint32_t resultHigh;
+			u4 resultHigh;
 			resultHigh = value >> 32;
-			uint32_t resultLow;
+			u4 resultLow;
 			resultLow = value & 0xffffffff;
 			//empilha resultado
 			empilhar_operando(resultHigh);
@@ -2668,7 +2668,7 @@ void getfield(){
 }
 
 void putfield(){
-	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	// get name and type for field index
 	index = frame_atual->constantPool[index].info.fieldref_info->name_and_type_index;
 
@@ -2677,17 +2677,17 @@ void putfield(){
 	switch(descriptor[0]){
 		// variaveis normais
 		case 'C': case 'F': case 'B': case 'I': case 'S': case 'Z': case 'L': case '[': {
-			uint32_t value = desempilhar_operando();
+			u4 value = desempilhar_operando();
 			Object* object = (Object*) desempilhar_operando();
 			set_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index), value);
 			break;
 		}
 		// variaveis categoria 2
 		case 'J': case 'D': {
-			uint32_t resultLow = desempilhar_operando();
-			uint32_t resultHigh = desempilhar_operando();
+			u4 resultLow = desempilhar_operando();
+			u4 resultHigh = desempilhar_operando();
 			Object* object = (Object*) desempilhar_operando();
-			uint64_t aux = resultHigh;
+			u8 aux = resultHigh;
 			aux <<= 32;
 			aux += resultLow;
 			set_object_field_value_por_nome(object, buscar_nome_metodo(frame_atual->constantPool, index), aux);
@@ -2699,7 +2699,7 @@ void putfield(){
 
 void invokevirtual(){
 	int i;
-	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
 	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 
@@ -2731,10 +2731,10 @@ void invokevirtual(){
 		// Calcula quantidade total de parametros na pilha
 		int32_t paramsCount = contador_de_parametros(methodDescriptor);
 		// Armazena os argumentos da pilha em um Array
-		uint32_t fieldsArray[paramsCount+1];
+		u4 fieldsArray[paramsCount+1];
 		for(i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());
 		Object* object = (Object*) desempilhar_operando();
-		fieldsArray[0] = (uint32_t) object;
+		fieldsArray[0] = (u4) object;
 		// Retorna um estrutura de metodo do objeto para criar um frame
 		object_method method = buscar_object_method_by_name(object, methodName, className);
 		ClassFile* classFile = method.classFile;
@@ -2750,7 +2750,7 @@ void invokevirtual(){
 }
 
 void invokespecial(){
-	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
 	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 	int32_t nameAndTypeIndex = frame_atual->constantPool[index].info.methodref_info->name_and_type_index;
@@ -2759,10 +2759,10 @@ void invokespecial(){
 	// Calcula quantidade total de parametros na pilha
 	int32_t paramsCount = contador_de_parametros(methodDescriptor);
 	// Armazena os argumentos da pilha em um Array
-	uint32_t fieldsArray[paramsCount+1];
+	u4 fieldsArray[paramsCount+1];
 	for(int i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());
 	Object* object = (Object*) desempilhar_operando();
-	fieldsArray[0] = (uint32_t) object;
+	fieldsArray[0] = (u4) object;
 	// Retorna um estrutura de metodo do objeto para criar um frame
 	object_method method = buscar_object_method_by_name(object, methodName, className);
 	ClassFile* classFile = method.classFile;
@@ -2778,7 +2778,7 @@ void invokespecial(){
 
 void invokestatic(){
 	int i;
-	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
 	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 
@@ -2788,7 +2788,7 @@ void invokestatic(){
 	Method_info* invokedMethod = buscar_metodo(classFile, frame_atual->classe, nameAndTypeIndex);
 	int32_t paramsCount = contador_de_parametros(
 			classFile->constant_pool[invokedMethod->descriptor_index].info.utf8_info->bytes);
-	uint32_t fieldsArray[paramsCount];
+	u4 fieldsArray[paramsCount];
 
 	for(i = 0; i < paramsCount; fieldsArray[i++] = desempilhar_operando());
 
@@ -2802,7 +2802,7 @@ void invokestatic(){
 }
 
 void invokeinterface(){
-	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
+	u2 index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
 	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 	int32_t nameAndTypeIndex = frame_atual->constantPool[index].info.methodref_info->name_and_type_index;
@@ -2811,10 +2811,10 @@ void invokeinterface(){
 	// Calcula quantidade total de parametros na pilha
 	int32_t paramsCount = contador_de_parametros(methodDescriptor);
 	// Armazena os argumentos da pilha em um Array
-	uint32_t fieldsArray[paramsCount+1];
+	u4 fieldsArray[paramsCount+1];
 	for(int i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());
 	Object* object = (Object*) desempilhar_operando();
-	fieldsArray[0] = (uint32_t) object;
+	fieldsArray[0] = (u4) object;
 	// Retorna um estrutura de metodo do objeto para criar um frame
 	object_method method = buscar_object_method_by_name(object, methodName, className);
 	ClassFile* classFile = method.classFile;
@@ -2830,7 +2830,7 @@ void invokeinterface(){
 
 void ins_new(){
 
-	uint16_t index = frame_atual->code[frame_atual->pc + 1];
+	u2 index = frame_atual->code[frame_atual->pc + 1];
 	// shifta pq sao 2 bytes de index
 	index <<= 8;
 	index += frame_atual->code[frame_atual->pc + 2];
@@ -2848,12 +2848,12 @@ void newarray(){
 	//instrucao que cria um novo array e coloca a referencia para a mesma na pilha
 
 	//Pega o parametro que define o tipo
-	uint32_t type = frame_atual->code[frame_atual->pc + 1];
+	u4 type = frame_atual->code[frame_atual->pc + 1];
 	//Numero de elementos para o array
-	uint32_t count = desempilhar_operando();
+	u4 count = desempilhar_operando();
 
 	//variavel para salvar o tamanho de cada elemento do array
-	uint16_t typeSize = 0;
+	u2 typeSize = 0;
 
 	//Define o tamanho do tipo
 	switch(type){
@@ -2896,7 +2896,7 @@ void newarray(){
 	// Coloca a referencia na pilha de operandos
     int32_t arrayTypeRef;
     memcpy(&arrayTypeRef, &array , sizeof(int32_t));
-	empilhar_operando((uint32_t) array);
+	empilhar_operando((u4) array);
 	//Incrementa o PC
 	frame_atual->pc += 2;
 }
@@ -2904,19 +2904,19 @@ void newarray(){
 void anewarray(){
 
 	//retira da pilha o valor que vai corresponder ao tamanho do array a ser criado
-	uint32_t count = desempilhar_operando();
+	u4 count = desempilhar_operando();
 
 	//Acha indices para o constant pool
-	uint8_t indexByte1 = frame_atual->code[frame_atual->pc+1];
-	uint8_t indexByte2 = frame_atual->code[frame_atual->pc+2];
+	u1 indexByte1 = frame_atual->code[frame_atual->pc+1];
+	u1 indexByte2 = frame_atual->code[frame_atual->pc+2];
 
 	//junta os dois para encontrar o indice desejado
-	uint16_t index = (indexByte1 << 8) | indexByte2;
+	u2 index = (indexByte1 << 8) | indexByte2;
 
 	//TODO definir que tipo o array vai ser e pegar o tamanho desse tipo para a alocacao
 	//Na descricao eh dito para acessar o constant pool na posicao index e verificar se eh uma
 	//classe, array ou interface.
-	uint16_t sizeBytes = sizeof(frame_atual->constantPool[index]);
+	u2 sizeBytes = sizeof(frame_atual->constantPool[index]);
 
 	// Aloca o array
 
@@ -2929,7 +2929,7 @@ void anewarray(){
 	put_referencia_array(calloc(count, sizeBytes), array);
 
 	// Coloca a referencia na pilha de operandos
-	empilhar_operando((uint32_t) array);
+	empilhar_operando((u4) array);
 
 	//Atualiza o pc
 	frame_atual->pc+=3;
@@ -2941,7 +2941,7 @@ void arraylength(){
 	//Pega a referecia para o array.
 	arrayType* array = (arrayType*) desempilhar_operando();
 
-	uint32_t size = get_tamanho_array(array);
+	u4 size = get_tamanho_array(array);
 
 	// Coloca o tamanho na pilha
 	empilhar_operando(size);
@@ -2967,10 +2967,10 @@ void multianewarray(){
 
 
 	//Acha o numero de dimensoes
-	uint8_t dimensions = frame_atual->code[frame_atual->pc+3];
+	u1 dimensions = frame_atual->code[frame_atual->pc+3];
 
 	//cria um array para armazenar os valores do tamanho das dimencoes
-	uint32_t count[dimensions + 1];
+	u4 count[dimensions + 1];
 
 	//pega os counts (tamanho da dimensao) correspondente ao numero de dimencoes
 	for (int i = dimensions; i > 0; --i){
@@ -2979,19 +2979,19 @@ void multianewarray(){
 	}
 
 	//Acha indices para o constant pool
-	uint8_t indexByte1 = frame_atual->code[frame_atual->pc+1];
-	uint8_t indexByte2 = frame_atual->code[frame_atual->pc+2];
+	u1 indexByte1 = frame_atual->code[frame_atual->pc+1];
+	u1 indexByte2 = frame_atual->code[frame_atual->pc+2];
 
 	//junta os dois para encontrar o indice desejado
-	uint16_t index = (indexByte1 << 8) | indexByte2;
+	u2 index = (indexByte1 << 8) | indexByte2;
 
 	//Tamanho de cada elemento
-	uint16_t sizeBytes = 0;
+	u2 sizeBytes = 0;
 
 	//pega o indice para o utf8
 	index = frame_atual->constantPool[index].info.string_info->string_index;
 	//acha a descricao do tipo
-	uint8_t* bytes = frame_atual->constantPool[index].info.utf8_info->bytes;
+	u1* bytes = frame_atual->constantPool[index].info.utf8_info->bytes;
 
 	//boOlean
 	if(strstr(bytes, "Z") != NULL) sizeBytes = 1;
@@ -3013,12 +3013,12 @@ void multianewarray(){
 
 	// Aloca o array multidimencoes
 	//Aloca o array de ponteiros
-	uint32_t *mArrayRef = (uint32_t *)calloc(dimensions, sizeof(uint32_t*));
+	u4 *mArrayRef = (u4 *)calloc(dimensions, sizeof(u4*));
 
 	// Aloca o corpo do array multidimensoes
 	for(int i = 0; i < dimensions; i++){
 		if(count[i+1]){
-			mArrayRef[i] = (uint32_t )calloc(count[i+1], sizeBytes);
+			mArrayRef[i] = (u4 )calloc(count[i+1], sizeBytes);
 		}else{ //caso o count seja 0 nenhuma nova dimencao eh alocada
 			break;
 		}
@@ -3034,7 +3034,7 @@ void multianewarray(){
 	put_referencia_array(mArrayRef, array);
 
 	// Coloca a referencia na pilha de operandos
-	empilhar_operando((uint32_t) array);
+	empilhar_operando((u4) array);
 
 	//Atualiza o pc
 	frame_atual->pc+=3;
@@ -3112,8 +3112,8 @@ void verifyDoubles(double double1,double double2){
 
 int32_t calculateOffset(){
 
-	uint8_t branchOffset1 = frame_atual->code[frame_atual->pc + 1];
-	uint8_t branchOffset2 = frame_atual->code[frame_atual->pc + 2];
+	u1 branchOffset1 = frame_atual->code[frame_atual->pc + 1];
+	u1 branchOffset2 = frame_atual->code[frame_atual->pc + 2];
 	int16_t branchOffset = branchOffset1;
 	branchOffset <<= 8;
 	branchOffset += branchOffset2;
@@ -3121,7 +3121,7 @@ int32_t calculateOffset(){
 
 }
 
-int16_t read2Bytes(uint8_t* data) {
+int16_t read2Bytes(u1* data) {
 	int16_t value = data[0];
 	value <<= 8;
 	value += data[1];
@@ -3136,7 +3136,7 @@ void tratar_impressao_int() {
 
 void tratar_impressao_long() {
 
-	uint64_t value;
+	u8 value;
 	int32_t lowValue = desempilhar_operando();
 	int32_t highValue = desempilhar_operando();
 
@@ -3170,8 +3170,8 @@ void tratar_impressao_boolean() {
 
 void tratar_impressao_double() {
     double doubleValue;
-    uint64_t low = desempilhar_operando();
-    uint64_t high = desempilhar_operando();
+    u8 low = desempilhar_operando();
+    u8 high = desempilhar_operando();
 		int64_t value;
 		value = high;
 		value <<=32;
