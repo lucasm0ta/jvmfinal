@@ -174,7 +174,7 @@ char* findMethodDescriptor(Cp_info* constantPool, int16_t nameAndTypeIndex) {
   return constantPool[methodDescriptorIndex].info.utf8_info->bytes;
 }
 
-Code_attribute* getCodeAttribute(ClassFile* classFile, Method_info* methodInfo) {
+Code_attribute* recuperar_code_attribute(ClassFile *classFile, Method_info *methodInfo) {
   int i = 0;
 
 

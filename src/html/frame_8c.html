@@ -73,25 +73,25 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:ab66470d49b0a83dcec2356c679c62785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#ab66470d49b0a83dcec2356c679c62785">createFrame</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *cp, <a class="el" href="struct_class_file.html">ClassFile</a> *classe, <a class="el" href="struct_code__attribute.html">Code_attribute</a> *code)</td></tr>
+<tr class="memitem:ab66470d49b0a83dcec2356c679c62785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#ab66470d49b0a83dcec2356c679c62785">criar_frame</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *cp, <a class="el" href="struct_class_file.html">ClassFile</a> *classe, <a class="el" href="struct_code__attribute.html">Code_attribute</a> *code)</td></tr>
 <tr class="memdesc:ab66470d49b0a83dcec2356c679c62785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a criacao do frame.  <a href="#ab66470d49b0a83dcec2356c679c62785">Mais...</a><br /></td></tr>
 <tr class="separator:ab66470d49b0a83dcec2356c679c62785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e6e6cebdd12fe3578cc93ca8997ddbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#a2e6e6cebdd12fe3578cc93ca8997ddbe">pushFrame</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *cp, <a class="el" href="struct_class_file.html">ClassFile</a> *classe, <a class="el" href="struct_code__attribute.html">Code_attribute</a> *code, struct <a class="el" href="structstack_frame.html">stackFrame</a> *sf)</td></tr>
+<tr class="memitem:a2e6e6cebdd12fe3578cc93ca8997ddbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#a2e6e6cebdd12fe3578cc93ca8997ddbe">empilhar_frame</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *cp, <a class="el" href="struct_class_file.html">ClassFile</a> *classe, <a class="el" href="struct_code__attribute.html">Code_attribute</a> *code, struct <a class="el" href="structstack_frame.html">pilha_frame</a> *sf)</td></tr>
 <tr class="memdesc:a2e6e6cebdd12fe3578cc93ca8997ddbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coloca um frame na pilha de frames.  <a href="#a2e6e6cebdd12fe3578cc93ca8997ddbe">Mais...</a><br /></td></tr>
 <tr class="separator:a2e6e6cebdd12fe3578cc93ca8997ddbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9cbfa46eaa4e3c07217b16d0c5212e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#aca9cbfa46eaa4e3c07217b16d0c5212e">popFrame</a> ()</td></tr>
-<tr class="memdesc:aca9cbfa46eaa4e3c07217b16d0c5212e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retira um frame do topo da pilha, libera seu espaço de memoria.  <a href="#aca9cbfa46eaa4e3c07217b16d0c5212e">Mais...</a><br /></td></tr>
+<tr class="memitem:aca9cbfa46eaa4e3c07217b16d0c5212e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#aca9cbfa46eaa4e3c07217b16d0c5212e">desempilhar_frame</a> ()</td></tr>
+<tr class="memdesc:aca9cbfa46eaa4e3c07217b16d0c5212e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retira um frame do cabeca da pilha, libera seu espaço de memoria.  <a href="#aca9cbfa46eaa4e3c07217b16d0c5212e">Mais...</a><br /></td></tr>
 <tr class="separator:aca9cbfa46eaa4e3c07217b16d0c5212e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84f8e58495f9af2999e9c89c15f08e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#a84f8e58495f9af2999e9c89c15f08e97">pushOperand</a> (int32_t value)</td></tr>
+<tr class="memitem:a84f8e58495f9af2999e9c89c15f08e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#a84f8e58495f9af2999e9c89c15f08e97">empilhar_operando</a> (int32_t value)</td></tr>
 <tr class="memdesc:a84f8e58495f9af2999e9c89c15f08e97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coloca um operando na pilha de operandos do frame.  <a href="#a84f8e58495f9af2999e9c89c15f08e97">Mais...</a><br /></td></tr>
 <tr class="separator:a84f8e58495f9af2999e9c89c15f08e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26b76e4bcd7752493dd4aae90a2bf2ba"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#a26b76e4bcd7752493dd4aae90a2bf2ba">popOperand</a> ()</td></tr>
+<tr class="memitem:a26b76e4bcd7752493dd4aae90a2bf2ba"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#a26b76e4bcd7752493dd4aae90a2bf2ba">desempilhar_operando</a> ()</td></tr>
 <tr class="memdesc:a26b76e4bcd7752493dd4aae90a2bf2ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retira e devolve um valor armazenado na pilha de operandos.  <a href="#a26b76e4bcd7752493dd4aae90a2bf2ba">Mais...</a><br /></td></tr>
 <tr class="separator:a26b76e4bcd7752493dd4aae90a2bf2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a389570f654e724ed55f27681229dcb21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#a389570f654e724ed55f27681229dcb21">runFrame</a> ()</td></tr>
+<tr class="memitem:a389570f654e724ed55f27681229dcb21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#a389570f654e724ed55f27681229dcb21">executar_frame</a> ()</td></tr>
 <tr class="memdesc:a389570f654e724ed55f27681229dcb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Roda os frames.  <a href="#a389570f654e724ed55f27681229dcb21">Mais...</a><br /></td></tr>
 <tr class="separator:a389570f654e724ed55f27681229dcb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0fb52d3c757f62209b021cd059386a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#ae0fb52d3c757f62209b021cd059386a3">pushMethod</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, <a class="el" href="struct_method__info.html">Method_info</a> *method)</td></tr>
+<tr class="memitem:ae0fb52d3c757f62209b021cd059386a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#ae0fb52d3c757f62209b021cd059386a3">empilhar_metodo</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, <a class="el" href="struct_method__info.html">Method_info</a> *method)</td></tr>
 <tr class="memdesc:ae0fb52d3c757f62209b021cd059386a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chama um metodo criando um frame para ele.  <a href="#ae0fb52d3c757f62209b021cd059386a3">Mais...</a><br /></td></tr>
 <tr class="separator:ae0fb52d3c757f62209b021cd059386a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab77078d864b42dc2a48ab02e8fc2cfc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8c.html#ab77078d864b42dc2a48ab02e8fc2cfc9">dumpStack</a> (int i)</td></tr>
@@ -100,13 +100,13 @@ Funções</h2></td></tr>
 </table>
 <h2 class="groupheader">Documentação das funções</h2>
 <a id="ab66470d49b0a83dcec2356c679c62785"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab66470d49b0a83dcec2356c679c62785">&sect;&nbsp;</a></span>createFrame()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab66470d49b0a83dcec2356c679c62785">&sect;&nbsp;</a></span>criar_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void createFrame </td>
+          <td class="memname">void criar_frame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
           <td class="paramname"><em>cp</em>, </td>
@@ -170,13 +170,13 @@ Funções</h2></td></tr>
 </div>
 </div>
 <a id="aca9cbfa46eaa4e3c07217b16d0c5212e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca9cbfa46eaa4e3c07217b16d0c5212e">&sect;&nbsp;</a></span>popFrame()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aca9cbfa46eaa4e3c07217b16d0c5212e">&sect;&nbsp;</a></span>desempilhar_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void popFrame </td>
+          <td class="memname">void desempilhar_frame </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -184,18 +184,18 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retira um frame do topo da pilha, libera seu espaço de memoria. </p>
+<p>Retira um frame do cabeca da pilha, libera seu espaço de memoria. </p>
 
 </div>
 </div>
 <a id="a26b76e4bcd7752493dd4aae90a2bf2ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26b76e4bcd7752493dd4aae90a2bf2ba">&sect;&nbsp;</a></span>popOperand()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b76e4bcd7752493dd4aae90a2bf2ba">&sect;&nbsp;</a></span>desempilhar_operando()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t popOperand </td>
+          <td class="memname">int32_t desempilhar_operando </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -209,13 +209,13 @@ Funções</h2></td></tr>
 </div>
 </div>
 <a id="a2e6e6cebdd12fe3578cc93ca8997ddbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e6e6cebdd12fe3578cc93ca8997ddbe">&sect;&nbsp;</a></span>pushFrame()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e6e6cebdd12fe3578cc93ca8997ddbe">&sect;&nbsp;</a></span>empilhar_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pushFrame </td>
+          <td class="memname">void empilhar_frame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td>
           <td class="paramname"><em>cp</em>, </td>
@@ -235,7 +235,7 @@ Funções</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">struct <a class="el" href="structstack_frame.html">stackFrame</a> *&#160;</td>
+          <td class="paramtype">struct <a class="el" href="structstack_frame.html">pilha_frame</a> *&#160;</td>
           <td class="paramname"><em>sf</em>&#160;</td>
         </tr>
         <tr>
@@ -260,13 +260,13 @@ Funções</h2></td></tr>
 </div>
 </div>
 <a id="ae0fb52d3c757f62209b021cd059386a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0fb52d3c757f62209b021cd059386a3">&sect;&nbsp;</a></span>pushMethod()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0fb52d3c757f62209b021cd059386a3">&sect;&nbsp;</a></span>empilhar_metodo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pushMethod </td>
+          <td class="memname">void empilhar_metodo </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
           <td class="paramname"><em>classFile</em>, </td>
@@ -297,13 +297,13 @@ Funções</h2></td></tr>
 </div>
 </div>
 <a id="a84f8e58495f9af2999e9c89c15f08e97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84f8e58495f9af2999e9c89c15f08e97">&sect;&nbsp;</a></span>pushOperand()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a84f8e58495f9af2999e9c89c15f08e97">&sect;&nbsp;</a></span>empilhar_operando()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pushOperand </td>
+          <td class="memname">void empilhar_operando </td>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -323,13 +323,13 @@ Funções</h2></td></tr>
 </div>
 </div>
 <a id="a389570f654e724ed55f27681229dcb21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a389570f654e724ed55f27681229dcb21">&sect;&nbsp;</a></span>runFrame()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a389570f654e724ed55f27681229dcb21">&sect;&nbsp;</a></span>executar_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void runFrame </td>
+          <td class="memname">void executar_frame </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

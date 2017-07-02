@@ -27,18 +27,18 @@ typedef struct frame {
 
 typedef struct stackFrame{
 	frame* node;
-	struct stackFrame* next;
-}stackFrame;
+	struct pilha_frame* next;
+}pilha_frame;
 
 
 //Flag para empilhar 1 slot ou 2(double e long).
-int8_t returnFlag;
+int8_t flag;
 int32_t returnValue;
 int32_t retHigh,retLow;
 
-struct frame* currentFrame;
-//Refencia ao topo da pilha de frames. Essencial para Empilhar e desempilhar os frames.
-static struct stackFrame* topo = NULL;
+struct frame* frame_atual;
+//Refencia ao cabeca da pilha de frames. Essencial para Empilhar e desempilhar os frames.
+static struct pilha_frame* cabeca = NULL;
 
 /**
  * Realiza a criacao do frame
@@ -46,7 +46,7 @@ static struct stackFrame* topo = NULL;
  * @param classe informacao do classfile
  * @param code   atributo de codigo
  */
-void createFrame(Cp_info* cp, ClassFile* classe, Code_attribute* code);
+void criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code);
 /**
  * Coloca um frame na pilha de frames
  * @param cp     Informação do constantpool
@@ -54,36 +54,36 @@ void createFrame(Cp_info* cp, ClassFile* classe, Code_attribute* code);
  * @param code   Atributo de codigo
  * @param sf     Ponteiro para o frame
  */
-void pushFrame(Cp_info*, ClassFile*, Code_attribute*,struct stackFrame*);
+void empilhar_frame(Cp_info *, ClassFile *, Code_attribute *, struct pilha_frame *);
 /**
  * Retira um frame do topo da pilha, libera seu espaço de memoria
  */
-void popFrame();
+void desempilhar_frame();
 /**
  * Coloca um operando na pilha de operandos do frame
  * @param value Valor a ser colocado na pilha
  */
-void pushOperand(int32_t);
+void empilhar_operando(int32_t);
 /**
  * Retira e devolve um valor armazenado na pilha de operandos
  * @return Valor antes armazenado na pilha de operandos
  */
-int32_t popOperand();
+int32_t desempilhar_operando();
 
 /**
  * Roda os frames 
  */
-void runFrame();
+void executar_frame();
 /**
  * Chama um metodo criando um frame para ele
  * @param classFile Informação da classe deste método
  * @param method    Informação do metodo
  */
-void pushMethod(ClassFile* classe, Method_info* method);
+void empilhar_metodo(ClassFile *classe, Method_info *method);
 
 /**
  * Sai do método
  * @param Flag para saida 
  */
-void dumpStack();
+void dumpStack(int i);
 #endif

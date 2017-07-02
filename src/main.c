@@ -39,8 +39,8 @@ int main(int argc, char **argv){
             DEBUG = 0;
             createInstructionsArray();
             Method_info* mainInfo = findMainMethod(classFile);
-            pushMethod(classFile, mainInfo);
-            runFrame();
+            empilhar_metodo(classFile, mainInfo);
+            executar_frame();
             break;
         }
         case(3):{
@@ -48,8 +48,8 @@ int main(int argc, char **argv){
             initMapper();
             createInstructionsArray();
             Method_info* mainInfo = findMainMethod(classFile);
-            pushMethod(classFile, mainInfo);
-            runFrame();
+            empilhar_metodo(classFile, mainInfo);
+            executar_frame();
             break;
         }
     }

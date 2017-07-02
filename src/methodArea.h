@@ -26,7 +26,7 @@ size_t hash(const char *str, size_t len);
 int indexOf(TypeInfo dt);
 
 
-Code_attribute* getCodeAttribute(ClassFile* classFile, Method_info* methodInfo);
+Code_attribute* recuperar_code_attribute(ClassFile *classFile, Method_info *methodInfo);
 Method_info* findMainMethod(ClassFile* classFile);
 Method_info* findMethod(ClassFile* targetClass, ClassFile* originClass, uint16_t indice);
 char* findClassNameFromMethod(Cp_info* constantPool, int32_t methodIndex);

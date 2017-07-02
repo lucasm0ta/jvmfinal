@@ -30,7 +30,7 @@ void \hyperlink{frame_8h_ab66470d49b0a83dcec2356c679c62785}{create\+Frame} (\hyp
 void \hyperlink{frame_8h_ac931ed4fe36780bd889670db9aa6434c}{push\+Frame} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$, \hyperlink{struct_class_file}{Class\+File} $\ast$, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$, struct \hyperlink{structstack_frame}{stack\+Frame} $\ast$)
 \begin{DoxyCompactList}\small\item\em Coloca um frame na pilha de frames. \end{DoxyCompactList}\item 
 void \hyperlink{frame_8h_aca9cbfa46eaa4e3c07217b16d0c5212e}{pop\+Frame} ()
-\begin{DoxyCompactList}\small\item\em Retira um frame do topo da pilha, libera seu espaço de memoria. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Retira um frame do cabeca da pilha, libera seu espaço de memoria. \end{DoxyCompactList}\item
 void \hyperlink{frame_8h_abae542180a129927e597a3660e032be5}{push\+Operand} (int32\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Coloca um operando na pilha de operandos do frame. \end{DoxyCompactList}\item 
 int32\+\_\+t \hyperlink{frame_8h_a26b76e4bcd7752493dd4aae90a2bf2ba}{pop\+Operand} ()
@@ -72,7 +72,7 @@ struct \hyperlink{structframe}{frame} $\ast$ \hyperlink{frame_8h_ace6ff79f29afa0
 \hypertarget{frame_8h_a43f1a647079ee63aca13ec70dcd13012}{}\label{frame_8h_a43f1a647079ee63aca13ec70dcd13012} 
 \index{frame.\+h@{frame.\+h}!stack\+Frame@{stack\+Frame}}
 \index{stack\+Frame@{stack\+Frame}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{stack\+Frame}{stackFrame}}
+\subsubsection{\texorpdfstring{stack\+Frame}{pilha_frame}}
 {\footnotesize\ttfamily typedef struct \hyperlink{structstack_frame}{stack\+Frame} \hyperlink{structstack_frame}{stack\+Frame}}
 
 
@@ -81,7 +81,7 @@ struct \hyperlink{structframe}{frame} $\ast$ \hyperlink{frame_8h_ace6ff79f29afa0
 \hypertarget{frame_8h_ab66470d49b0a83dcec2356c679c62785}{}\label{frame_8h_ab66470d49b0a83dcec2356c679c62785} 
 \index{frame.\+h@{frame.\+h}!create\+Frame@{create\+Frame}}
 \index{create\+Frame@{create\+Frame}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{create\+Frame()}{createFrame()}}
+\subsubsection{\texorpdfstring{create\+Frame()}{criar_frame()}}
 {\footnotesize\ttfamily void create\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{cp,  }\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{classe,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code }\end{DoxyParamCaption})}
 
 
@@ -115,17 +115,17 @@ Sai do método.
 \hypertarget{frame_8h_aca9cbfa46eaa4e3c07217b16d0c5212e}{}\label{frame_8h_aca9cbfa46eaa4e3c07217b16d0c5212e} 
 \index{frame.\+h@{frame.\+h}!pop\+Frame@{pop\+Frame}}
 \index{pop\+Frame@{pop\+Frame}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{pop\+Frame()}{popFrame()}}
+\subsubsection{\texorpdfstring{pop\+Frame()}{desempilhar_frame()}}
 {\footnotesize\ttfamily void pop\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Retira um frame do topo da pilha, libera seu espaço de memoria. 
+Retira um frame do cabeca da pilha, libera seu espaço de memoria.
 
 \hypertarget{frame_8h_a26b76e4bcd7752493dd4aae90a2bf2ba}{}\label{frame_8h_a26b76e4bcd7752493dd4aae90a2bf2ba} 
 \index{frame.\+h@{frame.\+h}!pop\+Operand@{pop\+Operand}}
 \index{pop\+Operand@{pop\+Operand}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{pop\+Operand()}{popOperand()}}
+\subsubsection{\texorpdfstring{pop\+Operand()}{desempilhar_operando()}}
 {\footnotesize\ttfamily int32\+\_\+t pop\+Operand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -138,7 +138,7 @@ Valor antes armazenado na pilha de operandos
 \hypertarget{frame_8h_ac931ed4fe36780bd889670db9aa6434c}{}\label{frame_8h_ac931ed4fe36780bd889670db9aa6434c} 
 \index{frame.\+h@{frame.\+h}!push\+Frame@{push\+Frame}}
 \index{push\+Frame@{push\+Frame}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{push\+Frame()}{pushFrame()}}
+\subsubsection{\texorpdfstring{push\+Frame()}{empilhar_frame()}}
 {\footnotesize\ttfamily void push\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{cp,  }\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{classe,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code,  }\item[{struct \hyperlink{structstack_frame}{stack\+Frame} $\ast$}]{sf }\end{DoxyParamCaption})}
 
 
@@ -159,7 +159,7 @@ Coloca um frame na pilha de frames.
 \hypertarget{frame_8h_ae9cd6331cafb943d4e635010235c2dc8}{}\label{frame_8h_ae9cd6331cafb943d4e635010235c2dc8} 
 \index{frame.\+h@{frame.\+h}!push\+Method@{push\+Method}}
 \index{push\+Method@{push\+Method}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{push\+Method()}{pushMethod()}}
+\subsubsection{\texorpdfstring{push\+Method()}{empilhar_metodo()}}
 {\footnotesize\ttfamily void push\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$}]{method }\end{DoxyParamCaption})}
 
 
@@ -176,7 +176,7 @@ Chama um metodo criando um frame para ele.
 \hypertarget{frame_8h_abae542180a129927e597a3660e032be5}{}\label{frame_8h_abae542180a129927e597a3660e032be5} 
 \index{frame.\+h@{frame.\+h}!push\+Operand@{push\+Operand}}
 \index{push\+Operand@{push\+Operand}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{push\+Operand()}{pushOperand()}}
+\subsubsection{\texorpdfstring{push\+Operand()}{empilhar_operando()}}
 {\footnotesize\ttfamily void push\+Operand (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -191,7 +191,7 @@ Coloca um operando na pilha de operandos do frame.
 \hypertarget{frame_8h_a389570f654e724ed55f27681229dcb21}{}\label{frame_8h_a389570f654e724ed55f27681229dcb21} 
 \index{frame.\+h@{frame.\+h}!run\+Frame@{run\+Frame}}
 \index{run\+Frame@{run\+Frame}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{run\+Frame()}{runFrame()}}
+\subsubsection{\texorpdfstring{run\+Frame()}{executar_frame()}}
 {\footnotesize\ttfamily void run\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -204,7 +204,7 @@ Roda os frames.
 \hypertarget{frame_8h_ace6ff79f29afa0062ad6c15e85a051b4}{}\label{frame_8h_ace6ff79f29afa0062ad6c15e85a051b4} 
 \index{frame.\+h@{frame.\+h}!current\+Frame@{current\+Frame}}
 \index{current\+Frame@{current\+Frame}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{current\+Frame}{currentFrame}}
+\subsubsection{\texorpdfstring{current\+Frame}{frame_atual}}
 {\footnotesize\ttfamily struct \hyperlink{structframe}{frame}$\ast$ current\+Frame}
 
 \hypertarget{frame_8h_ab479f927a43c13bd6ccd4a885d16a702}{}\label{frame_8h_ab479f927a43c13bd6ccd4a885d16a702} 
@@ -222,7 +222,7 @@ Roda os frames.
 \hypertarget{frame_8h_a568d2030787fcb5e081104db989e6761}{}\label{frame_8h_a568d2030787fcb5e081104db989e6761} 
 \index{frame.\+h@{frame.\+h}!return\+Flag@{return\+Flag}}
 \index{return\+Flag@{return\+Flag}!frame.\+h@{frame.\+h}}
-\subsubsection{\texorpdfstring{return\+Flag}{returnFlag}}
+\subsubsection{\texorpdfstring{return\+Flag}{flag}}
 {\footnotesize\ttfamily int8\+\_\+t return\+Flag}
 
 \hypertarget{frame_8h_acd29ef28df9878364c2a29a39e9c0dbc}{}\label{frame_8h_acd29ef28df9878364c2a29a39e9c0dbc} 
