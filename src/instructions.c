@@ -15,221 +15,221 @@
 extern struct frame* frame_atual;
 
 int16_t read2Bytes(uint8_t* data);
-void handlePrintInt();
-void handlePrintDouble();
-void handlePrintChar();
-void handlePrintFloat();
-void handlePrintLong();
-void handlePrintString();
-void handlePrintBoolean();
+void tratar_impressao_int();
+void tratar_impressao_double();
+void tratar_impressao_char();
+void tratar_impressao_float();
+void tratar_impressao_long();
+void tratar_impressao_string();
+void tratar_impressao_boolean();
 
 /**
  * Cria o arrray de instruções para ser acessado
  */
 void createInstructionsArray(){
 
-	instruction[0] = nop;
-	instruction[1] = aconst_null;
-	instruction[2] = iconst_m1;
-	instruction[3] = iconst_0;
-	instruction[4] = iconst_1;
-	instruction[5] = iconst_2;
-	instruction[6] = iconst_3;
-	instruction[7] = iconst_4;
-	instruction[8] = iconst_5;
-	instruction[9] = lconst_0;
-	instruction[10] = lconst_1;
-	instruction[11] = fconst_0;
-	instruction[12] = fconst_1;
-	instruction[13] = fconst_2;
-	instruction[14] = dconst_0;
-	instruction[15] = dconst_1;
-	instruction[16] = bipush;
-	instruction[17] = sipush;
-	instruction[18] = ldc;
-	instruction[19] = ldc_w;
-	instruction[20] = ldc2_w;
-	instruction[21] = iload;
-	instruction[22] = lload;
-	instruction[23] = fload;
-	instruction[24] = dload;
-	instruction[25] = aload;
-	instruction[26] = iload_0;
-	instruction[27] = iload_1;
-	instruction[28] = iload_2;
-	instruction[29] = iload_3;
-	instruction[30] = lload_0;
-	instruction[31] = lload_1;
-	instruction[32] = lload_2;
-	instruction[33] = lload_3;
-	instruction[34] = fload_0;
-	instruction[35] = fload_1;
-	instruction[36] = fload_2;
-	instruction[37] = fload_3;
-	instruction[38] = dload_0;
-	instruction[39] = dload_1;
-	instruction[40] = dload_2;
-	instruction[41] = dload_3;
-	instruction[42] = aload_0;
-	instruction[43] = aload_1;
-	instruction[44] = aload_2;
-	instruction[45] = aload_3;
-	instruction[46] = iaload;
-	instruction[47] = laload;
-	instruction[48] = faload;
-	instruction[49] = daload;
-	instruction[50] = aaload;
-	instruction[51] = baload;
-	instruction[52] = caload;
-	instruction[53] = saload;
-	instruction[54] = istore;
-	instruction[55] = lstore;
-	instruction[56] = fstore;
-	instruction[57] = dstore;
-	instruction[58] = astore;
-	instruction[59] = istore_0;
-	instruction[60] = istore_1;
-	instruction[61] = istore_2;
-	instruction[62] = istore_3;
-	instruction[63] = lstore_0;
-	instruction[64] = lstore_1;
-	instruction[65] = lstore_2;
-	instruction[66] = lstore_3;
-	instruction[67] = fstore_0;
-	instruction[68] = fstore_1;
-	instruction[69] = fstore_2;
-	instruction[70] = fstore_3;
-	instruction[71] = dstore_0;
-	instruction[72] = dstore_1;
-	instruction[73] = dstore_2;
-	instruction[74] = dstore_3;
-	instruction[75] = astore_0;
-	instruction[76] = astore_1;
-	instruction[77] = astore_2;
-	instruction[78] = astore_3;
-	instruction[79] = iastore;
-	instruction[80] = lastore;
-	instruction[81] = fastore;
-	instruction[82] = dastore;
-	instruction[83] = aastore;
-	instruction[84] = bastore;
-	instruction[85] = castore;
-	instruction[86] = sastore;
-	instruction[87] = pop;
-	instruction[88] = pop2;
-	instruction[89] = dup;
-	instruction[90] = dup_x1;
-	instruction[91] = dup_x2;
-	instruction[92] = dup2;
-	instruction[93] = dup2_x1;
-	instruction[94] = dup2_x2;
-	instruction[95] = swap;
-	instruction[96] = iadd;
-	instruction[97] = ladd;
-	instruction[98] = fadd;
-	instruction[99] = dadd;
-	instruction[100] = isub;
-	instruction[101] = lsub;
-	instruction[102] = fsub;
-	instruction[103] = dsub;
-	instruction[104] = imul;
-	instruction[105] = lmul;
-	instruction[106] = fmul;
-	instruction[107] = dmul;
-	instruction[108] = idiv;
-	instruction[109] = ins_ldiv;
-	instruction[110] = fdiv;
-	instruction[111] = ddiv;
-	instruction[112] = irem;
-	instruction[113] = lrem;
-	instruction[114] = frem;
-	instruction[115] = _drem;
-	instruction[116] = ineg;
-	instruction[117] = lneg;
-	instruction[118] = fneg;
-	instruction[119] = dneg;
-	instruction[120] = ishl;
-	instruction[121] = lshl;
-	instruction[122] = ishr;
-	instruction[123] = lshr;
-	instruction[124] = iushr;
-	instruction[125] = lushr;
-	instruction[126] = iand;
-	instruction[127] = land;
-	instruction[128] = ior;
-	instruction[129] = lor;
-	instruction[130] = ixor;
-	instruction[131] = lxor;
-	instruction[132] = iinc;
-	instruction[133] = i2l;
-	instruction[134] = i2f;
-	instruction[135] = i2d;
-	instruction[136] = l2i;
-	instruction[137] = l2f;
-	instruction[138] = l2d;
-	instruction[139] = f2i;
-	instruction[140] = f2l;
-	instruction[141] = f2d;
-	instruction[142] = d2i;
-	instruction[143] = d2l;
-	instruction[144] = d2f;
-	instruction[145] = i2b;
-	instruction[146] = i2c;
-	instruction[147] = i2s;
-	instruction[148] = lcmp;
-	instruction[149] = fcmpl;
-	instruction[150] = fcmpg;
-	instruction[151] = dcmpl;
-	instruction[152] = dcmpg;
-	instruction[153] = ifeq;
-	instruction[154] = ifne;
-	instruction[155] = iflt;
-	instruction[156] = ifge;
-	instruction[157] = ifgt;
-	instruction[158] = ifle;
-	instruction[159] = if_icmpeq;
-	instruction[160] = if_icmpne;
-	instruction[161] = if_icmplt;
-	instruction[162] = if_icmpge;
-	instruction[163] = if_icmpgt;
-	instruction[164] = if_icmple;
-	instruction[165] = if_acmpeq;
-	instruction[166] = if_acmpne;
-	instruction[167] = ins_goto;
-	instruction[168] = jsr;
-	instruction[169] = ret;
-	instruction[170] = tableswitch;
-	instruction[171] = lookupswitch;
-	instruction[172] = ireturn;
-	instruction[173] = lreturn;
-	instruction[174] = freturn;
-	instruction[175] = dreturn;
-	instruction[176] = areturn;
-	instruction[177] = void_return;
-	instruction[178] = getstatic;
-	instruction[179] = putstatic;
-	instruction[180] = getfield;
-	instruction[181] = putfield;
-	instruction[182] = invokevirtual;
-	instruction[183] = invokespecial;
-	instruction[184] = invokestatic;
-	instruction[185] = invokeinterface;
+	instrucao[0] = nop;
+	instrucao[1] = aconst_null;
+	instrucao[2] = iconst_m1;
+	instrucao[3] = iconst_0;
+	instrucao[4] = iconst_1;
+	instrucao[5] = iconst_2;
+	instrucao[6] = iconst_3;
+	instrucao[7] = iconst_4;
+	instrucao[8] = iconst_5;
+	instrucao[9] = lconst_0;
+	instrucao[10] = lconst_1;
+	instrucao[11] = fconst_0;
+	instrucao[12] = fconst_1;
+	instrucao[13] = fconst_2;
+	instrucao[14] = dconst_0;
+	instrucao[15] = dconst_1;
+	instrucao[16] = bipush;
+	instrucao[17] = sipush;
+	instrucao[18] = ldc;
+	instrucao[19] = ldc_w;
+	instrucao[20] = ldc2_w;
+	instrucao[21] = iload;
+	instrucao[22] = lload;
+	instrucao[23] = fload;
+	instrucao[24] = dload;
+	instrucao[25] = aload;
+	instrucao[26] = iload_0;
+	instrucao[27] = iload_1;
+	instrucao[28] = iload_2;
+	instrucao[29] = iload_3;
+	instrucao[30] = lload_0;
+	instrucao[31] = lload_1;
+	instrucao[32] = lload_2;
+	instrucao[33] = lload_3;
+	instrucao[34] = fload_0;
+	instrucao[35] = fload_1;
+	instrucao[36] = fload_2;
+	instrucao[37] = fload_3;
+	instrucao[38] = dload_0;
+	instrucao[39] = dload_1;
+	instrucao[40] = dload_2;
+	instrucao[41] = dload_3;
+	instrucao[42] = aload_0;
+	instrucao[43] = aload_1;
+	instrucao[44] = aload_2;
+	instrucao[45] = aload_3;
+	instrucao[46] = iaload;
+	instrucao[47] = laload;
+	instrucao[48] = faload;
+	instrucao[49] = daload;
+	instrucao[50] = aaload;
+	instrucao[51] = baload;
+	instrucao[52] = caload;
+	instrucao[53] = saload;
+	instrucao[54] = istore;
+	instrucao[55] = lstore;
+	instrucao[56] = fstore;
+	instrucao[57] = dstore;
+	instrucao[58] = astore;
+	instrucao[59] = istore_0;
+	instrucao[60] = istore_1;
+	instrucao[61] = istore_2;
+	instrucao[62] = istore_3;
+	instrucao[63] = lstore_0;
+	instrucao[64] = lstore_1;
+	instrucao[65] = lstore_2;
+	instrucao[66] = lstore_3;
+	instrucao[67] = fstore_0;
+	instrucao[68] = fstore_1;
+	instrucao[69] = fstore_2;
+	instrucao[70] = fstore_3;
+	instrucao[71] = dstore_0;
+	instrucao[72] = dstore_1;
+	instrucao[73] = dstore_2;
+	instrucao[74] = dstore_3;
+	instrucao[75] = astore_0;
+	instrucao[76] = astore_1;
+	instrucao[77] = astore_2;
+	instrucao[78] = astore_3;
+	instrucao[79] = iastore;
+	instrucao[80] = lastore;
+	instrucao[81] = fastore;
+	instrucao[82] = dastore;
+	instrucao[83] = aastore;
+	instrucao[84] = bastore;
+	instrucao[85] = castore;
+	instrucao[86] = sastore;
+	instrucao[87] = pop;
+	instrucao[88] = pop2;
+	instrucao[89] = dup;
+	instrucao[90] = dup_x1;
+	instrucao[91] = dup_x2;
+	instrucao[92] = dup2;
+	instrucao[93] = dup2_x1;
+	instrucao[94] = dup2_x2;
+	instrucao[95] = swap;
+	instrucao[96] = iadd;
+	instrucao[97] = ladd;
+	instrucao[98] = fadd;
+	instrucao[99] = dadd;
+	instrucao[100] = isub;
+	instrucao[101] = lsub;
+	instrucao[102] = fsub;
+	instrucao[103] = dsub;
+	instrucao[104] = imul;
+	instrucao[105] = lmul;
+	instrucao[106] = fmul;
+	instrucao[107] = dmul;
+	instrucao[108] = idiv;
+	instrucao[109] = ins_ldiv;
+	instrucao[110] = fdiv;
+	instrucao[111] = ddiv;
+	instrucao[112] = irem;
+	instrucao[113] = lrem;
+	instrucao[114] = frem;
+	instrucao[115] = _drem;
+	instrucao[116] = ineg;
+	instrucao[117] = lneg;
+	instrucao[118] = fneg;
+	instrucao[119] = dneg;
+	instrucao[120] = ishl;
+	instrucao[121] = lshl;
+	instrucao[122] = ishr;
+	instrucao[123] = lshr;
+	instrucao[124] = iushr;
+	instrucao[125] = lushr;
+	instrucao[126] = iand;
+	instrucao[127] = land;
+	instrucao[128] = ior;
+	instrucao[129] = lor;
+	instrucao[130] = ixor;
+	instrucao[131] = lxor;
+	instrucao[132] = iinc;
+	instrucao[133] = i2l;
+	instrucao[134] = i2f;
+	instrucao[135] = i2d;
+	instrucao[136] = l2i;
+	instrucao[137] = l2f;
+	instrucao[138] = l2d;
+	instrucao[139] = f2i;
+	instrucao[140] = f2l;
+	instrucao[141] = f2d;
+	instrucao[142] = d2i;
+	instrucao[143] = d2l;
+	instrucao[144] = d2f;
+	instrucao[145] = i2b;
+	instrucao[146] = i2c;
+	instrucao[147] = i2s;
+	instrucao[148] = lcmp;
+	instrucao[149] = fcmpl;
+	instrucao[150] = fcmpg;
+	instrucao[151] = dcmpl;
+	instrucao[152] = dcmpg;
+	instrucao[153] = ifeq;
+	instrucao[154] = ifne;
+	instrucao[155] = iflt;
+	instrucao[156] = ifge;
+	instrucao[157] = ifgt;
+	instrucao[158] = ifle;
+	instrucao[159] = if_icmpeq;
+	instrucao[160] = if_icmpne;
+	instrucao[161] = if_icmplt;
+	instrucao[162] = if_icmpge;
+	instrucao[163] = if_icmpgt;
+	instrucao[164] = if_icmple;
+	instrucao[165] = if_acmpeq;
+	instrucao[166] = if_acmpne;
+	instrucao[167] = ins_goto;
+	instrucao[168] = jsr;
+	instrucao[169] = ret;
+	instrucao[170] = tableswitch;
+	instrucao[171] = lookupswitch;
+	instrucao[172] = ireturn;
+	instrucao[173] = lreturn;
+	instrucao[174] = freturn;
+	instrucao[175] = dreturn;
+	instrucao[176] = areturn;
+	instrucao[177] = void_return;
+	instrucao[178] = getstatic;
+	instrucao[179] = putstatic;
+	instrucao[180] = getfield;
+	instrucao[181] = putfield;
+	instrucao[182] = invokevirtual;
+	instrucao[183] = invokespecial;
+	instrucao[184] = invokestatic;
+	instrucao[185] = invokeinterface;
 
-	instruction[187] = ins_new;
-	instruction[188] = newarray;
-	instruction[189] = anewarray;
-	instruction[190] = arraylength;
+	instrucao[187] = ins_new;
+	instrucao[188] = newarray;
+	instrucao[189] = anewarray;
+	instrucao[190] = arraylength;
 
-	instruction[192] = checkcast;
-	instruction[193] = instanceof;
+	instrucao[192] = checkcast;
+	instrucao[193] = instanceof;
 
 
-	instruction[196] = wide;
-	instruction[197] = multianewarray;
-	instruction[198] = ifnull;
-	instruction[199] = ifnonnull;
-	instruction[200] = goto_w;
-	instruction[201] = jsr_w;
+	instrucao[196] = wide;
+	instrucao[197] = multianewarray;
+	instrucao[198] = ifnull;
+	instrucao[199] = ifnonnull;
+	instrucao[200] = goto_w;
+	instrucao[201] = jsr_w;
 }
 /**
  * fazer nada
@@ -2717,7 +2717,7 @@ void dcmpg(){
  */
 void ifeq(){
 
-	//if value is 0, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value is 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
 	if (value == 0)
@@ -2732,7 +2732,7 @@ void ifeq(){
  */
 void ifne(){
 
-	//if value is not 0, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value is not 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
 	if (value != 0)
@@ -2747,7 +2747,7 @@ void ifne(){
  */
 void iflt(){
 
-	//if value is less than 0, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value is less than 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
 	if (value < 0)
@@ -2762,7 +2762,7 @@ void iflt(){
  */
 void ifge(){
 
-	//if value is greater or equal than 0, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value is greater or equal than 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
 	if (value >= 0)
@@ -2778,7 +2778,7 @@ void ifge(){
  */
 void ifgt(){
 
-	//if value is greater than 0, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value is greater than 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
 	if (value > 0)
@@ -2794,7 +2794,7 @@ void ifgt(){
  */
 void ifle(){
 
-	//if value is less or equal than 0, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value is less or equal than 0, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
 	if (value <= 0)
@@ -2810,7 +2810,7 @@ void ifle(){
  */
 void if_icmpeq(){
 
-	//if ints are equal, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if ints are equal, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value1 = desempilhar_operando();
 	int32_t value2 = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
@@ -2826,7 +2826,7 @@ void if_icmpeq(){
  */
 void if_icmpne(){
 
-	//if ints are not equal, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if ints are not equal, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value1 = desempilhar_operando();
 	int32_t value2 = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
@@ -2843,7 +2843,7 @@ void if_icmpne(){
  */
 void if_icmplt(){
 
-	//if value1 are less than value2, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value1 are less than value2, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value1 = desempilhar_operando();
 	int32_t value2 = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
@@ -2860,7 +2860,7 @@ void if_icmplt(){
  */
 void if_icmpge(){
 
-	//if value1 are greater or equal than value2, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value1 are greater or equal than value2, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value1 = desempilhar_operando();
 	int32_t value2 = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
@@ -2877,7 +2877,7 @@ void if_icmpge(){
  */
 void if_icmpgt(){
 
-	//if value1 are greater than value2, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value1 are greater than value2, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value1 = desempilhar_operando();
 	int32_t value2 = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
@@ -2894,7 +2894,7 @@ void if_icmpgt(){
  */
 void if_icmple(){
 
-	//if value1 are less or equal than value2, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value1 are less or equal than value2, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t value1 = desempilhar_operando();
 	int32_t value2 = desempilhar_operando();
 	int32_t branchOffset = calculateOffset();
@@ -3136,19 +3136,19 @@ void invokevirtual(){
 			printf("\n");
 		} else {
 			if (methodDescriptor[1] == 'I') {
-				handlePrintInt();
+				tratar_impressao_int();
 			} else if (methodDescriptor[1] == 'F') {
-				handlePrintFloat();
+				tratar_impressao_float();
 			} else if (methodDescriptor[1] == 'Z') {
-				handlePrintBoolean();
+				tratar_impressao_boolean();
 			} else if (methodDescriptor[1] == 'D') {
-				handlePrintDouble();
+				tratar_impressao_double();
 			} else if(methodDescriptor[1] == 'C') {
-				handlePrintChar();
+				tratar_impressao_char();
 			} else if(methodDescriptor[1] == 'J') {
-				handlePrintLong();
+				tratar_impressao_long();
 			} else {
-				handlePrintString();
+				tratar_impressao_string();
 			}
 		}
 	} else {
@@ -3483,7 +3483,7 @@ void multianewarray(){
  */
 void ifnull(){
 
-	//if value is null, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value is null, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t offset = calculateOffset();
 	int32_t value = desempilhar_operando();
 	if(value == 0){
@@ -3497,7 +3497,7 @@ void ifnull(){
  */
 void ifnonnull(){
 
-	//if value is not null, branch to instruction at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
+	//if value is not null, branch to instrucao at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2)
 	int32_t offset = calculateOffset();
 	int32_t value = desempilhar_operando();
 	if(value != 0){
@@ -3602,13 +3602,13 @@ int16_t read2Bytes(uint8_t* data) {
 /**
  * Printa um inteiro
  */
-void handlePrintInt() {
+void tratar_impressao_int() {
 	printf("%d\n", desempilhar_operando());
 }
 /**
  * Printa um Long
  */
-void handlePrintLong() {
+void tratar_impressao_long() {
 
 	uint64_t value;
 	int32_t lowValue = desempilhar_operando();
@@ -3622,14 +3622,14 @@ void handlePrintLong() {
 /**
  * Printa um Char
  */
-void handlePrintChar() {
+void tratar_impressao_char() {
 	char value = (char) desempilhar_operando();
 	printf("%c\n", value);
 }
 /**
  * Printa um Float
  */
-void handlePrintFloat() {
+void tratar_impressao_float() {
 	float floatValue;
 	int value = desempilhar_operando();
 	memcpy(&floatValue, &value, sizeof(int32_t));
@@ -3638,20 +3638,20 @@ void handlePrintFloat() {
 /**
  * Printa um String
  */
-void handlePrintString() {
+void tratar_impressao_string() {
 	printf("%s\n", frame_atual->constantPool[desempilhar_operando()].info.utf8_info->bytes);
 }
 /**
  * Printa um Boolean
  */
-void handlePrintBoolean() {
+void tratar_impressao_boolean() {
 	int value = desempilhar_operando();
 	value ? printf("TRUE\n") : printf("FALSE\n");
 }
 /**
  * Printa um Double
  */
-void handlePrintDouble() {
+void tratar_impressao_double() {
     double doubleValue;
     uint64_t low = desempilhar_operando();
     uint64_t high = desempilhar_operando();

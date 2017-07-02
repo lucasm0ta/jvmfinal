@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /* array com as instruções que foram implementadas */
-void (*instruction[256]) ();
+void (*instrucao[256]) ();
 
 /* preenche o array com as instruções implementadas, sendo o índice o código correspondente da instrução */
 void createInstructionsArray();

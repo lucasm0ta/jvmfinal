@@ -136,7 +136,7 @@ void executar_frame() {
   if(DEBUG) dumpStack(0);
   while ((frame_atual->pc) < frame_atual->code_length){
     if(DEBUG) printf("pc: %d\t%s\n", frame_atual->pc, decode[frame_atual->code[frame_atual->pc]].instruction);
-		instruction[frame_atual->code[frame_atual->pc]]();
+		instrucao[frame_atual->code[frame_atual->pc]]();
 	}
   if(DEBUG) dumpStack(1);
   desempilhar_frame();
