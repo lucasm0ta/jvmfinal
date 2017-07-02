@@ -10,7 +10,7 @@ extern "C" {
 
 uint32_t *group_words(uint8_t *src, int size);
 uint32_t group_word(uint8_t * word);
-int makePaddingOffset(int pos);
+int iniciar_padding_offset(int pos);
 
 #ifdef __cplusplus
 }

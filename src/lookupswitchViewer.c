@@ -13,7 +13,7 @@ void imprimir_Lookupswitch(LookupswitchData data, char *space) {
 }
 
 LookupswitchData montar_lookupswitch_data(uint8_t *src, int pos) {
-    const int padding_Offset = makePaddingOffset(pos);
+    const int padding_Offset = iniciar_padding_offset(pos);
     const int index_ofKey_offset_pairs = padding_Offset + 8;
 
     LookupswitchData data;

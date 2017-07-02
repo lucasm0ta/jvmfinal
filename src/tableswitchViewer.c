@@ -21,7 +21,7 @@ void imprimir_switch_table(TableswitchData data, char *space) {
 }
 
 TableswitchData montar_switch_table(uint8_t *src, int pc) {
-    const int paddingOffset = makePaddingOffset(pc);
+    const int paddingOffset = iniciar_padding_offset(pc);
     const int indexOfLowBytes = paddingOffset + 4;
     const int indexOfHighBytes = paddingOffset + 8;
     const int indexOfJumpOffsets = paddingOffset + 12;
