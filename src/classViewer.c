@@ -1,10 +1,6 @@
 #include "classViewer.h"
 
 
-/**
- * [printGeneralInformation description]
- * @param classFile [description]
- */
 void imprimir_informacoes_classe(ClassFile *classFile){
 	printf("GENERAL INFORMATION :\n\n");
 	printf("Magic:                   0x%X\n", classFile->magic);
@@ -21,12 +17,7 @@ void imprimir_informacoes_classe(ClassFile *classFile){
 	printf("\n");
 }
 
-/**
- * Função que imprime uma string que representa o valor de uma das constantes do Constant Pool
- * @param  index         index da constante no Constant Pool
- * @param  constant_pool ponteiro para um Constant Pool
- * @return               ponteiro para uma string
- */
+
 void imprimir_constant_pool_inserida
 		(int index, Cp_info *constant_pool){
 	switch(constant_pool[index].tag){
@@ -83,10 +74,7 @@ void imprimir_constant_pool_inserida
 	}
 }
 
-/**
- * [printConstantPool description]
- * @param classFile [description]
- */
+
 void imprimir_constant_pool_completa(ClassFile *classFile){
 	uint16_t i, index;
 	int64_t aux;
@@ -220,10 +208,7 @@ void imprimir_constant_pool_completa(ClassFile *classFile){
 	}
 }
 
-/**
- * [printInterfaces description]
- * @param classFile [description]
- */
+
 void imprimir_interfaces(ClassFile *classFile){
 	int i;
 	printf("INTERFACES :\n\n");
@@ -234,14 +219,7 @@ void imprimir_interfaces(ClassFile *classFile){
 	}printf("\n");
 }
 
-/**
- * WARNING: GAMBIARRA PARA DAR OS TABS CORRETOS (QUANDO UM ATRIBUTO ESTA DENTRO DO OUTRO)
- * 			POR ISSO QUE TEM UM %s NA FRENTE DE TODOS OS PRINTS
- * @param atributos       [description]
- * @param contador_atributos [description]
- * @param constant_pool    [description]
- * @param tab              quantidade de tabs que devem ser dados
- */
+
 void imprimir_atributos(Attribute_info *atributos, uint16_t contador_atributos, Cp_info *constant_pool, int tab){
 	int i, j, k;
 	uint16_t index;
@@ -411,10 +389,7 @@ int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attri
 	return instr_pos;
 }
 
-/**
- * [printFields description]
- * @param classFile [description]
- */
+
 void imprimir_fields(ClassFile *classFile){
 	uint16_t i, index;
 	Field_info* fields = classFile->fields;
@@ -435,10 +410,7 @@ void imprimir_fields(ClassFile *classFile){
 	}
 }
 
-/**
- * [printMethods description]
- * @param classFile [description]
- */
+
 void imprimir_metodos(ClassFile *classFile){
 	uint16_t i, index;
 	Method_info* methods = classFile->methods;
@@ -459,10 +431,7 @@ void imprimir_metodos(ClassFile *classFile){
 	}
 }
 
-/**
- * Função que realiza os prints de acordo com cada item do Byte code Viewer
- * @param classFile [description]
- */
+
 void imprimir_classe(ClassFile *classFile){
 	imprimir_informacoes_classe(classFile);
 	imprimir_constant_pool_completa(classFile);

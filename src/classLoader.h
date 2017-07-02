@@ -28,9 +28,7 @@ extern "C" {
 // Quando tem valor 1 printa saidas de debug
 int DEBUG;
 
-/***************************************************************************************************
-*                                       CONSTANT POOL                                              *
-***************************************************************************************************/
+
 
 typedef struct Class_info {
     uint16_t name_index;
@@ -346,6 +344,13 @@ typedef struct ClassFile {
 } ClassFile;
 
 ClassFile* carregar_classe(char *className);
+
+/**
+ * Entra na constant_pool e pega o valor de uma das entradas.
+ * @param  index         Index da entrada da constant_pool
+ * @param  constant_pool Ponteiro para a constant_pool
+ * @return               Valor de uma entrada da constant_pool como string
+ */
 uint8_t* acessar_constant_pool_entry(int index, Cp_info *constant_pool);
 void verificar_magic_number(ClassFile *classFile);
 void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo);
