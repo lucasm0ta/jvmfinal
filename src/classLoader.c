@@ -436,9 +436,10 @@ void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 			last = pos;
 		pos++;
 	}
+	if (last) last++;
 	size = pos - last;
 	char *buff2 = malloc(sizeof(char) * size);
-	memcpy(buff2, &nomeClassept[last+1], size);
+	memcpy(buff2, &nomeClassept[last], size);
 	buff2[size] = '\0';
 	if (strcmp(buff1, buff2)) {
 		printf("Nome da classe (%s) e do arquivo (%s) diferentes.\n", buff1, buff2);
