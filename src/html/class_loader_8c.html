@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>JVM: Referência ao ficheiro classLoader.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.8.12 -->
+<!-- Gerado por Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
 </script>
@@ -68,56 +68,52 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="class_loader_8h_source.html">classLoader.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="class_list_8h_source.html">classList.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="method_area_8h_source.html">methodArea.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="instructions_8h_source.html">instructions.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="frame_8h_source.html">frame.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="array_8h_source.html">array.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="object_manager_8h_source.html">objectManager.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:a6d7c4f23b53b33130513cf1b28bb3a99"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a6d7c4f23b53b33130513cf1b28bb3a99">ler_bytes</a> (int size, FILE *fp)</td></tr>
-<tr class="memdesc:a6d7c4f23b53b33130513cf1b28bb3a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para leitura byte a byte do arquivo fp.  <a href="#a6d7c4f23b53b33130513cf1b28bb3a99">Mais...</a><br /></td></tr>
-<tr class="separator:a6d7c4f23b53b33130513cf1b28bb3a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#adbc64e22f2dcd5daae28f25cb3c6d2c3">acessar_constant_pool_entry</a> (int index, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool)</td></tr>
-<tr class="memdesc:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que retorna uma string que representa o valor de uma das constantes do Constant Pool.  <a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">Mais...</a><br /></td></tr>
-<tr class="separator:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1290351b9cf245484329af16a3871fda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_attribute__info.html">Attribute_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a1290351b9cf245484329af16a3871fda">ler_atributos</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
-<tr class="memdesc:a1290351b9cf245484329af16a3871fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê atributos no arquivo .class.  <a href="#a1290351b9cf245484329af16a3871fda">Mais...</a><br /></td></tr>
-<tr class="separator:a1290351b9cf245484329af16a3871fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adce3966a4bfce3cbdcd26863acf4e7f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#adce3966a4bfce3cbdcd26863acf4e7f3">ler_constant_pool</a> (int length, FILE *fp)</td></tr>
-<tr class="memdesc:adce3966a4bfce3cbdcd26863acf4e7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê o Pool de constantes no arquivo .class.  <a href="#adce3966a4bfce3cbdcd26863acf4e7f3">Mais...</a><br /></td></tr>
-<tr class="separator:adce3966a4bfce3cbdcd26863acf4e7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acab25cca7a3bd9da43398a321e209885"><td class="memItemLeft" align="right" valign="top">uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#acab25cca7a3bd9da43398a321e209885">ler_interfaces</a> (int length, FILE *fp)</td></tr>
-<tr class="memdesc:acab25cca7a3bd9da43398a321e209885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê do arquivo .class os indices do contant pool que representam as interfaces da classe.  <a href="#acab25cca7a3bd9da43398a321e209885">Mais...</a><br /></td></tr>
-<tr class="separator:acab25cca7a3bd9da43398a321e209885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2df2cd4d7189c05a2690ebb85858634b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_field__info.html">Field_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a2df2cd4d7189c05a2690ebb85858634b">ler_fields</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
-<tr class="memdesc:a2df2cd4d7189c05a2690ebb85858634b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os fields de um arquivo .class.  <a href="#a2df2cd4d7189c05a2690ebb85858634b">Mais...</a><br /></td></tr>
-<tr class="separator:a2df2cd4d7189c05a2690ebb85858634b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e8b04495c973881244ac782272b604f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_method__info.html">Method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a1e8b04495c973881244ac782272b604f">ler_metodos</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
-<tr class="memdesc:a1e8b04495c973881244ac782272b604f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os métodos de um arquivo .class.  <a href="#a1e8b04495c973881244ac782272b604f">Mais...</a><br /></td></tr>
-<tr class="separator:a1e8b04495c973881244ac782272b604f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a054f9d1d78ad324c23b67bb02a57dac6">carregar_classe</a> (char *className)</td></tr>
-<tr class="memdesc:a054f9d1d78ad324c23b67bb02a57dac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada.  <a href="#a054f9d1d78ad324c23b67bb02a57dac6">Mais...</a><br /></td></tr>
-<tr class="separator:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67054480a9f3874ba2f0196b60a4350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#ae67054480a9f3874ba2f0196b60a4350">verificar_magic_number</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
-<tr class="memdesc:ae67054480a9f3874ba2f0196b60a4350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic.  <a href="#ae67054480a9f3874ba2f0196b60a4350">Mais...</a><br /></td></tr>
-<tr class="separator:ae67054480a9f3874ba2f0196b60a4350"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af07fd265d4b963d7972e5a683e6c4050"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#af07fd265d4b963d7972e5a683e6c4050">verificar_nome_classe_artigo</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, char *nomeArquivo)</td></tr>
-<tr class="memdesc:af07fd265d4b963d7972e5a683e6c4050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o nome da classe do .class bate com o do arquivo.  <a href="#af07fd265d4b963d7972e5a683e6c4050">Mais...</a><br /></td></tr>
-<tr class="separator:af07fd265d4b963d7972e5a683e6c4050"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a37e5445b741ed921d544e5fdd76f1dbc">verificar_versao</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
-<tr class="memdesc:a37e5445b741ed921d544e5fdd76f1dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se a major version do .class é suportada pelo java 2.  <a href="#a37e5445b741ed921d544e5fdd76f1dbc">Mais...</a><br /></td></tr>
-<tr class="separator:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef258106f56ba1b354bbfb1a693d4c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#ae391a1d79bb0c8cbc283f0283e3c098b">u4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a0ef258106f56ba1b354bbfb1a693d4c4">ler_bytes</a> (int size, FILE *fp)</td></tr>
+<tr class="memdesc:a0ef258106f56ba1b354bbfb1a693d4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para leitura byte a byte do arquivo fp.  <a href="#a0ef258106f56ba1b354bbfb1a693d4c4">Mais...</a><br /></td></tr>
+<tr class="separator:a0ef258106f56ba1b354bbfb1a693d4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576ae95a803e34e8c225a427f667dc75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a64f8055b64cf2a4c299c841130c5c938">u1</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a576ae95a803e34e8c225a427f667dc75">acessar_constant_pool_entry</a> (int index, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool)</td></tr>
+<tr class="memdesc:a576ae95a803e34e8c225a427f667dc75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que retorna uma string que representa o valor de uma das constantes do Constant Pool.  <a href="#a576ae95a803e34e8c225a427f667dc75">Mais...</a><br /></td></tr>
+<tr class="separator:a576ae95a803e34e8c225a427f667dc75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a294818caedfdd9cd692ef288822b1967"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_attribute__info.html">Attribute_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a294818caedfdd9cd692ef288822b1967">ler_atributos</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
+<tr class="memdesc:a294818caedfdd9cd692ef288822b1967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê atributos no arquivo .class.  <a href="#a294818caedfdd9cd692ef288822b1967">Mais...</a><br /></td></tr>
+<tr class="separator:a294818caedfdd9cd692ef288822b1967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5822ce58a3e3836227aaad0e10cc0ac4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cp__info.html">Cp_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a5822ce58a3e3836227aaad0e10cc0ac4">ler_constant_pool</a> (int length, FILE *fp)</td></tr>
+<tr class="memdesc:a5822ce58a3e3836227aaad0e10cc0ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê o Pool de constantes no arquivo .class.  <a href="#a5822ce58a3e3836227aaad0e10cc0ac4">Mais...</a><br /></td></tr>
+<tr class="separator:a5822ce58a3e3836227aaad0e10cc0ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64cd8674d4af3efd3be8977b69a03454"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a55ef8d87fd202b8417704c089899c5b9">u2</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a64cd8674d4af3efd3be8977b69a03454">ler_interfaces</a> (int length, FILE *fp)</td></tr>
+<tr class="memdesc:a64cd8674d4af3efd3be8977b69a03454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê do arquivo .class os indices do contant pool que representam as interfaces da classe.  <a href="#a64cd8674d4af3efd3be8977b69a03454">Mais...</a><br /></td></tr>
+<tr class="separator:a64cd8674d4af3efd3be8977b69a03454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dcfc407d971e11cecd31cae39d71ad3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_field__info.html">Field_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a7dcfc407d971e11cecd31cae39d71ad3">ler_fields</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
+<tr class="memdesc:a7dcfc407d971e11cecd31cae39d71ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os fields de um arquivo .class.  <a href="#a7dcfc407d971e11cecd31cae39d71ad3">Mais...</a><br /></td></tr>
+<tr class="separator:a7dcfc407d971e11cecd31cae39d71ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f64bb22737657fca74e4076edde4e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_method__info.html">Method_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a37f64bb22737657fca74e4076edde4e0">ler_metodos</a> (int length, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool, FILE *fp)</td></tr>
+<tr class="memdesc:a37f64bb22737657fca74e4076edde4e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê os métodos de um arquivo .class.  <a href="#a37f64bb22737657fca74e4076edde4e0">Mais...</a><br /></td></tr>
+<tr class="separator:a37f64bb22737657fca74e4076edde4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf68bc1426bc5087586572817ae0f16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a6cf68bc1426bc5087586572817ae0f16">carregar_classe</a> (char *className)</td></tr>
+<tr class="memdesc:a6cf68bc1426bc5087586572817ae0f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada.  <a href="#a6cf68bc1426bc5087586572817ae0f16">Mais...</a><br /></td></tr>
+<tr class="separator:a6cf68bc1426bc5087586572817ae0f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b11e11356b5a8922f066cc8e76fb1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a06b11e11356b5a8922f066cc8e76fb1e">verificar_magic_number</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:a06b11e11356b5a8922f066cc8e76fb1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic.  <a href="#a06b11e11356b5a8922f066cc8e76fb1e">Mais...</a><br /></td></tr>
+<tr class="separator:a06b11e11356b5a8922f066cc8e76fb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38fba4a49d5d320fb4c82bbf983a8f7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#a38fba4a49d5d320fb4c82bbf983a8f7f">verificar_nome_classe_artigo</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, char *nomeArquivo)</td></tr>
+<tr class="memdesc:a38fba4a49d5d320fb4c82bbf983a8f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o nome da classe do .class bate com o do arquivo.  <a href="#a38fba4a49d5d320fb4c82bbf983a8f7f">Mais...</a><br /></td></tr>
+<tr class="separator:a38fba4a49d5d320fb4c82bbf983a8f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa30c5d49114c3b975617c033d9637141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8c.html#aa30c5d49114c3b975617c033d9637141">verificar_versao</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:aa30c5d49114c3b975617c033d9637141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se a major version do .class é suportada pelo java 2.  <a href="#aa30c5d49114c3b975617c033d9637141">Mais...</a><br /></td></tr>
+<tr class="separator:aa30c5d49114c3b975617c033d9637141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentação das funções</h2>
-<a id="adbc64e22f2dcd5daae28f25cb3c6d2c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">&sect;&nbsp;</a></span>acessar_constant_pool_entry()</h2>
+<a id="a576ae95a803e34e8c225a427f667dc75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a576ae95a803e34e8c225a427f667dc75">&#9670;&nbsp;</a></span>acessar_constant_pool_entry()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t* acessar_constant_pool_entry </td>
+          <td class="memname"><a class="el" href="util_8h.html#a64f8055b64cf2a4c299c841130c5c938">u1</a>* acessar_constant_pool_entry </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -137,84 +133,20 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função que retorna uma string que representa o valor de uma das constantes do Constant Pool. </p>
+<p>Entra na constant_pool e pega o valor de uma das entradas.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>index da constante no Constant Pool </td></tr>
-    <tr><td class="paramname">constant_pool</td><td>ponteiro para um Constant Pool </td></tr>
+    <tr><td class="paramname">index</td><td>Index da constante no Constant Pool </td></tr>
+    <tr><td class="paramname">constant_pool</td><td>Ponteiro para um Constant Pool </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>ponteiro para uma string </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para uma string </dd></dl>
 
 </div>
 </div>
-<a id="ae67054480a9f3874ba2f0196b60a4350"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae67054480a9f3874ba2f0196b60a4350">&sect;&nbsp;</a></span>verificar_magic_number()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void verificar_magic_number </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
-          <td class="paramname"><em>classFile</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do suposto .class </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>1 para .class e 0 para nao .class </dd></dl>
-
-</div>
-</div>
-<a id="af07fd265d4b963d7972e5a683e6c4050"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af07fd265d4b963d7972e5a683e6c4050">&sect;&nbsp;</a></span>verificar_nome_classe_artigo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void verificar_nome_classe_artigo </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
-          <td class="paramname"><em>classFile</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>nomeArquivo</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Função verificacao, verificar se o nome da classe do .class bate com o do arquivo. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do .class </td></tr>
-    <tr><td class="paramname">nomeArquivo</td><td>Ponteiro o nome do arquivo </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>1 para confere e 0 para nao confere </dd></dl>
-
-</div>
-</div>
-<a id="a054f9d1d78ad324c23b67bb02a57dac6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a054f9d1d78ad324c23b67bb02a57dac6">&sect;&nbsp;</a></span>carregar_classe()</h2>
+<a id="a6cf68bc1426bc5087586572817ae0f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf68bc1426bc5087586572817ae0f16">&#9670;&nbsp;</a></span>carregar_classe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,8 +172,8 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="a1290351b9cf245484329af16a3871fda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1290351b9cf245484329af16a3871fda">&sect;&nbsp;</a></span>ler_atributos()</h2>
+<a id="a294818caedfdd9cd692ef288822b1967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a294818caedfdd9cd692ef288822b1967">&#9670;&nbsp;</a></span>ler_atributos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,7 +205,7 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Lê atributos no arquivo .class. </p>
-<p>É utilizado na função de leitura de outras estruturas, o ler_fields, ler_metodos e carregar_classe </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p>É utilizado na função de leitura de outras estruturas, o readFields, readMethods e loadClass </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">length</td><td>Quantidade de atributos </td></tr>
     <tr><td class="paramname">constant_pool</td><td>Ponteiro para o Constant Poll </td></tr>
@@ -285,14 +217,14 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="a6d7c4f23b53b33130513cf1b28bb3a99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d7c4f23b53b33130513cf1b28bb3a99">&sect;&nbsp;</a></span>ler_bytes()</h2>
+<a id="a0ef258106f56ba1b354bbfb1a693d4c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef258106f56ba1b354bbfb1a693d4c4">&#9670;&nbsp;</a></span>ler_bytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t ler_bytes </td>
+          <td class="memname"><a class="el" href="util_8h.html#ae391a1d79bb0c8cbc283f0283e3c098b">u4</a> ler_bytes </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>size</em>, </td>
@@ -323,8 +255,8 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="adce3966a4bfce3cbdcd26863acf4e7f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adce3966a4bfce3cbdcd26863acf4e7f3">&sect;&nbsp;</a></span>ler_constant_pool()</h2>
+<a id="a5822ce58a3e3836227aaad0e10cc0ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5822ce58a3e3836227aaad0e10cc0ac4">&#9670;&nbsp;</a></span>ler_constant_pool()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -361,8 +293,8 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="a2df2cd4d7189c05a2690ebb85858634b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2df2cd4d7189c05a2690ebb85858634b">&sect;&nbsp;</a></span>ler_fields()</h2>
+<a id="a7dcfc407d971e11cecd31cae39d71ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dcfc407d971e11cecd31cae39d71ad3">&#9670;&nbsp;</a></span>ler_fields()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,14 +338,14 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="acab25cca7a3bd9da43398a321e209885"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acab25cca7a3bd9da43398a321e209885">&sect;&nbsp;</a></span>ler_interfaces()</h2>
+<a id="a64cd8674d4af3efd3be8977b69a03454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64cd8674d4af3efd3be8977b69a03454">&#9670;&nbsp;</a></span>ler_interfaces()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t* ler_interfaces </td>
+          <td class="memname"><a class="el" href="util_8h.html#a55ef8d87fd202b8417704c089899c5b9">u2</a>* ler_interfaces </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>length</em>, </td>
@@ -444,8 +376,8 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="a1e8b04495c973881244ac782272b604f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e8b04495c973881244ac782272b604f">&sect;&nbsp;</a></span>ler_metodos()</h2>
+<a id="a37f64bb22737657fca74e4076edde4e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f64bb22737657fca74e4076edde4e0">&#9670;&nbsp;</a></span>ler_metodos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -489,8 +421,73 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="a37e5445b741ed921d544e5fdd76f1dbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37e5445b741ed921d544e5fdd76f1dbc">&sect;&nbsp;</a></span>verificar_versao()</h2>
+<a id="a06b11e11356b5a8922f066cc8e76fb1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b11e11356b5a8922f066cc8e76fb1e">&#9670;&nbsp;</a></span>verificar_magic_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void verificar_magic_number </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do suposto .class </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 para .class e 0 para nao .class </dd></dl>
+
+</div>
+</div>
+<a id="a38fba4a49d5d320fb4c82bbf983a8f7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38fba4a49d5d320fb4c82bbf983a8f7f">&#9670;&nbsp;</a></span>verificar_nome_classe_artigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void verificar_nome_classe_artigo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
+          <td class="paramname"><em>classFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nomeArquivo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função verificacao, verificar se o nome da classe do .class bate com o do arquivo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para os dados do .class </td></tr>
+    <tr><td class="paramname">nomeArquivo</td><td>Ponteiro o nome do arquivo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 para confere e 0 para nao confere </dd></dl>
+
+</div>
+</div>
+<a id="aa30c5d49114c3b975617c033d9637141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30c5d49114c3b975617c033d9637141">&#9670;&nbsp;</a></span>verificar_versao()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -521,7 +518,7 @@ Funções</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
+</a> 1.8.13
 </small></address>
 </body>
 </html>

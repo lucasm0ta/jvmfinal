@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>JVM: Referência à estrutura frame</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.8.12 -->
+<!-- Gerado por Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
 </script>
@@ -67,6 +67,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Estrutura do frame.  
+ <a href="structframe.html#details">Mais...</a></p>
+
 <p><code>#include &lt;<a class="el" href="frame_8h_source.html">frame.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -77,22 +80,25 @@ Atributos Públicos</h2></td></tr>
 <tr class="separator:a40e472a4fefc83b9b6920b4c3d0c3b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac199820b516dd4d579068706cd43af95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#ac199820b516dd4d579068706cd43af95">classe</a></td></tr>
 <tr class="separator:ac199820b516dd4d579068706cd43af95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21004a70deb96c08f1dd6fd30f610b51"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a21004a70deb96c08f1dd6fd30f610b51">max_stack</a></td></tr>
-<tr class="separator:a21004a70deb96c08f1dd6fd30f610b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afff6c0343d82c67273a7c92f582f7ba8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#afff6c0343d82c67273a7c92f582f7ba8">max_locals</a></td></tr>
-<tr class="separator:afff6c0343d82c67273a7c92f582f7ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a43626ab33a7b6ed584eb7a47fc93e8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a2a43626ab33a7b6ed584eb7a47fc93e8">code_length</a></td></tr>
-<tr class="separator:a2a43626ab33a7b6ed584eb7a47fc93e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a248713b5b9384b4d3edd365ee82625b4"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a248713b5b9384b4d3edd365ee82625b4">code</a></td></tr>
-<tr class="separator:a248713b5b9384b4d3edd365ee82625b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5915ace0f09c12110a4571ac827baf44"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a5915ace0f09c12110a4571ac827baf44">pc</a></td></tr>
-<tr class="separator:a5915ace0f09c12110a4571ac827baf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c15fcc6d1f7224dddf9e6539c8cf9d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a55ef8d87fd202b8417704c089899c5b9">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a0c15fcc6d1f7224dddf9e6539c8cf9d3">max_stack</a></td></tr>
+<tr class="separator:a0c15fcc6d1f7224dddf9e6539c8cf9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8c0cb2b381617b0065066918344dbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a55ef8d87fd202b8417704c089899c5b9">u2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a2f8c0cb2b381617b0065066918344dbf">max_locals</a></td></tr>
+<tr class="separator:a2f8c0cb2b381617b0065066918344dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aecdb355da5ec8d1393bb3bed5fac56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#ae391a1d79bb0c8cbc283f0283e3c098b">u4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a6aecdb355da5ec8d1393bb3bed5fac56">code_length</a></td></tr>
+<tr class="separator:a6aecdb355da5ec8d1393bb3bed5fac56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df0e7929808221d8109562c16e490fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a64f8055b64cf2a4c299c841130c5c938">u1</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a5df0e7929808221d8109562c16e490fc">code</a></td></tr>
+<tr class="separator:a5df0e7929808221d8109562c16e490fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2f8c8d0abb0ff0952fb8ab971c2d3d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#ae391a1d79bb0c8cbc283f0283e3c098b">u4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#ae2f8c8d0abb0ff0952fb8ab971c2d3d0">pc</a></td></tr>
+<tr class="separator:ae2f8c8d0abb0ff0952fb8ab971c2d3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2247e2a31594f7c5b3f6de0f6dc4ca18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structoperand_stack.html">operandStack</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html#a2247e2a31594f7c5b3f6de0f6dc4ca18">operandStack</a></td></tr>
 <tr class="separator:a2247e2a31594f7c5b3f6de0f6dc4ca18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentação dos dados membro</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Estrutura do frame. </p>
+<p>Contem um vetor de varaveis locais, um ponteiro para a constant_pool, um pilha de operandos e o codigo em si. Possui alguns outros elementos que sao usados no seu funcionamento. </p>
+</div><h2 class="groupheader">Documentação dos dados membro</h2>
 <a id="ac199820b516dd4d579068706cd43af95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac199820b516dd4d579068706cd43af95">&sect;&nbsp;</a></span>classe</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac199820b516dd4d579068706cd43af95">&#9670;&nbsp;</a></span>classe</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -105,28 +111,28 @@ Atributos Públicos</h2></td></tr>
 
 </div>
 </div>
-<a id="a248713b5b9384b4d3edd365ee82625b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a248713b5b9384b4d3edd365ee82625b4">&sect;&nbsp;</a></span>code</h2>
+<a id="a5df0e7929808221d8109562c16e490fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df0e7929808221d8109562c16e490fc">&#9670;&nbsp;</a></span>code</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t* frame::code</td>
+          <td class="memname"><a class="el" href="util_8h.html#a64f8055b64cf2a4c299c841130c5c938">u1</a>* frame::code</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a2a43626ab33a7b6ed584eb7a47fc93e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a43626ab33a7b6ed584eb7a47fc93e8">&sect;&nbsp;</a></span>code_length</h2>
+<a id="a6aecdb355da5ec8d1393bb3bed5fac56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aecdb355da5ec8d1393bb3bed5fac56">&#9670;&nbsp;</a></span>code_length</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t frame::code_length</td>
+          <td class="memname"><a class="el" href="util_8h.html#ae391a1d79bb0c8cbc283f0283e3c098b">u4</a> frame::code_length</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -134,7 +140,7 @@ Atributos Públicos</h2></td></tr>
 </div>
 </div>
 <a id="a40e472a4fefc83b9b6920b4c3d0c3b89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40e472a4fefc83b9b6920b4c3d0c3b89">&sect;&nbsp;</a></span>constantPool</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e472a4fefc83b9b6920b4c3d0c3b89">&#9670;&nbsp;</a></span>constantPool</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +154,7 @@ Atributos Públicos</h2></td></tr>
 </div>
 </div>
 <a id="abd74d70b2c953c57da3820ef8bfd152f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd74d70b2c953c57da3820ef8bfd152f">&sect;&nbsp;</a></span>fields</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abd74d70b2c953c57da3820ef8bfd152f">&#9670;&nbsp;</a></span>fields</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,28 +167,28 @@ Atributos Públicos</h2></td></tr>
 
 </div>
 </div>
-<a id="afff6c0343d82c67273a7c92f582f7ba8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afff6c0343d82c67273a7c92f582f7ba8">&sect;&nbsp;</a></span>max_locals</h2>
+<a id="a2f8c0cb2b381617b0065066918344dbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f8c0cb2b381617b0065066918344dbf">&#9670;&nbsp;</a></span>max_locals</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t frame::max_locals</td>
+          <td class="memname"><a class="el" href="util_8h.html#a55ef8d87fd202b8417704c089899c5b9">u2</a> frame::max_locals</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a21004a70deb96c08f1dd6fd30f610b51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21004a70deb96c08f1dd6fd30f610b51">&sect;&nbsp;</a></span>max_stack</h2>
+<a id="a0c15fcc6d1f7224dddf9e6539c8cf9d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c15fcc6d1f7224dddf9e6539c8cf9d3">&#9670;&nbsp;</a></span>max_stack</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t frame::max_stack</td>
+          <td class="memname"><a class="el" href="util_8h.html#a55ef8d87fd202b8417704c089899c5b9">u2</a> frame::max_stack</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -190,7 +196,7 @@ Atributos Públicos</h2></td></tr>
 </div>
 </div>
 <a id="a2247e2a31594f7c5b3f6de0f6dc4ca18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2247e2a31594f7c5b3f6de0f6dc4ca18">&sect;&nbsp;</a></span>operandStack</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2247e2a31594f7c5b3f6de0f6dc4ca18">&#9670;&nbsp;</a></span>operandStack</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,14 +209,14 @@ Atributos Públicos</h2></td></tr>
 
 </div>
 </div>
-<a id="a5915ace0f09c12110a4571ac827baf44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5915ace0f09c12110a4571ac827baf44">&sect;&nbsp;</a></span>pc</h2>
+<a id="ae2f8c8d0abb0ff0952fb8ab971c2d3d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2f8c8d0abb0ff0952fb8ab971c2d3d0">&#9670;&nbsp;</a></span>pc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t frame::pc</td>
+          <td class="memname"><a class="el" href="util_8h.html#ae391a1d79bb0c8cbc283f0283e3c098b">u4</a> frame::pc</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -225,7 +231,7 @@ Atributos Públicos</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
+</a> 1.8.13
 </small></address>
 </body>
 </html>

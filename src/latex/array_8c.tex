@@ -4,84 +4,64 @@
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-uint32\+\_\+t \hyperlink{array_8c_a9eee01abff040fec6a8376764a34066b}{get\+Array\+Reference} (\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$\hyperlink{structarray}{array})
-\begin{DoxyCompactList}\small\item\em Dada uma referencia para array\+Type devolve o ponteiro para o array propriamente dita. \end{DoxyCompactList}\item 
-uint32\+\_\+t \hyperlink{array_8c_a9fa0894ba8eb99505d998ccd5ddb109f}{get\+Array\+Size} (\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$\hyperlink{structarray}{array})
-\begin{DoxyCompactList}\small\item\em Dada uma referencia para array\+Type devolve o tamanho do array. \end{DoxyCompactList}\item 
-void \hyperlink{array_8c_a2d21eb874039abf599f7f2c170280da5}{put\+Array\+Reference} (uint32\+\_\+t $\ast$array\+Ref, \hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$\hyperlink{structarray}{array})
-\begin{DoxyCompactList}\small\item\em Dada um ponteiro para um array e um para a estrutura de array coloca-\/o na estrutura. \end{DoxyCompactList}\item 
-void \hyperlink{array_8c_a90196dac7d0605c067a591f93582344d}{put\+Array\+Size} (uint32\+\_\+t size, \hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$\hyperlink{structarray}{array})
-\begin{DoxyCompactList}\small\item\em //\+Dada um tamanho int um ponteiro para a estrutura de array coloca-\/o na estrutura \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{array_8c_afef92e273d06072649cc73d6a6562f5f}{put\+\_\+referencia\+\_\+array} (uint32\+\_\+t $\ast$array\+Ref, \hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$\hyperlink{structarray}{array})
+\item 
+void \hyperlink{array_8c_a08f8b44de565275dca16408327004895}{put\+\_\+tamanho\+\_\+array} (uint32\+\_\+t size, \hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$\hyperlink{structarray}{array})
+\item 
+uint32\+\_\+t \hyperlink{array_8c_ad58b4ed8d03331a583b4cb5e0955271f}{get\+\_\+referencia\+\_\+array} (\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$\hyperlink{structarray}{array})
+\begin{DoxyCompactList}\small\item\em Given an array\+Type structure, returns the pointer to the array itself. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{array_8c_a4c32d1eff258639a22570bf401371bf9}{get\+\_\+tamanho\+\_\+array} (\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$\hyperlink{structarray}{array})
+\begin{DoxyCompactList}\small\item\em Returns array\+Size from array\+Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Documentação das funções}
-\hypertarget{array_8c_a9eee01abff040fec6a8376764a34066b}{}\label{array_8c_a9eee01abff040fec6a8376764a34066b} 
-\index{array.\+c@{array.\+c}!get\+Array\+Reference@{get\+Array\+Reference}}
-\index{get\+Array\+Reference@{get\+Array\+Reference}!array.\+c@{array.\+c}}
-\subsubsection{\texorpdfstring{get\+Array\+Reference()}{get_referencia_array()}}
-{\footnotesize\ttfamily uint32\+\_\+t get\+Array\+Reference (\begin{DoxyParamCaption}\item[{\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$}]{array }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{array_8c_ad58b4ed8d03331a583b4cb5e0955271f}\label{array_8c_ad58b4ed8d03331a583b4cb5e0955271f}} 
+\index{array.\+c@{array.\+c}!get\+\_\+referencia\+\_\+array@{get\+\_\+referencia\+\_\+array}}
+\index{get\+\_\+referencia\+\_\+array@{get\+\_\+referencia\+\_\+array}!array.\+c@{array.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+referencia\+\_\+array()}{get\_referencia\_array()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+\_\+referencia\+\_\+array (\begin{DoxyParamCaption}\item[{\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$}]{array }\end{DoxyParamCaption})}
 
 
 
-Dada uma referencia para array\+Type devolve o ponteiro para o array propriamente dita. 
+Given an array\+Type structure, returns the pointer to the array itself. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em array} & Estrutura a qual a referencia se encontra \\
+{\em array} & Structure to array type \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-Referencia para o array 
+Reference to the array itself 
 \end{DoxyReturn}
-\hypertarget{array_8c_a9fa0894ba8eb99505d998ccd5ddb109f}{}\label{array_8c_a9fa0894ba8eb99505d998ccd5ddb109f} 
-\index{array.\+c@{array.\+c}!get\+Array\+Size@{get\+Array\+Size}}
-\index{get\+Array\+Size@{get\+Array\+Size}!array.\+c@{array.\+c}}
-\subsubsection{\texorpdfstring{get\+Array\+Size()}{get_tamanho_array()}}
-{\footnotesize\ttfamily uint32\+\_\+t get\+Array\+Size (\begin{DoxyParamCaption}\item[{\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$}]{array }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{array_8c_a4c32d1eff258639a22570bf401371bf9}\label{array_8c_a4c32d1eff258639a22570bf401371bf9}} 
+\index{array.\+c@{array.\+c}!get\+\_\+tamanho\+\_\+array@{get\+\_\+tamanho\+\_\+array}}
+\index{get\+\_\+tamanho\+\_\+array@{get\+\_\+tamanho\+\_\+array}!array.\+c@{array.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+tamanho\+\_\+array()}{get\_tamanho\_array()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+\_\+tamanho\+\_\+array (\begin{DoxyParamCaption}\item[{\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$}]{array }\end{DoxyParamCaption})}
 
 
 
-Dada uma referencia para array\+Type devolve o tamanho do array. 
+Returns array\+Size from array\+Type. 
+
+Complexity O(1) since it updates the array\+Size for every operation
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em array} & Estrutura a qual a referencia se encontra \\
+{\em array} & Structure to array type \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-Tamanho do array 
+Array Size 
 \end{DoxyReturn}
-\hypertarget{array_8c_a2d21eb874039abf599f7f2c170280da5}{}\label{array_8c_a2d21eb874039abf599f7f2c170280da5} 
-\index{array.\+c@{array.\+c}!put\+Array\+Reference@{put\+Array\+Reference}}
-\index{put\+Array\+Reference@{put\+Array\+Reference}!array.\+c@{array.\+c}}
-\subsubsection{\texorpdfstring{put\+Array\+Reference()}{put_referencia_array()}}
-{\footnotesize\ttfamily void put\+Array\+Reference (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{array\+Ref,  }\item[{\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$}]{array }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{array_8c_afef92e273d06072649cc73d6a6562f5f}\label{array_8c_afef92e273d06072649cc73d6a6562f5f}} 
+\index{array.\+c@{array.\+c}!put\+\_\+referencia\+\_\+array@{put\+\_\+referencia\+\_\+array}}
+\index{put\+\_\+referencia\+\_\+array@{put\+\_\+referencia\+\_\+array}!array.\+c@{array.\+c}}
+\subsubsection{\texorpdfstring{put\+\_\+referencia\+\_\+array()}{put\_referencia\_array()}}
+{\footnotesize\ttfamily void put\+\_\+referencia\+\_\+array (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{array\+Ref,  }\item[{\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$}]{array }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{array_8c_a08f8b44de565275dca16408327004895}\label{array_8c_a08f8b44de565275dca16408327004895}} 
+\index{array.\+c@{array.\+c}!put\+\_\+tamanho\+\_\+array@{put\+\_\+tamanho\+\_\+array}}
+\index{put\+\_\+tamanho\+\_\+array@{put\+\_\+tamanho\+\_\+array}!array.\+c@{array.\+c}}
+\subsubsection{\texorpdfstring{put\+\_\+tamanho\+\_\+array()}{put\_tamanho\_array()}}
+{\footnotesize\ttfamily void put\+\_\+tamanho\+\_\+array (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{size,  }\item[{\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$}]{array }\end{DoxyParamCaption})}
 
-
-Dada um ponteiro para um array e um para a estrutura de array coloca-\/o na estrutura. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em array\+Ref} & Referencia a ser posta \\
-\hline
-{\em array} & Estrutura a ser posta a referencia \\
-\hline
-\end{DoxyParams}
-\hypertarget{array_8c_a90196dac7d0605c067a591f93582344d}{}\label{array_8c_a90196dac7d0605c067a591f93582344d} 
-\index{array.\+c@{array.\+c}!put\+Array\+Size@{put\+Array\+Size}}
-\index{put\+Array\+Size@{put\+Array\+Size}!array.\+c@{array.\+c}}
-\subsubsection{\texorpdfstring{put\+Array\+Size()}{put_tamanho_array()}}
-{\footnotesize\ttfamily void put\+Array\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{size,  }\item[{\hyperlink{array_8h_abe1045a9cebd75e02c4669d55753caf1}{array\+Type} $\ast$}]{array }\end{DoxyParamCaption})}
-
-
-
-//\+Dada um tamanho int um ponteiro para a estrutura de array coloca-\/o na estrutura 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em size} & Tamanho a ser posto na estrutura \\
-\hline
-{\em array} & Estrutura a ser posto o tamanho \\
-\hline
-\end{DoxyParams}

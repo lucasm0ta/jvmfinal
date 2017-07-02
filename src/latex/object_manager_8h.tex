@@ -1,34 +1,35 @@
 \hypertarget{object_manager_8h}{}\section{Referência ao ficheiro object\+Manager.\+h}
 \label{object_manager_8h}\index{object\+Manager.\+h@{object\+Manager.\+h}}
 {\ttfamily \#include \char`\"{}class\+Loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
 \subsection*{Componentes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{struct_object_field}{Object\+Field}
+struct \hyperlink{structobject__field}{object\+\_\+field}
 \item 
-struct \hyperlink{struct_object_method}{Object\+Method}
+struct \hyperlink{structobject__method}{object\+\_\+method}
 \item 
 struct \hyperlink{struct_object}{Object}
 \end{DoxyCompactItemize}
 \subsection*{Definições de tipos}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{struct_object_field}{Object\+Field} \hyperlink{object_manager_8h_ab2e75939200ebbc8842f0f6e5fe8bcf9}{Object\+Field}
+typedef struct \hyperlink{structobject__field}{object\+\_\+field} \hyperlink{object_manager_8h_a50679c1badb1b4075bdc3e4cf11f5489}{object\+\_\+field}
 \item 
-typedef struct \hyperlink{struct_object_method}{Object\+Method} \hyperlink{object_manager_8h_a201b9273b22688ae250ace069fba1705}{Object\+Method}
+typedef struct \hyperlink{structobject__method}{object\+\_\+method} \hyperlink{object_manager_8h_aa6a1100b5b3b64223ea08c55794f6a16}{object\+\_\+method}
 \item 
 typedef struct \hyperlink{struct_object}{Object} \hyperlink{object_manager_8h_ab1287b6141419421dc5c14b9f7756b0a}{Object}
 \end{DoxyCompactItemize}
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct_object}{Object} $\ast$ \hyperlink{object_manager_8h_acbb8929de342d56ed8d572fc5d690083}{create\+Object} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
-\begin{DoxyCompactList}\small\item\em Retorna uma instância da classe do class\+File. \end{DoxyCompactList}\item 
-uint64\+\_\+t \hyperlink{object_manager_8h_a4e0494b9f5b7b399e73e7b1da38e2d6c}{get\+Object\+Field\+Value\+By\+Name} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$name)
-\begin{DoxyCompactList}\small\item\em Retorna o field com nome \char`\"{}name\char`\"{} de um objeto. \end{DoxyCompactList}\item 
-void \hyperlink{object_manager_8h_aa894740a7d501f453ab07155c008557a}{set\+Object\+Field\+Value\+By\+Name} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$name, uint64\+\_\+t value)
+\hyperlink{struct_object}{Object} $\ast$ \hyperlink{object_manager_8h_a89511bb516e8430cddbcb787ed8f3fcc}{criar\+\_\+objeto} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Retorna uma instância da classe alocada. \end{DoxyCompactList}\item 
+uint64\+\_\+t \hyperlink{object_manager_8h_a3e0aaec6083a904bc59094fc5b649f3f}{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Retorna o field que possuiu o mesmo nome do parâmetro informado. \end{DoxyCompactList}\item 
+void \hyperlink{object_manager_8h_a58cd1fbfe2b62eaf986c7e9fe88a4bdd}{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$name, uint64\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Atribui o valor passado para um dos fields do objeto. \end{DoxyCompactList}\item 
-\hyperlink{struct_object_method}{Object\+Method} \hyperlink{object_manager_8h_a82c9a8c25b0d7079e3f6289a5925c7e1}{get\+Object\+Method\+By\+Name} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$method\+Name, char $\ast$class\+Name)
+\hyperlink{structobject__method}{object\+\_\+method} \hyperlink{object_manager_8h_a5c494dfb31b30ef0323a39c5ec32afcc}{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$method\+\_\+name, char $\ast$class\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Retorna um método de um objeto. \end{DoxyCompactList}\item 
 void \hyperlink{object_manager_8h_aae74193bbad0147f2cc93813258fc88b}{dump\+Object\+Fields} (\hyperlink{struct_object}{Object} $\ast$object)
 \begin{DoxyCompactList}\small\item\em Mostra uma lista do nome dos fields do objeto. \end{DoxyCompactList}\item 
@@ -37,46 +38,88 @@ void \hyperlink{object_manager_8h_a67b1c1ad28b2a4256155110a520e8091}{dump\+Objec
 
 
 \subsection{Documentação dos tipos}
-\hypertarget{object_manager_8h_ab1287b6141419421dc5c14b9f7756b0a}{}\label{object_manager_8h_ab1287b6141419421dc5c14b9f7756b0a} 
+\mbox{\Hypertarget{object_manager_8h_ab1287b6141419421dc5c14b9f7756b0a}\label{object_manager_8h_ab1287b6141419421dc5c14b9f7756b0a}} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!Object@{Object}}
 \index{Object@{Object}!object\+Manager.\+h@{object\+Manager.\+h}}
 \subsubsection{\texorpdfstring{Object}{Object}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_object}{Object} \hyperlink{struct_object}{Object}}
 
-\hypertarget{object_manager_8h_ab2e75939200ebbc8842f0f6e5fe8bcf9}{}\label{object_manager_8h_ab2e75939200ebbc8842f0f6e5fe8bcf9} 
-\index{object\+Manager.\+h@{object\+Manager.\+h}!Object\+Field@{Object\+Field}}
-\index{Object\+Field@{Object\+Field}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{Object\+Field}{object_field}}
-{\footnotesize\ttfamily typedef struct \hyperlink{struct_object_field}{Object\+Field} \hyperlink{struct_object_field}{Object\+Field}}
+\mbox{\Hypertarget{object_manager_8h_a50679c1badb1b4075bdc3e4cf11f5489}\label{object_manager_8h_a50679c1badb1b4075bdc3e4cf11f5489}} 
+\index{object\+Manager.\+h@{object\+Manager.\+h}!object\+\_\+field@{object\+\_\+field}}
+\index{object\+\_\+field@{object\+\_\+field}!object\+Manager.\+h@{object\+Manager.\+h}}
+\subsubsection{\texorpdfstring{object\+\_\+field}{object\_field}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structobject__field}{object\+\_\+field} \hyperlink{structobject__field}{object\+\_\+field}}
 
-\hypertarget{object_manager_8h_a201b9273b22688ae250ace069fba1705}{}\label{object_manager_8h_a201b9273b22688ae250ace069fba1705} 
-\index{object\+Manager.\+h@{object\+Manager.\+h}!Object\+Method@{Object\+Method}}
-\index{Object\+Method@{Object\+Method}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{Object\+Method}{object_method}}
-{\footnotesize\ttfamily typedef struct \hyperlink{struct_object_method}{Object\+Method} \hyperlink{struct_object_method}{Object\+Method}}
+\mbox{\Hypertarget{object_manager_8h_aa6a1100b5b3b64223ea08c55794f6a16}\label{object_manager_8h_aa6a1100b5b3b64223ea08c55794f6a16}} 
+\index{object\+Manager.\+h@{object\+Manager.\+h}!object\+\_\+method@{object\+\_\+method}}
+\index{object\+\_\+method@{object\+\_\+method}!object\+Manager.\+h@{object\+Manager.\+h}}
+\subsubsection{\texorpdfstring{object\+\_\+method}{object\_method}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structobject__method}{object\+\_\+method} \hyperlink{structobject__method}{object\+\_\+method}}
 
 
 
 \subsection{Documentação das funções}
-\hypertarget{object_manager_8h_acbb8929de342d56ed8d572fc5d690083}{}\label{object_manager_8h_acbb8929de342d56ed8d572fc5d690083} 
-\index{object\+Manager.\+h@{object\+Manager.\+h}!create\+Object@{create\+Object}}
-\index{create\+Object@{create\+Object}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{create\+Object()}{criar_objeto()}}
-{\footnotesize\ttfamily \hyperlink{struct_object}{Object}$\ast$ create\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8h_a3e0aaec6083a904bc59094fc5b649f3f}\label{object_manager_8h_a3e0aaec6083a904bc59094fc5b649f3f}} 
+\index{object\+Manager.\+h@{object\+Manager.\+h}!buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome@{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome}}
+\index{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome@{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome}!object\+Manager.\+h@{object\+Manager.\+h}}
+\subsubsection{\texorpdfstring{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome()}{buscar\_object\_field\_value\_por\_nome()}}
+{\footnotesize\ttfamily uint64\+\_\+t buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
 
 
-Retorna uma instância da classe do class\+File. 
+Retorna o field que possuiu o mesmo nome do parâmetro informado. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em class\+File} & struct do class\+File que sera instanciado \\
+{\em object} & referência para o objeto \\
+\hline
+{\em name} & nome do field desejado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+caso o field for um objeto/array retorna uma referência, ou um valor nos outros casos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{object_manager_8h_a5c494dfb31b30ef0323a39c5ec32afcc}\label{object_manager_8h_a5c494dfb31b30ef0323a39c5ec32afcc}} 
+\index{object\+Manager.\+h@{object\+Manager.\+h}!buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name@{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name}}
+\index{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name@{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name}!object\+Manager.\+h@{object\+Manager.\+h}}
+\subsubsection{\texorpdfstring{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name()}{buscar\_object\_method\_by\_name()}}
+{\footnotesize\ttfamily \hyperlink{structobject__method}{object\+\_\+method} buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{method\+\_\+name,  }\item[{char $\ast$}]{class\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Retorna um método de um objeto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em object} & referência para o objeto \\
+\hline
+{\em method\+\_\+name} & nome do método desejado \\
+\hline
+{\em class\+\_\+name} & classe do método desejado (para caso de métodos com mesmo nome, como construtores) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+refência para um objeto que contém informações do método 
+\end{DoxyReturn}
+\mbox{\Hypertarget{object_manager_8h_a89511bb516e8430cddbcb787ed8f3fcc}\label{object_manager_8h_a89511bb516e8430cddbcb787ed8f3fcc}} 
+\index{object\+Manager.\+h@{object\+Manager.\+h}!criar\+\_\+objeto@{criar\+\_\+objeto}}
+\index{criar\+\_\+objeto@{criar\+\_\+objeto}!object\+Manager.\+h@{object\+Manager.\+h}}
+\subsubsection{\texorpdfstring{criar\+\_\+objeto()}{criar\_objeto()}}
+{\footnotesize\ttfamily \hyperlink{struct_object}{Object}$\ast$ criar\+\_\+objeto (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Retorna uma instância da classe alocada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+\_\+file} & estrutura do class\+File que sera instanciada \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
 referência para um objeto alocado 
 \end{DoxyReturn}
-\hypertarget{object_manager_8h_aae74193bbad0147f2cc93813258fc88b}{}\label{object_manager_8h_aae74193bbad0147f2cc93813258fc88b} 
+\mbox{\Hypertarget{object_manager_8h_aae74193bbad0147f2cc93813258fc88b}\label{object_manager_8h_aae74193bbad0147f2cc93813258fc88b}} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!dump\+Object\+Fields@{dump\+Object\+Fields}}
 \index{dump\+Object\+Fields@{dump\+Object\+Fields}!object\+Manager.\+h@{object\+Manager.\+h}}
 \subsubsection{\texorpdfstring{dump\+Object\+Fields()}{dumpObjectFields()}}
@@ -91,7 +134,7 @@ Mostra uma lista do nome dos fields do objeto.
 {\em object} & referênciaa para o objeto \\
 \hline
 \end{DoxyParams}
-\hypertarget{object_manager_8h_a67b1c1ad28b2a4256155110a520e8091}{}\label{object_manager_8h_a67b1c1ad28b2a4256155110a520e8091} 
+\mbox{\Hypertarget{object_manager_8h_a67b1c1ad28b2a4256155110a520e8091}\label{object_manager_8h_a67b1c1ad28b2a4256155110a520e8091}} 
 \index{object\+Manager.\+h@{object\+Manager.\+h}!dump\+Object\+Methods@{dump\+Object\+Methods}}
 \index{dump\+Object\+Methods@{dump\+Object\+Methods}!object\+Manager.\+h@{object\+Manager.\+h}}
 \subsubsection{\texorpdfstring{dump\+Object\+Methods()}{dumpObjectMethods()}}
@@ -106,53 +149,11 @@ Mostra uma lista do nome dos métodos do objeto.
 {\em object} & referênciaa para o objeto \\
 \hline
 \end{DoxyParams}
-\hypertarget{object_manager_8h_a4e0494b9f5b7b399e73e7b1da38e2d6c}{}\label{object_manager_8h_a4e0494b9f5b7b399e73e7b1da38e2d6c} 
-\index{object\+Manager.\+h@{object\+Manager.\+h}!get\+Object\+Field\+Value\+By\+Name@{get\+Object\+Field\+Value\+By\+Name}}
-\index{get\+Object\+Field\+Value\+By\+Name@{get\+Object\+Field\+Value\+By\+Name}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{get\+Object\+Field\+Value\+By\+Name()}{buscar_object_field_value_por_nome()}}
-{\footnotesize\ttfamily uint64\+\_\+t get\+Object\+Field\+Value\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
-
-
-
-Retorna o field com nome \char`\"{}name\char`\"{} de um objeto. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em object} & referência para o objeto \\
-\hline
-{\em name} & nome do field desejado \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Retorna}
-uma referência caso o field for um objeto/array, ou um valor do campo nos outros casos 
-\end{DoxyReturn}
-\hypertarget{object_manager_8h_a82c9a8c25b0d7079e3f6289a5925c7e1}{}\label{object_manager_8h_a82c9a8c25b0d7079e3f6289a5925c7e1} 
-\index{object\+Manager.\+h@{object\+Manager.\+h}!get\+Object\+Method\+By\+Name@{get\+Object\+Method\+By\+Name}}
-\index{get\+Object\+Method\+By\+Name@{get\+Object\+Method\+By\+Name}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{get\+Object\+Method\+By\+Name()}{buscar_object_method_by_name()}}
-{\footnotesize\ttfamily \hyperlink{struct_object_method}{Object\+Method} get\+Object\+Method\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{method\+Name,  }\item[{char $\ast$}]{class\+Name }\end{DoxyParamCaption})}
-
-
-
-Retorna um método de um objeto. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em object} & referência para o objeto \\
-\hline
-{\em method\+Name} & nome do método desejado \\
-\hline
-{\em class\+Name} & classe do método desejado (para caso de métodos com mesmo nome, como construtores) \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Retorna}
-refência para um objeto que contém informações do método 
-\end{DoxyReturn}
-\hypertarget{object_manager_8h_aa894740a7d501f453ab07155c008557a}{}\label{object_manager_8h_aa894740a7d501f453ab07155c008557a} 
-\index{object\+Manager.\+h@{object\+Manager.\+h}!set\+Object\+Field\+Value\+By\+Name@{set\+Object\+Field\+Value\+By\+Name}}
-\index{set\+Object\+Field\+Value\+By\+Name@{set\+Object\+Field\+Value\+By\+Name}!object\+Manager.\+h@{object\+Manager.\+h}}
-\subsubsection{\texorpdfstring{set\+Object\+Field\+Value\+By\+Name()}{set_object_field_value_por_nome()}}
-{\footnotesize\ttfamily void set\+Object\+Field\+Value\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name,  }\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8h_a58cd1fbfe2b62eaf986c7e9fe88a4bdd}\label{object_manager_8h_a58cd1fbfe2b62eaf986c7e9fe88a4bdd}} 
+\index{object\+Manager.\+h@{object\+Manager.\+h}!set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome@{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome}}
+\index{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome@{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome}!object\+Manager.\+h@{object\+Manager.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome()}{set\_object\_field\_value\_por\_nome()}}
+{\footnotesize\ttfamily void set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name,  }\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 

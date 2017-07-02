@@ -2,6 +2,11 @@
 \label{structframe}\index{frame@{frame}}
 
 
+Estrutura do frame.  
+
+
+
+
 {\ttfamily \#include $<$frame.\+h$>$}
 
 \subsection*{Atributos Públicos}
@@ -13,74 +18,79 @@ int32\+\_\+t $\ast$ \hyperlink{structframe_abd74d70b2c953c57da3820ef8bfd152f}{fi
 \item 
 \hyperlink{struct_class_file}{Class\+File} $\ast$ \hyperlink{structframe_ac199820b516dd4d579068706cd43af95}{classe}
 \item 
-uint16\+\_\+t \hyperlink{structframe_a21004a70deb96c08f1dd6fd30f610b51}{max\+\_\+stack}
+\hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} \hyperlink{structframe_a0c15fcc6d1f7224dddf9e6539c8cf9d3}{max\+\_\+stack}
 \item 
-uint16\+\_\+t \hyperlink{structframe_afff6c0343d82c67273a7c92f582f7ba8}{max\+\_\+locals}
+\hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} \hyperlink{structframe_a2f8c0cb2b381617b0065066918344dbf}{max\+\_\+locals}
 \item 
-uint32\+\_\+t \hyperlink{structframe_a2a43626ab33a7b6ed584eb7a47fc93e8}{code\+\_\+length}
+\hyperlink{util_8h_ae391a1d79bb0c8cbc283f0283e3c098b}{u4} \hyperlink{structframe_a6aecdb355da5ec8d1393bb3bed5fac56}{code\+\_\+length}
 \item 
-uint8\+\_\+t $\ast$ \hyperlink{structframe_a248713b5b9384b4d3edd365ee82625b4}{code}
+\hyperlink{util_8h_a64f8055b64cf2a4c299c841130c5c938}{u1} $\ast$ \hyperlink{structframe_a5df0e7929808221d8109562c16e490fc}{code}
 \item 
-uint32\+\_\+t \hyperlink{structframe_a5915ace0f09c12110a4571ac827baf44}{pc}
+\hyperlink{util_8h_ae391a1d79bb0c8cbc283f0283e3c098b}{u4} \hyperlink{structframe_ae2f8c8d0abb0ff0952fb8ab971c2d3d0}{pc}
 \item 
 \hyperlink{structoperand_stack}{operand\+Stack} $\ast$ \hyperlink{structframe_a2247e2a31594f7c5b3f6de0f6dc4ca18}{operand\+Stack}
 \end{DoxyCompactItemize}
 
 
+\subsection{Descrição detalhada}
+Estrutura do frame. 
+
+Contem um vetor de varaveis locais, um ponteiro para a constant\+\_\+pool, um pilha de operandos e o codigo em si. Possui alguns outros elementos que sao usados no seu funcionamento. 
+
 \subsection{Documentação dos dados membro}
-\hypertarget{structframe_ac199820b516dd4d579068706cd43af95}{}\label{structframe_ac199820b516dd4d579068706cd43af95} 
+\mbox{\Hypertarget{structframe_ac199820b516dd4d579068706cd43af95}\label{structframe_ac199820b516dd4d579068706cd43af95}} 
 \index{frame@{frame}!classe@{classe}}
 \index{classe@{classe}!frame@{frame}}
 \subsubsection{\texorpdfstring{classe}{classe}}
 {\footnotesize\ttfamily \hyperlink{struct_class_file}{Class\+File}$\ast$ frame\+::classe}
 
-\hypertarget{structframe_a248713b5b9384b4d3edd365ee82625b4}{}\label{structframe_a248713b5b9384b4d3edd365ee82625b4} 
+\mbox{\Hypertarget{structframe_a5df0e7929808221d8109562c16e490fc}\label{structframe_a5df0e7929808221d8109562c16e490fc}} 
 \index{frame@{frame}!code@{code}}
 \index{code@{code}!frame@{frame}}
 \subsubsection{\texorpdfstring{code}{code}}
-{\footnotesize\ttfamily uint8\+\_\+t$\ast$ frame\+::code}
+{\footnotesize\ttfamily \hyperlink{util_8h_a64f8055b64cf2a4c299c841130c5c938}{u1}$\ast$ frame\+::code}
 
-\hypertarget{structframe_a2a43626ab33a7b6ed584eb7a47fc93e8}{}\label{structframe_a2a43626ab33a7b6ed584eb7a47fc93e8} 
+\mbox{\Hypertarget{structframe_a6aecdb355da5ec8d1393bb3bed5fac56}\label{structframe_a6aecdb355da5ec8d1393bb3bed5fac56}} 
 \index{frame@{frame}!code\+\_\+length@{code\+\_\+length}}
 \index{code\+\_\+length@{code\+\_\+length}!frame@{frame}}
 \subsubsection{\texorpdfstring{code\+\_\+length}{code\_length}}
-{\footnotesize\ttfamily uint32\+\_\+t frame\+::code\+\_\+length}
+{\footnotesize\ttfamily \hyperlink{util_8h_ae391a1d79bb0c8cbc283f0283e3c098b}{u4} frame\+::code\+\_\+length}
 
-\hypertarget{structframe_a40e472a4fefc83b9b6920b4c3d0c3b89}{}\label{structframe_a40e472a4fefc83b9b6920b4c3d0c3b89} 
+\mbox{\Hypertarget{structframe_a40e472a4fefc83b9b6920b4c3d0c3b89}\label{structframe_a40e472a4fefc83b9b6920b4c3d0c3b89}} 
 \index{frame@{frame}!constant\+Pool@{constant\+Pool}}
 \index{constant\+Pool@{constant\+Pool}!frame@{frame}}
 \subsubsection{\texorpdfstring{constant\+Pool}{constantPool}}
 {\footnotesize\ttfamily \hyperlink{struct_cp__info}{Cp\+\_\+info}$\ast$ frame\+::constant\+Pool}
 
-\hypertarget{structframe_abd74d70b2c953c57da3820ef8bfd152f}{}\label{structframe_abd74d70b2c953c57da3820ef8bfd152f} 
+\mbox{\Hypertarget{structframe_abd74d70b2c953c57da3820ef8bfd152f}\label{structframe_abd74d70b2c953c57da3820ef8bfd152f}} 
 \index{frame@{frame}!fields@{fields}}
 \index{fields@{fields}!frame@{frame}}
 \subsubsection{\texorpdfstring{fields}{fields}}
 {\footnotesize\ttfamily int32\+\_\+t$\ast$ frame\+::fields}
 
-\hypertarget{structframe_afff6c0343d82c67273a7c92f582f7ba8}{}\label{structframe_afff6c0343d82c67273a7c92f582f7ba8} 
+\mbox{\Hypertarget{structframe_a2f8c0cb2b381617b0065066918344dbf}\label{structframe_a2f8c0cb2b381617b0065066918344dbf}} 
 \index{frame@{frame}!max\+\_\+locals@{max\+\_\+locals}}
 \index{max\+\_\+locals@{max\+\_\+locals}!frame@{frame}}
 \subsubsection{\texorpdfstring{max\+\_\+locals}{max\_locals}}
-{\footnotesize\ttfamily uint16\+\_\+t frame\+::max\+\_\+locals}
+{\footnotesize\ttfamily \hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} frame\+::max\+\_\+locals}
 
-\hypertarget{structframe_a21004a70deb96c08f1dd6fd30f610b51}{}\label{structframe_a21004a70deb96c08f1dd6fd30f610b51} 
+\mbox{\Hypertarget{structframe_a0c15fcc6d1f7224dddf9e6539c8cf9d3}\label{structframe_a0c15fcc6d1f7224dddf9e6539c8cf9d3}} 
 \index{frame@{frame}!max\+\_\+stack@{max\+\_\+stack}}
 \index{max\+\_\+stack@{max\+\_\+stack}!frame@{frame}}
 \subsubsection{\texorpdfstring{max\+\_\+stack}{max\_stack}}
-{\footnotesize\ttfamily uint16\+\_\+t frame\+::max\+\_\+stack}
+{\footnotesize\ttfamily \hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} frame\+::max\+\_\+stack}
 
-\hypertarget{structframe_a2247e2a31594f7c5b3f6de0f6dc4ca18}{}\label{structframe_a2247e2a31594f7c5b3f6de0f6dc4ca18} 
+\mbox{\Hypertarget{structframe_a2247e2a31594f7c5b3f6de0f6dc4ca18}\label{structframe_a2247e2a31594f7c5b3f6de0f6dc4ca18}} 
 \index{frame@{frame}!operand\+Stack@{operand\+Stack}}
 \index{operand\+Stack@{operand\+Stack}!frame@{frame}}
 \subsubsection{\texorpdfstring{operand\+Stack}{operandStack}}
 {\footnotesize\ttfamily \hyperlink{structoperand_stack}{operand\+Stack}$\ast$ frame\+::operand\+Stack}
 
-\hypertarget{structframe_a5915ace0f09c12110a4571ac827baf44}{}\label{structframe_a5915ace0f09c12110a4571ac827baf44} 
+\mbox{\Hypertarget{structframe_ae2f8c8d0abb0ff0952fb8ab971c2d3d0}\label{structframe_ae2f8c8d0abb0ff0952fb8ab971c2d3d0}} 
 \index{frame@{frame}!pc@{pc}}
 \index{pc@{pc}!frame@{frame}}
 \subsubsection{\texorpdfstring{pc}{pc}}
-{\footnotesize\ttfamily uint32\+\_\+t frame\+::pc}
+{\footnotesize\ttfamily \hyperlink{util_8h_ae391a1d79bb0c8cbc283f0283e3c098b}{u4} frame\+::pc}
 
 
 

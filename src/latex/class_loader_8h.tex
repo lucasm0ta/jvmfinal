@@ -4,6 +4,7 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
 \subsection*{Componentes}
 \begin{DoxyCompactItemize}
 \item 
@@ -208,15 +209,15 @@ typedef struct \hyperlink{struct_class_file}{Class\+File} \hyperlink{class_loade
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct_class_file}{Class\+File} $\ast$ \hyperlink{class_loader_8h_a054f9d1d78ad324c23b67bb02a57dac6}{load\+Class} (char $\ast$class\+Name)
+\hyperlink{struct_class_file}{Class\+File} $\ast$ \hyperlink{class_loader_8h_a6cf68bc1426bc5087586572817ae0f16}{carregar\+\_\+classe} (char $\ast$class\+Name)
 \begin{DoxyCompactList}\small\item\em Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. \end{DoxyCompactList}\item 
-uint8\+\_\+t $\ast$ \hyperlink{class_loader_8h_adbc64e22f2dcd5daae28f25cb3c6d2c3}{access\+Constant\+Pool\+Entry} (int index, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool)
-\begin{DoxyCompactList}\small\item\em Função que retorna uma string que representa o valor de uma das constantes do Constant Pool. \end{DoxyCompactList}\item 
-void \hyperlink{class_loader_8h_ae67054480a9f3874ba2f0196b60a4350}{class\+Formatchecker} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\hyperlink{util_8h_a64f8055b64cf2a4c299c841130c5c938}{u1} $\ast$ \hyperlink{class_loader_8h_a576ae95a803e34e8c225a427f667dc75}{acessar\+\_\+constant\+\_\+pool\+\_\+entry} (int index, \hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$constant\+\_\+pool)
+\begin{DoxyCompactList}\small\item\em Entra na constant\+\_\+pool e pega o valor de uma das entradas. \end{DoxyCompactList}\item 
+void \hyperlink{class_loader_8h_a06b11e11356b5a8922f066cc8e76fb1e}{verificar\+\_\+magic\+\_\+number} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
 \begin{DoxyCompactList}\small\item\em Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic. \end{DoxyCompactList}\item 
-void \hyperlink{class_loader_8h_af07fd265d4b963d7972e5a683e6c4050}{class\+Name\+Checker} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, char $\ast$nome\+Arquivo)
+void \hyperlink{class_loader_8h_a38fba4a49d5d320fb4c82bbf983a8f7f}{verificar\+\_\+nome\+\_\+classe\+\_\+artigo} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, char $\ast$nome\+Arquivo)
 \begin{DoxyCompactList}\small\item\em Função verificacao, verificar se o nome da classe do .class bate com o do arquivo. \end{DoxyCompactList}\item 
-void \hyperlink{class_loader_8h_a37e5445b741ed921d544e5fdd76f1dbc}{version\+Checker} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+void \hyperlink{class_loader_8h_aa30c5d49114c3b975617c033d9637141}{verificar\+\_\+versao} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
 \begin{DoxyCompactList}\small\item\em Função verificacao, verificar se a major version do .class é suportada pelo java 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variáveis}
 \begin{DoxyCompactItemize}
@@ -226,85 +227,85 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 
 \subsection{Documentação das macros}
-\hypertarget{class_loader_8h_a72b5b534aa409975da610a36f648fa0a}{}\label{class_loader_8h_a72b5b534aa409975da610a36f648fa0a} 
+\mbox{\Hypertarget{class_loader_8h_a72b5b534aa409975da610a36f648fa0a}\label{class_loader_8h_a72b5b534aa409975da610a36f648fa0a}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class}{CONSTANT\_Class}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Class~7}
 
-\hypertarget{class_loader_8h_ab49341c3b4ade4bfa1a64be8d2f73ae1}{}\label{class_loader_8h_ab49341c3b4ade4bfa1a64be8d2f73ae1} 
+\mbox{\Hypertarget{class_loader_8h_ab49341c3b4ade4bfa1a64be8d2f73ae1}\label{class_loader_8h_ab49341c3b4ade4bfa1a64be8d2f73ae1}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double}{CONSTANT\_Double}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Double~6}
 
-\hypertarget{class_loader_8h_a008d43478c2e2973e7413f5d1c48095d}{}\label{class_loader_8h_a008d43478c2e2973e7413f5d1c48095d} 
+\mbox{\Hypertarget{class_loader_8h_a008d43478c2e2973e7413f5d1c48095d}\label{class_loader_8h_a008d43478c2e2973e7413f5d1c48095d}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref}{CONSTANT\_Fieldref}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Fieldref~9}
 
-\hypertarget{class_loader_8h_ab914627ce5b25c4acfc98f2eacb78473}{}\label{class_loader_8h_ab914627ce5b25c4acfc98f2eacb78473} 
+\mbox{\Hypertarget{class_loader_8h_ab914627ce5b25c4acfc98f2eacb78473}\label{class_loader_8h_ab914627ce5b25c4acfc98f2eacb78473}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float}{CONSTANT\_Float}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Float~4}
 
-\hypertarget{class_loader_8h_a856a6553a55d721970ca5450eb1ccd2c}{}\label{class_loader_8h_a856a6553a55d721970ca5450eb1ccd2c} 
+\mbox{\Hypertarget{class_loader_8h_a856a6553a55d721970ca5450eb1ccd2c}\label{class_loader_8h_a856a6553a55d721970ca5450eb1ccd2c}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer}{CONSTANT\_Integer}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Integer~3}
 
-\hypertarget{class_loader_8h_ac0e92044d246c6e4d691116f89a70ebb}{}\label{class_loader_8h_ac0e92044d246c6e4d691116f89a70ebb} 
+\mbox{\Hypertarget{class_loader_8h_ac0e92044d246c6e4d691116f89a70ebb}\label{class_loader_8h_ac0e92044d246c6e4d691116f89a70ebb}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref}{CONSTANT\_InterfaceMethodref}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Interface\+Methodref~11}
 
-\hypertarget{class_loader_8h_a127046386d755d4a91c71aa9b453a8bb}{}\label{class_loader_8h_a127046386d755d4a91c71aa9b453a8bb} 
+\mbox{\Hypertarget{class_loader_8h_a127046386d755d4a91c71aa9b453a8bb}\label{class_loader_8h_a127046386d755d4a91c71aa9b453a8bb}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Invoke\+Dynamic@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Invoke\+Dynamic}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Invoke\+Dynamic@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Invoke\+Dynamic}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Invoke\+Dynamic}{CONSTANT\_InvokeDynamic}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Invoke\+Dynamic~18}
 
-\hypertarget{class_loader_8h_a426ca017b895fc522671a561d460be7a}{}\label{class_loader_8h_a426ca017b895fc522671a561d460be7a} 
+\mbox{\Hypertarget{class_loader_8h_a426ca017b895fc522671a561d460be7a}\label{class_loader_8h_a426ca017b895fc522671a561d460be7a}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long}{CONSTANT\_Long}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Long~5}
 
-\hypertarget{class_loader_8h_adb3c84f82163f217ab7f8fa0258d80ce}{}\label{class_loader_8h_adb3c84f82163f217ab7f8fa0258d80ce} 
+\mbox{\Hypertarget{class_loader_8h_adb3c84f82163f217ab7f8fa0258d80ce}\label{class_loader_8h_adb3c84f82163f217ab7f8fa0258d80ce}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Handle@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Handle}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Handle@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Handle}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Handle}{CONSTANT\_MethodHandle}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Handle~15}
 
-\hypertarget{class_loader_8h_a2a179cf178ea867c6ab1700508c269dd}{}\label{class_loader_8h_a2a179cf178ea867c6ab1700508c269dd} 
+\mbox{\Hypertarget{class_loader_8h_a2a179cf178ea867c6ab1700508c269dd}\label{class_loader_8h_a2a179cf178ea867c6ab1700508c269dd}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref}{CONSTANT\_Methodref}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Methodref~10}
 
-\hypertarget{class_loader_8h_a991ba557d63f94e2cdf05c9f80630a6f}{}\label{class_loader_8h_a991ba557d63f94e2cdf05c9f80630a6f} 
+\mbox{\Hypertarget{class_loader_8h_a991ba557d63f94e2cdf05c9f80630a6f}\label{class_loader_8h_a991ba557d63f94e2cdf05c9f80630a6f}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Type@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Type}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Type@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Type}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Type}{CONSTANT\_MethodType}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Method\+Type~16}
 
-\hypertarget{class_loader_8h_a5b6ba749976ae61415983ca0b890c91a}{}\label{class_loader_8h_a5b6ba749976ae61415983ca0b890c91a} 
+\mbox{\Hypertarget{class_loader_8h_a5b6ba749976ae61415983ca0b890c91a}\label{class_loader_8h_a5b6ba749976ae61415983ca0b890c91a}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type}{CONSTANT\_NameAndType}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Name\+And\+Type~12}
 
-\hypertarget{class_loader_8h_a0a7acbe175de56072a2f0a1a051418e1}{}\label{class_loader_8h_a0a7acbe175de56072a2f0a1a051418e1} 
+\mbox{\Hypertarget{class_loader_8h_a0a7acbe175de56072a2f0a1a051418e1}\label{class_loader_8h_a0a7acbe175de56072a2f0a1a051418e1}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String}{CONSTANT\_String}}
 {\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+String~8}
 
-\hypertarget{class_loader_8h_afc46559a7d3f7baf519fc183c2fad2b4}{}\label{class_loader_8h_afc46559a7d3f7baf519fc183c2fad2b4} 
+\mbox{\Hypertarget{class_loader_8h_afc46559a7d3f7baf519fc183c2fad2b4}\label{class_loader_8h_afc46559a7d3f7baf519fc183c2fad2b4}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8}}
 \index{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8@{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+Utf8}{CONSTANT\_Utf8}}
@@ -313,13 +314,13 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 
 \subsection{Documentação dos tipos}
-\hypertarget{class_loader_8h_a212a9d4aa2f66b9e1f5e13a35cbadacb}{}\label{class_loader_8h_a212a9d4aa2f66b9e1f5e13a35cbadacb} 
+\mbox{\Hypertarget{class_loader_8h_a212a9d4aa2f66b9e1f5e13a35cbadacb}\label{class_loader_8h_a212a9d4aa2f66b9e1f5e13a35cbadacb}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Attribute\+\_\+info@{Attribute\+\_\+info}}
 \index{Attribute\+\_\+info@{Attribute\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Attribute\+\_\+info}{Attribute\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_attribute__info}{Attribute\+\_\+info} \hyperlink{struct_attribute__info}{Attribute\+\_\+info}}
 
-\hypertarget{class_loader_8h_ae0b0a5eb3797bef0dd32802591c04323}{}\label{class_loader_8h_ae0b0a5eb3797bef0dd32802591c04323} 
+\mbox{\Hypertarget{class_loader_8h_ae0b0a5eb3797bef0dd32802591c04323}\label{class_loader_8h_ae0b0a5eb3797bef0dd32802591c04323}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!attribute\+\_\+pointer@{attribute\+\_\+pointer}}
 \index{attribute\+\_\+pointer@{attribute\+\_\+pointer}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{attribute\+\_\+pointer}{attribute\_pointer}}
@@ -329,7 +330,7 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_attribute__info}{Attribute\+\_\+info}. 
 
-\hypertarget{class_loader_8h_ac14884605a91c8b411791bd95a7636f5}{}\label{class_loader_8h_ac14884605a91c8b411791bd95a7636f5} 
+\mbox{\Hypertarget{class_loader_8h_ac14884605a91c8b411791bd95a7636f5}\label{class_loader_8h_ac14884605a91c8b411791bd95a7636f5}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!bootstrap\+\_\+methods@{bootstrap\+\_\+methods}}
 \index{bootstrap\+\_\+methods@{bootstrap\+\_\+methods}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{bootstrap\+\_\+methods}{bootstrap\_methods}}
@@ -339,19 +340,19 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_bootstrap_methods__attribute}{Bootstrap\+Methods\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a2fef54220191eb558ae91be5fa0fd2b5}{}\label{class_loader_8h_a2fef54220191eb558ae91be5fa0fd2b5} 
+\mbox{\Hypertarget{class_loader_8h_a2fef54220191eb558ae91be5fa0fd2b5}\label{class_loader_8h_a2fef54220191eb558ae91be5fa0fd2b5}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Bootstrap\+Methods\+\_\+attribute@{Bootstrap\+Methods\+\_\+attribute}}
 \index{Bootstrap\+Methods\+\_\+attribute@{Bootstrap\+Methods\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Bootstrap\+Methods\+\_\+attribute}{BootstrapMethods\_attribute}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_bootstrap_methods__attribute}{Bootstrap\+Methods\+\_\+attribute} \hyperlink{struct_bootstrap_methods__attribute}{Bootstrap\+Methods\+\_\+attribute}}
 
-\hypertarget{class_loader_8h_a3360f51937b6ef3bac71814699e546b2}{}\label{class_loader_8h_a3360f51937b6ef3bac71814699e546b2} 
+\mbox{\Hypertarget{class_loader_8h_a3360f51937b6ef3bac71814699e546b2}\label{class_loader_8h_a3360f51937b6ef3bac71814699e546b2}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Class\+\_\+info@{Class\+\_\+info}}
 \index{Class\+\_\+info@{Class\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Class\+\_\+info}{Class\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_class__info}{Class\+\_\+info} \hyperlink{struct_class__info}{Class\+\_\+info}}
 
-\hypertarget{class_loader_8h_a08d8d7581fd08212fad9c390183f1b1b}{}\label{class_loader_8h_a08d8d7581fd08212fad9c390183f1b1b} 
+\mbox{\Hypertarget{class_loader_8h_a08d8d7581fd08212fad9c390183f1b1b}\label{class_loader_8h_a08d8d7581fd08212fad9c390183f1b1b}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Classes@{Classes}}
 \index{Classes@{Classes}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Classes}{Classes}}
@@ -361,19 +362,19 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_inner_classes__attribute}{Inner\+Classes\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_aa2722eac638126419cda16ab0a201376}{}\label{class_loader_8h_aa2722eac638126419cda16ab0a201376} 
+\mbox{\Hypertarget{class_loader_8h_aa2722eac638126419cda16ab0a201376}\label{class_loader_8h_aa2722eac638126419cda16ab0a201376}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Class\+File@{Class\+File}}
 \index{Class\+File@{Class\+File}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Class\+File}{ClassFile}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_class_file}{Class\+File}  \hyperlink{struct_class_file}{Class\+File}}
 
-\hypertarget{class_loader_8h_aa9fcfc552a29567bbd53aeb83e864118}{}\label{class_loader_8h_aa9fcfc552a29567bbd53aeb83e864118} 
+\mbox{\Hypertarget{class_loader_8h_aa9fcfc552a29567bbd53aeb83e864118}\label{class_loader_8h_aa9fcfc552a29567bbd53aeb83e864118}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Code\+\_\+attribute@{Code\+\_\+attribute}}
 \index{Code\+\_\+attribute@{Code\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Code\+\_\+attribute}{Code\_attribute}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_code__attribute}{Code\+\_\+attribute} \hyperlink{struct_code__attribute}{Code\+\_\+attribute}}
 
-\hypertarget{class_loader_8h_a636712c88fb34aa4a0faeff41223844c}{}\label{class_loader_8h_a636712c88fb34aa4a0faeff41223844c} 
+\mbox{\Hypertarget{class_loader_8h_a636712c88fb34aa4a0faeff41223844c}\label{class_loader_8h_a636712c88fb34aa4a0faeff41223844c}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Constant\+Value\+\_\+attribute@{Constant\+Value\+\_\+attribute}}
 \index{Constant\+Value\+\_\+attribute@{Constant\+Value\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Constant\+Value\+\_\+attribute}{ConstantValue\_attribute}}
@@ -383,13 +384,13 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_constant_value__attribute}{Constant\+Value\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a3ff61ddfad9e520371345eb5736e3976}{}\label{class_loader_8h_a3ff61ddfad9e520371345eb5736e3976} 
+\mbox{\Hypertarget{class_loader_8h_a3ff61ddfad9e520371345eb5736e3976}\label{class_loader_8h_a3ff61ddfad9e520371345eb5736e3976}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Cp\+\_\+info@{Cp\+\_\+info}}
 \index{Cp\+\_\+info@{Cp\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Cp\+\_\+info}{Cp\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_cp__info}{Cp\+\_\+info} \hyperlink{struct_cp__info}{Cp\+\_\+info}}
 
-\hypertarget{class_loader_8h_aef134ca7805a6ebce7bf1e49361eb767}{}\label{class_loader_8h_aef134ca7805a6ebce7bf1e49361eb767} 
+\mbox{\Hypertarget{class_loader_8h_aef134ca7805a6ebce7bf1e49361eb767}\label{class_loader_8h_aef134ca7805a6ebce7bf1e49361eb767}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Deprecated\+\_\+attribute@{Deprecated\+\_\+attribute}}
 \index{Deprecated\+\_\+attribute@{Deprecated\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Deprecated\+\_\+attribute}{Deprecated\_attribute}}
@@ -399,13 +400,13 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_deprecated__attribute}{Deprecated\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_aa7e6a5a324d048f51433494c5085deb5}{}\label{class_loader_8h_aa7e6a5a324d048f51433494c5085deb5} 
+\mbox{\Hypertarget{class_loader_8h_aa7e6a5a324d048f51433494c5085deb5}\label{class_loader_8h_aa7e6a5a324d048f51433494c5085deb5}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Double\+\_\+info@{Double\+\_\+info}}
 \index{Double\+\_\+info@{Double\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Double\+\_\+info}{Double\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_double__info}{Double\+\_\+info} \hyperlink{struct_double__info}{Double\+\_\+info}}
 
-\hypertarget{class_loader_8h_a6cd90bb2bf92f4158e0644e61b5d36c1}{}\label{class_loader_8h_a6cd90bb2bf92f4158e0644e61b5d36c1} 
+\mbox{\Hypertarget{class_loader_8h_a6cd90bb2bf92f4158e0644e61b5d36c1}\label{class_loader_8h_a6cd90bb2bf92f4158e0644e61b5d36c1}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Enclosing\+Method\+\_\+attribute@{Enclosing\+Method\+\_\+attribute}}
 \index{Enclosing\+Method\+\_\+attribute@{Enclosing\+Method\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Enclosing\+Method\+\_\+attribute}{EnclosingMethod\_attribute}}
@@ -415,7 +416,7 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_enclosing_method__attribute}{Enclosing\+Method\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a221b9693e220df24ce3b6a3df1e70605}{}\label{class_loader_8h_a221b9693e220df24ce3b6a3df1e70605} 
+\mbox{\Hypertarget{class_loader_8h_a221b9693e220df24ce3b6a3df1e70605}\label{class_loader_8h_a221b9693e220df24ce3b6a3df1e70605}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!exception\+\_\+table@{exception\+\_\+table}}
 \index{exception\+\_\+table@{exception\+\_\+table}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{exception\+\_\+table}{exception\_table}}
@@ -425,7 +426,7 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_code__attribute}{Code\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_ac330bf061900eb51490c00a1d573f0ee}{}\label{class_loader_8h_ac330bf061900eb51490c00a1d573f0ee} 
+\mbox{\Hypertarget{class_loader_8h_ac330bf061900eb51490c00a1d573f0ee}\label{class_loader_8h_ac330bf061900eb51490c00a1d573f0ee}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Exceptions\+\_\+attribute@{Exceptions\+\_\+attribute}}
 \index{Exceptions\+\_\+attribute@{Exceptions\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Exceptions\+\_\+attribute}{Exceptions\_attribute}}
@@ -435,55 +436,55 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_exceptions__attribute}{Exceptions\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a01068f3927029a2624e7fc1a146da360}{}\label{class_loader_8h_a01068f3927029a2624e7fc1a146da360} 
+\mbox{\Hypertarget{class_loader_8h_a01068f3927029a2624e7fc1a146da360}\label{class_loader_8h_a01068f3927029a2624e7fc1a146da360}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Field\+\_\+info@{Field\+\_\+info}}
 \index{Field\+\_\+info@{Field\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Field\+\_\+info}{Field\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_field__info}{Field\+\_\+info} \hyperlink{struct_field__info}{Field\+\_\+info}}
 
-\hypertarget{class_loader_8h_a1a6c96ea384c06448120bd2414d52335}{}\label{class_loader_8h_a1a6c96ea384c06448120bd2414d52335} 
+\mbox{\Hypertarget{class_loader_8h_a1a6c96ea384c06448120bd2414d52335}\label{class_loader_8h_a1a6c96ea384c06448120bd2414d52335}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Fieldref\+\_\+info@{Fieldref\+\_\+info}}
 \index{Fieldref\+\_\+info@{Fieldref\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Fieldref\+\_\+info}{Fieldref\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_fieldref__info}{Fieldref\+\_\+info} \hyperlink{struct_fieldref__info}{Fieldref\+\_\+info}}
 
-\hypertarget{class_loader_8h_a13bcd7f88efd0679c6d72324ac0136bd}{}\label{class_loader_8h_a13bcd7f88efd0679c6d72324ac0136bd} 
+\mbox{\Hypertarget{class_loader_8h_a13bcd7f88efd0679c6d72324ac0136bd}\label{class_loader_8h_a13bcd7f88efd0679c6d72324ac0136bd}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Float\+\_\+info@{Float\+\_\+info}}
 \index{Float\+\_\+info@{Float\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Float\+\_\+info}{Float\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_float__info}{Float\+\_\+info} \hyperlink{struct_float__info}{Float\+\_\+info}}
 
-\hypertarget{class_loader_8h_a7d4d0fe894d6eefdb230a2b0283b13d6}{}\label{class_loader_8h_a7d4d0fe894d6eefdb230a2b0283b13d6} 
+\mbox{\Hypertarget{class_loader_8h_a7d4d0fe894d6eefdb230a2b0283b13d6}\label{class_loader_8h_a7d4d0fe894d6eefdb230a2b0283b13d6}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!info\+\_\+pointer@{info\+\_\+pointer}}
 \index{info\+\_\+pointer@{info\+\_\+pointer}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{info\+\_\+pointer}{info\_pointer}}
 {\footnotesize\ttfamily typedef union \hyperlink{unioninfo__pointer}{info\+\_\+pointer} \hyperlink{unioninfo__pointer}{info\+\_\+pointer}}
 
-\hypertarget{class_loader_8h_a7ead007231e060b83061b50d2dcdf1cf}{}\label{class_loader_8h_a7ead007231e060b83061b50d2dcdf1cf} 
+\mbox{\Hypertarget{class_loader_8h_a7ead007231e060b83061b50d2dcdf1cf}\label{class_loader_8h_a7ead007231e060b83061b50d2dcdf1cf}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Inner\+Classes\+\_\+attribute@{Inner\+Classes\+\_\+attribute}}
 \index{Inner\+Classes\+\_\+attribute@{Inner\+Classes\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Inner\+Classes\+\_\+attribute}{InnerClasses\_attribute}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_inner_classes__attribute}{Inner\+Classes\+\_\+attribute} \hyperlink{struct_inner_classes__attribute}{Inner\+Classes\+\_\+attribute}}
 
-\hypertarget{class_loader_8h_acc5a3e36ee075d2a192259b6674829f7}{}\label{class_loader_8h_acc5a3e36ee075d2a192259b6674829f7} 
+\mbox{\Hypertarget{class_loader_8h_acc5a3e36ee075d2a192259b6674829f7}\label{class_loader_8h_acc5a3e36ee075d2a192259b6674829f7}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Integer\+\_\+info@{Integer\+\_\+info}}
 \index{Integer\+\_\+info@{Integer\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Integer\+\_\+info}{Integer\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_integer__info}{Integer\+\_\+info} \hyperlink{struct_integer__info}{Integer\+\_\+info}}
 
-\hypertarget{class_loader_8h_a9b2cad31056620602dae325294154df5}{}\label{class_loader_8h_a9b2cad31056620602dae325294154df5} 
+\mbox{\Hypertarget{class_loader_8h_a9b2cad31056620602dae325294154df5}\label{class_loader_8h_a9b2cad31056620602dae325294154df5}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Interface\+Methodref\+\_\+info@{Interface\+Methodref\+\_\+info}}
 \index{Interface\+Methodref\+\_\+info@{Interface\+Methodref\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Interface\+Methodref\+\_\+info}{InterfaceMethodref\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_interface_methodref__info}{Interface\+Methodref\+\_\+info} \hyperlink{struct_interface_methodref__info}{Interface\+Methodref\+\_\+info}}
 
-\hypertarget{class_loader_8h_a3f54cdbe2c57e640e3126d6f0a21d1b6}{}\label{class_loader_8h_a3f54cdbe2c57e640e3126d6f0a21d1b6} 
+\mbox{\Hypertarget{class_loader_8h_a3f54cdbe2c57e640e3126d6f0a21d1b6}\label{class_loader_8h_a3f54cdbe2c57e640e3126d6f0a21d1b6}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Invoke\+Dynamic\+\_\+info@{Invoke\+Dynamic\+\_\+info}}
 \index{Invoke\+Dynamic\+\_\+info@{Invoke\+Dynamic\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Invoke\+Dynamic\+\_\+info}{InvokeDynamic\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_invoke_dynamic__info}{Invoke\+Dynamic\+\_\+info} \hyperlink{struct_invoke_dynamic__info}{Invoke\+Dynamic\+\_\+info}}
 
-\hypertarget{class_loader_8h_adc39fcd2453b9af80360841c9e5a56bc}{}\label{class_loader_8h_adc39fcd2453b9af80360841c9e5a56bc} 
+\mbox{\Hypertarget{class_loader_8h_adc39fcd2453b9af80360841c9e5a56bc}\label{class_loader_8h_adc39fcd2453b9af80360841c9e5a56bc}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!line\+\_\+number\+\_\+table@{line\+\_\+number\+\_\+table}}
 \index{line\+\_\+number\+\_\+table@{line\+\_\+number\+\_\+table}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{line\+\_\+number\+\_\+table}{line\_number\_table}}
@@ -493,13 +494,13 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_line_number_table__attribute}{Line\+Number\+Table\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a0428e8301bb51ca96ca465f181d4bb56}{}\label{class_loader_8h_a0428e8301bb51ca96ca465f181d4bb56} 
+\mbox{\Hypertarget{class_loader_8h_a0428e8301bb51ca96ca465f181d4bb56}\label{class_loader_8h_a0428e8301bb51ca96ca465f181d4bb56}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Line\+Number\+Table\+\_\+attribute@{Line\+Number\+Table\+\_\+attribute}}
 \index{Line\+Number\+Table\+\_\+attribute@{Line\+Number\+Table\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Line\+Number\+Table\+\_\+attribute}{LineNumberTable\_attribute}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_line_number_table__attribute}{Line\+Number\+Table\+\_\+attribute} \hyperlink{struct_line_number_table__attribute}{Line\+Number\+Table\+\_\+attribute}}
 
-\hypertarget{class_loader_8h_ae045ac5cb4d68040806388e1ee9bb9d2}{}\label{class_loader_8h_ae045ac5cb4d68040806388e1ee9bb9d2} 
+\mbox{\Hypertarget{class_loader_8h_ae045ac5cb4d68040806388e1ee9bb9d2}\label{class_loader_8h_ae045ac5cb4d68040806388e1ee9bb9d2}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!local\+\_\+variable\+\_\+table@{local\+\_\+variable\+\_\+table}}
 \index{local\+\_\+variable\+\_\+table@{local\+\_\+variable\+\_\+table}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{local\+\_\+variable\+\_\+table}{local\_variable\_table}}
@@ -509,7 +510,7 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_local_variable_table__attribute}{Local\+Variable\+Table\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a340f38fdc660476ae6372860917f127f}{}\label{class_loader_8h_a340f38fdc660476ae6372860917f127f} 
+\mbox{\Hypertarget{class_loader_8h_a340f38fdc660476ae6372860917f127f}\label{class_loader_8h_a340f38fdc660476ae6372860917f127f}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!local\+\_\+variable\+\_\+type\+\_\+table@{local\+\_\+variable\+\_\+type\+\_\+table}}
 \index{local\+\_\+variable\+\_\+type\+\_\+table@{local\+\_\+variable\+\_\+type\+\_\+table}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{local\+\_\+variable\+\_\+type\+\_\+table}{local\_variable\_type\_table}}
@@ -519,55 +520,55 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_local_variable_type_table__attribute}{Local\+Variable\+Type\+Table\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a26868272c9eb00b00cf0307459b29e5f}{}\label{class_loader_8h_a26868272c9eb00b00cf0307459b29e5f} 
+\mbox{\Hypertarget{class_loader_8h_a26868272c9eb00b00cf0307459b29e5f}\label{class_loader_8h_a26868272c9eb00b00cf0307459b29e5f}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Local\+Variable\+Table\+\_\+attribute@{Local\+Variable\+Table\+\_\+attribute}}
 \index{Local\+Variable\+Table\+\_\+attribute@{Local\+Variable\+Table\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Local\+Variable\+Table\+\_\+attribute}{LocalVariableTable\_attribute}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_local_variable_table__attribute}{Local\+Variable\+Table\+\_\+attribute} \hyperlink{struct_local_variable_table__attribute}{Local\+Variable\+Table\+\_\+attribute}}
 
-\hypertarget{class_loader_8h_a358acf4a1763e6f1b39072db67c258c9}{}\label{class_loader_8h_a358acf4a1763e6f1b39072db67c258c9} 
+\mbox{\Hypertarget{class_loader_8h_a358acf4a1763e6f1b39072db67c258c9}\label{class_loader_8h_a358acf4a1763e6f1b39072db67c258c9}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Local\+Variable\+Type\+Table\+\_\+attribute@{Local\+Variable\+Type\+Table\+\_\+attribute}}
 \index{Local\+Variable\+Type\+Table\+\_\+attribute@{Local\+Variable\+Type\+Table\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Local\+Variable\+Type\+Table\+\_\+attribute}{LocalVariableTypeTable\_attribute}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_local_variable_type_table__attribute}{Local\+Variable\+Type\+Table\+\_\+attribute} \hyperlink{struct_local_variable_type_table__attribute}{Local\+Variable\+Type\+Table\+\_\+attribute}}
 
-\hypertarget{class_loader_8h_a3fc76c98ba6a31aa6cc8fd9c7cc45deb}{}\label{class_loader_8h_a3fc76c98ba6a31aa6cc8fd9c7cc45deb} 
+\mbox{\Hypertarget{class_loader_8h_a3fc76c98ba6a31aa6cc8fd9c7cc45deb}\label{class_loader_8h_a3fc76c98ba6a31aa6cc8fd9c7cc45deb}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Long\+\_\+info@{Long\+\_\+info}}
 \index{Long\+\_\+info@{Long\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Long\+\_\+info}{Long\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_long__info}{Long\+\_\+info} \hyperlink{struct_long__info}{Long\+\_\+info}}
 
-\hypertarget{class_loader_8h_aa02eb286fc0a21e8d1754026aba939b3}{}\label{class_loader_8h_aa02eb286fc0a21e8d1754026aba939b3} 
+\mbox{\Hypertarget{class_loader_8h_aa02eb286fc0a21e8d1754026aba939b3}\label{class_loader_8h_aa02eb286fc0a21e8d1754026aba939b3}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Method\+\_\+info@{Method\+\_\+info}}
 \index{Method\+\_\+info@{Method\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Method\+\_\+info}{Method\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_method__info}{Method\+\_\+info} \hyperlink{struct_method__info}{Method\+\_\+info}}
 
-\hypertarget{class_loader_8h_acad3ff9facfe09ba4edcd0743cd5ebf6}{}\label{class_loader_8h_acad3ff9facfe09ba4edcd0743cd5ebf6} 
+\mbox{\Hypertarget{class_loader_8h_acad3ff9facfe09ba4edcd0743cd5ebf6}\label{class_loader_8h_acad3ff9facfe09ba4edcd0743cd5ebf6}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Method\+Handle\+\_\+info@{Method\+Handle\+\_\+info}}
 \index{Method\+Handle\+\_\+info@{Method\+Handle\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Method\+Handle\+\_\+info}{MethodHandle\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_method_handle__info}{Method\+Handle\+\_\+info} \hyperlink{struct_method_handle__info}{Method\+Handle\+\_\+info}}
 
-\hypertarget{class_loader_8h_a9d14a49ad2aa3c665807b93cef897646}{}\label{class_loader_8h_a9d14a49ad2aa3c665807b93cef897646} 
+\mbox{\Hypertarget{class_loader_8h_a9d14a49ad2aa3c665807b93cef897646}\label{class_loader_8h_a9d14a49ad2aa3c665807b93cef897646}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Methodref\+\_\+info@{Methodref\+\_\+info}}
 \index{Methodref\+\_\+info@{Methodref\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Methodref\+\_\+info}{Methodref\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_methodref__info}{Methodref\+\_\+info} \hyperlink{struct_methodref__info}{Methodref\+\_\+info}}
 
-\hypertarget{class_loader_8h_a2f569353b0286c20aa69c0f7c83b7f42}{}\label{class_loader_8h_a2f569353b0286c20aa69c0f7c83b7f42} 
+\mbox{\Hypertarget{class_loader_8h_a2f569353b0286c20aa69c0f7c83b7f42}\label{class_loader_8h_a2f569353b0286c20aa69c0f7c83b7f42}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Method\+Type\+\_\+info@{Method\+Type\+\_\+info}}
 \index{Method\+Type\+\_\+info@{Method\+Type\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Method\+Type\+\_\+info}{MethodType\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_method_type__info}{Method\+Type\+\_\+info} \hyperlink{struct_method_type__info}{Method\+Type\+\_\+info}}
 
-\hypertarget{class_loader_8h_a0d921ff7200111aa8127e56ea4259300}{}\label{class_loader_8h_a0d921ff7200111aa8127e56ea4259300} 
+\mbox{\Hypertarget{class_loader_8h_a0d921ff7200111aa8127e56ea4259300}\label{class_loader_8h_a0d921ff7200111aa8127e56ea4259300}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Name\+And\+Type\+\_\+info@{Name\+And\+Type\+\_\+info}}
 \index{Name\+And\+Type\+\_\+info@{Name\+And\+Type\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Name\+And\+Type\+\_\+info}{NameAndType\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_name_and_type__info}{Name\+And\+Type\+\_\+info} \hyperlink{struct_name_and_type__info}{Name\+And\+Type\+\_\+info}}
 
-\hypertarget{class_loader_8h_a3573119d158fcaa25656263b29c49942}{}\label{class_loader_8h_a3573119d158fcaa25656263b29c49942} 
+\mbox{\Hypertarget{class_loader_8h_a3573119d158fcaa25656263b29c49942}\label{class_loader_8h_a3573119d158fcaa25656263b29c49942}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Signature\+\_\+attribute@{Signature\+\_\+attribute}}
 \index{Signature\+\_\+attribute@{Signature\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Signature\+\_\+attribute}{Signature\_attribute}}
@@ -577,7 +578,7 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_signature__attribute}{Signature\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a1a90fcc47c8fb1ef36bc1bdcf38fc4ed}{}\label{class_loader_8h_a1a90fcc47c8fb1ef36bc1bdcf38fc4ed} 
+\mbox{\Hypertarget{class_loader_8h_a1a90fcc47c8fb1ef36bc1bdcf38fc4ed}\label{class_loader_8h_a1a90fcc47c8fb1ef36bc1bdcf38fc4ed}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Source\+Debug\+Extension\+\_\+attribute@{Source\+Debug\+Extension\+\_\+attribute}}
 \index{Source\+Debug\+Extension\+\_\+attribute@{Source\+Debug\+Extension\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Source\+Debug\+Extension\+\_\+attribute}{SourceDebugExtension\_attribute}}
@@ -587,7 +588,7 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_source_debug_extension__attribute}{Source\+Debug\+Extension\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_acb8b65b933bdd949b533fe0dc8ddd31e}{}\label{class_loader_8h_acb8b65b933bdd949b533fe0dc8ddd31e} 
+\mbox{\Hypertarget{class_loader_8h_acb8b65b933bdd949b533fe0dc8ddd31e}\label{class_loader_8h_acb8b65b933bdd949b533fe0dc8ddd31e}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Source\+File\+\_\+attribute@{Source\+File\+\_\+attribute}}
 \index{Source\+File\+\_\+attribute@{Source\+File\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Source\+File\+\_\+attribute}{SourceFile\_attribute}}
@@ -597,13 +598,13 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_source_file__attribute}{Source\+File\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_a765681bbc37bea14a966a81a950027b1}{}\label{class_loader_8h_a765681bbc37bea14a966a81a950027b1} 
+\mbox{\Hypertarget{class_loader_8h_a765681bbc37bea14a966a81a950027b1}\label{class_loader_8h_a765681bbc37bea14a966a81a950027b1}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!String\+\_\+info@{String\+\_\+info}}
 \index{String\+\_\+info@{String\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{String\+\_\+info}{String\_info}}
 {\footnotesize\ttfamily typedef struct \hyperlink{struct_string__info}{String\+\_\+info} \hyperlink{struct_string__info}{String\+\_\+info}}
 
-\hypertarget{class_loader_8h_ae00366bbab014ac22f3427dc33a60694}{}\label{class_loader_8h_ae00366bbab014ac22f3427dc33a60694} 
+\mbox{\Hypertarget{class_loader_8h_ae00366bbab014ac22f3427dc33a60694}\label{class_loader_8h_ae00366bbab014ac22f3427dc33a60694}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Synthetic\+\_\+attribute@{Synthetic\+\_\+attribute}}
 \index{Synthetic\+\_\+attribute@{Synthetic\+\_\+attribute}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Synthetic\+\_\+attribute}{Synthetic\_attribute}}
@@ -613,7 +614,7 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 \hyperlink{struct_synthetic__attribute}{Synthetic\+\_\+attribute}. 
 
-\hypertarget{class_loader_8h_adc076fd8628f664b7c6bc6fa48c4fed1}{}\label{class_loader_8h_adc076fd8628f664b7c6bc6fa48c4fed1} 
+\mbox{\Hypertarget{class_loader_8h_adc076fd8628f664b7c6bc6fa48c4fed1}\label{class_loader_8h_adc076fd8628f664b7c6bc6fa48c4fed1}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!Utf8\+\_\+info@{Utf8\+\_\+info}}
 \index{Utf8\+\_\+info@{Utf8\+\_\+info}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{Utf8\+\_\+info}{Utf8\_info}}
@@ -622,31 +623,61 @@ int \hyperlink{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{D\+E\+B\+UG}
 
 
 \subsection{Documentação das funções}
-\hypertarget{class_loader_8h_adbc64e22f2dcd5daae28f25cb3c6d2c3}{}\label{class_loader_8h_adbc64e22f2dcd5daae28f25cb3c6d2c3} 
-\index{class\+Loader.\+h@{class\+Loader.\+h}!access\+Constant\+Pool\+Entry@{access\+Constant\+Pool\+Entry}}
-\index{access\+Constant\+Pool\+Entry@{access\+Constant\+Pool\+Entry}!class\+Loader.\+h@{class\+Loader.\+h}}
-\subsubsection{\texorpdfstring{access\+Constant\+Pool\+Entry()}{acessar_constant_pool_entry()}}
-{\footnotesize\ttfamily uint8\+\_\+t$\ast$ access\+Constant\+Pool\+Entry (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_loader_8h_a576ae95a803e34e8c225a427f667dc75}\label{class_loader_8h_a576ae95a803e34e8c225a427f667dc75}} 
+\index{class\+Loader.\+h@{class\+Loader.\+h}!acessar\+\_\+constant\+\_\+pool\+\_\+entry@{acessar\+\_\+constant\+\_\+pool\+\_\+entry}}
+\index{acessar\+\_\+constant\+\_\+pool\+\_\+entry@{acessar\+\_\+constant\+\_\+pool\+\_\+entry}!class\+Loader.\+h@{class\+Loader.\+h}}
+\subsubsection{\texorpdfstring{acessar\+\_\+constant\+\_\+pool\+\_\+entry()}{acessar\_constant\_pool\_entry()}}
+{\footnotesize\ttfamily \hyperlink{util_8h_a64f8055b64cf2a4c299c841130c5c938}{u1}$\ast$ acessar\+\_\+constant\+\_\+pool\+\_\+entry (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool }\end{DoxyParamCaption})}
 
 
 
-Função que retorna uma string que representa o valor de uma das constantes do Constant Pool. 
+Entra na constant\+\_\+pool e pega o valor de uma das entradas. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em index} & index da constante no Constant Pool \\
+{\em index} & Index da entrada da constant\+\_\+pool \\
 \hline
-{\em constant\+\_\+pool} & ponteiro para um Constant Pool \\
+{\em constant\+\_\+pool} & Ponteiro para a constant\+\_\+pool \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-ponteiro para uma string 
+Valor de uma entrada da constant\+\_\+pool como string
 \end{DoxyReturn}
-\hypertarget{class_loader_8h_ae67054480a9f3874ba2f0196b60a4350}{}\label{class_loader_8h_ae67054480a9f3874ba2f0196b60a4350} 
-\index{class\+Loader.\+h@{class\+Loader.\+h}!class\+Formatchecker@{class\+Formatchecker}}
-\index{class\+Formatchecker@{class\+Formatchecker}!class\+Loader.\+h@{class\+Loader.\+h}}
-\subsubsection{\texorpdfstring{class\+Formatchecker()}{verificar_magic_number()}}
-{\footnotesize\ttfamily void class\+Formatchecker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+Entra na constant\+\_\+pool e pega o valor de uma das entradas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & Index da constante no Constant Pool \\
+\hline
+{\em constant\+\_\+pool} & Ponteiro para um Constant Pool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para uma string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_loader_8h_a6cf68bc1426bc5087586572817ae0f16}\label{class_loader_8h_a6cf68bc1426bc5087586572817ae0f16}} 
+\index{class\+Loader.\+h@{class\+Loader.\+h}!carregar\+\_\+classe@{carregar\+\_\+classe}}
+\index{carregar\+\_\+classe@{carregar\+\_\+classe}!class\+Loader.\+h@{class\+Loader.\+h}}
+\subsubsection{\texorpdfstring{carregar\+\_\+classe()}{carregar\_classe()}}
+{\footnotesize\ttfamily \hyperlink{struct_class_file}{Class\+File}$\ast$ carregar\+\_\+classe (\begin{DoxyParamCaption}\item[{char $\ast$}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+Name} & Nome da classe a ser lida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Referência para uma struct \hyperlink{struct_class_file}{Class\+File} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_loader_8h_a06b11e11356b5a8922f066cc8e76fb1e}\label{class_loader_8h_a06b11e11356b5a8922f066cc8e76fb1e}} 
+\index{class\+Loader.\+h@{class\+Loader.\+h}!verificar\+\_\+magic\+\_\+number@{verificar\+\_\+magic\+\_\+number}}
+\index{verificar\+\_\+magic\+\_\+number@{verificar\+\_\+magic\+\_\+number}!class\+Loader.\+h@{class\+Loader.\+h}}
+\subsubsection{\texorpdfstring{verificar\+\_\+magic\+\_\+number()}{verificar\_magic\_number()}}
+{\footnotesize\ttfamily void verificar\+\_\+magic\+\_\+number (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
 
@@ -660,11 +691,11 @@ Função verificacao, verificar se o arquivo se trata de um .class verificando o
 \begin{DoxyReturn}{Retorna}
 1 para .class e 0 para nao .class 
 \end{DoxyReturn}
-\hypertarget{class_loader_8h_af07fd265d4b963d7972e5a683e6c4050}{}\label{class_loader_8h_af07fd265d4b963d7972e5a683e6c4050} 
-\index{class\+Loader.\+h@{class\+Loader.\+h}!class\+Name\+Checker@{class\+Name\+Checker}}
-\index{class\+Name\+Checker@{class\+Name\+Checker}!class\+Loader.\+h@{class\+Loader.\+h}}
-\subsubsection{\texorpdfstring{class\+Name\+Checker()}{verificar_nome_classe_artigo()}}
-{\footnotesize\ttfamily void class\+Name\+Checker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_loader_8h_a38fba4a49d5d320fb4c82bbf983a8f7f}\label{class_loader_8h_a38fba4a49d5d320fb4c82bbf983a8f7f}} 
+\index{class\+Loader.\+h@{class\+Loader.\+h}!verificar\+\_\+nome\+\_\+classe\+\_\+artigo@{verificar\+\_\+nome\+\_\+classe\+\_\+artigo}}
+\index{verificar\+\_\+nome\+\_\+classe\+\_\+artigo@{verificar\+\_\+nome\+\_\+classe\+\_\+artigo}!class\+Loader.\+h@{class\+Loader.\+h}}
+\subsubsection{\texorpdfstring{verificar\+\_\+nome\+\_\+classe\+\_\+artigo()}{verificar\_nome\_classe\_artigo()}}
+{\footnotesize\ttfamily void verificar\+\_\+nome\+\_\+classe\+\_\+artigo (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
 
 
 
@@ -680,29 +711,11 @@ Função verificacao, verificar se o nome da classe do .class bate com o do arqu
 \begin{DoxyReturn}{Retorna}
 1 para confere e 0 para nao confere 
 \end{DoxyReturn}
-\hypertarget{class_loader_8h_a054f9d1d78ad324c23b67bb02a57dac6}{}\label{class_loader_8h_a054f9d1d78ad324c23b67bb02a57dac6} 
-\index{class\+Loader.\+h@{class\+Loader.\+h}!load\+Class@{load\+Class}}
-\index{load\+Class@{load\+Class}!class\+Loader.\+h@{class\+Loader.\+h}}
-\subsubsection{\texorpdfstring{load\+Class()}{carregar_classe()}}
-{\footnotesize\ttfamily \hyperlink{struct_class_file}{Class\+File}$\ast$ load\+Class (\begin{DoxyParamCaption}\item[{char $\ast$}]{class\+Name }\end{DoxyParamCaption})}
-
-
-
-Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em class\+Name} & Nome da classe a ser lida \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Retorna}
-Referência para uma struct \hyperlink{struct_class_file}{Class\+File} 
-\end{DoxyReturn}
-\hypertarget{class_loader_8h_a37e5445b741ed921d544e5fdd76f1dbc}{}\label{class_loader_8h_a37e5445b741ed921d544e5fdd76f1dbc} 
-\index{class\+Loader.\+h@{class\+Loader.\+h}!version\+Checker@{version\+Checker}}
-\index{version\+Checker@{version\+Checker}!class\+Loader.\+h@{class\+Loader.\+h}}
-\subsubsection{\texorpdfstring{version\+Checker()}{verificar_versao()}}
-{\footnotesize\ttfamily void version\+Checker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_loader_8h_aa30c5d49114c3b975617c033d9637141}\label{class_loader_8h_aa30c5d49114c3b975617c033d9637141}} 
+\index{class\+Loader.\+h@{class\+Loader.\+h}!verificar\+\_\+versao@{verificar\+\_\+versao}}
+\index{verificar\+\_\+versao@{verificar\+\_\+versao}!class\+Loader.\+h@{class\+Loader.\+h}}
+\subsubsection{\texorpdfstring{verificar\+\_\+versao()}{verificar\_versao()}}
+{\footnotesize\ttfamily void verificar\+\_\+versao (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
 
@@ -719,7 +732,7 @@ Função verificacao, verificar se a major version do .class é suportada pelo j
 
 
 \subsection{Documentação das variáveis}
-\hypertarget{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}{}\label{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078} 
+\mbox{\Hypertarget{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}\label{class_loader_8h_a48f76a8c0dc23567f303ed6aa221e078}} 
 \index{class\+Loader.\+h@{class\+Loader.\+h}!D\+E\+B\+UG@{D\+E\+B\+UG}}
 \index{D\+E\+B\+UG@{D\+E\+B\+UG}!class\+Loader.\+h@{class\+Loader.\+h}}
 \subsubsection{\texorpdfstring{D\+E\+B\+UG}{DEBUG}}

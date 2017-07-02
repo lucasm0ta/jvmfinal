@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['utf8_5finfo',['Utf8_info',['../class_loader_8h.html#adc076fd8628f664b7c6bc6fa48c4fed1',1,'classLoader.h']]]
+  ['signature_5fattribute',['Signature_attribute',['../class_loader_8h.html#a3573119d158fcaa25656263b29c49942',1,'classLoader.h']]],
+  ['sourcedebugextension_5fattribute',['SourceDebugExtension_attribute',['../class_loader_8h.html#a1a90fcc47c8fb1ef36bc1bdcf38fc4ed',1,'classLoader.h']]],
+  ['sourcefile_5fattribute',['SourceFile_attribute',['../class_loader_8h.html#acb8b65b933bdd949b533fe0dc8ddd31e',1,'classLoader.h']]],
+  ['string_5finfo',['String_info',['../class_loader_8h.html#a765681bbc37bea14a966a81a950027b1',1,'classLoader.h']]],
+  ['synthetic_5fattribute',['Synthetic_attribute',['../class_loader_8h.html#ae00366bbab014ac22f3427dc33a60694',1,'classLoader.h']]]
 ];

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>JVM: Referência ao ficheiro lookupswitchViewer.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.8.12 -->
+<!-- Gerado por Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
 </script>
@@ -70,6 +70,7 @@ $(function() {
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="switch_viewer_8h_source.html">switchViewer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="instruction_mapper_8h_source.html">instructionMapper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
 </div>
 <p><a href="lookupswitch_viewer_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
 <table class="memberdecls">
@@ -80,42 +81,14 @@ Componentes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:a705f004b5d93a527730b92950d10c23f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_lookupswitch_data.html">LookupswitchData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookupswitch_viewer_8h.html#a705f004b5d93a527730b92950d10c23f">montar_lookupswitch_data</a> (uint8_t *src, int pos)</td></tr>
-<tr class="separator:a705f004b5d93a527730b92950d10c23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace6471e3476ac450877b953504e655a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookupswitch_viewer_8h.html#ace6471e3476ac450877b953504e655a5">imprimir_Lookupswitch</a> (<a class="el" href="struct_lookupswitch_data.html">LookupswitchData</a> data, char *space)</td></tr>
-<tr class="separator:ace6471e3476ac450877b953504e655a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3d822cc1d665f2395ae627eb4f8c7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_lookupswitch_data.html">LookupswitchData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookupswitch_viewer_8h.html#a7d3d822cc1d665f2395ae627eb4f8c7f">montar_lookupswitch_data</a> (<a class="el" href="util_8h.html#a64f8055b64cf2a4c299c841130c5c938">u1</a> *src, int pos)</td></tr>
+<tr class="separator:a7d3d822cc1d665f2395ae627eb4f8c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9988bcaa7b7b5abe72f387549b2199cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookupswitch_viewer_8h.html#a9988bcaa7b7b5abe72f387549b2199cb">imprimir_Lookupswitch</a> (<a class="el" href="struct_lookupswitch_data.html">LookupswitchData</a> data, char *space)</td></tr>
+<tr class="separator:a9988bcaa7b7b5abe72f387549b2199cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentação das funções</h2>
-<a id="a705f004b5d93a527730b92950d10c23f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a705f004b5d93a527730b92950d10c23f">&sect;&nbsp;</a></span>montar_lookupswitch_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_lookupswitch_data.html">LookupswitchData</a> montar_lookupswitch_data </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ace6471e3476ac450877b953504e655a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace6471e3476ac450877b953504e655a5">&sect;&nbsp;</a></span>imprimir_Lookupswitch()</h2>
+<a id="a9988bcaa7b7b5abe72f387549b2199cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9988bcaa7b7b5abe72f387549b2199cb">&#9670;&nbsp;</a></span>imprimir_Lookupswitch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,12 +115,40 @@ Funções</h2></td></tr>
 
 </div>
 </div>
+<a id="a7d3d822cc1d665f2395ae627eb4f8c7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3d822cc1d665f2395ae627eb4f8c7f">&#9670;&nbsp;</a></span>montar_lookupswitch_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_lookupswitch_data.html">LookupswitchData</a> montar_lookupswitch_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a64f8055b64cf2a4c299c841130c5c938">u1</a> *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
+</a> 1.8.13
 </small></address>
 </body>
 </html>

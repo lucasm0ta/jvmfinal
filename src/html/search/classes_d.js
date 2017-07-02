@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['utf8_5finfo',['Utf8_info',['../struct_utf8__info.html',1,'']]]
+  ['tableswitchdata',['TableswitchData',['../struct_tableswitch_data.html',1,'']]],
+  ['typeinfo',['TypeInfo',['../struct_type_info.html',1,'']]]
 ];

@@ -1,11 +1,17 @@
 var searchData=
 [
-  ['handleprintboolean',['handlePrintBoolean',['../instructions_8c.html#aeea4e5f2461eaf3907d8976593f1e985',1,'instructions.c']]],
-  ['handleprintchar',['handlePrintChar',['../instructions_8c.html#ae8bb1cd96b62440ab6a98573098478fa',1,'instructions.c']]],
-  ['handleprintdouble',['handlePrintDouble',['../instructions_8c.html#a6ab24861164f0b56370153a89e69cd9f',1,'instructions.c']]],
-  ['handleprintfloat',['handlePrintFloat',['../instructions_8c.html#a0af1f18543249b6367fbc25c1270f81f',1,'instructions.c']]],
-  ['handleprintint',['handlePrintInt',['../instructions_8c.html#a170548f15b81346a687068203403d165',1,'instructions.c']]],
-  ['handleprintlong',['handlePrintLong',['../instructions_8c.html#a3395f2106c7e97247f02f468b116712a',1,'instructions.c']]],
-  ['handleprintstring',['handlePrintString',['../instructions_8c.html#a5c30a5be2cdef57f0097efb38f57a062',1,'instructions.c']]],
-  ['hash',['hash',['../method_area_8c.html#a583698de25f50fb32eb5370c3a5f6b03',1,'hash(const char *str, size_t len):&#160;methodArea.c'],['../method_area_8h.html#a583698de25f50fb32eb5370c3a5f6b03',1,'hash(const char *str, size_t len):&#160;methodArea.c']]]
+  ['gerar_5fobject_5ffield',['gerar_object_field',['../object_manager_8c.html#a96418d0fbea29f678487a78211b2c463',1,'objectManager.c']]],
+  ['gerar_5fobject_5ffield_5farray',['gerar_object_field_array',['../object_manager_8c.html#a0b9c1d296ef2e30f58059b9e6e3fafe5',1,'objectManager.c']]],
+  ['gerar_5fobject_5ffield_5fcount',['gerar_object_field_count',['../object_manager_8c.html#aed79a9f1ca47d45b36d92a3be775f58a',1,'objectManager.c']]],
+  ['gerar_5fobject_5fmethod',['gerar_object_method',['../object_manager_8c.html#a4d45967c688b71715148c51896baa671',1,'objectManager.c']]],
+  ['gerar_5fobject_5fmethod_5farray',['gerar_object_method_array',['../object_manager_8c.html#a99c65c9b0a6717e1f0f79bf7c0f7f533',1,'objectManager.c']]],
+  ['gerar_5fobject_5fmethod_5fcount',['gerar_object_method_count',['../object_manager_8c.html#a4988a0a469ff642407794ee949e86dfe',1,'objectManager.c']]],
+  ['get_5freferencia_5farray',['get_referencia_array',['../array_8c.html#ad58b4ed8d03331a583b4cb5e0955271f',1,'get_referencia_array(arrayType *array):&#160;array.c'],['../array_8h.html#a57f02edfe1a269bba33460855854a462',1,'get_referencia_array(arrayType *array):&#160;array.c']]],
+  ['get_5ftamanho_5farray',['get_tamanho_array',['../array_8c.html#a4c32d1eff258639a22570bf401371bf9',1,'get_tamanho_array(arrayType *array):&#160;array.c'],['../array_8h.html#afc32e997014712a5a30dcf988cc75a97',1,'get_tamanho_array(arrayType *array):&#160;array.c']]],
+  ['getfield',['getfield',['../instructions_8c.html#a840f06b326362c8d7d80b20820618f81',1,'getfield():&#160;instructions.c'],['../instructions_8h.html#a840f06b326362c8d7d80b20820618f81',1,'getfield():&#160;instructions.c']]],
+  ['getitem',['getItem',['../method_area_8h.html#afbd517cca838b1d9944bce24e1ffd80c',1,'methodArea.h']]],
+  ['getstatic',['getstatic',['../instructions_8c.html#a83c0c1e57fa9474537180722bdaf65ec',1,'getstatic():&#160;instructions.c'],['../instructions_8h.html#a83c0c1e57fa9474537180722bdaf65ec',1,'getstatic():&#160;instructions.c']]],
+  ['goto_5fw',['goto_w',['../instructions_8c.html#a644324ed1a37c333efbc3f9c2ef2efa3',1,'goto_w():&#160;instructions.c'],['../instructions_8h.html#a644324ed1a37c333efbc3f9c2ef2efa3',1,'goto_w():&#160;instructions.c']]],
+  ['group_5fword',['group_word',['../switch_viewer_8c.html#ac4ca3809244c236b8addd4832f41f97f',1,'group_word(u1 *word):&#160;switchViewer.c'],['../switch_viewer_8h.html#ac4ca3809244c236b8addd4832f41f97f',1,'group_word(u1 *word):&#160;switchViewer.c']]],
+  ['group_5fwords',['group_words',['../switch_viewer_8c.html#a297b40ecd9dc56611e15e4666335d2ec',1,'group_words(u1 *src, int size):&#160;switchViewer.c'],['../switch_viewer_8h.html#a297b40ecd9dc56611e15e4666335d2ec',1,'group_words(u1 *src, int size):&#160;switchViewer.c']]]
 ];

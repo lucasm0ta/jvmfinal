@@ -1,13 +1,12 @@
 var indexSectionsWithContent =
 {
   0: "_abcdefghijklmnoprstuvw",
-  1: "abcdefilmnostu",
-  2: "acfilmorst",
-  3: "_abcdfghijlmnprstvw",
+  1: "abcdefilmnopstu",
+  2: "acfilmostu",
+  3: "_abcdefgijlmnprstvw",
   4: "abcdefhijklmnoprstuv",
-  5: "abcdefilmnosu",
-  6: "ci",
-  7: "j"
+  5: "abcdefilmnopsu",
+  6: "ciu"
 };
 
 var indexSectionNames =
@@ -18,8 +17,7 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "defines",
-  7: "pages"
+  6: "defines"
 };
 
 var indexSectionLabels =
@@ -30,7 +28,6 @@ var indexSectionLabels =
   3: "Funções",
   4: "Variáveis",
   5: "Definições de tipos",
-  6: "Macros",
-  7: "Páginas"
+  6: "Macros"
 };
 

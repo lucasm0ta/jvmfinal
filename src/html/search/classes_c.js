@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['tableswitchdata',['TableswitchData',['../struct_tableswitch_data.html',1,'']]],
-  ['typeinfo',['TypeInfo',['../struct_type_info.html',1,'']]]
+  ['signature_5fattribute',['Signature_attribute',['../struct_signature__attribute.html',1,'']]],
+  ['sourcedebugextension_5fattribute',['SourceDebugExtension_attribute',['../struct_source_debug_extension__attribute.html',1,'']]],
+  ['sourcefile_5fattribute',['SourceFile_attribute',['../struct_source_file__attribute.html',1,'']]],
+  ['string_5finfo',['String_info',['../struct_string__info.html',1,'']]],
+  ['synthetic_5fattribute',['Synthetic_attribute',['../struct_synthetic__attribute.html',1,'']]]
 ];

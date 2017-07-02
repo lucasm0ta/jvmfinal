@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>JVM: Referência ao ficheiro frame.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.8.12 -->
+<!-- Gerado por Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
 </script>
@@ -72,70 +72,77 @@ $(function() {
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="class_loader_8h_source.html">classLoader.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="instructions_8h_source.html">instructions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
 </div>
 <p><a href="frame_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Componentes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structoperand_stack.html">operandStack</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pilha de operandos.  <a href="structoperand_stack.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html">frame</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura do frame.  <a href="structframe.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstack_frame.html">pilha_frame</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpilha__frame.html">pilha_frame</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para empilhar frames.  <a href="structpilha__frame.html#details">Mais...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Definições de tipos</h2></td></tr>
 <tr class="memitem:a5028e374e8588d135024ccf91b6de9a8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structoperand_stack.html">operandStack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a5028e374e8588d135024ccf91b6de9a8">operandStack</a></td></tr>
+<tr class="memdesc:a5028e374e8588d135024ccf91b6de9a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pilha de operandos.  <a href="#a5028e374e8588d135024ccf91b6de9a8">Mais...</a><br /></td></tr>
 <tr class="separator:a5028e374e8588d135024ccf91b6de9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa02f79e5cf231f7fcd7bdf8e647fe96e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structframe.html">frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#aa02f79e5cf231f7fcd7bdf8e647fe96e">frame</a></td></tr>
+<tr class="memdesc:aa02f79e5cf231f7fcd7bdf8e647fe96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura do frame.  <a href="#aa02f79e5cf231f7fcd7bdf8e647fe96e">Mais...</a><br /></td></tr>
 <tr class="separator:aa02f79e5cf231f7fcd7bdf8e647fe96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43f1a647079ee63aca13ec70dcd13012"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structstack_frame.html">pilha_frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a43f1a647079ee63aca13ec70dcd13012">pilha_frame</a></td></tr>
-<tr class="separator:a43f1a647079ee63aca13ec70dcd13012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56bbbf643a59001d89bd197adba435d4"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structpilha__frame.html">pilha_frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a56bbbf643a59001d89bd197adba435d4">pilha_frame</a></td></tr>
+<tr class="memdesc:a56bbbf643a59001d89bd197adba435d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para empilhar frames.  <a href="#a56bbbf643a59001d89bd197adba435d4">Mais...</a><br /></td></tr>
+<tr class="separator:a56bbbf643a59001d89bd197adba435d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:ab66470d49b0a83dcec2356c679c62785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#ab66470d49b0a83dcec2356c679c62785">criar_frame</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *cp, <a class="el" href="struct_class_file.html">ClassFile</a> *classe, <a class="el" href="struct_code__attribute.html">Code_attribute</a> *code)</td></tr>
-<tr class="memdesc:ab66470d49b0a83dcec2356c679c62785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a criacao do frame.  <a href="#ab66470d49b0a83dcec2356c679c62785">Mais...</a><br /></td></tr>
-<tr class="separator:ab66470d49b0a83dcec2356c679c62785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac931ed4fe36780bd889670db9aa6434c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#ac931ed4fe36780bd889670db9aa6434c">empilhar_frame</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *, <a class="el" href="struct_class_file.html">ClassFile</a> *, <a class="el" href="struct_code__attribute.html">Code_attribute</a> *, struct <a class="el" href="structstack_frame.html">pilha_frame</a> *)</td></tr>
-<tr class="memdesc:ac931ed4fe36780bd889670db9aa6434c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coloca um frame na pilha de frames.  <a href="#ac931ed4fe36780bd889670db9aa6434c">Mais...</a><br /></td></tr>
-<tr class="separator:ac931ed4fe36780bd889670db9aa6434c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9cbfa46eaa4e3c07217b16d0c5212e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#aca9cbfa46eaa4e3c07217b16d0c5212e">desempilhar_frame</a> ()</td></tr>
-<tr class="memdesc:aca9cbfa46eaa4e3c07217b16d0c5212e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retira um frame do cabeca da pilha, libera seu espaço de memoria.  <a href="#aca9cbfa46eaa4e3c07217b16d0c5212e">Mais...</a><br /></td></tr>
-<tr class="separator:aca9cbfa46eaa4e3c07217b16d0c5212e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abae542180a129927e597a3660e032be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#abae542180a129927e597a3660e032be5">empilhar_operando</a> (int32_t)</td></tr>
-<tr class="memdesc:abae542180a129927e597a3660e032be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coloca um operando na pilha de operandos do frame.  <a href="#abae542180a129927e597a3660e032be5">Mais...</a><br /></td></tr>
-<tr class="separator:abae542180a129927e597a3660e032be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26b76e4bcd7752493dd4aae90a2bf2ba"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a26b76e4bcd7752493dd4aae90a2bf2ba">desempilhar_operando</a> ()</td></tr>
-<tr class="memdesc:a26b76e4bcd7752493dd4aae90a2bf2ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retira e devolve um valor armazenado na pilha de operandos.  <a href="#a26b76e4bcd7752493dd4aae90a2bf2ba">Mais...</a><br /></td></tr>
-<tr class="separator:a26b76e4bcd7752493dd4aae90a2bf2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a389570f654e724ed55f27681229dcb21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a389570f654e724ed55f27681229dcb21">executar_frame</a> ()</td></tr>
-<tr class="memdesc:a389570f654e724ed55f27681229dcb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Roda os frames.  <a href="#a389570f654e724ed55f27681229dcb21">Mais...</a><br /></td></tr>
-<tr class="separator:a389570f654e724ed55f27681229dcb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9cd6331cafb943d4e635010235c2dc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#ae9cd6331cafb943d4e635010235c2dc8">empilhar_metodo</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classe, <a class="el" href="struct_method__info.html">Method_info</a> *method)</td></tr>
-<tr class="memdesc:ae9cd6331cafb943d4e635010235c2dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chama um metodo criando um frame para ele.  <a href="#ae9cd6331cafb943d4e635010235c2dc8">Mais...</a><br /></td></tr>
-<tr class="separator:ae9cd6331cafb943d4e635010235c2dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66a49a1024974e095ed46edaad769052"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a66a49a1024974e095ed46edaad769052">dumpStack</a> ()</td></tr>
-<tr class="memdesc:a66a49a1024974e095ed46edaad769052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sai do método.  <a href="#a66a49a1024974e095ed46edaad769052">Mais...</a><br /></td></tr>
-<tr class="separator:a66a49a1024974e095ed46edaad769052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8410dc74b71f413e8ec2c52998c40b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#aed8410dc74b71f413e8ec2c52998c40b">criar_frame</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *cp, <a class="el" href="struct_class_file.html">ClassFile</a> *classe, <a class="el" href="struct_code__attribute.html">Code_attribute</a> *code)</td></tr>
+<tr class="memdesc:aed8410dc74b71f413e8ec2c52998c40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria a estrutura do frame e faz empilha ela.  <a href="#aed8410dc74b71f413e8ec2c52998c40b">Mais...</a><br /></td></tr>
+<tr class="separator:aed8410dc74b71f413e8ec2c52998c40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94aa0863c6873ac704bf815128e1708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#aa94aa0863c6873ac704bf815128e1708">empilhar_frame</a> (<a class="el" href="struct_cp__info.html">Cp_info</a> *, <a class="el" href="struct_class_file.html">ClassFile</a> *, <a class="el" href="struct_code__attribute.html">Code_attribute</a> *, struct <a class="el" href="structpilha__frame.html">pilha_frame</a> *)</td></tr>
+<tr class="memdesc:aa94aa0863c6873ac704bf815128e1708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empilha um frame na pilha.  <a href="#aa94aa0863c6873ac704bf815128e1708">Mais...</a><br /></td></tr>
+<tr class="separator:aa94aa0863c6873ac704bf815128e1708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4417dea7d64e2cc7168133442358ab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#aa4417dea7d64e2cc7168133442358ab7">desempilhar_frame</a> ()</td></tr>
+<tr class="memdesc:aa4417dea7d64e2cc7168133442358ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desempilha um frame, liberando toda a memoria usada por esse frame.  <a href="#aa4417dea7d64e2cc7168133442358ab7">Mais...</a><br /></td></tr>
+<tr class="separator:aa4417dea7d64e2cc7168133442358ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa2b25c7efc79af8ae9db023bb90fc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a5aa2b25c7efc79af8ae9db023bb90fc8">empilhar_operando</a> (int32_t)</td></tr>
+<tr class="memdesc:a5aa2b25c7efc79af8ae9db023bb90fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empilha um operando na pilha de openrados do frame atual.  <a href="#a5aa2b25c7efc79af8ae9db023bb90fc8">Mais...</a><br /></td></tr>
+<tr class="separator:a5aa2b25c7efc79af8ae9db023bb90fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fcb5aca5b15bd9457bcc68ecde93a8f"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a5fcb5aca5b15bd9457bcc68ecde93a8f">desempilhar_operando</a> ()</td></tr>
+<tr class="memdesc:a5fcb5aca5b15bd9457bcc68ecde93a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desempilha o valor da pilha e retorna esse valor.  <a href="#a5fcb5aca5b15bd9457bcc68ecde93a8f">Mais...</a><br /></td></tr>
+<tr class="separator:a5fcb5aca5b15bd9457bcc68ecde93a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c192866c5a9f5169bb0325ff105250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a91c192866c5a9f5169bb0325ff105250">executar_frame</a> ()</td></tr>
+<tr class="memdesc:a91c192866c5a9f5169bb0325ff105250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o codigo do atributo Code do frame.  <a href="#a91c192866c5a9f5169bb0325ff105250">Mais...</a><br /></td></tr>
+<tr class="separator:a91c192866c5a9f5169bb0325ff105250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a699366592938f390d3e713e80040ec1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a699366592938f390d3e713e80040ec1c">empilhar_metodo</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classe, <a class="el" href="struct_method__info.html">Method_info</a> *method)</td></tr>
+<tr class="memdesc:a699366592938f390d3e713e80040ec1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo frame para o metodo chamado.  <a href="#a699366592938f390d3e713e80040ec1c">Mais...</a><br /></td></tr>
+<tr class="separator:a699366592938f390d3e713e80040ec1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab77078d864b42dc2a48ab02e8fc2cfc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#ab77078d864b42dc2a48ab02e8fc2cfc9">dumpStack</a> (int i)</td></tr>
+<tr class="memdesc:ab77078d864b42dc2a48ab02e8fc2cfc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saida do metodo atual, destruindo o flame.  <a href="#ab77078d864b42dc2a48ab02e8fc2cfc9">Mais...</a><br /></td></tr>
+<tr class="separator:ab77078d864b42dc2a48ab02e8fc2cfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variáveis</h2></td></tr>
-<tr class="memitem:a568d2030787fcb5e081104db989e6761"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a568d2030787fcb5e081104db989e6761">flag</a></td></tr>
-<tr class="separator:a568d2030787fcb5e081104db989e6761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03652c5e308d724b9b7a7663699596c"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#af03652c5e308d724b9b7a7663699596c">flag</a></td></tr>
+<tr class="separator:af03652c5e308d724b9b7a7663699596c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd29ef28df9878364c2a29a39e9c0dbc"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#acd29ef28df9878364c2a29a39e9c0dbc">returnValue</a></td></tr>
 <tr class="separator:acd29ef28df9878364c2a29a39e9c0dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab479f927a43c13bd6ccd4a885d16a702"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#ab479f927a43c13bd6ccd4a885d16a702">retHigh</a></td></tr>
 <tr class="separator:ab479f927a43c13bd6ccd4a885d16a702"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3a306460b6573f9fe5e6b0183d2bc6a"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#ad3a306460b6573f9fe5e6b0183d2bc6a">retLow</a></td></tr>
 <tr class="separator:ad3a306460b6573f9fe5e6b0183d2bc6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace6ff79f29afa0062ad6c15e85a051b4"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structframe.html">frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#ace6ff79f29afa0062ad6c15e85a051b4">frame_atual</a></td></tr>
-<tr class="separator:ace6ff79f29afa0062ad6c15e85a051b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bcf617d9e7aa025d455f7753a160d0a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structframe.html">frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frame_8h.html#a9bcf617d9e7aa025d455f7753a160d0a">frame_atual</a></td></tr>
+<tr class="separator:a9bcf617d9e7aa025d455f7753a160d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentação dos tipos</h2>
 <a id="aa02f79e5cf231f7fcd7bdf8e647fe96e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa02f79e5cf231f7fcd7bdf8e647fe96e">&sect;&nbsp;</a></span>frame</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02f79e5cf231f7fcd7bdf8e647fe96e">&#9670;&nbsp;</a></span>frame</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,10 +153,13 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Estrutura do frame. </p>
+<p>Contem um vetor de varaveis locais, um ponteiro para a constant_pool, um pilha de operandos e o codigo em si. Possui alguns outros elementos que sao usados no seu funcionamento. </p>
+
 </div>
 </div>
 <a id="a5028e374e8588d135024ccf91b6de9a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5028e374e8588d135024ccf91b6de9a8">&sect;&nbsp;</a></span>operandStack</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5028e374e8588d135024ccf91b6de9a8">&#9670;&nbsp;</a></span>operandStack</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,25 +170,31 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pilha de operandos. </p>
+<p>Cada frame tera um desses que sera usado por algumas instrucoes, principalmente as que fazem operacoes.</p>
+<p>Tamanho do frame. Aponta para o ultimo elemento adicionado  O vetor de operandos que representa a pilha </p>
+
 </div>
 </div>
-<a id="a43f1a647079ee63aca13ec70dcd13012"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43f1a647079ee63aca13ec70dcd13012">&sect;&nbsp;</a></span>pilha_frame</h2>
+<a id="a56bbbf643a59001d89bd197adba435d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56bbbf643a59001d89bd197adba435d4">&#9670;&nbsp;</a></span>pilha_frame</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structstack_frame.html">pilha_frame</a> <a class="el" href="structstack_frame.html">pilha_frame</a></td>
+          <td class="memname">typedef struct <a class="el" href="structpilha__frame.html">pilha_frame</a> <a class="el" href="structpilha__frame.html">pilha_frame</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Estrutura usada para empilhar frames. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Documentação das funções</h2>
-<a id="ab66470d49b0a83dcec2356c679c62785"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab66470d49b0a83dcec2356c679c62785">&sect;&nbsp;</a></span>criar_frame()</h2>
+<a id="aed8410dc74b71f413e8ec2c52998c40b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed8410dc74b71f413e8ec2c52998c40b">&#9670;&nbsp;</a></span>criar_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +225,16 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Realiza a criacao do frame. </p>
+<p>Cria a estrutura do frame e faz empilha ela. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td>Ponteiro para o constant_pool </td></tr>
+    <tr><td class="paramname">classe</td><td>Estrutura do classFile </td></tr>
+    <tr><td class="paramname">code</td><td>Ponteiro para a estrutura do codigo</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Cria a estrutura do frame e faz empilha ela.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">cp</td><td>informacao do constantpool </td></tr>
@@ -221,33 +246,8 @@ Variáveis</h2></td></tr>
 
 </div>
 </div>
-<a id="a66a49a1024974e095ed46edaad769052"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66a49a1024974e095ed46edaad769052">&sect;&nbsp;</a></span>dumpStack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void dumpStack </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sai do método. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Flag</td><td>para saida </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aca9cbfa46eaa4e3c07217b16d0c5212e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca9cbfa46eaa4e3c07217b16d0c5212e">&sect;&nbsp;</a></span>desempilhar_frame()</h2>
+<a id="aa4417dea7d64e2cc7168133442358ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4417dea7d64e2cc7168133442358ab7">&#9670;&nbsp;</a></span>desempilhar_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -261,12 +261,13 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retira um frame do cabeca da pilha, libera seu espaço de memoria. </p>
+<p>Desempilha um frame, liberando toda a memoria usada por esse frame. </p>
+<p>Desempilha um frame, liberando toda a memoria usada por esse frame. </p>
 
 </div>
 </div>
-<a id="a26b76e4bcd7752493dd4aae90a2bf2ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26b76e4bcd7752493dd4aae90a2bf2ba">&sect;&nbsp;</a></span>desempilhar_operando()</h2>
+<a id="a5fcb5aca5b15bd9457bcc68ecde93a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fcb5aca5b15bd9457bcc68ecde93a8f">&#9670;&nbsp;</a></span>desempilhar_operando()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,13 +281,48 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retira e devolve um valor armazenado na pilha de operandos. </p>
+<p>Desempilha o valor da pilha e retorna esse valor. </p>
+<dl class="section return"><dt>Retorna</dt><dd>Valor que foi desempilhado</dd></dl>
+<p>Desempilha o valor da pilha e retorna esse valor.</p>
 <dl class="section return"><dt>Retorna</dt><dd>Valor antes armazenado na pilha de operandos </dd></dl>
 
 </div>
 </div>
-<a id="ac931ed4fe36780bd889670db9aa6434c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac931ed4fe36780bd889670db9aa6434c">&sect;&nbsp;</a></span>empilhar_frame()</h2>
+<a id="ab77078d864b42dc2a48ab02e8fc2cfc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab77078d864b42dc2a48ab02e8fc2cfc9">&#9670;&nbsp;</a></span>dumpStack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dumpStack </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saida do metodo atual, destruindo o flame. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Flag para saber o q sera impresso</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Saida do metodo atual, destruindo o flame.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Flag</td><td>para saida </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa94aa0863c6873ac704bf815128e1708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94aa0863c6873ac704bf815128e1708">&#9670;&nbsp;</a></span>empilhar_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,8 +348,8 @@ Variáveis</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">struct <a class="el" href="structstack_frame.html">pilha_frame</a> *&#160;</td>
-          <td class="paramname"><em>sf</em>&#160;</td>
+          <td class="paramtype">struct <a class="el" href="structpilha__frame.html">pilha_frame</a> *&#160;</td>
+          <td class="paramname"><em>pf</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -323,21 +359,31 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Coloca um frame na pilha de frames. </p>
+<p>Empilha um frame na pilha. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td>Ponteiro para o constant_pool </td></tr>
+    <tr><td class="paramname">classe</td><td>Estrutura do classFile </td></tr>
+    <tr><td class="paramname">code</td><td>Ponteiro para a estrutura do codigo </td></tr>
+    <tr><td class="paramname">sf</td><td>Ponteiro para a pilha de frames</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Empilha um frame na pilha.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">cp</td><td>Informação do constantpool </td></tr>
     <tr><td class="paramname">classe</td><td>Informação da classe, classfile </td></tr>
     <tr><td class="paramname">code</td><td>Atributo de codigo </td></tr>
-    <tr><td class="paramname">sf</td><td>Ponteiro para o frame </td></tr>
+    <tr><td class="paramname">pf</td><td>Ponteiro para o frame </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ae9cd6331cafb943d4e635010235c2dc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9cd6331cafb943d4e635010235c2dc8">&sect;&nbsp;</a></span>empilhar_metodo()</h2>
+<a id="a699366592938f390d3e713e80040ec1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699366592938f390d3e713e80040ec1c">&#9670;&nbsp;</a></span>empilhar_metodo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -362,7 +408,15 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Chama um metodo criando um frame para ele. </p>
+<p>Cria um novo frame para o metodo chamado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">classFile</td><td>Ponteiro para a estrutura da classe </td></tr>
+    <tr><td class="paramname">method</td><td>Ponteiro para o atributo metodo</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Cria um novo frame para o metodo chamado.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">classFile</td><td>Informação da classe deste método </td></tr>
@@ -373,8 +427,8 @@ Variáveis</h2></td></tr>
 
 </div>
 </div>
-<a id="abae542180a129927e597a3660e032be5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abae542180a129927e597a3660e032be5">&sect;&nbsp;</a></span>empilhar_operando()</h2>
+<a id="a5aa2b25c7efc79af8ae9db023bb90fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa2b25c7efc79af8ae9db023bb90fc8">&#9670;&nbsp;</a></span>empilhar_operando()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -389,7 +443,14 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Coloca um operando na pilha de operandos do frame. </p>
+<p>Empilha um operando na pilha de openrados do frame atual. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Valor que sera colocado na pilha</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Empilha um operando na pilha de openrados do frame atual.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>Valor a ser colocado na pilha </td></tr>
@@ -399,8 +460,8 @@ Variáveis</h2></td></tr>
 
 </div>
 </div>
-<a id="a389570f654e724ed55f27681229dcb21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a389570f654e724ed55f27681229dcb21">&sect;&nbsp;</a></span>executar_frame()</h2>
+<a id="a91c192866c5a9f5169bb0325ff105250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c192866c5a9f5169bb0325ff105250">&#9670;&nbsp;</a></span>executar_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,13 +475,28 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Roda os frames. </p>
+<p>Executa o codigo do atributo Code do frame. </p>
+<p>Executa o codigo do atributo Code do frame. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentação das variáveis</h2>
-<a id="ace6ff79f29afa0062ad6c15e85a051b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace6ff79f29afa0062ad6c15e85a051b4">&sect;&nbsp;</a></span>frame_atual</h2>
+<a id="af03652c5e308d724b9b7a7663699596c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03652c5e308d724b9b7a7663699596c">&#9670;&nbsp;</a></span>flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t flag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bcf617d9e7aa025d455f7753a160d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bcf617d9e7aa025d455f7753a160d0a">&#9670;&nbsp;</a></span>frame_atual</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -434,7 +510,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ab479f927a43c13bd6ccd4a885d16a702"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab479f927a43c13bd6ccd4a885d16a702">&sect;&nbsp;</a></span>retHigh</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab479f927a43c13bd6ccd4a885d16a702">&#9670;&nbsp;</a></span>retHigh</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -448,7 +524,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ad3a306460b6573f9fe5e6b0183d2bc6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3a306460b6573f9fe5e6b0183d2bc6a">&sect;&nbsp;</a></span>retLow</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a306460b6573f9fe5e6b0183d2bc6a">&#9670;&nbsp;</a></span>retLow</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,22 +537,8 @@ Variáveis</h2></td></tr>
 
 </div>
 </div>
-<a id="a568d2030787fcb5e081104db989e6761"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a568d2030787fcb5e081104db989e6761">&sect;&nbsp;</a></span>flag</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int8_t flag</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="acd29ef28df9878364c2a29a39e9c0dbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd29ef28df9878364c2a29a39e9c0dbc">&sect;&nbsp;</a></span>returnValue</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acd29ef28df9878364c2a29a39e9c0dbc">&#9670;&nbsp;</a></span>returnValue</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,7 +556,7 @@ Variáveis</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
+</a> 1.8.13
 </small></address>
 </body>
 </html>

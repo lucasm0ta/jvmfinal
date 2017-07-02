@@ -8,52 +8,94 @@
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-uint16\+\_\+t \hyperlink{object_manager_8c_a08a07d51a8a7fe3bb9fb633a96374879}{generate\+Object\+Field\+Count} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} \hyperlink{object_manager_8c_aed79a9f1ca47d45b36d92a3be775f58a}{gerar\+\_\+object\+\_\+field\+\_\+count} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
 \item 
-\hyperlink{struct_object_field}{Object\+Field} $\ast$ \hyperlink{object_manager_8c_aa30cac2463b0d9241c3e539e4f16b943}{generate\+Object\+Field\+Array} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, uint16\+\_\+t count)
+\hyperlink{structobject__field}{object\+\_\+field} $\ast$ \hyperlink{object_manager_8c_a0b9c1d296ef2e30f58059b9e6e3fafe5}{gerar\+\_\+object\+\_\+field\+\_\+array} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+\_\+file, \hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} count)
 \item 
-uint16\+\_\+t \hyperlink{object_manager_8c_a25ccf79158421f4aff17262096fb6e56}{generate\+Object\+Method\+Count} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
+\hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} \hyperlink{object_manager_8c_a4988a0a469ff642407794ee949e86dfe}{gerar\+\_\+object\+\_\+method\+\_\+count} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+\_\+file)
 \item 
-\hyperlink{struct_object_method}{Object\+Method} $\ast$ \hyperlink{object_manager_8c_ae0a895e091fa6a03c003069ad221977d}{generate\+Object\+Method\+Array} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, uint16\+\_\+t count)
+\hyperlink{structobject__method}{object\+\_\+method} $\ast$ \hyperlink{object_manager_8c_a99c65c9b0a6717e1f0f79bf7c0f7f533}{gerar\+\_\+object\+\_\+method\+\_\+array} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+\_\+file, \hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} count)
 \item 
-\hyperlink{struct_object}{Object} $\ast$ \hyperlink{object_manager_8c_acbb8929de342d56ed8d572fc5d690083}{create\+Object} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File)
-\begin{DoxyCompactList}\small\item\em Retorna uma instância da classe do class\+File. \end{DoxyCompactList}\item 
-\hyperlink{struct_object_method}{Object\+Method} \hyperlink{object_manager_8c_a51b10e3f17d5f25758caebedbe9ff866}{generate\+Object\+Method} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, \hyperlink{struct_method__info}{Method\+\_\+info} $\ast$method\+\_\+info)
+\hyperlink{struct_object}{Object} $\ast$ \hyperlink{object_manager_8c_a89511bb516e8430cddbcb787ed8f3fcc}{criar\+\_\+objeto} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Retorna uma instância da classe alocada. \end{DoxyCompactList}\item 
+\hyperlink{structobject__method}{object\+\_\+method} \hyperlink{object_manager_8c_a4d45967c688b71715148c51896baa671}{gerar\+\_\+object\+\_\+method} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+\_\+file, \hyperlink{struct_method__info}{Method\+\_\+info} $\ast$method\+\_\+info)
 \item 
-\hyperlink{struct_object_method}{Object\+Method} \hyperlink{object_manager_8c_a82c9a8c25b0d7079e3f6289a5925c7e1}{get\+Object\+Method\+By\+Name} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$method\+Name, char $\ast$class\+Name)
+\hyperlink{structobject__method}{object\+\_\+method} \hyperlink{object_manager_8c_a5c494dfb31b30ef0323a39c5ec32afcc}{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$method\+\_\+name, char $\ast$class\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Retorna um método de um objeto. \end{DoxyCompactList}\item 
 void \hyperlink{object_manager_8c_a67b1c1ad28b2a4256155110a520e8091}{dump\+Object\+Methods} (\hyperlink{struct_object}{Object} $\ast$object)
 \begin{DoxyCompactList}\small\item\em Mostra uma lista do nome dos métodos do objeto. \end{DoxyCompactList}\item 
-\hyperlink{struct_object_field}{Object\+Field} \hyperlink{object_manager_8c_abb2e7a8b4f1cde3ba2e4b4e4fa4225ac}{generate\+Object\+Field} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, \hyperlink{struct_field__info}{Field\+\_\+info} $\ast$field\+\_\+info)
+\hyperlink{structobject__field}{object\+\_\+field} \hyperlink{object_manager_8c_a96418d0fbea29f678487a78211b2c463}{gerar\+\_\+object\+\_\+field} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+\_\+file, \hyperlink{struct_field__info}{Field\+\_\+info} $\ast$field\+\_\+info)
 \item 
-uint64\+\_\+t \hyperlink{object_manager_8c_a4e0494b9f5b7b399e73e7b1da38e2d6c}{get\+Object\+Field\+Value\+By\+Name} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$name)
-\begin{DoxyCompactList}\small\item\em Retorna o field com nome \char`\"{}name\char`\"{} de um objeto. \end{DoxyCompactList}\item 
-void \hyperlink{object_manager_8c_aa894740a7d501f453ab07155c008557a}{set\+Object\+Field\+Value\+By\+Name} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$name, uint64\+\_\+t value)
+uint64\+\_\+t \hyperlink{object_manager_8c_a3e0aaec6083a904bc59094fc5b649f3f}{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Retorna o field que possuiu o mesmo nome do parâmetro informado. \end{DoxyCompactList}\item 
+void \hyperlink{object_manager_8c_a58cd1fbfe2b62eaf986c7e9fe88a4bdd}{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome} (\hyperlink{struct_object}{Object} $\ast$object, char $\ast$name, uint64\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Atribui o valor passado para um dos fields do objeto. \end{DoxyCompactList}\item 
 void \hyperlink{object_manager_8c_aae74193bbad0147f2cc93813258fc88b}{dump\+Object\+Fields} (\hyperlink{struct_object}{Object} $\ast$object)
 \begin{DoxyCompactList}\small\item\em Mostra uma lista do nome dos fields do objeto. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Documentação das funções}
-\hypertarget{object_manager_8c_acbb8929de342d56ed8d572fc5d690083}{}\label{object_manager_8c_acbb8929de342d56ed8d572fc5d690083} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!create\+Object@{create\+Object}}
-\index{create\+Object@{create\+Object}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{create\+Object()}{criar_objeto()}}
-{\footnotesize\ttfamily \hyperlink{struct_object}{Object}$\ast$ create\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8c_a3e0aaec6083a904bc59094fc5b649f3f}\label{object_manager_8c_a3e0aaec6083a904bc59094fc5b649f3f}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome@{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome}}
+\index{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome@{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome()}{buscar\_object\_field\_value\_por\_nome()}}
+{\footnotesize\ttfamily uint64\+\_\+t buscar\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
 
 
-Retorna uma instância da classe do class\+File. 
+Retorna o field que possuiu o mesmo nome do parâmetro informado. 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em class\+File} & struct do class\+File que sera instanciado \\
+{\em object} & referência para o objeto \\
+\hline
+{\em name} & nome do field desejado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+caso o field for um objeto/array retorna uma referência, ou um valor nos outros casos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{object_manager_8c_a5c494dfb31b30ef0323a39c5ec32afcc}\label{object_manager_8c_a5c494dfb31b30ef0323a39c5ec32afcc}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name@{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name}}
+\index{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name@{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name()}{buscar\_object\_method\_by\_name()}}
+{\footnotesize\ttfamily \hyperlink{structobject__method}{object\+\_\+method} buscar\+\_\+object\+\_\+method\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{method\+\_\+name,  }\item[{char $\ast$}]{class\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Retorna um método de um objeto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em object} & referência para o objeto \\
+\hline
+{\em method\+\_\+name} & nome do método desejado \\
+\hline
+{\em class\+\_\+name} & classe do método desejado (para caso de métodos com mesmo nome, como construtores) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+refência para um objeto que contém informações do método 
+\end{DoxyReturn}
+\mbox{\Hypertarget{object_manager_8c_a89511bb516e8430cddbcb787ed8f3fcc}\label{object_manager_8c_a89511bb516e8430cddbcb787ed8f3fcc}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!criar\+\_\+objeto@{criar\+\_\+objeto}}
+\index{criar\+\_\+objeto@{criar\+\_\+objeto}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{criar\+\_\+objeto()}{criar\_objeto()}}
+{\footnotesize\ttfamily \hyperlink{struct_object}{Object}$\ast$ criar\+\_\+objeto (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Retorna uma instância da classe alocada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em class\+\_\+file} & estrutura do class\+File que sera instanciada \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
 referência para um objeto alocado 
 \end{DoxyReturn}
-\hypertarget{object_manager_8c_aae74193bbad0147f2cc93813258fc88b}{}\label{object_manager_8c_aae74193bbad0147f2cc93813258fc88b} 
+\mbox{\Hypertarget{object_manager_8c_aae74193bbad0147f2cc93813258fc88b}\label{object_manager_8c_aae74193bbad0147f2cc93813258fc88b}} 
 \index{object\+Manager.\+c@{object\+Manager.\+c}!dump\+Object\+Fields@{dump\+Object\+Fields}}
 \index{dump\+Object\+Fields@{dump\+Object\+Fields}!object\+Manager.\+c@{object\+Manager.\+c}}
 \subsubsection{\texorpdfstring{dump\+Object\+Fields()}{dumpObjectFields()}}
@@ -68,7 +110,7 @@ Mostra uma lista do nome dos fields do objeto.
 {\em object} & referênciaa para o objeto \\
 \hline
 \end{DoxyParams}
-\hypertarget{object_manager_8c_a67b1c1ad28b2a4256155110a520e8091}{}\label{object_manager_8c_a67b1c1ad28b2a4256155110a520e8091} 
+\mbox{\Hypertarget{object_manager_8c_a67b1c1ad28b2a4256155110a520e8091}\label{object_manager_8c_a67b1c1ad28b2a4256155110a520e8091}} 
 \index{object\+Manager.\+c@{object\+Manager.\+c}!dump\+Object\+Methods@{dump\+Object\+Methods}}
 \index{dump\+Object\+Methods@{dump\+Object\+Methods}!object\+Manager.\+c@{object\+Manager.\+c}}
 \subsubsection{\texorpdfstring{dump\+Object\+Methods()}{dumpObjectMethods()}}
@@ -83,89 +125,47 @@ Mostra uma lista do nome dos métodos do objeto.
 {\em object} & referênciaa para o objeto \\
 \hline
 \end{DoxyParams}
-\hypertarget{object_manager_8c_abb2e7a8b4f1cde3ba2e4b4e4fa4225ac}{}\label{object_manager_8c_abb2e7a8b4f1cde3ba2e4b4e4fa4225ac} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!generate\+Object\+Field@{generate\+Object\+Field}}
-\index{generate\+Object\+Field@{generate\+Object\+Field}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{generate\+Object\+Field()}{gerar_object_field()}}
-{\footnotesize\ttfamily \hyperlink{struct_object_field}{Object\+Field} generate\+Object\+Field (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{\hyperlink{struct_field__info}{Field\+\_\+info} $\ast$}]{field\+\_\+info }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8c_a96418d0fbea29f678487a78211b2c463}\label{object_manager_8c_a96418d0fbea29f678487a78211b2c463}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!gerar\+\_\+object\+\_\+field@{gerar\+\_\+object\+\_\+field}}
+\index{gerar\+\_\+object\+\_\+field@{gerar\+\_\+object\+\_\+field}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{gerar\+\_\+object\+\_\+field()}{gerar\_object\_field()}}
+{\footnotesize\ttfamily \hyperlink{structobject__field}{object\+\_\+field} gerar\+\_\+object\+\_\+field (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+\_\+file,  }\item[{\hyperlink{struct_field__info}{Field\+\_\+info} $\ast$}]{field\+\_\+info }\end{DoxyParamCaption})}
 
-\hypertarget{object_manager_8c_aa30cac2463b0d9241c3e539e4f16b943}{}\label{object_manager_8c_aa30cac2463b0d9241c3e539e4f16b943} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!generate\+Object\+Field\+Array@{generate\+Object\+Field\+Array}}
-\index{generate\+Object\+Field\+Array@{generate\+Object\+Field\+Array}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{generate\+Object\+Field\+Array()}{gerar_object_field_array()}}
-{\footnotesize\ttfamily \hyperlink{struct_object_field}{Object\+Field} $\ast$ generate\+Object\+Field\+Array (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{uint16\+\_\+t}]{count }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8c_a0b9c1d296ef2e30f58059b9e6e3fafe5}\label{object_manager_8c_a0b9c1d296ef2e30f58059b9e6e3fafe5}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!gerar\+\_\+object\+\_\+field\+\_\+array@{gerar\+\_\+object\+\_\+field\+\_\+array}}
+\index{gerar\+\_\+object\+\_\+field\+\_\+array@{gerar\+\_\+object\+\_\+field\+\_\+array}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{gerar\+\_\+object\+\_\+field\+\_\+array()}{gerar\_object\_field\_array()}}
+{\footnotesize\ttfamily \hyperlink{structobject__field}{object\+\_\+field} $\ast$ gerar\+\_\+object\+\_\+field\+\_\+array (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+\_\+file,  }\item[{\hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2}}]{count }\end{DoxyParamCaption})}
 
-\hypertarget{object_manager_8c_a08a07d51a8a7fe3bb9fb633a96374879}{}\label{object_manager_8c_a08a07d51a8a7fe3bb9fb633a96374879} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!generate\+Object\+Field\+Count@{generate\+Object\+Field\+Count}}
-\index{generate\+Object\+Field\+Count@{generate\+Object\+Field\+Count}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{generate\+Object\+Field\+Count()}{gerar_object_field_count()}}
-{\footnotesize\ttfamily uint16\+\_\+t generate\+Object\+Field\+Count (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8c_aed79a9f1ca47d45b36d92a3be775f58a}\label{object_manager_8c_aed79a9f1ca47d45b36d92a3be775f58a}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!gerar\+\_\+object\+\_\+field\+\_\+count@{gerar\+\_\+object\+\_\+field\+\_\+count}}
+\index{gerar\+\_\+object\+\_\+field\+\_\+count@{gerar\+\_\+object\+\_\+field\+\_\+count}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{gerar\+\_\+object\+\_\+field\+\_\+count()}{gerar\_object\_field\_count()}}
+{\footnotesize\ttfamily \hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} gerar\+\_\+object\+\_\+field\+\_\+count (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
-\hypertarget{object_manager_8c_a51b10e3f17d5f25758caebedbe9ff866}{}\label{object_manager_8c_a51b10e3f17d5f25758caebedbe9ff866} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!generate\+Object\+Method@{generate\+Object\+Method}}
-\index{generate\+Object\+Method@{generate\+Object\+Method}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{generate\+Object\+Method()}{gerar_object_method()}}
-{\footnotesize\ttfamily \hyperlink{struct_object_method}{Object\+Method} generate\+Object\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$}]{method\+\_\+info }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8c_a4d45967c688b71715148c51896baa671}\label{object_manager_8c_a4d45967c688b71715148c51896baa671}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!gerar\+\_\+object\+\_\+method@{gerar\+\_\+object\+\_\+method}}
+\index{gerar\+\_\+object\+\_\+method@{gerar\+\_\+object\+\_\+method}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{gerar\+\_\+object\+\_\+method()}{gerar\_object\_method()}}
+{\footnotesize\ttfamily \hyperlink{structobject__method}{object\+\_\+method} gerar\+\_\+object\+\_\+method (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+\_\+file,  }\item[{\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$}]{method\+\_\+info }\end{DoxyParamCaption})}
 
-\hypertarget{object_manager_8c_ae0a895e091fa6a03c003069ad221977d}{}\label{object_manager_8c_ae0a895e091fa6a03c003069ad221977d} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!generate\+Object\+Method\+Array@{generate\+Object\+Method\+Array}}
-\index{generate\+Object\+Method\+Array@{generate\+Object\+Method\+Array}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{generate\+Object\+Method\+Array()}{gerar_object_method_array()}}
-{\footnotesize\ttfamily \hyperlink{struct_object_method}{Object\+Method} $\ast$ generate\+Object\+Method\+Array (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{uint16\+\_\+t}]{count }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8c_a99c65c9b0a6717e1f0f79bf7c0f7f533}\label{object_manager_8c_a99c65c9b0a6717e1f0f79bf7c0f7f533}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!gerar\+\_\+object\+\_\+method\+\_\+array@{gerar\+\_\+object\+\_\+method\+\_\+array}}
+\index{gerar\+\_\+object\+\_\+method\+\_\+array@{gerar\+\_\+object\+\_\+method\+\_\+array}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{gerar\+\_\+object\+\_\+method\+\_\+array()}{gerar\_object\_method\_array()}}
+{\footnotesize\ttfamily \hyperlink{structobject__method}{object\+\_\+method} $\ast$ gerar\+\_\+object\+\_\+method\+\_\+array (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+\_\+file,  }\item[{\hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2}}]{count }\end{DoxyParamCaption})}
 
-\hypertarget{object_manager_8c_a25ccf79158421f4aff17262096fb6e56}{}\label{object_manager_8c_a25ccf79158421f4aff17262096fb6e56} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!generate\+Object\+Method\+Count@{generate\+Object\+Method\+Count}}
-\index{generate\+Object\+Method\+Count@{generate\+Object\+Method\+Count}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{generate\+Object\+Method\+Count()}{gerar_object_method_count()}}
-{\footnotesize\ttfamily uint16\+\_\+t generate\+Object\+Method\+Count (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8c_a4988a0a469ff642407794ee949e86dfe}\label{object_manager_8c_a4988a0a469ff642407794ee949e86dfe}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!gerar\+\_\+object\+\_\+method\+\_\+count@{gerar\+\_\+object\+\_\+method\+\_\+count}}
+\index{gerar\+\_\+object\+\_\+method\+\_\+count@{gerar\+\_\+object\+\_\+method\+\_\+count}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{gerar\+\_\+object\+\_\+method\+\_\+count()}{gerar\_object\_method\_count()}}
+{\footnotesize\ttfamily \hyperlink{util_8h_a55ef8d87fd202b8417704c089899c5b9}{u2} gerar\+\_\+object\+\_\+method\+\_\+count (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+\_\+file }\end{DoxyParamCaption})}
 
-\hypertarget{object_manager_8c_a4e0494b9f5b7b399e73e7b1da38e2d6c}{}\label{object_manager_8c_a4e0494b9f5b7b399e73e7b1da38e2d6c} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!get\+Object\+Field\+Value\+By\+Name@{get\+Object\+Field\+Value\+By\+Name}}
-\index{get\+Object\+Field\+Value\+By\+Name@{get\+Object\+Field\+Value\+By\+Name}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{get\+Object\+Field\+Value\+By\+Name()}{buscar_object_field_value_por_nome()}}
-{\footnotesize\ttfamily uint64\+\_\+t get\+Object\+Field\+Value\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
-
-
-
-Retorna o field com nome \char`\"{}name\char`\"{} de um objeto. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em object} & referência para o objeto \\
-\hline
-{\em name} & nome do field desejado \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Retorna}
-uma referência caso o field for um objeto/array, ou um valor do campo nos outros casos 
-\end{DoxyReturn}
-\hypertarget{object_manager_8c_a82c9a8c25b0d7079e3f6289a5925c7e1}{}\label{object_manager_8c_a82c9a8c25b0d7079e3f6289a5925c7e1} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!get\+Object\+Method\+By\+Name@{get\+Object\+Method\+By\+Name}}
-\index{get\+Object\+Method\+By\+Name@{get\+Object\+Method\+By\+Name}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{get\+Object\+Method\+By\+Name()}{buscar_object_method_by_name()}}
-{\footnotesize\ttfamily \hyperlink{struct_object_method}{Object\+Method} get\+Object\+Method\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{method\+Name,  }\item[{char $\ast$}]{class\+Name }\end{DoxyParamCaption})}
-
-
-
-Retorna um método de um objeto. 
-
-
-\begin{DoxyParams}{Parâmetros}
-{\em object} & referência para o objeto \\
-\hline
-{\em method\+Name} & nome do método desejado \\
-\hline
-{\em class\+Name} & classe do método desejado (para caso de métodos com mesmo nome, como construtores) \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Retorna}
-refência para um objeto que contém informações do método 
-\end{DoxyReturn}
-\hypertarget{object_manager_8c_aa894740a7d501f453ab07155c008557a}{}\label{object_manager_8c_aa894740a7d501f453ab07155c008557a} 
-\index{object\+Manager.\+c@{object\+Manager.\+c}!set\+Object\+Field\+Value\+By\+Name@{set\+Object\+Field\+Value\+By\+Name}}
-\index{set\+Object\+Field\+Value\+By\+Name@{set\+Object\+Field\+Value\+By\+Name}!object\+Manager.\+c@{object\+Manager.\+c}}
-\subsubsection{\texorpdfstring{set\+Object\+Field\+Value\+By\+Name()}{set_object_field_value_por_nome()}}
-{\footnotesize\ttfamily void set\+Object\+Field\+Value\+By\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name,  }\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_manager_8c_a58cd1fbfe2b62eaf986c7e9fe88a4bdd}\label{object_manager_8c_a58cd1fbfe2b62eaf986c7e9fe88a4bdd}} 
+\index{object\+Manager.\+c@{object\+Manager.\+c}!set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome@{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome}}
+\index{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome@{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome}!object\+Manager.\+c@{object\+Manager.\+c}}
+\subsubsection{\texorpdfstring{set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome()}{set\_object\_field\_value\_por\_nome()}}
+{\footnotesize\ttfamily void set\+\_\+object\+\_\+field\+\_\+value\+\_\+por\+\_\+nome (\begin{DoxyParamCaption}\item[{\hyperlink{struct_object}{Object} $\ast$}]{object,  }\item[{char $\ast$}]{name,  }\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>JVM: Referência ao ficheiro classLoader.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.8.12 -->
+<!-- Gerado por Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
 </script>
@@ -73,6 +73,7 @@ $(function() {
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
 </div>
 <p><a href="class_loader_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
 <table class="memberdecls">
@@ -309,21 +310,21 @@ Definições de tipos</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a054f9d1d78ad324c23b67bb02a57dac6">carregar_classe</a> (char *className)</td></tr>
-<tr class="memdesc:a054f9d1d78ad324c23b67bb02a57dac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada.  <a href="#a054f9d1d78ad324c23b67bb02a57dac6">Mais...</a><br /></td></tr>
-<tr class="separator:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#adbc64e22f2dcd5daae28f25cb3c6d2c3">acessar_constant_pool_entry</a> (int index, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool)</td></tr>
-<tr class="memdesc:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que retorna uma string que representa o valor de uma das constantes do Constant Pool.  <a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">Mais...</a><br /></td></tr>
-<tr class="separator:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67054480a9f3874ba2f0196b60a4350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ae67054480a9f3874ba2f0196b60a4350">verificar_magic_number</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
-<tr class="memdesc:ae67054480a9f3874ba2f0196b60a4350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic.  <a href="#ae67054480a9f3874ba2f0196b60a4350">Mais...</a><br /></td></tr>
-<tr class="separator:ae67054480a9f3874ba2f0196b60a4350"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af07fd265d4b963d7972e5a683e6c4050"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#af07fd265d4b963d7972e5a683e6c4050">verificar_nome_classe_artigo</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, char *nomeArquivo)</td></tr>
-<tr class="memdesc:af07fd265d4b963d7972e5a683e6c4050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o nome da classe do .class bate com o do arquivo.  <a href="#af07fd265d4b963d7972e5a683e6c4050">Mais...</a><br /></td></tr>
-<tr class="separator:af07fd265d4b963d7972e5a683e6c4050"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a37e5445b741ed921d544e5fdd76f1dbc">verificar_versao</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
-<tr class="memdesc:a37e5445b741ed921d544e5fdd76f1dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se a major version do .class é suportada pelo java 2.  <a href="#a37e5445b741ed921d544e5fdd76f1dbc">Mais...</a><br /></td></tr>
-<tr class="separator:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf68bc1426bc5087586572817ae0f16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a6cf68bc1426bc5087586572817ae0f16">carregar_classe</a> (char *className)</td></tr>
+<tr class="memdesc:a6cf68bc1426bc5087586572817ae0f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada.  <a href="#a6cf68bc1426bc5087586572817ae0f16">Mais...</a><br /></td></tr>
+<tr class="separator:a6cf68bc1426bc5087586572817ae0f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576ae95a803e34e8c225a427f667dc75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a64f8055b64cf2a4c299c841130c5c938">u1</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a576ae95a803e34e8c225a427f667dc75">acessar_constant_pool_entry</a> (int index, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool)</td></tr>
+<tr class="memdesc:a576ae95a803e34e8c225a427f667dc75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entra na constant_pool e pega o valor de uma das entradas.  <a href="#a576ae95a803e34e8c225a427f667dc75">Mais...</a><br /></td></tr>
+<tr class="separator:a576ae95a803e34e8c225a427f667dc75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b11e11356b5a8922f066cc8e76fb1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a06b11e11356b5a8922f066cc8e76fb1e">verificar_magic_number</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:a06b11e11356b5a8922f066cc8e76fb1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic.  <a href="#a06b11e11356b5a8922f066cc8e76fb1e">Mais...</a><br /></td></tr>
+<tr class="separator:a06b11e11356b5a8922f066cc8e76fb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38fba4a49d5d320fb4c82bbf983a8f7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a38fba4a49d5d320fb4c82bbf983a8f7f">verificar_nome_classe_artigo</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, char *nomeArquivo)</td></tr>
+<tr class="memdesc:a38fba4a49d5d320fb4c82bbf983a8f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o nome da classe do .class bate com o do arquivo.  <a href="#a38fba4a49d5d320fb4c82bbf983a8f7f">Mais...</a><br /></td></tr>
+<tr class="separator:a38fba4a49d5d320fb4c82bbf983a8f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa30c5d49114c3b975617c033d9637141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#aa30c5d49114c3b975617c033d9637141">verificar_versao</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memdesc:aa30c5d49114c3b975617c033d9637141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se a major version do .class é suportada pelo java 2.  <a href="#aa30c5d49114c3b975617c033d9637141">Mais...</a><br /></td></tr>
+<tr class="separator:aa30c5d49114c3b975617c033d9637141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variáveis</h2></td></tr>
@@ -332,7 +333,7 @@ Variáveis</h2></td></tr>
 </table>
 <h2 class="groupheader">Documentação das macros</h2>
 <a id="a72b5b534aa409975da610a36f648fa0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72b5b534aa409975da610a36f648fa0a">&sect;&nbsp;</a></span>CONSTANT_Class</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a72b5b534aa409975da610a36f648fa0a">&#9670;&nbsp;</a></span>CONSTANT_Class</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -346,7 +347,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ab49341c3b4ade4bfa1a64be8d2f73ae1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab49341c3b4ade4bfa1a64be8d2f73ae1">&sect;&nbsp;</a></span>CONSTANT_Double</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49341c3b4ade4bfa1a64be8d2f73ae1">&#9670;&nbsp;</a></span>CONSTANT_Double</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,7 +361,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a008d43478c2e2973e7413f5d1c48095d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a008d43478c2e2973e7413f5d1c48095d">&sect;&nbsp;</a></span>CONSTANT_Fieldref</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a008d43478c2e2973e7413f5d1c48095d">&#9670;&nbsp;</a></span>CONSTANT_Fieldref</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,7 +375,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ab914627ce5b25c4acfc98f2eacb78473"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab914627ce5b25c4acfc98f2eacb78473">&sect;&nbsp;</a></span>CONSTANT_Float</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab914627ce5b25c4acfc98f2eacb78473">&#9670;&nbsp;</a></span>CONSTANT_Float</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,7 +389,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a856a6553a55d721970ca5450eb1ccd2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a856a6553a55d721970ca5450eb1ccd2c">&sect;&nbsp;</a></span>CONSTANT_Integer</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a856a6553a55d721970ca5450eb1ccd2c">&#9670;&nbsp;</a></span>CONSTANT_Integer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,7 +403,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ac0e92044d246c6e4d691116f89a70ebb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0e92044d246c6e4d691116f89a70ebb">&sect;&nbsp;</a></span>CONSTANT_InterfaceMethodref</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e92044d246c6e4d691116f89a70ebb">&#9670;&nbsp;</a></span>CONSTANT_InterfaceMethodref</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,7 +417,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a127046386d755d4a91c71aa9b453a8bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a127046386d755d4a91c71aa9b453a8bb">&sect;&nbsp;</a></span>CONSTANT_InvokeDynamic</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a127046386d755d4a91c71aa9b453a8bb">&#9670;&nbsp;</a></span>CONSTANT_InvokeDynamic</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -430,7 +431,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a426ca017b895fc522671a561d460be7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a426ca017b895fc522671a561d460be7a">&sect;&nbsp;</a></span>CONSTANT_Long</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a426ca017b895fc522671a561d460be7a">&#9670;&nbsp;</a></span>CONSTANT_Long</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -444,7 +445,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="adb3c84f82163f217ab7f8fa0258d80ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb3c84f82163f217ab7f8fa0258d80ce">&sect;&nbsp;</a></span>CONSTANT_MethodHandle</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adb3c84f82163f217ab7f8fa0258d80ce">&#9670;&nbsp;</a></span>CONSTANT_MethodHandle</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -458,7 +459,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a2a179cf178ea867c6ab1700508c269dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a179cf178ea867c6ab1700508c269dd">&sect;&nbsp;</a></span>CONSTANT_Methodref</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a179cf178ea867c6ab1700508c269dd">&#9670;&nbsp;</a></span>CONSTANT_Methodref</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,7 +473,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a991ba557d63f94e2cdf05c9f80630a6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a991ba557d63f94e2cdf05c9f80630a6f">&sect;&nbsp;</a></span>CONSTANT_MethodType</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a991ba557d63f94e2cdf05c9f80630a6f">&#9670;&nbsp;</a></span>CONSTANT_MethodType</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -486,7 +487,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a5b6ba749976ae61415983ca0b890c91a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b6ba749976ae61415983ca0b890c91a">&sect;&nbsp;</a></span>CONSTANT_NameAndType</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b6ba749976ae61415983ca0b890c91a">&#9670;&nbsp;</a></span>CONSTANT_NameAndType</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +501,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a0a7acbe175de56072a2f0a1a051418e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a7acbe175de56072a2f0a1a051418e1">&sect;&nbsp;</a></span>CONSTANT_String</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7acbe175de56072a2f0a1a051418e1">&#9670;&nbsp;</a></span>CONSTANT_String</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,7 +515,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="afc46559a7d3f7baf519fc183c2fad2b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc46559a7d3f7baf519fc183c2fad2b4">&sect;&nbsp;</a></span>CONSTANT_Utf8</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afc46559a7d3f7baf519fc183c2fad2b4">&#9670;&nbsp;</a></span>CONSTANT_Utf8</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -529,7 +530,7 @@ Variáveis</h2></td></tr>
 </div>
 <h2 class="groupheader">Documentação dos tipos</h2>
 <a id="a212a9d4aa2f66b9e1f5e13a35cbadacb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a212a9d4aa2f66b9e1f5e13a35cbadacb">&sect;&nbsp;</a></span>Attribute_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a212a9d4aa2f66b9e1f5e13a35cbadacb">&#9670;&nbsp;</a></span>Attribute_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -543,7 +544,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ae0b0a5eb3797bef0dd32802591c04323"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0b0a5eb3797bef0dd32802591c04323">&sect;&nbsp;</a></span>attribute_pointer</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b0a5eb3797bef0dd32802591c04323">&#9670;&nbsp;</a></span>attribute_pointer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -559,7 +560,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ac14884605a91c8b411791bd95a7636f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac14884605a91c8b411791bd95a7636f5">&sect;&nbsp;</a></span>bootstrap_methods</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14884605a91c8b411791bd95a7636f5">&#9670;&nbsp;</a></span>bootstrap_methods</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,7 +576,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a2fef54220191eb558ae91be5fa0fd2b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fef54220191eb558ae91be5fa0fd2b5">&sect;&nbsp;</a></span>BootstrapMethods_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fef54220191eb558ae91be5fa0fd2b5">&#9670;&nbsp;</a></span>BootstrapMethods_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -589,7 +590,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a3360f51937b6ef3bac71814699e546b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3360f51937b6ef3bac71814699e546b2">&sect;&nbsp;</a></span>Class_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3360f51937b6ef3bac71814699e546b2">&#9670;&nbsp;</a></span>Class_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -603,7 +604,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a08d8d7581fd08212fad9c390183f1b1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08d8d7581fd08212fad9c390183f1b1b">&sect;&nbsp;</a></span>Classes</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d8d7581fd08212fad9c390183f1b1b">&#9670;&nbsp;</a></span>Classes</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -619,7 +620,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="aa2722eac638126419cda16ab0a201376"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2722eac638126419cda16ab0a201376">&sect;&nbsp;</a></span>ClassFile</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2722eac638126419cda16ab0a201376">&#9670;&nbsp;</a></span>ClassFile</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -633,7 +634,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="aa9fcfc552a29567bbd53aeb83e864118"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9fcfc552a29567bbd53aeb83e864118">&sect;&nbsp;</a></span>Code_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fcfc552a29567bbd53aeb83e864118">&#9670;&nbsp;</a></span>Code_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -647,7 +648,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a636712c88fb34aa4a0faeff41223844c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a636712c88fb34aa4a0faeff41223844c">&sect;&nbsp;</a></span>ConstantValue_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a636712c88fb34aa4a0faeff41223844c">&#9670;&nbsp;</a></span>ConstantValue_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -663,7 +664,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a3ff61ddfad9e520371345eb5736e3976"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ff61ddfad9e520371345eb5736e3976">&sect;&nbsp;</a></span>Cp_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff61ddfad9e520371345eb5736e3976">&#9670;&nbsp;</a></span>Cp_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -677,7 +678,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="aef134ca7805a6ebce7bf1e49361eb767"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef134ca7805a6ebce7bf1e49361eb767">&sect;&nbsp;</a></span>Deprecated_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aef134ca7805a6ebce7bf1e49361eb767">&#9670;&nbsp;</a></span>Deprecated_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -693,7 +694,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="aa7e6a5a324d048f51433494c5085deb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7e6a5a324d048f51433494c5085deb5">&sect;&nbsp;</a></span>Double_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7e6a5a324d048f51433494c5085deb5">&#9670;&nbsp;</a></span>Double_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -707,7 +708,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a6cd90bb2bf92f4158e0644e61b5d36c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cd90bb2bf92f4158e0644e61b5d36c1">&sect;&nbsp;</a></span>EnclosingMethod_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd90bb2bf92f4158e0644e61b5d36c1">&#9670;&nbsp;</a></span>EnclosingMethod_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -723,7 +724,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a221b9693e220df24ce3b6a3df1e70605"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a221b9693e220df24ce3b6a3df1e70605">&sect;&nbsp;</a></span>exception_table</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a221b9693e220df24ce3b6a3df1e70605">&#9670;&nbsp;</a></span>exception_table</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -739,7 +740,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ac330bf061900eb51490c00a1d573f0ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac330bf061900eb51490c00a1d573f0ee">&sect;&nbsp;</a></span>Exceptions_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac330bf061900eb51490c00a1d573f0ee">&#9670;&nbsp;</a></span>Exceptions_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -755,7 +756,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a01068f3927029a2624e7fc1a146da360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01068f3927029a2624e7fc1a146da360">&sect;&nbsp;</a></span>Field_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a01068f3927029a2624e7fc1a146da360">&#9670;&nbsp;</a></span>Field_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -769,7 +770,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a1a6c96ea384c06448120bd2414d52335"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a6c96ea384c06448120bd2414d52335">&sect;&nbsp;</a></span>Fieldref_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6c96ea384c06448120bd2414d52335">&#9670;&nbsp;</a></span>Fieldref_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -783,7 +784,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a13bcd7f88efd0679c6d72324ac0136bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13bcd7f88efd0679c6d72324ac0136bd">&sect;&nbsp;</a></span>Float_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a13bcd7f88efd0679c6d72324ac0136bd">&#9670;&nbsp;</a></span>Float_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -797,7 +798,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a7d4d0fe894d6eefdb230a2b0283b13d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d4d0fe894d6eefdb230a2b0283b13d6">&sect;&nbsp;</a></span>info_pointer</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4d0fe894d6eefdb230a2b0283b13d6">&#9670;&nbsp;</a></span>info_pointer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -811,7 +812,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a7ead007231e060b83061b50d2dcdf1cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ead007231e060b83061b50d2dcdf1cf">&sect;&nbsp;</a></span>InnerClasses_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ead007231e060b83061b50d2dcdf1cf">&#9670;&nbsp;</a></span>InnerClasses_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -825,7 +826,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="acc5a3e36ee075d2a192259b6674829f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc5a3e36ee075d2a192259b6674829f7">&sect;&nbsp;</a></span>Integer_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5a3e36ee075d2a192259b6674829f7">&#9670;&nbsp;</a></span>Integer_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -839,7 +840,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a9b2cad31056620602dae325294154df5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b2cad31056620602dae325294154df5">&sect;&nbsp;</a></span>InterfaceMethodref_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b2cad31056620602dae325294154df5">&#9670;&nbsp;</a></span>InterfaceMethodref_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -853,7 +854,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a3f54cdbe2c57e640e3126d6f0a21d1b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f54cdbe2c57e640e3126d6f0a21d1b6">&sect;&nbsp;</a></span>InvokeDynamic_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f54cdbe2c57e640e3126d6f0a21d1b6">&#9670;&nbsp;</a></span>InvokeDynamic_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -867,7 +868,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="adc39fcd2453b9af80360841c9e5a56bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc39fcd2453b9af80360841c9e5a56bc">&sect;&nbsp;</a></span>line_number_table</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adc39fcd2453b9af80360841c9e5a56bc">&#9670;&nbsp;</a></span>line_number_table</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -883,7 +884,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a0428e8301bb51ca96ca465f181d4bb56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0428e8301bb51ca96ca465f181d4bb56">&sect;&nbsp;</a></span>LineNumberTable_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0428e8301bb51ca96ca465f181d4bb56">&#9670;&nbsp;</a></span>LineNumberTable_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -897,7 +898,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ae045ac5cb4d68040806388e1ee9bb9d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae045ac5cb4d68040806388e1ee9bb9d2">&sect;&nbsp;</a></span>local_variable_table</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae045ac5cb4d68040806388e1ee9bb9d2">&#9670;&nbsp;</a></span>local_variable_table</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -913,7 +914,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a340f38fdc660476ae6372860917f127f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a340f38fdc660476ae6372860917f127f">&sect;&nbsp;</a></span>local_variable_type_table</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a340f38fdc660476ae6372860917f127f">&#9670;&nbsp;</a></span>local_variable_type_table</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -929,7 +930,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a26868272c9eb00b00cf0307459b29e5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26868272c9eb00b00cf0307459b29e5f">&sect;&nbsp;</a></span>LocalVariableTable_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a26868272c9eb00b00cf0307459b29e5f">&#9670;&nbsp;</a></span>LocalVariableTable_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -943,7 +944,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a358acf4a1763e6f1b39072db67c258c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a358acf4a1763e6f1b39072db67c258c9">&sect;&nbsp;</a></span>LocalVariableTypeTable_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a358acf4a1763e6f1b39072db67c258c9">&#9670;&nbsp;</a></span>LocalVariableTypeTable_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -957,7 +958,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a3fc76c98ba6a31aa6cc8fd9c7cc45deb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fc76c98ba6a31aa6cc8fd9c7cc45deb">&sect;&nbsp;</a></span>Long_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc76c98ba6a31aa6cc8fd9c7cc45deb">&#9670;&nbsp;</a></span>Long_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -971,7 +972,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="aa02eb286fc0a21e8d1754026aba939b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa02eb286fc0a21e8d1754026aba939b3">&sect;&nbsp;</a></span>Method_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02eb286fc0a21e8d1754026aba939b3">&#9670;&nbsp;</a></span>Method_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -985,7 +986,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="acad3ff9facfe09ba4edcd0743cd5ebf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acad3ff9facfe09ba4edcd0743cd5ebf6">&sect;&nbsp;</a></span>MethodHandle_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acad3ff9facfe09ba4edcd0743cd5ebf6">&#9670;&nbsp;</a></span>MethodHandle_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -999,7 +1000,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a9d14a49ad2aa3c665807b93cef897646"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d14a49ad2aa3c665807b93cef897646">&sect;&nbsp;</a></span>Methodref_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d14a49ad2aa3c665807b93cef897646">&#9670;&nbsp;</a></span>Methodref_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1013,7 +1014,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a2f569353b0286c20aa69c0f7c83b7f42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f569353b0286c20aa69c0f7c83b7f42">&sect;&nbsp;</a></span>MethodType_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f569353b0286c20aa69c0f7c83b7f42">&#9670;&nbsp;</a></span>MethodType_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1027,7 +1028,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a0d921ff7200111aa8127e56ea4259300"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d921ff7200111aa8127e56ea4259300">&sect;&nbsp;</a></span>NameAndType_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d921ff7200111aa8127e56ea4259300">&#9670;&nbsp;</a></span>NameAndType_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1041,7 +1042,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a3573119d158fcaa25656263b29c49942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3573119d158fcaa25656263b29c49942">&sect;&nbsp;</a></span>Signature_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3573119d158fcaa25656263b29c49942">&#9670;&nbsp;</a></span>Signature_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1057,7 +1058,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a1a90fcc47c8fb1ef36bc1bdcf38fc4ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a90fcc47c8fb1ef36bc1bdcf38fc4ed">&sect;&nbsp;</a></span>SourceDebugExtension_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a90fcc47c8fb1ef36bc1bdcf38fc4ed">&#9670;&nbsp;</a></span>SourceDebugExtension_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1073,7 +1074,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="acb8b65b933bdd949b533fe0dc8ddd31e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb8b65b933bdd949b533fe0dc8ddd31e">&sect;&nbsp;</a></span>SourceFile_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acb8b65b933bdd949b533fe0dc8ddd31e">&#9670;&nbsp;</a></span>SourceFile_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1089,7 +1090,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a765681bbc37bea14a966a81a950027b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a765681bbc37bea14a966a81a950027b1">&sect;&nbsp;</a></span>String_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a765681bbc37bea14a966a81a950027b1">&#9670;&nbsp;</a></span>String_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1103,7 +1104,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ae00366bbab014ac22f3427dc33a60694"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae00366bbab014ac22f3427dc33a60694">&sect;&nbsp;</a></span>Synthetic_attribute</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00366bbab014ac22f3427dc33a60694">&#9670;&nbsp;</a></span>Synthetic_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1119,7 +1120,7 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="adc076fd8628f664b7c6bc6fa48c4fed1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc076fd8628f664b7c6bc6fa48c4fed1">&sect;&nbsp;</a></span>Utf8_info</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adc076fd8628f664b7c6bc6fa48c4fed1">&#9670;&nbsp;</a></span>Utf8_info</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1133,14 +1134,14 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentação das funções</h2>
-<a id="adbc64e22f2dcd5daae28f25cb3c6d2c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">&sect;&nbsp;</a></span>acessar_constant_pool_entry()</h2>
+<a id="a576ae95a803e34e8c225a427f667dc75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a576ae95a803e34e8c225a427f667dc75">&#9670;&nbsp;</a></span>acessar_constant_pool_entry()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t* acessar_constant_pool_entry </td>
+          <td class="memname"><a class="el" href="util_8h.html#a64f8055b64cf2a4c299c841130c5c938">u1</a>* acessar_constant_pool_entry </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -1159,20 +1160,56 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Função que retorna uma string que representa o valor de uma das constantes do Constant Pool. </p>
+<p>Entra na constant_pool e pega o valor de uma das entradas. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>index da constante no Constant Pool </td></tr>
-    <tr><td class="paramname">constant_pool</td><td>ponteiro para um Constant Pool </td></tr>
+    <tr><td class="paramname">index</td><td>Index da entrada da constant_pool </td></tr>
+    <tr><td class="paramname">constant_pool</td><td>Ponteiro para a constant_pool </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>ponteiro para uma string </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Valor de uma entrada da constant_pool como string</dd></dl>
+<p>Entra na constant_pool e pega o valor de uma das entradas.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index da constante no Constant Pool </td></tr>
+    <tr><td class="paramname">constant_pool</td><td>Ponteiro para um Constant Pool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para uma string </dd></dl>
 
 </div>
 </div>
-<a id="ae67054480a9f3874ba2f0196b60a4350"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae67054480a9f3874ba2f0196b60a4350">&sect;&nbsp;</a></span>verificar_magic_number()</h2>
+<a id="a6cf68bc1426bc5087586572817ae0f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf68bc1426bc5087586572817ae0f16">&#9670;&nbsp;</a></span>carregar_classe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* carregar_classe </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>className</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td>Nome da classe a ser lida </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Referência para uma struct <a class="el" href="struct_class_file.html">ClassFile</a> </dd></dl>
+
+</div>
+</div>
+<a id="a06b11e11356b5a8922f066cc8e76fb1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b11e11356b5a8922f066cc8e76fb1e">&#9670;&nbsp;</a></span>verificar_magic_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1198,8 +1235,8 @@ Variáveis</h2></td></tr>
 
 </div>
 </div>
-<a id="af07fd265d4b963d7972e5a683e6c4050"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af07fd265d4b963d7972e5a683e6c4050">&sect;&nbsp;</a></span>verificar_nome_classe_artigo()</h2>
+<a id="a38fba4a49d5d320fb4c82bbf983a8f7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38fba4a49d5d320fb4c82bbf983a8f7f">&#9670;&nbsp;</a></span>verificar_nome_classe_artigo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1236,35 +1273,8 @@ Variáveis</h2></td></tr>
 
 </div>
 </div>
-<a id="a054f9d1d78ad324c23b67bb02a57dac6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a054f9d1d78ad324c23b67bb02a57dac6">&sect;&nbsp;</a></span>carregar_classe()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* carregar_classe </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>className</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada. </p>
-<dl class="params"><dt>Parâmetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">className</td><td>Nome da classe a ser lida </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Retorna</dt><dd>Referência para uma struct <a class="el" href="struct_class_file.html">ClassFile</a> </dd></dl>
-
-</div>
-</div>
-<a id="a37e5445b741ed921d544e5fdd76f1dbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37e5445b741ed921d544e5fdd76f1dbc">&sect;&nbsp;</a></span>verificar_versao()</h2>
+<a id="aa30c5d49114c3b975617c033d9637141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30c5d49114c3b975617c033d9637141">&#9670;&nbsp;</a></span>verificar_versao()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1292,7 +1302,7 @@ Variáveis</h2></td></tr>
 </div>
 <h2 class="groupheader">Documentação das variáveis</h2>
 <a id="a48f76a8c0dc23567f303ed6aa221e078"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48f76a8c0dc23567f303ed6aa221e078">&sect;&nbsp;</a></span>DEBUG</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f76a8c0dc23567f303ed6aa221e078">&#9670;&nbsp;</a></span>DEBUG</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1310,7 +1320,7 @@ Variáveis</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.12
+</a> 1.8.13
 </small></address>
 </body>
 </html>

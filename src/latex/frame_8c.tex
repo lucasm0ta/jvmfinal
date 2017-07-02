@@ -4,38 +4,40 @@
 {\ttfamily \#include \char`\"{}instructions.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}method\+Area.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}class\+Loader.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}instrucao\+decoder.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}instruction\+Mapper.\+h\char`\"{}}\newline
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{frame_8c_ab66470d49b0a83dcec2356c679c62785}{create\+Frame} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$cp, \hyperlink{struct_class_file}{Class\+File} $\ast$classe, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code)
+void \hyperlink{frame_8c_aed8410dc74b71f413e8ec2c52998c40b}{criar\+\_\+frame} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$cp, \hyperlink{struct_class_file}{Class\+File} $\ast$classe, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code)
 \begin{DoxyCompactList}\small\item\em Realiza a criacao do frame. \end{DoxyCompactList}\item 
-void \hyperlink{frame_8c_a2e6e6cebdd12fe3578cc93ca8997ddbe}{push\+Frame} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$cp, \hyperlink{struct_class_file}{Class\+File} $\ast$classe, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code, struct \hyperlink{structstack_frame}{stack\+Frame} $\ast$sf)
+void \hyperlink{frame_8c_a214358ae31494774ad5296962a37f704}{empilhar\+\_\+frame} (\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$cp, \hyperlink{struct_class_file}{Class\+File} $\ast$classe, \hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$code, struct \hyperlink{structpilha__frame}{pilha\+\_\+frame} $\ast$pf)
 \begin{DoxyCompactList}\small\item\em Coloca um frame na pilha de frames. \end{DoxyCompactList}\item 
-void \hyperlink{frame_8c_aca9cbfa46eaa4e3c07217b16d0c5212e}{pop\+Frame} ()
-\begin{DoxyCompactList}\small\item\em Retira um frame do cabeca da pilha, libera seu espaço de memoria. \end{DoxyCompactList}\item
-void \hyperlink{frame_8c_a84f8e58495f9af2999e9c89c15f08e97}{push\+Operand} (int32\+\_\+t value)
+void \hyperlink{frame_8c_aa4417dea7d64e2cc7168133442358ab7}{desempilhar\+\_\+frame} ()
+\begin{DoxyCompactList}\small\item\em Retira um frame do topo da pilha, libera seu espaço de memoria. \end{DoxyCompactList}\item 
+void \hyperlink{frame_8c_a6b746e737e7e2418bca26b0edb5f7050}{empilhar\+\_\+operando} (int32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Coloca um operando na pilha de operandos do frame. \end{DoxyCompactList}\item 
-int32\+\_\+t \hyperlink{frame_8c_a26b76e4bcd7752493dd4aae90a2bf2ba}{pop\+Operand} ()
+int32\+\_\+t \hyperlink{frame_8c_a5fcb5aca5b15bd9457bcc68ecde93a8f}{desempilhar\+\_\+operando} ()
 \begin{DoxyCompactList}\small\item\em Retira e devolve um valor armazenado na pilha de operandos. \end{DoxyCompactList}\item 
-void \hyperlink{frame_8c_a389570f654e724ed55f27681229dcb21}{run\+Frame} ()
+void \hyperlink{frame_8c_a91c192866c5a9f5169bb0325ff105250}{executar\+\_\+frame} ()
 \begin{DoxyCompactList}\small\item\em Roda os frames. \end{DoxyCompactList}\item 
-void \hyperlink{frame_8c_ae0fb52d3c757f62209b021cd059386a3}{push\+Method} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, \hyperlink{struct_method__info}{Method\+\_\+info} $\ast$method)
+void \hyperlink{frame_8c_a5459590455d07edc07d7661f970be69c}{empilhar\+\_\+metodo} (\hyperlink{struct_class_file}{Class\+File} $\ast$class\+File, \hyperlink{struct_method__info}{Method\+\_\+info} $\ast$method)
 \begin{DoxyCompactList}\small\item\em Chama um metodo criando um frame para ele. \end{DoxyCompactList}\item 
 void \hyperlink{frame_8c_ab77078d864b42dc2a48ab02e8fc2cfc9}{dump\+Stack} (int i)
 \begin{DoxyCompactList}\small\item\em Sai do método. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Documentação das funções}
-\hypertarget{frame_8c_ab66470d49b0a83dcec2356c679c62785}{}\label{frame_8c_ab66470d49b0a83dcec2356c679c62785} 
-\index{frame.\+c@{frame.\+c}!create\+Frame@{create\+Frame}}
-\index{create\+Frame@{create\+Frame}!frame.\+c@{frame.\+c}}
-\subsubsection{\texorpdfstring{create\+Frame()}{criar_frame()}}
-{\footnotesize\ttfamily void create\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{cp,  }\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{classe,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{frame_8c_aed8410dc74b71f413e8ec2c52998c40b}\label{frame_8c_aed8410dc74b71f413e8ec2c52998c40b}} 
+\index{frame.\+c@{frame.\+c}!criar\+\_\+frame@{criar\+\_\+frame}}
+\index{criar\+\_\+frame@{criar\+\_\+frame}!frame.\+c@{frame.\+c}}
+\subsubsection{\texorpdfstring{criar\+\_\+frame()}{criar\_frame()}}
+{\footnotesize\ttfamily void criar\+\_\+frame (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{cp,  }\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{classe,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code }\end{DoxyParamCaption})}
 
 
 
 Realiza a criacao do frame. 
+
+Cria a estrutura do frame e faz empilha ela.
 
 
 \begin{DoxyParams}{Parâmetros}
@@ -46,7 +48,32 @@ Realiza a criacao do frame.
 {\em code} & atributo de codigo \\
 \hline
 \end{DoxyParams}
-\hypertarget{frame_8c_ab77078d864b42dc2a48ab02e8fc2cfc9}{}\label{frame_8c_ab77078d864b42dc2a48ab02e8fc2cfc9} 
+\mbox{\Hypertarget{frame_8c_aa4417dea7d64e2cc7168133442358ab7}\label{frame_8c_aa4417dea7d64e2cc7168133442358ab7}} 
+\index{frame.\+c@{frame.\+c}!desempilhar\+\_\+frame@{desempilhar\+\_\+frame}}
+\index{desempilhar\+\_\+frame@{desempilhar\+\_\+frame}!frame.\+c@{frame.\+c}}
+\subsubsection{\texorpdfstring{desempilhar\+\_\+frame()}{desempilhar\_frame()}}
+{\footnotesize\ttfamily void desempilhar\+\_\+frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retira um frame do topo da pilha, libera seu espaço de memoria. 
+
+Desempilha um frame, liberando toda a memoria usada por esse frame. \mbox{\Hypertarget{frame_8c_a5fcb5aca5b15bd9457bcc68ecde93a8f}\label{frame_8c_a5fcb5aca5b15bd9457bcc68ecde93a8f}} 
+\index{frame.\+c@{frame.\+c}!desempilhar\+\_\+operando@{desempilhar\+\_\+operando}}
+\index{desempilhar\+\_\+operando@{desempilhar\+\_\+operando}!frame.\+c@{frame.\+c}}
+\subsubsection{\texorpdfstring{desempilhar\+\_\+operando()}{desempilhar\_operando()}}
+{\footnotesize\ttfamily int32\+\_\+t desempilhar\+\_\+operando (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retira e devolve um valor armazenado na pilha de operandos. 
+
+Desempilha o valor da pilha e retorna esse valor.
+
+\begin{DoxyReturn}{Retorna}
+Valor antes armazenado na pilha de operandos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{frame_8c_ab77078d864b42dc2a48ab02e8fc2cfc9}\label{frame_8c_ab77078d864b42dc2a48ab02e8fc2cfc9}} 
 \index{frame.\+c@{frame.\+c}!dump\+Stack@{dump\+Stack}}
 \index{dump\+Stack@{dump\+Stack}!frame.\+c@{frame.\+c}}
 \subsubsection{\texorpdfstring{dump\+Stack()}{dumpStack()}}
@@ -56,43 +83,24 @@ Realiza a criacao do frame.
 
 Sai do método. 
 
+Saida do metodo atual, destruindo o flame.
+
 
 \begin{DoxyParams}{Parâmetros}
 {\em Flag} & para saida \\
 \hline
 \end{DoxyParams}
-\hypertarget{frame_8c_aca9cbfa46eaa4e3c07217b16d0c5212e}{}\label{frame_8c_aca9cbfa46eaa4e3c07217b16d0c5212e} 
-\index{frame.\+c@{frame.\+c}!pop\+Frame@{pop\+Frame}}
-\index{pop\+Frame@{pop\+Frame}!frame.\+c@{frame.\+c}}
-\subsubsection{\texorpdfstring{pop\+Frame()}{desempilhar_frame()}}
-{\footnotesize\ttfamily void pop\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Retira um frame do cabeca da pilha, libera seu espaço de memoria.
-
-\hypertarget{frame_8c_a26b76e4bcd7752493dd4aae90a2bf2ba}{}\label{frame_8c_a26b76e4bcd7752493dd4aae90a2bf2ba} 
-\index{frame.\+c@{frame.\+c}!pop\+Operand@{pop\+Operand}}
-\index{pop\+Operand@{pop\+Operand}!frame.\+c@{frame.\+c}}
-\subsubsection{\texorpdfstring{pop\+Operand()}{desempilhar_operando()}}
-{\footnotesize\ttfamily int32\+\_\+t pop\+Operand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Retira e devolve um valor armazenado na pilha de operandos. 
-
-\begin{DoxyReturn}{Retorna}
-Valor antes armazenado na pilha de operandos 
-\end{DoxyReturn}
-\hypertarget{frame_8c_a2e6e6cebdd12fe3578cc93ca8997ddbe}{}\label{frame_8c_a2e6e6cebdd12fe3578cc93ca8997ddbe} 
-\index{frame.\+c@{frame.\+c}!push\+Frame@{push\+Frame}}
-\index{push\+Frame@{push\+Frame}!frame.\+c@{frame.\+c}}
-\subsubsection{\texorpdfstring{push\+Frame()}{empilhar_frame()}}
-{\footnotesize\ttfamily void push\+Frame (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{cp,  }\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{classe,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code,  }\item[{struct \hyperlink{structstack_frame}{stack\+Frame} $\ast$}]{sf }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{frame_8c_a214358ae31494774ad5296962a37f704}\label{frame_8c_a214358ae31494774ad5296962a37f704}} 
+\index{frame.\+c@{frame.\+c}!empilhar\+\_\+frame@{empilhar\+\_\+frame}}
+\index{empilhar\+\_\+frame@{empilhar\+\_\+frame}!frame.\+c@{frame.\+c}}
+\subsubsection{\texorpdfstring{empilhar\+\_\+frame()}{empilhar\_frame()}}
+{\footnotesize\ttfamily void empilhar\+\_\+frame (\begin{DoxyParamCaption}\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{cp,  }\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{classe,  }\item[{\hyperlink{struct_code__attribute}{Code\+\_\+attribute} $\ast$}]{code,  }\item[{struct \hyperlink{structpilha__frame}{pilha\+\_\+frame} $\ast$}]{pf }\end{DoxyParamCaption})}
 
 
 
 Coloca um frame na pilha de frames. 
+
+Empilha um frame na pilha.
 
 
 \begin{DoxyParams}{Parâmetros}
@@ -102,18 +110,20 @@ Coloca um frame na pilha de frames.
 \hline
 {\em code} & Atributo de codigo \\
 \hline
-{\em sf} & Ponteiro para o frame \\
+{\em pf} & Ponteiro para o frame \\
 \hline
 \end{DoxyParams}
-\hypertarget{frame_8c_ae0fb52d3c757f62209b021cd059386a3}{}\label{frame_8c_ae0fb52d3c757f62209b021cd059386a3} 
-\index{frame.\+c@{frame.\+c}!push\+Method@{push\+Method}}
-\index{push\+Method@{push\+Method}!frame.\+c@{frame.\+c}}
-\subsubsection{\texorpdfstring{push\+Method()}{empilhar_metodo()}}
-{\footnotesize\ttfamily void push\+Method (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$}]{method }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{frame_8c_a5459590455d07edc07d7661f970be69c}\label{frame_8c_a5459590455d07edc07d7661f970be69c}} 
+\index{frame.\+c@{frame.\+c}!empilhar\+\_\+metodo@{empilhar\+\_\+metodo}}
+\index{empilhar\+\_\+metodo@{empilhar\+\_\+metodo}!frame.\+c@{frame.\+c}}
+\subsubsection{\texorpdfstring{empilhar\+\_\+metodo()}{empilhar\_metodo()}}
+{\footnotesize\ttfamily void empilhar\+\_\+metodo (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{\hyperlink{struct_method__info}{Method\+\_\+info} $\ast$}]{method }\end{DoxyParamCaption})}
 
 
 
 Chama um metodo criando um frame para ele. 
+
+Cria um novo frame para o metodo chamado.
 
 
 \begin{DoxyParams}{Parâmetros}
@@ -122,28 +132,31 @@ Chama um metodo criando um frame para ele.
 {\em method} & Informação do metodo \\
 \hline
 \end{DoxyParams}
-\hypertarget{frame_8c_a84f8e58495f9af2999e9c89c15f08e97}{}\label{frame_8c_a84f8e58495f9af2999e9c89c15f08e97} 
-\index{frame.\+c@{frame.\+c}!push\+Operand@{push\+Operand}}
-\index{push\+Operand@{push\+Operand}!frame.\+c@{frame.\+c}}
-\subsubsection{\texorpdfstring{push\+Operand()}{empilhar_operando()}}
-{\footnotesize\ttfamily void push\+Operand (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{frame_8c_a6b746e737e7e2418bca26b0edb5f7050}\label{frame_8c_a6b746e737e7e2418bca26b0edb5f7050}} 
+\index{frame.\+c@{frame.\+c}!empilhar\+\_\+operando@{empilhar\+\_\+operando}}
+\index{empilhar\+\_\+operando@{empilhar\+\_\+operando}!frame.\+c@{frame.\+c}}
+\subsubsection{\texorpdfstring{empilhar\+\_\+operando()}{empilhar\_operando()}}
+{\footnotesize\ttfamily void empilhar\+\_\+operando (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
 Coloca um operando na pilha de operandos do frame. 
+
+Empilha um operando na pilha de openrados do frame atual.
 
 
 \begin{DoxyParams}{Parâmetros}
 {\em value} & Valor a ser colocado na pilha \\
 \hline
 \end{DoxyParams}
-\hypertarget{frame_8c_a389570f654e724ed55f27681229dcb21}{}\label{frame_8c_a389570f654e724ed55f27681229dcb21} 
-\index{frame.\+c@{frame.\+c}!run\+Frame@{run\+Frame}}
-\index{run\+Frame@{run\+Frame}!frame.\+c@{frame.\+c}}
-\subsubsection{\texorpdfstring{run\+Frame()}{executar_frame()}}
-{\footnotesize\ttfamily void run\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{frame_8c_a91c192866c5a9f5169bb0325ff105250}\label{frame_8c_a91c192866c5a9f5169bb0325ff105250}} 
+\index{frame.\+c@{frame.\+c}!executar\+\_\+frame@{executar\+\_\+frame}}
+\index{executar\+\_\+frame@{executar\+\_\+frame}!frame.\+c@{frame.\+c}}
+\subsubsection{\texorpdfstring{executar\+\_\+frame()}{executar\_frame()}}
+{\footnotesize\ttfamily void executar\+\_\+frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Roda os frames. 
 
+Executa o codigo do atributo Code do frame. 

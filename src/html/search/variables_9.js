@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyoffsetpairs',['keyOffsetPairs',['../struct_lookupswitch_data.html#a47c2e5ea4d79b8f5fa1b92ab2280bb22',1,'LookupswitchData']]]
+  ['keyoffsetpairs',['keyOffsetPairs',['../struct_lookupswitch_data.html#abeb3d24ab5d002219d5591717e015f75',1,'LookupswitchData']]]
 ];

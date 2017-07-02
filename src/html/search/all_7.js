@@ -1,22 +1,17 @@
 var searchData=
 [
-  ['generateobjectfield',['generateObjectField',['../object_manager_8c.html#abb2e7a8b4f1cde3ba2e4b4e4fa4225ac',1,'objectManager.c']]],
-  ['generateobjectfieldarray',['generateObjectFieldArray',['../object_manager_8c.html#aa30cac2463b0d9241c3e539e4f16b943',1,'objectManager.c']]],
-  ['generateobjectfieldcount',['generateObjectFieldCount',['../object_manager_8c.html#a08a07d51a8a7fe3bb9fb633a96374879',1,'objectManager.c']]],
-  ['generateobjectmethod',['generateObjectMethod',['../object_manager_8c.html#a51b10e3f17d5f25758caebedbe9ff866',1,'objectManager.c']]],
-  ['generateobjectmethodarray',['generateObjectMethodArray',['../object_manager_8c.html#ae0a895e091fa6a03c003069ad221977d',1,'objectManager.c']]],
-  ['generateobjectmethodcount',['generateObjectMethodCount',['../object_manager_8c.html#a25ccf79158421f4aff17262096fb6e56',1,'objectManager.c']]],
-  ['getarrayreference',['getArrayReference',['../array_8c.html#a9eee01abff040fec6a8376764a34066b',1,'getArrayReference(arrayType *array):&#160;array.c'],['../array_8h.html#a9eee01abff040fec6a8376764a34066b',1,'getArrayReference(arrayType *array):&#160;array.c']]],
-  ['getarraysize',['getArraySize',['../array_8c.html#a9fa0894ba8eb99505d998ccd5ddb109f',1,'getArraySize(arrayType *array):&#160;array.c'],['../array_8h.html#a9fa0894ba8eb99505d998ccd5ddb109f',1,'getArraySize(arrayType *array):&#160;array.c']]],
-  ['getcodeattribute',['getCodeAttribute',['../method_area_8c.html#a847deaa650d5b70dd9fe5e339b1ba0e7',1,'getCodeAttribute(ClassFile *classFile, Method_info *methodInfo):&#160;methodArea.c'],['../method_area_8h.html#a847deaa650d5b70dd9fe5e339b1ba0e7',1,'getCodeAttribute(ClassFile *classFile, Method_info *methodInfo):&#160;methodArea.c']]],
+  ['gerar_5fobject_5ffield',['gerar_object_field',['../object_manager_8c.html#a96418d0fbea29f678487a78211b2c463',1,'objectManager.c']]],
+  ['gerar_5fobject_5ffield_5farray',['gerar_object_field_array',['../object_manager_8c.html#a0b9c1d296ef2e30f58059b9e6e3fafe5',1,'objectManager.c']]],
+  ['gerar_5fobject_5ffield_5fcount',['gerar_object_field_count',['../object_manager_8c.html#aed79a9f1ca47d45b36d92a3be775f58a',1,'objectManager.c']]],
+  ['gerar_5fobject_5fmethod',['gerar_object_method',['../object_manager_8c.html#a4d45967c688b71715148c51896baa671',1,'objectManager.c']]],
+  ['gerar_5fobject_5fmethod_5farray',['gerar_object_method_array',['../object_manager_8c.html#a99c65c9b0a6717e1f0f79bf7c0f7f533',1,'objectManager.c']]],
+  ['gerar_5fobject_5fmethod_5fcount',['gerar_object_method_count',['../object_manager_8c.html#a4988a0a469ff642407794ee949e86dfe',1,'objectManager.c']]],
+  ['get_5freferencia_5farray',['get_referencia_array',['../array_8c.html#ad58b4ed8d03331a583b4cb5e0955271f',1,'get_referencia_array(arrayType *array):&#160;array.c'],['../array_8h.html#a57f02edfe1a269bba33460855854a462',1,'get_referencia_array(arrayType *array):&#160;array.c']]],
+  ['get_5ftamanho_5farray',['get_tamanho_array',['../array_8c.html#a4c32d1eff258639a22570bf401371bf9',1,'get_tamanho_array(arrayType *array):&#160;array.c'],['../array_8h.html#afc32e997014712a5a30dcf988cc75a97',1,'get_tamanho_array(arrayType *array):&#160;array.c']]],
   ['getfield',['getfield',['../instructions_8c.html#a840f06b326362c8d7d80b20820618f81',1,'getfield():&#160;instructions.c'],['../instructions_8h.html#a840f06b326362c8d7d80b20820618f81',1,'getfield():&#160;instructions.c']]],
-  ['getitem',['getItem',['../method_area_8c.html#afbd517cca838b1d9944bce24e1ffd80c',1,'getItem(int index):&#160;methodArea.c'],['../method_area_8h.html#afbd517cca838b1d9944bce24e1ffd80c',1,'getItem(int index):&#160;methodArea.c']]],
-  ['getobjectfieldvaluebyname',['getObjectFieldValueByName',['../object_manager_8c.html#a4e0494b9f5b7b399e73e7b1da38e2d6c',1,'getObjectFieldValueByName(Object *object, char *name):&#160;objectManager.c'],['../object_manager_8h.html#a4e0494b9f5b7b399e73e7b1da38e2d6c',1,'getObjectFieldValueByName(Object *object, char *name):&#160;objectManager.c']]],
-  ['getobjectmethodbyname',['getObjectMethodByName',['../object_manager_8c.html#a82c9a8c25b0d7079e3f6289a5925c7e1',1,'getObjectMethodByName(Object *object, char *methodName, char *className):&#160;objectManager.c'],['../object_manager_8h.html#a82c9a8c25b0d7079e3f6289a5925c7e1',1,'getObjectMethodByName(Object *object, char *methodName, char *className):&#160;objectManager.c']]],
-  ['getparamscount',['getParamsCount',['../method_area_8c.html#a7d4c88da8bd0289033b47b707f4964da',1,'getParamsCount(char *bytes):&#160;methodArea.c'],['../method_area_8h.html#a7d4c88da8bd0289033b47b707f4964da',1,'getParamsCount(char *bytes):&#160;methodArea.c']]],
+  ['getitem',['getItem',['../method_area_8h.html#afbd517cca838b1d9944bce24e1ffd80c',1,'methodArea.h']]],
   ['getstatic',['getstatic',['../instructions_8c.html#a83c0c1e57fa9474537180722bdaf65ec',1,'getstatic():&#160;instructions.c'],['../instructions_8h.html#a83c0c1e57fa9474537180722bdaf65ec',1,'getstatic():&#160;instructions.c']]],
-  ['getsuperclass',['getSuperClass',['../method_area_8c.html#a0c966fe67c58370645911bfdcc914af1',1,'getSuperClass(ClassFile *classFile):&#160;methodArea.c'],['../method_area_8h.html#a0c966fe67c58370645911bfdcc914af1',1,'getSuperClass(ClassFile *classFile):&#160;methodArea.c']]],
   ['goto_5fw',['goto_w',['../instructions_8c.html#a644324ed1a37c333efbc3f9c2ef2efa3',1,'goto_w():&#160;instructions.c'],['../instructions_8h.html#a644324ed1a37c333efbc3f9c2ef2efa3',1,'goto_w():&#160;instructions.c']]],
-  ['group_5fword',['group_word',['../switch_viewer_8c.html#a0d20f8f01c54ddb8be49ea3d4b7d23fd',1,'group_word(uint8_t *word):&#160;switchViewer.c'],['../switch_viewer_8h.html#a0d20f8f01c54ddb8be49ea3d4b7d23fd',1,'group_word(uint8_t *word):&#160;switchViewer.c']]],
-  ['group_5fwords',['group_words',['../switch_viewer_8c.html#a76ba50c6888444613ad8adf4075b3d5f',1,'group_words(uint8_t *src, int size):&#160;switchViewer.c'],['../switch_viewer_8h.html#a76ba50c6888444613ad8adf4075b3d5f',1,'group_words(uint8_t *src, int size):&#160;switchViewer.c']]]
+  ['group_5fword',['group_word',['../switch_viewer_8c.html#ac4ca3809244c236b8addd4832f41f97f',1,'group_word(u1 *word):&#160;switchViewer.c'],['../switch_viewer_8h.html#ac4ca3809244c236b8addd4832f41f97f',1,'group_word(u1 *word):&#160;switchViewer.c']]],
+  ['group_5fwords',['group_words',['../switch_viewer_8c.html#a297b40ecd9dc56611e15e4666335d2ec',1,'group_words(u1 *src, int size):&#160;switchViewer.c'],['../switch_viewer_8h.html#a297b40ecd9dc56611e15e4666335d2ec',1,'group_words(u1 *src, int size):&#160;switchViewer.c']]]
 ];
