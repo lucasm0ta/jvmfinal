@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include "util.h"
 
 #ifndef INSTRUCTION_H
 #define INSTRUCTION_H
