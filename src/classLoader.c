@@ -344,7 +344,7 @@ Method_info* readMethods(int length, Cp_info* constant_pool, FILE* fp){
  */
 ClassFile* loadClass(char* className){
 	// Veifica se o arquivo ja foi carregado alguma vez
-	ClassFile* classFile = searchClass(className);
+	ClassFile* classFile = buscar_classe(className);
 	if (classFile != NULL)	return classFile;
 
 	// Concatena o .class no final do nome
@@ -388,7 +388,7 @@ ClassFile* loadClass(char* className){
 	// Verifica se a versao do .class é suportada pelo java 2
 	versionChecker(classFile);
 	// Guarda a classe no vetor global de classes
-	pushClass(classFile);
+    empilhar_classe(classFile);
 	return classFile;
 }
 

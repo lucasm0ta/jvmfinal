@@ -1,31 +1,31 @@
 #include "classList.h"
 
-static ClassList* g_classList;
+static lista_classe* g_classList;
 
-ClassList* createClassList(){
-	ClassList* aux = (ClassList*)malloc(sizeof(ClassList));
+lista_classe* criar_lista_classe(){
+	lista_classe* aux = (lista_classe*)malloc(sizeof(lista_classe));
 	aux->classFile = NULL;
 	aux->next = NULL;
 	return aux;
 }
 
-void initClassList(){
-	if (g_classList == NULL) g_classList = createClassList();
+void iniciar_lista_classe(){
+	if (g_classList == NULL) g_classList = criar_lista_classe();
 }
 
-void pushClass(ClassFile *classFile){
-	initClassList();
-	ClassList* classListAux = g_classList;
-	while(classListAux->next != NULL){
-		classListAux = classListAux->next;
+void empilhar_classe(ClassFile *classFile){
+    iniciar_lista_classe();
+	lista_classe* aux_lista_classe = g_classList;
+	while(aux_lista_classe->next != NULL){
+		aux_lista_classe = aux_lista_classe->next;
 	}
-	classListAux->classFile = classFile;
-	classListAux->next = createClassList();
+	aux_lista_classe->classFile = classFile;
+	aux_lista_classe->next = criar_lista_classe();
 }
 
-ClassFile* searchClass(char *name){
-	initClassList();
-	ClassList* classListAux = g_classList;
+ClassFile* buscar_classe(char *name){
+    iniciar_lista_classe();
+	lista_classe* classListAux = g_classList;
 	int stringIndex;
 	char *className;
 	while(classListAux->next != NULL){
@@ -40,8 +40,8 @@ ClassFile* searchClass(char *name){
 }
 
 void dumpClassList(){
-	initClassList();
-	ClassList* classListAux = g_classList;	
+    iniciar_lista_classe();
+	lista_classe* classListAux = g_classList;
 	int stringIndex;
 	char *className;
 	printf("Dump Class List : \n");
