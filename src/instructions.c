@@ -26,7 +26,7 @@ void tratar_impressao_boolean();
 /**
  * Cria o arrray de instruções para ser acessado
  */
-void createInstructionsArray(){
+void criar_array_instrucoes(){
 
 	instrucao[0] = nop;
 	instrucao[1] = aconst_null;
@@ -3061,8 +3061,8 @@ void getfield(){
 
 	Object* object = (Object*) desempilhar_operando();
 
-	char* descriptor = findMethodDescriptor(frame_atual->constantPool, index);
-	uint64_t value = getObjectFieldValueByName(object, findMethodName(frame_atual->constantPool, index));
+	char* descriptor = buscar_descritor_metodo(frame_atual->constantPool, index);
+	uint64_t value = getObjectFieldValueByName(object, buscar_nome_metodo(frame_atual->constantPool, index));
 
 	switch(descriptor[0]){
 		// variaveis normais
@@ -3094,14 +3094,14 @@ void putfield(){
 	// get name and type for field index
 	index = frame_atual->constantPool[index].info.fieldref_info->name_and_type_index;
 
-	char* descriptor = findMethodDescriptor(frame_atual->constantPool, index);
+	char* descriptor = buscar_descritor_metodo(frame_atual->constantPool, index);
 
 	switch(descriptor[0]){
 		// variaveis normais
 		case 'C': case 'F': case 'B': case 'I': case 'S': case 'Z': case 'L': case '[': {
 			uint32_t value = desempilhar_operando();
 			Object* object = (Object*) desempilhar_operando();
-			setObjectFieldValueByName(object, findMethodName(frame_atual->constantPool, index), value);
+			setObjectFieldValueByName(object, buscar_nome_metodo(frame_atual->constantPool, index), value);
 			break;
 		}
 		// variaveis categoria 2
@@ -3112,7 +3112,7 @@ void putfield(){
 			uint64_t aux = resultHigh;
 			aux <<= 32;
 			aux += resultLow;
-			setObjectFieldValueByName(object, findMethodName(frame_atual->constantPool, index), aux);
+			setObjectFieldValueByName(object, buscar_nome_metodo(frame_atual->constantPool, index), aux);
 			break;
 		}
 	}
@@ -3125,11 +3125,11 @@ void invokevirtual(){
 	int i;
 	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
-	char* className = findClassNameFromMethod(frame_atual->constantPool, index);
+	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 
 	int32_t nameAndTypeIndex = frame_atual->constantPool[index].info.methodref_info->name_and_type_index;
-	char* methodName = findMethodName(frame_atual->constantPool, nameAndTypeIndex);
-	char* methodDescriptor = findMethodDescriptor(frame_atual->constantPool, nameAndTypeIndex);
+	char* methodName = buscar_nome_metodo(frame_atual->constantPool, nameAndTypeIndex);
+	char* methodDescriptor = buscar_descritor_metodo(frame_atual->constantPool, nameAndTypeIndex);
 	if((strcmp(className, "java/io/PrintStream") == 0) && (strcmp(methodName,"println") == 0)) {
 		if (DEBUG) printf("SYSTEM OUT : ");
 		if(strcmp(methodDescriptor,"()V") == 0) {
@@ -3153,7 +3153,7 @@ void invokevirtual(){
 		}
 	} else {
 		// Calcula quantidade total de parametros na pilha
-		int32_t paramsCount = getParamsCount(methodDescriptor);
+		int32_t paramsCount = contador_de_parametros(methodDescriptor);
 		// Armazena os argumentos da pilha em um Array
 		uint32_t fieldsArray[paramsCount+1];
 		for(i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());
@@ -3178,12 +3178,12 @@ void invokevirtual(){
 void invokespecial(){
 	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
-	char* className = findClassNameFromMethod(frame_atual->constantPool, index);
+	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 	int32_t nameAndTypeIndex = frame_atual->constantPool[index].info.methodref_info->name_and_type_index;
-	char* methodName = findMethodName(frame_atual->constantPool, nameAndTypeIndex);
-	char* methodDescriptor = findMethodDescriptor(frame_atual->constantPool, nameAndTypeIndex);
+	char* methodName = buscar_nome_metodo(frame_atual->constantPool, nameAndTypeIndex);
+	char* methodDescriptor = buscar_descritor_metodo(frame_atual->constantPool, nameAndTypeIndex);
 	// Calcula quantidade total de parametros na pilha
-	int32_t paramsCount = getParamsCount(methodDescriptor);
+	int32_t paramsCount = contador_de_parametros(methodDescriptor);
 	// Armazena os argumentos da pilha em um Array
 	uint32_t fieldsArray[paramsCount+1];
 	for(int i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());
@@ -3208,13 +3208,14 @@ void invokestatic(){
 	int i;
 	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
-	char* className = findClassNameFromMethod(frame_atual->constantPool, index);
+	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 
 	int32_t nameAndTypeIndex = frame_atual->constantPool[index].info.methodref_info->name_and_type_index;
 
 	ClassFile* classFile = carregar_classe(className);
-	Method_info* invokedMethod = findMethod(classFile, frame_atual->classe,nameAndTypeIndex);
-	int32_t paramsCount = getParamsCount(classFile->constant_pool[invokedMethod->descriptor_index].info.utf8_info->bytes);
+	Method_info* invokedMethod = buscar_metodo(classFile, frame_atual->classe, nameAndTypeIndex);
+	int32_t paramsCount = contador_de_parametros(
+			classFile->constant_pool[invokedMethod->descriptor_index].info.utf8_info->bytes);
 	uint32_t fieldsArray[paramsCount];
 
 	for(i = 0; i < paramsCount; fieldsArray[i++] = desempilhar_operando());
@@ -3233,12 +3234,12 @@ void invokestatic(){
 void invokeinterface(){
 	uint16_t index = read2Bytes((frame_atual->code + frame_atual->pc + 1));
 	//pega o nome da classe
-	char* className = findClassNameFromMethod(frame_atual->constantPool, index);
+	char* className = buscar_nome_classe_por_metodo(frame_atual->constantPool, index);
 	int32_t nameAndTypeIndex = frame_atual->constantPool[index].info.methodref_info->name_and_type_index;
-	char* methodName = findMethodName(frame_atual->constantPool, nameAndTypeIndex);
-	char* methodDescriptor = findMethodDescriptor(frame_atual->constantPool, nameAndTypeIndex);
+	char* methodName = buscar_nome_metodo(frame_atual->constantPool, nameAndTypeIndex);
+	char* methodDescriptor = buscar_descritor_metodo(frame_atual->constantPool, nameAndTypeIndex);
 	// Calcula quantidade total de parametros na pilha
-	int32_t paramsCount = getParamsCount(methodDescriptor);
+	int32_t paramsCount = contador_de_parametros(methodDescriptor);
 	// Armazena os argumentos da pilha em um Array
 	uint32_t fieldsArray[paramsCount+1];
 	for(int i = 0; i < paramsCount; fieldsArray[paramsCount-(i++)] = desempilhar_operando());

@@ -6,7 +6,7 @@
 void (*instrucao[256]) ();
 
 /* preenche o array com as instruções implementadas, sendo o índice o código correspondente da instrução */
-void createInstructionsArray();
+void criar_array_instrucoes();
 
 /* instruções implementadas */
 void nop();

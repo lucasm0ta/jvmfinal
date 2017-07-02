@@ -31,7 +31,7 @@ uint16_t generateObjectMethodCount(ClassFile* classFile){
 	uint16_t count = 0;
 	do{
 		count += classFile->methods_count;
-		classFile = getSuperClass(classFile);
+		classFile = super_classe(classFile);
 	}while(classFile != NULL);
 	return count;
 }
@@ -54,7 +54,7 @@ ObjectMethod* generateObjectMethodArray(ClassFile* classFile, uint16_t count){
 			methods[count] = generateObjectMethod(classFile, &(classFile->methods[i]));
 			count++;
 		}
-		classFile = getSuperClass(classFile);
+		classFile = super_classe(classFile);
 	}while(classFile != NULL);
 	return methods;
 }
@@ -92,7 +92,7 @@ uint16_t generateObjectFieldCount(ClassFile* classFile){
 	uint16_t count = 0;
 	do{
 		count += classFile->fields_count;
-		classFile = getSuperClass(classFile);
+		classFile = super_classe(classFile);
 	}while(classFile != NULL);
 	return count;
 }
@@ -113,7 +113,7 @@ ObjectField* generateObjectFieldArray(ClassFile* classFile, uint16_t count){
 			fields[count] = generateObjectField(classFile, &(classFile->fields[i]));
 			count++;
 		}
-		classFile = getSuperClass(classFile);
+		classFile = super_classe(classFile);
 	}while(classFile != NULL);
 	return fields;
 }

@@ -37,17 +37,17 @@ int main(int argc, char **argv){
             break;
         case(2):{
             DEBUG = 0;
-            createInstructionsArray();
-            Method_info* mainInfo = findMainMethod(classFile);
-            empilhar_metodo(classFile, mainInfo);
+            criar_array_instrucoes();
+            Method_info* informacao_principal = buscar_metodo_main(classFile);
+            empilhar_metodo(classFile, informacao_principal);
             executar_frame();
             break;
         }
         case(3):{
             DEBUG = 1;
             inicializar_decodificador();
-            createInstructionsArray();
-            Method_info* mainInfo = findMainMethod(classFile);
+            criar_array_instrucoes();
+            Method_info* mainInfo = buscar_metodo_main(classFile);
             empilhar_metodo(classFile, mainInfo);
             executar_frame();
             break;

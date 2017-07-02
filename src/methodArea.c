@@ -4,47 +4,47 @@
 
 
 
-int tableSize;
+int tamanho_tabela;
 
-void resizeHashtable();
+void redimensionar_hashtable();
 
 TypeInfo ** hashtable;
-int dataCount = 0;
+int data_count = 0;
 
-void initHashtable(int initialSize) {
-    tableSize = initialSize;
-    hashtable = (TypeInfo **) malloc(tableSize * sizeof(TypeInfo *));
+void inicializar_hashtable(int tamanho_inicial) {
+    tamanho_tabela = tamanho_inicial;
+    hashtable = (TypeInfo **) malloc(tamanho_tabela * sizeof(TypeInfo *));
 
     if(hashtable == NULL)
          exit(1);
 
-    for (int i = 0; i < tableSize; i++)
+    for (int i = 0; i < tamanho_tabela; i++)
         hashtable[i] = NULL;
 }
 
-void freeHashtable() {
-    for (int i = 0; i < tableSize; i++) {
+void liberar_memoria_Hashtable() {
+    for (int i = 0; i < tamanho_tabela; i++) {
         if(hashtable[i] != NULL)
             free(hashtable[i]);
     }
     free(hashtable);
-    dataCount = 0;
+    data_count = 0;
 }
 
-void resizeHashtable() {
-    int newSize = tableSize + (tableSize * 2) / 3;
-    hashtable = (TypeInfo **) realloc(hashtable, newSize * sizeof(TypeInfo *));
+void redimensionar_hashtable() {
+    int novo_tamanho = tamanho_tabela + (tamanho_tabela * 2) / 3;
+    hashtable = (TypeInfo **) realloc(hashtable, novo_tamanho * sizeof(TypeInfo *));
 
-    for (int i = tableSize; i < newSize; i++)
+    for (int i = tamanho_tabela; i < novo_tamanho; i++)
         hashtable[i] = NULL;
 
-    tableSize = newSize;
+    tamanho_tabela = novo_tamanho;
 }
 
-void insert(TypeInfo dt) {
+void inserir(TypeInfo dt) {
 
-    if(dataCount == tableSize)
-        resizeHashtable();
+    if(data_count == tamanho_tabela)
+        redimensionar_hashtable();
 
     const int index = indexOf(dt);
     hashtable[index] = (TypeInfo *) malloc(sizeof(TypeInfo));
@@ -54,17 +54,17 @@ void insert(TypeInfo dt) {
 
     hashtable[index]->name = dt.name;
 
-    dataCount++;
+    data_count++;
 }
 
 int indexOf(TypeInfo dt) {
     const int hashValue = hash(dt.name, strlen(dt.name));
 
     if(hashtable[hashValue] != NULL) {
-        int i = (hashValue + 1) % tableSize;
+        int i = (hashValue + 1) % tamanho_tabela;
 
         while(hashtable[i] != NULL) {
-            i = (i + 1) % tableSize;
+            i = (i + 1) % tamanho_tabela;
         }
         return i;
     } else {
@@ -73,16 +73,16 @@ int indexOf(TypeInfo dt) {
 }
 
 
-size_t hash(const char *str, size_t len) {
+size_t hash(const char *str, size_t tamanho) {
     unsigned int hash = 5381;
     unsigned int i    = 0;
 
-    for(i = 0; i < len; str++, i++)
+    for(i = 0; i < tamanho; str++, i++)
     {
         hash = ((hash << 5) + hash) + (*str);
     }
 
-    return hash % tableSize;
+    return hash % tamanho_tabela;
 }
 
 
@@ -91,9 +91,9 @@ TypeInfo *getItem(int index) {
 }
 
 
-void printHashtable() {
+void imprimir_hashtable() {
     printf("\n");
-    for(int i = 0; i < tableSize; i++) {
+    for(int i = 0; i < tamanho_tabela; i++) {
         if(hashtable[i] != NULL)
             printf("%s\n", hashtable[i]->name);
         else
@@ -102,7 +102,7 @@ void printHashtable() {
     printf("\n");
 }
 
-Method_info* findMainMethod(ClassFile* classFile) {
+Method_info* buscar_metodo_main(ClassFile *classFile) {
 
 	int i;
 	char* nome;
@@ -127,47 +127,47 @@ Method_info* findMainMethod(ClassFile* classFile) {
  * @param  classFile [description]
  * @return           [description]
  */
-ClassFile* getSuperClass(ClassFile* classFile){
+ClassFile* super_classe(ClassFile *classFile){
   if (classFile->super_class == 0){
     return NULL;
   }
   return carregar_classe(acessar_constant_pool_entry(classFile->super_class, classFile->constant_pool));
 }
 
-Method_info* findMethod(ClassFile* targetClass, ClassFile* originClass, uint16_t indice) {
+Method_info* buscar_metodo(ClassFile *classe_desejada, ClassFile *classe_origem, uint16_t indice) {
 
-    int indiceName = originClass->constant_pool[indice].info.nameAndType_info->name_index;
-    int indiceDescription = originClass->constant_pool[indice].info.nameAndType_info->descriptor_index;
-    char* nameOrigin = originClass->constant_pool[indiceName].info.utf8_info->bytes;
-    char* descOrigin = originClass->constant_pool[indiceDescription].info.utf8_info->bytes;
-    char* nameTarget;
-    char* descTarget;
+    int nome_indice = classe_origem->constant_pool[indice].info.nameAndType_info->name_index;
+    int desc_indice = classe_origem->constant_pool[indice].info.nameAndType_info->descriptor_index;
+    char* name_origin = classe_origem->constant_pool[nome_indice].info.utf8_info->bytes;
+    char* desc_origin = classe_origem->constant_pool[desc_indice].info.utf8_info->bytes;
+    char* name_target;
+    char* desc_target;
 
-    for(int i = 0; i < targetClass->methods_count; i++) {
+    for(int i = 0; i < classe_desejada->methods_count; i++) {
 
-        nameTarget = targetClass->constant_pool[(targetClass->methods[i].name_index)].info.utf8_info->bytes;
-        descTarget = targetClass->constant_pool[(targetClass->methods[i].descriptor_index)].info.utf8_info->bytes;
+        name_target = classe_desejada->constant_pool[(classe_desejada->methods[i].name_index)].info.utf8_info->bytes;
+        desc_target = classe_desejada->constant_pool[(classe_desejada->methods[i].descriptor_index)].info.utf8_info->bytes;
 
-        if(strcmp(nameOrigin, nameTarget) == 0 && strcmp(descOrigin, descTarget) == 0) {
-                return &(targetClass->methods[i]);
+        if(strcmp(name_origin, name_target) == 0 && strcmp(desc_origin, desc_target) == 0) {
+                return &(classe_desejada->methods[i]);
         }
 
     }
 }
 
-char* findClassNameFromMethod(Cp_info* constantPool, int32_t methodIndex) {
-	int32_t classIndex = constantPool[methodIndex].info.methodref_info->class_index;
-  return acessar_constant_pool_entry(classIndex, constantPool);
+char* buscar_nome_classe_por_metodo(Cp_info *constant_pool, int32_t method_index) {
+	int32_t class_index = constant_pool[method_index].info.methodref_info->class_index;
+  return acessar_constant_pool_entry(class_index, constant_pool);
 }
 
-char* findMethodName(Cp_info* constantPool, int16_t nameAndTypeIndex) {
-  int32_t methodNameIndex = constantPool[nameAndTypeIndex].info.nameAndType_info->name_index;
-  return constantPool[methodNameIndex].info.utf8_info->bytes;
+char* buscar_nome_metodo(Cp_info *constant_pool, int16_t nome_type_index) {
+  int32_t indice_nome_method = constant_pool[nome_type_index].info.nameAndType_info->name_index;
+  return constant_pool[indice_nome_method].info.utf8_info->bytes;
 }
 
-char* findMethodDescriptor(Cp_info* constantPool, int16_t nameAndTypeIndex) {
-  int32_t methodDescriptorIndex = constantPool[nameAndTypeIndex].info.nameAndType_info->descriptor_index;
-  return constantPool[methodDescriptorIndex].info.utf8_info->bytes;
+char* buscar_descritor_metodo(Cp_info *constant_pool, int16_t nameAndTypeIndex) {
+  int32_t methodDescriptorIndex = constant_pool[nameAndTypeIndex].info.nameAndType_info->descriptor_index;
+  return constant_pool[methodDescriptorIndex].info.utf8_info->bytes;
 }
 
 Code_attribute* recuperar_code_attribute(ClassFile *classFile, Method_info *methodInfo) {
@@ -185,22 +185,22 @@ Code_attribute* recuperar_code_attribute(ClassFile *classFile, Method_info *meth
 
 }
 
-int32_t getParamsCount(char* bytes) {
+int32_t contador_de_parametros(char *bytes) {
 
   int i = 1;
-  int parametersCount = 0;
+  int contador = 0;
   while(bytes[i] != ')') {
     if(bytes[i] == 'Z' || bytes[i] == 'S' || bytes[i] == 'F' ||
     bytes[i] == 'I' || bytes[i] == 'C' || bytes[i] == 'B') {
-      parametersCount++;
+      contador++;
     } else if(bytes[i] == 'D' || bytes[i] == 'J') {
-      parametersCount+=2;
+      contador+=2;
     } else if(bytes[i] == 'L') {
       while(bytes[i++] != ';');
-      parametersCount++;
+      contador++;
     }
     i++;
   }
 
-  return parametersCount;
+  return contador;
 }
