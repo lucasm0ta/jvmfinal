@@ -247,7 +247,7 @@ void printAttributes(Attribute_info* attributes, uint16_t attributes_count, Cp_i
 	printf("%sATTRIBUTES :\n\n", space);
 	for (i = 0; i < attributes_count; ++i){
 		printf("%s[%.2d] ", space, i);
-		char *str = accessConstantPoolEntry(attributes[i].attribute_name_index, constant_pool);
+		char *str = acessar_constant_pool_entry(attributes[i].attribute_name_index, constant_pool);
 		printf(":\n");
 		printf("%s     Attribute name:   cp_info #%d <", space, attributes[i].attribute_name_index);
 		printConstantPoolEntry(attributes[i].attribute_name_index, constant_pool);
@@ -325,38 +325,38 @@ void printAttributes(Attribute_info* attributes, uint16_t attributes_count, Cp_i
 			}
 		}
 		else if (strcmp(str, "LocalVariableTable") == 0){
-			// attributes[i].info.localVariableTable_attribute->local_variable_table_length = readBytes(2, fp);
+			// attributes[i].info.localVariableTable_attribute->local_variable_table_length = ler_bytes(2, fp);
 			// attributes[i].info.localVariableTable_attribute->local_variable_table_ptr = (local_variable_table*)malloc(attributes[i].info.localVariableTable_attribute->local_variable_table_length*sizeof(local_variable_table));
 			// for (j = 0; j < attributes[i].info.localVariableTable_attribute->local_variable_table_length; ++j){
-			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].start_pc = readBytes(2, fp);
-			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].length = readBytes(2, fp);
-			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].name_index = readBytes(2, fp);
-			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].descriptor_index = readBytes(2, fp);
-			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].index = readBytes(2, fp);
+			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].start_pc = ler_bytes(2, fp);
+			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].length = ler_bytes(2, fp);
+			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].name_index = ler_bytes(2, fp);
+			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].descriptor_index = ler_bytes(2, fp);
+			//     attributes[i].info.localVariableTable_attribute->local_variable_table_ptr[j].index = ler_bytes(2, fp);
 			// }
 		}
 		else if (strcmp(str, "LocalVariableTypeTable") == 0){
-			// attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_length = readBytes(2, fp);
+			// attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_length = ler_bytes(2, fp);
 			// attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr = (local_variable_type_table*)malloc(attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_length*sizeof(local_variable_type_table));
 			// for (j = 0; j < attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_length; ++j){
-			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].start_pc = readBytes(2, fp);
-			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].length = readBytes(2, fp);
-			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].name_index = readBytes(2, fp);
-			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].signature_index = readBytes(2, fp);
-			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].index = readBytes(2, fp);
+			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].start_pc = ler_bytes(2, fp);
+			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].length = ler_bytes(2, fp);
+			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].name_index = ler_bytes(2, fp);
+			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].signature_index = ler_bytes(2, fp);
+			//     attributes[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].index = ler_bytes(2, fp);
 			// }
 		}
 		else if (strcmp(str, "Deprecated") == 0){
 		}
 		else if (strcmp(str, "BootstrapMethods") == 0){
-			// attributes[i].info.bootstrapMethods_attribute->num_bootstrap_methods = readBytes(2, fp);
+			// attributes[i].info.bootstrapMethods_attribute->num_bootstrap_methods = ler_bytes(2, fp);
 			// attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr = (bootstrap_methods*)malloc(attributes[i].info.bootstrapMethods_attribute->num_bootstrap_methods*sizeof(bootstrap_methods));
 			// for (j = 0; j < attributes[i].info.bootstrapMethods_attribute->num_bootstrap_methods; ++j){
-			//     attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_method_ref = readBytes(2, fp);
-			//     attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments = readBytes(2, fp);
+			//     attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_method_ref = ler_bytes(2, fp);
+			//     attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments = ler_bytes(2, fp);
 			//     attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments = (uint16_t*)malloc(attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments*sizeof(uint16_t));
 			// 	for (k = 0; k < attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments; ++k){
-			// 		attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments[k] = readBytes(2, fp);
+			// 		attributes[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments[k] = ler_bytes(2, fp);
 			// 	}
 			// }
 		}

@@ -38,7 +38,7 @@ void \hyperlink{class_loader_8c_a37e5445b741ed921d544e5fdd76f1dbc}{version\+Chec
 \hypertarget{class_loader_8c_adbc64e22f2dcd5daae28f25cb3c6d2c3}{}\label{class_loader_8c_adbc64e22f2dcd5daae28f25cb3c6d2c3} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!access\+Constant\+Pool\+Entry@{access\+Constant\+Pool\+Entry}}
 \index{access\+Constant\+Pool\+Entry@{access\+Constant\+Pool\+Entry}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{access\+Constant\+Pool\+Entry()}{accessConstantPoolEntry()}}
+\subsubsection{\texorpdfstring{access\+Constant\+Pool\+Entry()}{acessar_constant_pool_entry()}}
 {\footnotesize\ttfamily uint8\+\_\+t$\ast$ access\+Constant\+Pool\+Entry (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool }\end{DoxyParamCaption})}
 
 
@@ -58,7 +58,7 @@ ponteiro para uma string
 \hypertarget{class_loader_8c_ae67054480a9f3874ba2f0196b60a4350}{}\label{class_loader_8c_ae67054480a9f3874ba2f0196b60a4350} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!class\+Formatchecker@{class\+Formatchecker}}
 \index{class\+Formatchecker@{class\+Formatchecker}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{class\+Formatchecker()}{classFormatchecker()}}
+\subsubsection{\texorpdfstring{class\+Formatchecker()}{verificar_magic_number()}}
 {\footnotesize\ttfamily void class\+Formatchecker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 
@@ -76,7 +76,7 @@ Função verificacao, verificar se o arquivo se trata de um .class verificando o
 \hypertarget{class_loader_8c_af07fd265d4b963d7972e5a683e6c4050}{}\label{class_loader_8c_af07fd265d4b963d7972e5a683e6c4050} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!class\+Name\+Checker@{class\+Name\+Checker}}
 \index{class\+Name\+Checker@{class\+Name\+Checker}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{class\+Name\+Checker()}{classNameChecker()}}
+\subsubsection{\texorpdfstring{class\+Name\+Checker()}{verificar_nome_classe_artigo()}}
 {\footnotesize\ttfamily void class\+Name\+Checker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File,  }\item[{char $\ast$}]{nome\+Arquivo }\end{DoxyParamCaption})}
 
 
@@ -96,7 +96,7 @@ Função verificacao, verificar se o nome da classe do .class bate com o do arqu
 \hypertarget{class_loader_8c_a054f9d1d78ad324c23b67bb02a57dac6}{}\label{class_loader_8c_a054f9d1d78ad324c23b67bb02a57dac6} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!load\+Class@{load\+Class}}
 \index{load\+Class@{load\+Class}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{load\+Class()}{loadClass()}}
+\subsubsection{\texorpdfstring{load\+Class()}{carregar_classe()}}
 {\footnotesize\ttfamily \hyperlink{struct_class_file}{Class\+File}$\ast$ load\+Class (\begin{DoxyParamCaption}\item[{char $\ast$}]{class\+Name }\end{DoxyParamCaption})}
 
 
@@ -114,7 +114,7 @@ Referência para uma struct \hyperlink{struct_class_file}{Class\+File}
 \hypertarget{class_loader_8c_a1290351b9cf245484329af16a3871fda}{}\label{class_loader_8c_a1290351b9cf245484329af16a3871fda} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Attributes@{read\+Attributes}}
 \index{read\+Attributes@{read\+Attributes}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{read\+Attributes()}{readAttributes()}}
+\subsubsection{\texorpdfstring{read\+Attributes()}{ler_atributos()}}
 {\footnotesize\ttfamily \hyperlink{struct_attribute__info}{Attribute\+\_\+info}$\ast$ read\+Attributes (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
 
 
@@ -136,7 +136,7 @@ Estrutura de atributos
 \hypertarget{class_loader_8c_a6d7c4f23b53b33130513cf1b28bb3a99}{}\label{class_loader_8c_a6d7c4f23b53b33130513cf1b28bb3a99} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Bytes@{read\+Bytes}}
 \index{read\+Bytes@{read\+Bytes}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{read\+Bytes()}{readBytes()}}
+\subsubsection{\texorpdfstring{read\+Bytes()}{ler_bytes()}}
 {\footnotesize\ttfamily uint32\+\_\+t read\+Bytes (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
 
 
@@ -156,7 +156,7 @@ Os 4 últimos bytes lidos (variável dde 32 bits)
 \hypertarget{class_loader_8c_adce3966a4bfce3cbdcd26863acf4e7f3}{}\label{class_loader_8c_adce3966a4bfce3cbdcd26863acf4e7f3} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Constant\+Pool@{read\+Constant\+Pool}}
 \index{read\+Constant\+Pool@{read\+Constant\+Pool}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{read\+Constant\+Pool()}{readConstantPool()}}
+\subsubsection{\texorpdfstring{read\+Constant\+Pool()}{ler_constant_pool()}}
 {\footnotesize\ttfamily \hyperlink{struct_cp__info}{Cp\+\_\+info}$\ast$ read\+Constant\+Pool (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
 
 
@@ -176,7 +176,7 @@ Referência para uma estrutura Pool de Constantes
 \hypertarget{class_loader_8c_a2df2cd4d7189c05a2690ebb85858634b}{}\label{class_loader_8c_a2df2cd4d7189c05a2690ebb85858634b} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Fields@{read\+Fields}}
 \index{read\+Fields@{read\+Fields}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{read\+Fields()}{readFields()}}
+\subsubsection{\texorpdfstring{read\+Fields()}{ler_fields()}}
 {\footnotesize\ttfamily \hyperlink{struct_field__info}{Field\+\_\+info}$\ast$ read\+Fields (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
 
 
@@ -198,7 +198,7 @@ Referência para um vetor de estruturas dos fields
 \hypertarget{class_loader_8c_acab25cca7a3bd9da43398a321e209885}{}\label{class_loader_8c_acab25cca7a3bd9da43398a321e209885} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Interfaces@{read\+Interfaces}}
 \index{read\+Interfaces@{read\+Interfaces}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{read\+Interfaces()}{readInterfaces()}}
+\subsubsection{\texorpdfstring{read\+Interfaces()}{ler_interfaces()}}
 {\footnotesize\ttfamily uint16\+\_\+t$\ast$ read\+Interfaces (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
 
 
@@ -218,7 +218,7 @@ Referência para um vetor de indices do constant pool
 \hypertarget{class_loader_8c_a1e8b04495c973881244ac782272b604f}{}\label{class_loader_8c_a1e8b04495c973881244ac782272b604f} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!read\+Methods@{read\+Methods}}
 \index{read\+Methods@{read\+Methods}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{read\+Methods()}{readMethods()}}
+\subsubsection{\texorpdfstring{read\+Methods()}{ler_metodos()}}
 {\footnotesize\ttfamily \hyperlink{struct_method__info}{Method\+\_\+info}$\ast$ read\+Methods (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{\hyperlink{struct_cp__info}{Cp\+\_\+info} $\ast$}]{constant\+\_\+pool,  }\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
 
 
@@ -240,7 +240,7 @@ Referência para um vetor de estruturas dos métodos
 \hypertarget{class_loader_8c_a37e5445b741ed921d544e5fdd76f1dbc}{}\label{class_loader_8c_a37e5445b741ed921d544e5fdd76f1dbc} 
 \index{class\+Loader.\+c@{class\+Loader.\+c}!version\+Checker@{version\+Checker}}
 \index{version\+Checker@{version\+Checker}!class\+Loader.\+c@{class\+Loader.\+c}}
-\subsubsection{\texorpdfstring{version\+Checker()}{versionChecker()}}
+\subsubsection{\texorpdfstring{version\+Checker()}{verificar_versao()}}
 {\footnotesize\ttfamily void version\+Checker (\begin{DoxyParamCaption}\item[{\hyperlink{struct_class_file}{Class\+File} $\ast$}]{class\+File }\end{DoxyParamCaption})}
 
 

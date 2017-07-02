@@ -3215,7 +3215,7 @@ void invokestatic(){
 
 	int32_t nameAndTypeIndex = currentFrame->constantPool[index].info.methodref_info->name_and_type_index;
 
-	ClassFile* classFile = loadClass(className);
+	ClassFile* classFile = carregar_classe(className);
 	Method_info* invokedMethod = findMethod(classFile, currentFrame->classe,nameAndTypeIndex);
 	int32_t paramsCount = getParamsCount(classFile->constant_pool[invokedMethod->descriptor_index].info.utf8_info->bytes);
 	uint32_t fieldsArray[paramsCount];
@@ -3271,7 +3271,7 @@ void ins_new(){
 
 	index = currentFrame->constantPool[index].info.class_info->name_index;
 
-	ClassFile* classFile = loadClass(currentFrame->constantPool[index].info.utf8_info->bytes);
+	ClassFile* classFile = carregar_classe(currentFrame->constantPool[index].info.utf8_info->bytes);
 	Object* object = createObject(classFile);
 	pushOperand((int32_t) object);
 

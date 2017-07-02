@@ -135,7 +135,7 @@ ClassFile* getSuperClass(ClassFile* classFile){
   if (classFile->super_class == 0){
     return NULL;
   }
-  return loadClass(accessConstantPoolEntry(classFile->super_class, classFile->constant_pool));
+  return carregar_classe(acessar_constant_pool_entry(classFile->super_class, classFile->constant_pool));
 }
 
 Method_info* findMethod(ClassFile* targetClass, ClassFile* originClass, uint16_t indice) {
@@ -161,7 +161,7 @@ Method_info* findMethod(ClassFile* targetClass, ClassFile* originClass, uint16_t
 
 char* findClassNameFromMethod(Cp_info* constantPool, int32_t methodIndex) {
 	int32_t classIndex = constantPool[methodIndex].info.methodref_info->class_index;
-  return accessConstantPoolEntry(classIndex, constantPool);
+  return acessar_constant_pool_entry(classIndex, constantPool);
 }
 
 char* findMethodName(Cp_info* constantPool, int16_t nameAndTypeIndex) {

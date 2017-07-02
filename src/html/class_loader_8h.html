@@ -309,19 +309,19 @@ Definições de tipos</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a054f9d1d78ad324c23b67bb02a57dac6">loadClass</a> (char *className)</td></tr>
+<tr class="memitem:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a054f9d1d78ad324c23b67bb02a57dac6">carregar_classe</a> (char *className)</td></tr>
 <tr class="memdesc:a054f9d1d78ad324c23b67bb02a57dac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que chama todas as outras funções de leitura para ler o .class inteiro Caso o .class solicitado já foi carregado anteriormente, retorna uma referência para a estrutura já carregada.  <a href="#a054f9d1d78ad324c23b67bb02a57dac6">Mais...</a><br /></td></tr>
 <tr class="separator:a054f9d1d78ad324c23b67bb02a57dac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#adbc64e22f2dcd5daae28f25cb3c6d2c3">accessConstantPoolEntry</a> (int index, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool)</td></tr>
+<tr class="memitem:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#adbc64e22f2dcd5daae28f25cb3c6d2c3">acessar_constant_pool_entry</a> (int index, <a class="el" href="struct_cp__info.html">Cp_info</a> *constant_pool)</td></tr>
 <tr class="memdesc:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que retorna uma string que representa o valor de uma das constantes do Constant Pool.  <a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">Mais...</a><br /></td></tr>
 <tr class="separator:adbc64e22f2dcd5daae28f25cb3c6d2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67054480a9f3874ba2f0196b60a4350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ae67054480a9f3874ba2f0196b60a4350">classFormatchecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memitem:ae67054480a9f3874ba2f0196b60a4350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#ae67054480a9f3874ba2f0196b60a4350">verificar_magic_number</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
 <tr class="memdesc:ae67054480a9f3874ba2f0196b60a4350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o arquivo se trata de um .class verificando o campo magic.  <a href="#ae67054480a9f3874ba2f0196b60a4350">Mais...</a><br /></td></tr>
 <tr class="separator:ae67054480a9f3874ba2f0196b60a4350"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af07fd265d4b963d7972e5a683e6c4050"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#af07fd265d4b963d7972e5a683e6c4050">classNameChecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, char *nomeArquivo)</td></tr>
+<tr class="memitem:af07fd265d4b963d7972e5a683e6c4050"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#af07fd265d4b963d7972e5a683e6c4050">verificar_nome_classe_artigo</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile, char *nomeArquivo)</td></tr>
 <tr class="memdesc:af07fd265d4b963d7972e5a683e6c4050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se o nome da classe do .class bate com o do arquivo.  <a href="#af07fd265d4b963d7972e5a683e6c4050">Mais...</a><br /></td></tr>
 <tr class="separator:af07fd265d4b963d7972e5a683e6c4050"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a37e5445b741ed921d544e5fdd76f1dbc">versionChecker</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
+<tr class="memitem:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loader_8h.html#a37e5445b741ed921d544e5fdd76f1dbc">verificar_versao</a> (<a class="el" href="struct_class_file.html">ClassFile</a> *classFile)</td></tr>
 <tr class="memdesc:a37e5445b741ed921d544e5fdd76f1dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função verificacao, verificar se a major version do .class é suportada pelo java 2.  <a href="#a37e5445b741ed921d544e5fdd76f1dbc">Mais...</a><br /></td></tr>
 <tr class="separator:a37e5445b741ed921d544e5fdd76f1dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -1134,13 +1134,13 @@ Variáveis</h2></td></tr>
 </div>
 <h2 class="groupheader">Documentação das funções</h2>
 <a id="adbc64e22f2dcd5daae28f25cb3c6d2c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">&sect;&nbsp;</a></span>accessConstantPoolEntry()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc64e22f2dcd5daae28f25cb3c6d2c3">&sect;&nbsp;</a></span>acessar_constant_pool_entry()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t* accessConstantPoolEntry </td>
+          <td class="memname">uint8_t* acessar_constant_pool_entry </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -1172,13 +1172,13 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="ae67054480a9f3874ba2f0196b60a4350"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae67054480a9f3874ba2f0196b60a4350">&sect;&nbsp;</a></span>classFormatchecker()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67054480a9f3874ba2f0196b60a4350">&sect;&nbsp;</a></span>verificar_magic_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void classFormatchecker </td>
+          <td class="memname">void verificar_magic_number </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
           <td class="paramname"><em>classFile</em></td><td>)</td>
@@ -1199,13 +1199,13 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="af07fd265d4b963d7972e5a683e6c4050"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af07fd265d4b963d7972e5a683e6c4050">&sect;&nbsp;</a></span>classNameChecker()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af07fd265d4b963d7972e5a683e6c4050">&sect;&nbsp;</a></span>verificar_nome_classe_artigo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void classNameChecker </td>
+          <td class="memname">void verificar_nome_classe_artigo </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
           <td class="paramname"><em>classFile</em>, </td>
@@ -1237,13 +1237,13 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a054f9d1d78ad324c23b67bb02a57dac6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a054f9d1d78ad324c23b67bb02a57dac6">&sect;&nbsp;</a></span>loadClass()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a054f9d1d78ad324c23b67bb02a57dac6">&sect;&nbsp;</a></span>carregar_classe()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* loadClass </td>
+          <td class="memname"><a class="el" href="struct_class_file.html">ClassFile</a>* carregar_classe </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>className</em></td><td>)</td>
@@ -1264,13 +1264,13 @@ Variáveis</h2></td></tr>
 </div>
 </div>
 <a id="a37e5445b741ed921d544e5fdd76f1dbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37e5445b741ed921d544e5fdd76f1dbc">&sect;&nbsp;</a></span>versionChecker()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e5445b741ed921d544e5fdd76f1dbc">&sect;&nbsp;</a></span>verificar_versao()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void versionChecker </td>
+          <td class="memname">void verificar_versao </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_class_file.html">ClassFile</a> *&#160;</td>
           <td class="paramname"><em>classFile</em></td><td>)</td>

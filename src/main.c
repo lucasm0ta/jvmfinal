@@ -21,7 +21,7 @@ int main(int argc, char **argv){
     }
     
     //Carrega o .class    
-    ClassFile* classFile = loadClass(nomeArquivo);
+    ClassFile* classFile = carregar_classe(nomeArquivo);
     int opcao;
     
     // Mostra o menu

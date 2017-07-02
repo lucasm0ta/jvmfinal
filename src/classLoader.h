@@ -346,11 +346,11 @@ typedef struct ClassFile {
     Attribute_info* attributes;
 } ClassFile;
 
-ClassFile* loadClass(char* className);
-uint8_t* accessConstantPoolEntry(int index, Cp_info* constant_pool);
-void classFormatchecker(ClassFile* classFile);
-void classNameChecker(ClassFile* classFile, char * nomeArquivo);
-void versionChecker(ClassFile* classFile);
+ClassFile* carregar_classe(char *className);
+uint8_t* acessar_constant_pool_entry(int index, Cp_info *constant_pool);
+void verificar_magic_number(ClassFile *classFile);
+void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo);
+void verificar_versao(ClassFile *classFile);
 
 #ifdef __cplusplus
 }
