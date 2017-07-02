@@ -23,7 +23,7 @@ extern "C" {
 void imprimir_informacoes_classe(ClassFile *classFile);
 
 /**
- * Imprime as informacoes da constantPool do .class. 
+ * Imprime as informacoes da constantPool do .class.
  * @param classFile Estrutura que guarda informacoes do .class
  */
 void imprimir_constant_pool_completa(ClassFile *classFile);
@@ -63,7 +63,7 @@ void imprimir_atributos(Attribute_info *atributos, uint16_t contador_atributos, 
 void imprimir_classe(ClassFile *classfile);
 
 /**
- * Imprime as informacoes do code attribute. Ele usa a constant_pool para 
+ * Imprime as informacoes do code attribute. Ele usa a constant_pool para
  * imprimir as informacoes das entradas do constant_pool que estao no code
  * @param constant_pool  Ponteiro para constant_pool q o code usa
  * @param code_attribute Codigo que tera sua informacao impressaq
@@ -82,7 +82,7 @@ int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attri
                               int instr_pos);
 
 /**
- * Imprime a entrada em index da constant_pool 
+ * Imprime a entrada em index da constant_pool
  * @param index         Index da entrada da constant_pool q sera impressa
  * @param constant_pool Ponteiro para a constant_pool
  */
