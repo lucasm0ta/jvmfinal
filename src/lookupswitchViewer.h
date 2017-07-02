@@ -19,7 +19,18 @@ typedef struct {
     int totalSize;
 } LookupswitchData;
 
+/*
+ * Esta função monta a estrutura LookupswitchData
+ * @param fonte dos dados
+ * @param posição
+ * @return struct com os dados
+ */
 LookupswitchData montar_lookupswitch_data(uint8_t *src, int pos);
+/*
+ * imprime estrutura LookupswitchData
+ * @param estrutura LookupswitchData
+ * @param space
+ */
 void imprimir_Lookupswitch(LookupswitchData data, char *space);
 
 #ifdef __cplusplus
