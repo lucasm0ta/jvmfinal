@@ -1,7 +1,3 @@
-//
-// Created by Henrique Faria on 11/13/16.
-//
-
 #include "lookupswitchViewer.h"
 
 void imprimir_Lookupswitch(LookupswitchData data, char *space) {
@@ -17,15 +13,15 @@ void imprimir_Lookupswitch(LookupswitchData data, char *space) {
 }
 
 LookupswitchData montar_lookupswitch_data(uint8_t *src, int pos) {
-    const int paddingOffset = makePaddingOffset(pos);
-    const int indexOfKeyOffsetPairs = paddingOffset + 8;
+    const int padding_Offset = makePaddingOffset(pos);
+    const int index_ofKey_offset_pairs = padding_Offset + 8;
 
     LookupswitchData data;
     data.name = INSTR_LOOKUPSWITCH;
     data.position = pos;
-    data.defaultBytes = group_word(src + paddingOffset);
-    data.amountOfPairs = group_word(src + paddingOffset + 4);
-    data.keyOffsetPairs = group_words(src + indexOfKeyOffsetPairs, data.amountOfPairs * 2);
-    data.totalSize = paddingOffset + (2 + (data.amountOfPairs * 2)) * 4;
+    data.defaultBytes = group_word(src + padding_Offset);
+    data.amountOfPairs = group_word(src + padding_Offset + 4);
+    data.keyOffsetPairs = group_words(src + index_ofKey_offset_pairs, data.amountOfPairs * 2);
+    data.totalSize = padding_Offset + (2 + (data.amountOfPairs * 2)) * 4;
     return data;
 }
