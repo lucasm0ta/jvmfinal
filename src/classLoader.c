@@ -424,9 +424,10 @@ void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 			last = pos;
 		pos++;
 	}
-	int size = pos - last - 7;
+	if (last) last++;
+	int size = pos - last - 6;
 	char *buff1 = malloc(sizeof(char) * size);
-	memcpy(buff1, &nomeArquivo[last+1], size);
+	memcpy(buff1, &nomeArquivo[last], size);
 	buff1[size] = '\0';
 
 	pos = 0;
