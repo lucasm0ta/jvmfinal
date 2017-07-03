@@ -19,7 +19,7 @@ void iniciar_lista_classe(){
 	if (g_classList == NULL) g_classList = criar_lista_classe();
 }
 
-ClassFile* buscar_classe(char *name){
+ClassFile* buscar_classe(char *name){ 
     iniciar_lista_classe();
 	lista_classe* aux_lista_classe = g_classList;
 	int stringIndex;
