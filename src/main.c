@@ -17,18 +17,17 @@ int main(int argc, char **argv){
     if(argc == 2) {
         strcpy(nomeArquivo, argv[1]);
     }
-    
+
     //Se nome não for especificado
     else {
         printf("Digite o nome do arquivo (sem o .class):\n>> ");
         scanf("%s", nomeArquivo);
     }
-    
-    //Carrega o .class    
+
+    //Carrega o .class
     ClassFile* classFile = carregar_classe(nomeArquivo);
     menu(classFile);
 
-    
     return 0;
 }
 
