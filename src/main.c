@@ -68,8 +68,8 @@ int menu (ClassFile* classFile){
         case(2):{
             DEBUG = 0;
             criar_array_instrucoes();
-            Method_info* informacao_principal = buscar_metodo_main(classFile);
-            empilhar_metodo(classFile, informacao_principal);
+            Method_info* metodo_main = buscar_metodo_main(classFile);
+            empilhar_metodo(classFile, metodo_main);
             executar_frame();
             break;
         }

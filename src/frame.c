@@ -27,30 +27,30 @@ void criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code) {
  * @param pf Ponteiro para o frame
  */
 void empilhar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code, struct pilha_frame *pf) {
-    pf->next = cabeca;
-	cabeca = pf;
+  pf->next = cabeca;
+  cabeca = pf;
 
   //Inicializa o pc.
-	cabeca->node->pc = 0;
+  cabeca->node->pc = 0;
 
   //Inicializa classe constantPool tamanho da pilha tamanho do array de ver local
-	//Inicializa bytecodes.
-	cabeca->node->classe = classe;
-	cabeca->node->constantPool = cp;
-	cabeca->node->max_stack = code->max_stack;
-	cabeca->node->max_locals = code->max_locals;
-	cabeca->node->code_length = code->code_length;
-	cabeca->node->code = code->code;
+  //Inicializa bytecodes.
+  cabeca->node->classe = classe;
+  cabeca->node->constantPool = cp;
+  cabeca->node->max_stack = code->max_stack;
+  cabeca->node->max_locals = code->max_locals;
+  cabeca->node->code_length = code->code_length;
+  cabeca->node->code = code->code;
 
   //Aloca espaço para o array de var local
-	cabeca->node->fields = (u4*) calloc(cabeca->node->max_locals, sizeof(u4));
+  cabeca->node->fields = (u4*) calloc(cabeca->node->max_locals, sizeof(u4));
 
   cabeca->node->operandStack = (operandStack*) calloc(1, sizeof(operandStack));
   cabeca->node->operandStack->operands = (u4*) calloc(cabeca->node->max_stack, sizeof(u4));
   cabeca->node->operandStack->depth = 0; // inicialmente a pilha esta vazia
 
-	//Atualiza o frame_atual para o frame alocado agora.
-	frame_atual = cabeca->node;
+  //Atualiza o frame_atual para o frame alocado agora.
+  frame_atual = cabeca->node;
 }
 /**
  * Retira um frame do topo da pilha, libera seu espaço de memoria
@@ -134,8 +134,8 @@ void executar_frame() {
   if(DEBUG) dumpStack(0);
   while ((frame_atual->pc) < frame_atual->code_length){
     if(DEBUG) printf("pc: %d\t%s\n", frame_atual->pc, decode[frame_atual->code[frame_atual->pc]].instruction);
-		instrucao[frame_atual->code[frame_atual->pc]]();
-	}
+    instrucao[frame_atual->code[frame_atual->pc]]();
+  }
   if(DEBUG) dumpStack(1);
   desempilhar_frame();
 }
