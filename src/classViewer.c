@@ -1,6 +1,7 @@
 #include "classViewer.h"
 
 static void acesso_str(int access_flag) {
+	printf("[");
 	if(access_flag & 0x0001) {
 		printf("public; ");
 	}
@@ -34,7 +35,7 @@ static void acesso_str(int access_flag) {
 	if(access_flag & 0x4000) {
 		printf("enum; ");
 	}
-	printf("\n");
+	printf("]\n");
 }
 
 static void printUtf8String(Cp_info* cp, int index) {
@@ -54,11 +55,27 @@ static void printUtf8String(Cp_info* cp, int index) {
 	}
 }
 
+static void versao_java(int versao) {
+	switch(versao) {
+		case 52:
+			printf("[1.8]");
+			break;
+		case 51:
+			printf("[1.7]");
+			break;
+		case 50:
+			printf("[1.6]");
+			break;
+	}
+	printf("\n");
+}
+
 void imprimir_informacoes_classe(ClassFile *classFile){
 	printf("\nINFORMACOES BASICAS:\n");
 	printf("\tMagic Number: 0x%X\n", classFile->magic);
 	printf("\tMinor Version: %d\n", classFile->minor_version);
-	printf("\tMajor Version: %d\n", classFile->major_version);
+	printf("\tMajor Version: %d ", classFile->major_version);
+	versao_java(classFile->major_version);
 	printf("\tConstant Pool Count: %d\n", classFile->constant_pool_count);
 	printf("\tAccess flags: 0x%.4X ", classFile->access_flags);
 	acesso_str(classFile->access_flags);
@@ -286,14 +303,16 @@ void imprimir_atributos(Attribute_info *atributos, u2 contador_atributos, Cp_inf
 	space = (tab == 2) ? "          " : space;
 	printf("%sATTRIBUTES :\n\n", space);
 	for (i = 0; i < contador_atributos; ++i){
-		printf("%s[%.2d] ", space, i);
+		printf("%s[%.2d] \n", space, i);
+		printf("%s     Generic Info:\n", space);
 		char *str = acessar_constant_pool_entry(atributos[i].attribute_name_index, constant_pool);
 		printf(":\n");
 		printf("%s     Attribute name:   cp_info #%d <", space, atributos[i].attribute_name_index);
 		imprimir_constant_pool_inserida(atributos[i].attribute_name_index, constant_pool);
 		printf(">\n");
-		printf("%s     Attribute length: %d\n", space, atributos[i].attribute_length);
+		printf("%s     Attribute length: %d\n\n", space, atributos[i].attribute_length);
 
+		printf("%s     Specific Info:\n", space);
 		if (strcmp(str, "ConstantValue") == 0){
 			index = atributos[i].info.constantValue_attribute->constantvalue_index;
 			printf("%s     Constant value:   cp_info #%d <", space, index);
@@ -329,7 +348,8 @@ void imprimir_atributos(Attribute_info *atributos, u2 contador_atributos, Cp_inf
 				printf("%s          Inner name:    cp_info #%d <", space, index);
 				imprimir_constant_pool_inserida(index, constant_pool);
 				printf(">\n");
-				printf("%s          Access flag:   0x%.4X\n", space, atributos[i].info.innerClasses_attribute->classes_ptr[j].inner_class_access_flags);
+				printf("%s          Access flag:   0x%.4X", space, atributos[i].info.innerClasses_attribute->classes_ptr[j].inner_class_access_flags);
+				acesso_str(atributos[i].info.innerClasses_attribute->classes_ptr[j].inner_class_access_flags);
 			}
 		}
 		else if (strcmp(str, "EnclosingMethod") == 0){
@@ -364,42 +384,6 @@ void imprimir_atributos(Attribute_info *atributos, u2 contador_atributos, Cp_inf
 				printf("%d", atributos[i].info.lineNumberTable_attribute->line_number_table_ptr[j].line_number);
 				printf("\n");
 			}
-		}
-		else if (strcmp(str, "LocalVariableTable") == 0){
-			// atributos[i].info.localVariableTable_attribute->local_variable_table_length = ler_bytes(2, fp);
-			// atributos[i].info.localVariableTable_attribute->local_variable_table_ptr = (local_variable_table*)malloc(atributos[i].info.localVariableTable_attribute->local_variable_table_length*sizeof(local_variable_table));
-			// for (j = 0; j < atributos[i].info.localVariableTable_attribute->local_variable_table_length; ++j){
-			//     atributos[i].info.localVariableTable_attribute->local_variable_table_ptr[j].start_pc = ler_bytes(2, fp);
-			//     atributos[i].info.localVariableTable_attribute->local_variable_table_ptr[j].length = ler_bytes(2, fp);
-			//     atributos[i].info.localVariableTable_attribute->local_variable_table_ptr[j].name_index = ler_bytes(2, fp);
-			//     atributos[i].info.localVariableTable_attribute->local_variable_table_ptr[j].descriptor_index = ler_bytes(2, fp);
-			//     atributos[i].info.localVariableTable_attribute->local_variable_table_ptr[j].index = ler_bytes(2, fp);
-			// }
-		}
-		else if (strcmp(str, "LocalVariableTypeTable") == 0){
-			// atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_length = ler_bytes(2, fp);
-			// atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr = (local_variable_type_table*)malloc(atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_length*sizeof(local_variable_type_table));
-			// for (j = 0; j < atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_length; ++j){
-			//     atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].start_pc = ler_bytes(2, fp);
-			//     atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].length = ler_bytes(2, fp);
-			//     atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].name_index = ler_bytes(2, fp);
-			//     atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].signature_index = ler_bytes(2, fp);
-			//     atributos[i].info.localVariableTypeTable_attribute->local_variable_type_table_ptr[j].index = ler_bytes(2, fp);
-			// }
-		}
-		else if (strcmp(str, "Deprecated") == 0){
-		}
-		else if (strcmp(str, "BootstrapMethods") == 0){
-			// atributos[i].info.bootstrapMethods_attribute->num_bootstrap_methods = ler_bytes(2, fp);
-			// atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr = (bootstrap_methods*)malloc(atributos[i].info.bootstrapMethods_attribute->num_bootstrap_methods*sizeof(bootstrap_methods));
-			// for (j = 0; j < atributos[i].info.bootstrapMethods_attribute->num_bootstrap_methods; ++j){
-			//     atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_method_ref = ler_bytes(2, fp);
-			//     atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments = ler_bytes(2, fp);
-			//     atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments = (u2*)malloc(atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments*sizeof(u2));
-			// 	for (k = 0; k < atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].num_bootstrap_arguments; ++k){
-			// 		atributos[i].info.bootstrapMethods_attribute->bootstrap_methods_ptr[j].bootstrap_arguments[k] = ler_bytes(2, fp);
-			// 	}
-			// }
 		}
 		if (i != contador_atributos-1 || tab == 0) printf("\n");
 	}
@@ -480,7 +464,8 @@ void imprimir_metodos(ClassFile *classFile){
 		printf("     Descriptor:        cp_info #%d <", methods[i].descriptor_index);
 		imprimir_constant_pool_inserida(methods[i].descriptor_index, classFile->constant_pool);
 		printf(">\n");
-		printf("     Access flags:      0x%.4X\n", methods[i].access_flags);
+		printf("     Access flags:      0x%.4X", methods[i].access_flags);
+		acesso_str(methods[i].access_flags);
 		if (methods[i].attributes_count > 0){
 			printf("\n");
 			imprimir_atributos(methods[i].attributes, methods[i].attributes_count, classFile->constant_pool, 1);
