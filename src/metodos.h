@@ -10,6 +10,13 @@ extern "C" {
 #include "carregador.h"
 #include "util.h"
 
+/**
+ * Guarda o tipo da informacao em uma string
+ */
+typedef struct {
+    char *name;
+} TypeInfo;
+
 
 /**
  * Pega a a rea de code de um determinado metodo
