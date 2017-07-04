@@ -1,4 +1,4 @@
-#include "switchViewer.h"
+#include "switchView.h"
 
 u4 *group_words(u1 *src, int size) {
     static u4 words[256];

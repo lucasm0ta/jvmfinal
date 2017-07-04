@@ -1,4 +1,4 @@
-#include "instructionMapper.h"
+#include "decodificador.h"
 
 const char *INSTR_TABLESWITCH = "tableswitch";
 const char *INSTR_LOOKUPSWITCH = "lookupswitch";

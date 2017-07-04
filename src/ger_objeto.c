@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include "objectManager.h"
-#include "classLoader.h"
-#include "methodArea.h"
+#include "ger_objeto.h"
+#include "carregador.h"
+#include "metodos.h"
 
 static Object* objectList;
 

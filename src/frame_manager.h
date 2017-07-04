@@ -3,8 +3,8 @@
 
 #include <stdint.h>
 #include <stdlib.h>
-#include "classLoader.h"
-#include "instructions.h"
+#include "carregador.h"
+#include "instrucoes_base.h"
 #include "util.h"
 
 /**

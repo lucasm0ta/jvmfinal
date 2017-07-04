@@ -1,7 +1,7 @@
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H
 
-#include "classLoader.h"
+#include "carregador.h"
 #include "util.h"
 
 typedef struct object_field{

@@ -11,10 +11,10 @@ extern "C" {
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "classLoader.h"
-#include "instructionMapper.h"
-#include "tableswitchViewer.h"
-#include "lookupswitchViewer.h"
+#include "carregador.h"
+#include "decodificador.h"
+#include "tableswitchView.h"
+#include "lookupswitchView.h"
 
 /**
  * Imprime as informacoes basicas da classe como magic_number e tamanho das estruturas

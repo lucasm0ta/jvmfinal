@@ -1,6 +1,6 @@
 #include <stdbool.h>
 #include <wchar.h>
-#include "classList.h"
+#include "lista_classe.h"
 
 static lista_classe* g_classList;
 

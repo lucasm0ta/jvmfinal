@@ -1,9 +1,9 @@
-#include "instructions.h"
-#include "methodArea.h"
-#include "frame.h"
-#include "objectManager.h"
-#include "tableswitchViewer.h"
-#include "lookupswitchViewer.h"
+#include "instrucoes_base.h"
+#include "metodos.h"
+#include "frame_manager.h"
+#include "ger_objeto.h"
+#include "tableswitchView.h"
+#include "lookupswitchView.h"
 #include "array.h"
 
 #include <stdio.h>

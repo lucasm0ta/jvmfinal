@@ -1,10 +1,10 @@
-#include "classLoader.h"
-#include "classList.h"
-#include "methodArea.h"
-#include "instructions.h"
-#include "frame.h"
+#include "carregador.h"
+#include "lista_classe.h"
+#include "metodos.h"
+#include "instrucoes_base.h"
+#include "frame_manager.h"
 #include "array.h"
-#include "objectManager.h"
+#include "ger_objeto.h"
 
 /**
  * \brief Função para leitura byte a byte do arquivo fp

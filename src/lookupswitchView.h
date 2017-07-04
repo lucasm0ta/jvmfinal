@@ -7,8 +7,8 @@ extern "C" {
 
 #include <stdint.h>
 #include <stdio.h>
-#include "switchViewer.h"
-#include "instructionMapper.h"
+#include "switchView.h"
+#include "decodificador.h"
 #include "util.h"
 
 typedef struct {

@@ -1,4 +1,4 @@
-#include "lookupswitchViewer.h"
+#include "lookupswitchView.h"
 
 void imprimir_Lookupswitch(LookupswitchData data, char *space) {
     printf("\n%s     %d: %s {", space, data.position, data.name);

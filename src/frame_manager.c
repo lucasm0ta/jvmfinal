@@ -1,8 +1,8 @@
-#include "frame.h"
-#include "instructions.h"
-#include "methodArea.h"
-#include "classLoader.h"
-#include "instructionMapper.h"
+#include "frame_manager.h"
+#include "instrucoes_base.h"
+#include "metodos.h"
+#include "carregador.h"
+#include "decodificador.h"
 
 
 pilha_frame* criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code) {

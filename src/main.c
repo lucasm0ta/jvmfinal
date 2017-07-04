@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "classLoader.h"
-#include "classViewer.h"
-#include "instructionMapper.h"
-#include "instructions.h"
-#include "frame.h"
-#include "methodArea.h"
+#include "carregador.h"
+#include "exibidor.h"
+#include "decodificador.h"
+#include "instrucoes_base.h"
+#include "frame_manager.h"
+#include "metodos.h"
 
 void cruzeiro();
 

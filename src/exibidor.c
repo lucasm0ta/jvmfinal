@@ -1,4 +1,4 @@
-#include "classViewer.h"
+#include "exibidor.h"
 
 int imprimir_instr_table_switch(const Code_attribute *codeAttribute, const char *space, int i);
 
