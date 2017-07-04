@@ -23,7 +23,7 @@ typedef struct {
 } TableswitchData;
 
 TableswitchData montar_switch_table(u1 *src, int pc);
-void imprimir_switch_table(TableswitchData data, char *space);
+void imprimir_switch_table(TableswitchData data, const char *space);
 
 #ifdef __cplusplus
 }

@@ -23,7 +23,6 @@ void empilhar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code, struct
 
     new_frame->pc = 0;
 
-
     new_frame->classe = classe;
     new_frame->constantPool = cp;
     new_frame->max_stack = code->max_stack;
@@ -35,7 +34,7 @@ void empilhar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code, struct
 
     new_frame->operandStack = (operandStack*) calloc(1, sizeof(operandStack));
     new_frame->operandStack->operands = (uint32_t*) calloc(new_frame->max_stack, sizeof(uint32_t));
-    new_frame->operandStack->depth = 0; 
+    new_frame->operandStack->depth = 0;
 }
 /**
 * Retira um frame do topo da pilha, libera seu espaço de memoria
@@ -117,4 +116,3 @@ void empilhar_metodo(ClassFile *classFile, Method_info *method) {
     pilha_frame* new_frame = criar_frame(classFile->constant_pool, classFile, recuperar_code_attribute(classFile, method));
     empilhar_frame(classFile->constant_pool, classFile, recuperar_code_attribute(classFile, method), new_frame);
 }
-

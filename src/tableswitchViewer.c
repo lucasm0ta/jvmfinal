@@ -7,7 +7,7 @@
 
 #include "tableswitchViewer.h"
 
-void imprimir_switch_table(TableswitchData data, char *space) {
+void imprimir_switch_table(TableswitchData data,const char *space) {
     printf("\n%s     %d: %s {", space, data.position, data.name);
     printf("\n%s           default: %d", space, data.defaultBytes);
     printf("\n%s               min: %d", space, data.lowBytes);
@@ -37,5 +37,3 @@ TableswitchData montar_switch_table(u1 *src, int pc) {
     data.totalSize = paddingOffset + (3 + data.sizeOfJumpOffsets) * 4;
     return data;
 }
-
-

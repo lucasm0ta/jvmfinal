@@ -828,7 +828,7 @@ void lconst_0();
 void lconst_1();
 
 /**
- * Puts item in the stack from constant pool at index 16  bits
+ * Puts item in the stack from constant pool at index 16 bits
  */
 void ldc_w();
 

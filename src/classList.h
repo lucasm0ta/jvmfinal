@@ -13,7 +13,7 @@
  */
 typedef struct ClassList{
     ClassFile*			classFile;
-    struct lista_classe*	next;
+    struct ClassList*	next;
 }lista_classe;
 
 /**
@@ -34,4 +34,4 @@ void empilhar_classe(ClassFile *classFile);
  */
 ClassFile* buscar_classe(char *name);
 
-#endif 
+#endif

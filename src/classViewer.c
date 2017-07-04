@@ -303,13 +303,13 @@ void imprimir_atributos(Attribute_info *atributos, u2 contador_atributos, Cp_inf
 	int i, j, k;
 	u2 index;
 	// Calcula tabs, máximo 2
-	char* space = (tab == 1) ? "     " : "";
-	space = (tab == 2) ? "          " : space;
+	char* space = (tab == 1) ? (char *)"     " :(char *) "";
+	space = (tab == 2) ? (char *)"          " : (char *)space;
 	printf("%sATTRIBUTES :\n\n", space);
 	for (i = 0; i < contador_atributos; ++i){
 		printf("%s[%.2d] \n", space, i);
 		printf("%s     Generic Info:\n", space);
-		char *str = acessar_constant_pool_entry(atributos[i].attribute_name_index, constant_pool);
+		char *str = (char *) acessar_constant_pool_entry(atributos[i].attribute_name_index, constant_pool);
 		printf(":\n");
 		printf("%s     Attribute name:   cp_info #%d <", space, atributos[i].attribute_name_index);
 		imprimir_constant_pool_inserida(atributos[i].attribute_name_index, constant_pool);

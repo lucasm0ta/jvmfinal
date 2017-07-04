@@ -59,7 +59,7 @@ u1* acessar_constant_pool_entry(int index, Cp_info *constant_pool){
 			return acessar_constant_pool_entry(constant_pool[index].info.invokeDynamic_info->name_and_type_index,
 											   constant_pool);
 		default:
-			return "invalid constant pool reference";
+			return(u1*) "invalid constant pool reference";
 	}
 }
 
@@ -76,7 +76,7 @@ Attribute_info* ler_atributos(int length, Cp_info *constant_pool, FILE *fp){
 	for (i = 0; i < length; ++i){
 		retorno[i].attribute_name_index = ler_bytes(2, fp);
 		retorno[i].attribute_length = ler_bytes(4, fp);
-		char* str = (constant_pool[retorno[i].attribute_name_index]).info.utf8_info->bytes;
+		char* str = (char *) (constant_pool[retorno[i].attribute_name_index]).info.utf8_info->bytes;
 		if (strcmp(str, "ConstantValue") == 0){
 			retorno[i].info.constantValue_attribute = (ConstantValue_attribute*)malloc(sizeof(ConstantValue_attribute));
     		retorno[i].info.constantValue_attribute->constantvalue_index = ler_bytes(2, fp);
@@ -414,7 +414,7 @@ void verificar_magic_number(ClassFile *classFile){
 void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 	int i = 0;
 	int string_index = classFile->constant_pool[classFile->this_class].info.string_info->string_index;
-	char *nomeClassept = classFile->constant_pool[string_index].info.utf8_info->bytes;
+	char *nomeClassept = (char *) classFile->constant_pool[string_index].info.utf8_info->bytes;
 
 	//Verifica se nome da classe eh igual ao nome do arquivo
 	int pos = 0;
@@ -426,7 +426,7 @@ void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 	}
 	if (last) last++;
 	int size = pos - last - 6;
-	char *buff1 = malloc(sizeof(char) * size);
+	char *buff1 = (char *) malloc(sizeof(char) * size);
 	memcpy(buff1, &nomeArquivo[last], size);
 	buff1[size] = '\0';
 
@@ -439,7 +439,7 @@ void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 	}
 	if (last) last++;
 	size = pos - last;
-	char *buff2 = malloc(sizeof(char) * size);
+	char *buff2 = (char *) malloc(sizeof(char) * size);
 	memcpy(buff2, &nomeClassept[last], size);
 	buff2[size] = '\0';
 	if (strcmp(buff1, buff2)) {

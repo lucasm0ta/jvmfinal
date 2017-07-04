@@ -19,7 +19,7 @@ void iniciar_lista_classe(){
 	if (g_classList == NULL) g_classList = criar_lista_classe();
 }
 
-ClassFile* buscar_classe(char *name){ 
+ClassFile* buscar_classe(char *name){
     iniciar_lista_classe();
 	lista_classe* aux_lista_classe = g_classList;
 	int stringIndex;
@@ -38,7 +38,7 @@ bool existe_proximo_elemento(const lista_classe *aux_lista_classe) { return aux_
 char *get_nome_classe(const lista_classe *classListAux, int stringIndex) {
 	char *className;
 	stringIndex = classListAux->classFile->constant_pool[classListAux->classFile->this_class].info.string_info->string_index;
-	className = classListAux->classFile->constant_pool[stringIndex].info.utf8_info->bytes;
+	className = (char *)classListAux->classFile->constant_pool[stringIndex].info.utf8_info->bytes;
 	return className;
 }
 
