@@ -12,13 +12,6 @@ extern "C" {
 
 
 /**
- * Guarda o tipo da informacao em uma string
- */
-typedef struct {
-    char *name;
-} TypeInfo;
-
-/**
  * Pega a a rea de code de um determinado metodo
  * @param  classFile  Estrutura do classFile
  * @param  methodInfo Estrutura do metodo q sera procurado
