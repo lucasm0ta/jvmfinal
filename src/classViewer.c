@@ -1,5 +1,9 @@
 #include "classViewer.h"
 
+int imprimir_instr_table_switch(const Code_attribute *codeAttribute, const char *space, int i);
+
+int imprimir_instr_lookupswitch(const Code_attribute *codeAttribute, const char *space, int i);
+
 static void acesso_str(int access_flag) {
 	printf("[");
 	if(access_flag & 0x0001) {
@@ -401,18 +405,28 @@ void imprimir_code(Cp_info *constant_pool, Code_attribute *codeAttribute, char *
 		decoder opcode_decod = decode[opcode];
 
 		if(strcmp(opcode_decod.instruction, INSTR_TABLESWITCH) == 0) {
-			TableswitchData data = montar_switch_table(codeAttribute->code + i + 1, i);
-			imprimir_switch_table(data, space);
-			i += data.totalSize;
+			i = imprimir_instr_table_switch(codeAttribute, space, i);
 		} else if(strcmp(opcode_decod.instruction, INSTR_LOOKUPSWITCH) == 0) {
-			LookupswitchData data = montar_lookupswitch_data(codeAttribute->code + i + 1, i);
-			imprimir_Lookupswitch(data, space);
-			i += data.totalSize;
+			i = imprimir_instr_lookupswitch(codeAttribute, space, i);
 		} else {
 			i = imprimir_instrucao_padrao(constant_pool, codeAttribute, space, opcode_decod, i);
 		}
 	}
 	printf("\n");
+}
+
+int imprimir_instr_lookupswitch(const Code_attribute *codeAttribute, const char *space, int i) {
+	LookupswitchData data = montar_lookupswitch_data(codeAttribute->code + i + 1, i);
+	imprimir_Lookupswitch(data, space);
+	i += data.totalSize;
+	return i;
+}
+
+int imprimir_instr_table_switch(const Code_attribute *codeAttribute, const char *space, int i) {
+	TableswitchData data = montar_switch_table(codeAttribute->code + i + 1, i);
+	imprimir_switch_table(data, space);
+	i += data.totalSize;
+	return i;
 }
 
 int imprimir_instrucao_padrao(Cp_info *constant_pool, Code_attribute *code_attribute, char *space, decoder opcode_decod,
