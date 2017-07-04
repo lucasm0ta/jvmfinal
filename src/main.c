@@ -72,15 +72,6 @@ int menu (ClassFile* classFile){
             executar_frame();
             break;
         }
-        case(3):{
-            DEBUG = 1;
-            inicializar_decodificador();
-            criar_array_instrucoes();
-            Method_info* mainInfo = buscar_metodo_main(classFile);
-            empilhar_metodo(classFile, mainInfo);
-            executar_frame();
-            break;
-        }
     }
 
 }
