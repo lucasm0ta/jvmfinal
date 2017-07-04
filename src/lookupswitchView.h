@@ -32,7 +32,7 @@ LookupswitchData montar_lookupswitch_data(u1 *src, int pos);
  * @param estrutura LookupswitchData
  * @param space
  */
-void imprimir_Lookupswitch(LookupswitchData data, char *space);
+void imprimir_Lookupswitch(LookupswitchData data, const char *space);
 
 #ifdef __cplusplus
 }

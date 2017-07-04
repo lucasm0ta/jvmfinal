@@ -1,6 +1,6 @@
 #include "lookupswitchView.h"
 
-void imprimir_Lookupswitch(LookupswitchData data, char *space) {
+void imprimir_Lookupswitch(LookupswitchData data, const char *space) {
     printf("\n%s     %d: %s {", space, data.position, data.name);
     printf("\n%s           default: %d", space, data.defaultBytes);
     printf("\n%s             count: %d", space, data.amountOfPairs);
