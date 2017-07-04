@@ -3,13 +3,6 @@
 #include "metodos.h"
 
 
-
-int tamanho_tabela;
-
-
-TypeInfo ** hashtable;
-int data_count = 0;
-
 Method_info* buscar_metodo_main(ClassFile *classFile) {
 
 	int i;
