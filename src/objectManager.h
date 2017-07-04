@@ -59,16 +59,4 @@ void set_object_field_value_por_nome(Object *object, char *name, uint64_t value)
  */
 object_method buscar_object_method_by_name(Object *object, char *method_name, char *class_name);
 
-/**
- * Mostra uma lista do nome dos fields do objeto
- * @param object referênciaa para o objeto
- */
-void dumpObjectFields(Object* object);
-
-/**
- * Mostra uma lista do nome dos métodos do objeto
- * @param object referênciaa para o objeto
- */
-void dumpObjectMethods(Object* object);
-
 #endif

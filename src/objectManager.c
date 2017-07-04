@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 #include "objectManager.h"
 #include "classLoader.h"
 #include "methodArea.h"
@@ -10,6 +11,10 @@ u2 gerar_object_field_count(ClassFile *classFile);
 object_field* gerar_object_field_array(ClassFile *class_file, u2 count);
 u2 gerar_object_method_count(ClassFile *class_file);
 object_method* gerar_object_method_array(ClassFile *class_file, u2 count);
+
+bool eh_metodo_init(const char *method_name);
+
+bool eh_igual_nome_field(const Object *object, const char *name, int i);
 
 Object* criar_objeto(ClassFile *class_file){
 	Object* object = (Object*)malloc(sizeof(Object));
@@ -43,6 +48,7 @@ object_method gerar_object_method(ClassFile *class_file, Method_info *method_inf
 	method.descriptor = class_file->constant_pool[method_info->descriptor_index].info.utf8_info->bytes;
 	method.access_flag = method_info->access_flags;
 	method.method_info = method_info;
+
 	return method;
 }
 
@@ -63,7 +69,7 @@ object_method buscar_object_method_by_name(Object *object, char *method_name, ch
 	for (int i = 0; i < object->methods_count; ++i){
 		// Procura pela funcao com mesmo nome
 		if (strcmp(object->methods[i].name, method_name) == 0){
-			if (strcmp("<init>", method_name) == 0){
+			if (eh_metodo_init(method_name)){
 				// Procura pela classe com mesmo nome
 				ClassFile* classFile = object->methods[i].classFile;
 				int string_index = classFile->constant_pool[classFile->this_class].info.string_info->string_index;
@@ -79,12 +85,7 @@ object_method buscar_object_method_by_name(Object *object, char *method_name, ch
 	}	
 }
 
-void dumpObjectMethods(Object* object){
-	printf("Methods Field:\n");
-	for (int i = 0; i < object->methods_count; ++i){
-		printf("%d : %s\n", i, object->methods[i].name);
-	}
-}
+bool eh_metodo_init(const char *method_name) { return strcmp("<init>", method_name) == 0; }
 
 // Funcoes de fields do objeto
 
@@ -129,16 +130,11 @@ uint64_t buscar_object_field_value_por_nome(Object *object, char *name){
 
 void set_object_field_value_por_nome(Object *object, char *name, uint64_t value){
 	for (int i = 0; i < object->fields_count; ++i){
-		if (strcmp(object->fields[i].name, name) == 0){
+		if (eh_igual_nome_field(object, name, i)){
 			object->variables_pointers[i] = value;
 			return;
 		}
 	}	
 }
 
-void dumpObjectFields(Object* object){
-	printf("Object Field:\n");
-	for (int i = 0; i < object->fields_count; ++i){
-		printf("%d : %s\n", i, object->fields[i].name);
-	}
-}
+bool eh_igual_nome_field(const Object *object, const char *name, int i) { return strcmp(object->fields[i].name, name) == 0; }
