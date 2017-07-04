@@ -27,25 +27,6 @@ void criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code) {
 * @param pf Ponteiro para o frame
 */
 void empilhar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code, struct pilha_frame *pf) {
-<<<<<<< HEAD
-  pf->next = cabeca;
-  cabeca = pf;
-
-  //Inicializa o pc.
-  cabeca->node->pc = 0;
-
-  //Inicializa classe constantPool tamanho da pilha tamanho do array de ver local
-  //Inicializa bytecodes.
-  cabeca->node->classe = classe;
-  cabeca->node->constantPool = cp;
-  cabeca->node->max_stack = code->max_stack;
-  cabeca->node->max_locals = code->max_locals;
-  cabeca->node->code_length = code->code_length;
-  cabeca->node->code = code->code;
-
-  //Aloca espaço para o array de var local
-  cabeca->node->fields = (u4*) calloc(cabeca->node->max_locals, sizeof(u4));
-=======
     pf->next = cabeca;
     cabeca = pf;
 
@@ -63,19 +44,13 @@ void empilhar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code, struct
 
     //Aloca espaço para o array de var local
     cabeca->node->fields = (uint32_t*) calloc(cabeca->node->max_locals, sizeof(uint32_t));
->>>>>>> cd3d5a335ea0769bfef4f9de64a9c5ce1af30d3a
 
     cabeca->node->operandStack = (operandStack*) calloc(1, sizeof(operandStack));
     cabeca->node->operandStack->operands = (uint32_t*) calloc(cabeca->node->max_stack, sizeof(uint32_t));
     cabeca->node->operandStack->depth = 0; // inicialmente a pilha esta vazia
 
-<<<<<<< HEAD
-  //Atualiza o frame_atual para o frame alocado agora.
-  frame_atual = cabeca->node;
-=======
     //Atualiza o frame_atual para o frame alocado agora.
     frame_atual = cabeca->node;
->>>>>>> cd3d5a335ea0769bfef4f9de64a9c5ce1af30d3a
 }
 /**
 * Retira um frame do topo da pilha, libera seu espaço de memoria
