@@ -6,104 +6,9 @@
 
 int tamanho_tabela;
 
-// void redimensionar_hashtable();
 
 TypeInfo ** hashtable;
 int data_count = 0;
-
-/*
-void inicializar_hashtable(int tamanho_inicial) {
-    tamanho_tabela = tamanho_inicial;
-    hashtable = (TypeInfo **) malloc(tamanho_tabela * sizeof(TypeInfo *));
-
-    if(hashtable == NULL)
-         exit(1);
-
-    for (int i = 0; i < tamanho_tabela; i++)
-        hashtable[i] = NULL;
-}
-
-void liberar_memoria_Hashtable() {
-    for (int i = 0; i < tamanho_tabela; i++) {
-        if(hashtable[i] != NULL)
-            free(hashtable[i]);
-    }
-    free(hashtable);
-    data_count = 0;
-}
-
-void redimensionar_hashtable() {
-    int novo_tamanho = tamanho_tabela + (tamanho_tabela * 2) / 3;
-    hashtable = (TypeInfo **) realloc(hashtable, novo_tamanho * sizeof(TypeInfo *));
-
-    for (int i = tamanho_tabela; i < novo_tamanho; i++)
-        hashtable[i] = NULL;
-
-    tamanho_tabela = novo_tamanho;
-}
-
-void inserir(TypeInfo dt) {
-
-    if(data_count == tamanho_tabela)
-        redimensionar_hashtable();
-
-    const int index = indexOf(dt);
-    hashtable[index] = (TypeInfo *) malloc(sizeof(TypeInfo));
-
-    if(hashtable[index] == NULL)
-        exit(1);
-
-    hashtable[index]->name = dt.name;
-
-    data_count++;
-}
-
-int indexOf(TypeInfo dt) {
-    const int hashValue = hash(dt.name, strlen(dt.name));
-
-    if(hashtable[hashValue] != NULL) {
-        int i = (hashValue + 1) % tamanho_tabela;
-
-        while(hashtable[i] != NULL) {
-            i = (i + 1) % tamanho_tabela;
-        }
-        return i;
-    } else {
-        return hashValue;
-    }
-}
-
-
-size_t hash(const char *str, size_t tamanho) {
-    unsigned int hash = 5381;
-    unsigned int i    = 0;
-
-    for(i = 0; i < tamanho; str++, i++)
-    {
-        hash = ((hash << 5) + hash) + (*str);
-    }
-
-    return hash % tamanho_tabela;
-}
-
-
-TypeInfo *getItem(int index) {
-    return hashtable[index];
-}
-
-
-void imprimir_hashtable() {
-    printf("\n");
-    for(int i = 0; i < tamanho_tabela; i++) {
-        if(hashtable[i] != NULL)
-            printf("%s\n", hashtable[i]->name);
-        else
-            printf("-1\n");
-    }
-    printf("\n");
-}
-
-*/
 
 Method_info* buscar_metodo_main(ClassFile *classFile) {
 
@@ -121,7 +26,7 @@ Method_info* buscar_metodo_main(ClassFile *classFile) {
 		}
 	}
 
-    printf("Não foi possível encontrar o método main\n");
+    printf("Arquivo nao contem metodo Main, terminando o programa...");
     exit(1);
 }
 

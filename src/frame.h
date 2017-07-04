@@ -60,7 +60,7 @@ static struct pilha_frame* cabeca = NULL;
  * @param classe Estrutura do classFile
  * @param code   Ponteiro para a estrutura do codigo
  */
-void criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code);
+pilha_frame* criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code);
 
 /**
  * Empilha um frame na pilha
@@ -101,8 +101,9 @@ void executar_frame();
 void empilhar_metodo(ClassFile *classe, Method_info *method);
 
 /**
- * Saida do metodo atual, destruindo o flame
- * @param i Flag para saber o q sera impresso
+ * Libera a memoria usada por um frame
+ * @param frame Ponteiro para frame
  */
-void dumpStack(int i);
+void free_frame(struct pilha_frame* pf);
+
 #endif

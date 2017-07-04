@@ -20,7 +20,7 @@ int main(int argc, char **argv){
 
     //Se nome não for especificado
     else {
-        printf("Digite o nome do arquivo (sem o .class):\n>> ");
+        printf("Digite o nome do arquivo:\n>> ");
         scanf("%s", nomeArquivo);
     }
 

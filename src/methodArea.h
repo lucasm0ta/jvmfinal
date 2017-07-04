@@ -17,46 +17,6 @@ extern "C" {
 typedef struct {
     char *name;
 } TypeInfo;
-/*
-
- 
-// /**
-//  * Inicia a hashtable que sera usada para (????)
-//  * @param tamanho_inicial Tamanho inicial da hashtable
-//  */
-// void inicializar_hashtable(int tamanho_inicial);
-
-// /**
-//  * Imprime todas as informacoes guardadas na hashtable
-//  */
-// void imprimir_hashtable();
-
-// /**
-//  * Limpa a memoria usada pela hashtable e suas estruturas internas
-//  */
-// void liberar_memoria_Hashtable();
-
-// *
-//  * Insere uma informacao na hashTable
-//  * @param dt informacao a ser inserida na hashTable
- 
-// void inserir(TypeInfo dt);
-
-// /**
-//  * Faz o hash de uma string
-//  * @param  str     String que sera 'hasheada'
-//  * @param  tamanho Tamanho da string
-//  * @return         O hash da string passada
-//  */
-// size_t hash(const char *str, size_t tamanho);
-
-// /**
-//  * Acha a posicao da informacao passada na hashTable
-//  * @param  dt informacao que sera procurada na hashTable
-//  * @return    Posicao dessa informacao na hashTable
-//  */
-// int indexOf(TypeInfo dt);
-
 
 /**
  * Pega a a rea de code de um determinado metodo
