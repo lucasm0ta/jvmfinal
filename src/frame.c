@@ -10,7 +10,7 @@
 * @param classe informacao do classfile
 * @param code   atributo de codigo
 */
-void criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code) {
+pilha_frame* criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code) {
     pilha_frame* pf = NULL;
     pf = (pilha_frame*) calloc(1, sizeof(pilha_frame));
 
@@ -146,7 +146,7 @@ void executar_frame() {
 */
 void empilhar_metodo(ClassFile *classFile, Method_info *method) {
     if(DEBUG) printf("\nENTRANDO NO METODO: %s\n", classFile->constant_pool[method->name_index].info.utf8_info->bytes);
-    criar_frame(classFile->constant_pool, classFile, recuperar_code_attribute(classFile, method));
+    pilha_frame* new_frame = criar_frame(classFile->constant_pool, classFile, recuperar_code_attribute(classFile, method));
 }
 
 /**

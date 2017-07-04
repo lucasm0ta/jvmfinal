@@ -638,13 +638,10 @@ void iaload(){
 	int32_t* arrayRef = (int32_t*) get_referencia_array(arrayStruct);
 	//Coloca na pilha h l
 	empilhar_operando(arrayRef[index]);
-
 	//atualiza o pc, sem argumentos
-
 	frame_atual->pc++;
-
-
 }
+
 
 void laload(){
 	//Load long from array
@@ -654,18 +651,14 @@ void laload(){
 	arrayType *arrayStruct = (arrayType*) desempilhar_operando();
 	//Acha a referencia para o array propriamente dito
 	u8* arrayRef = (u8*) get_referencia_array(arrayStruct);
-
 	//Divide os 64 bits em duas de 32
 	u4 highBits = (u4)(arrayRef[index] >> 32);
 	u4 lowBits = (u4)(arrayRef[index]);
-
 	//Coloca na pilha os 32 bits mais significativos
 	empilhar_operando(highBits);
 	//Coloca na pilha os 32 bits menos significativos
 	empilhar_operando(lowBits);
-
 	//atualiza o pc, sem argumentos
-
 	frame_atual->pc++;
 }
 
@@ -1173,20 +1166,15 @@ void dup(){
 	frame_atual->pc++;
 }
 
-void dup_x1(){
-
+void dup_x1() {
 	//TODO
-	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
 
-void dup_x2(){
-
+void dup_x2() {
 	//TODO
-	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
 
-void dup2(){
-
+void dup2() {
 	int32_t top = desempilhar_operando();
 	int32_t sub_top = desempilhar_operando();
 	empilhar_operando(sub_top);
@@ -1196,20 +1184,15 @@ void dup2(){
 	frame_atual->pc++;
 }
 
-void dup2_x1(){
-
+void dup2_x1() {
 	//TODO
-	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
 
 void dup2_x2(){
-
 	//TODO
-	//FUNÇÃO QUE ATUALIZA PC QUANDO TEM ARGUMENTO
 }
 
-void swap(){
-
+void swap() {
 	int32_t value1 = desempilhar_operando();
 	int32_t value2 = desempilhar_operando();
 	empilhar_operando(value1);
@@ -1321,8 +1304,7 @@ void dadd(){
 	frame_atual->pc++;
 }
 
-void isub(){
-
+void isub() {
 	int32_t operator2 = desempilhar_operando();
 	int32_t operator1 = desempilhar_operando();
 	int32_t result = operator1-operator2;
@@ -1330,12 +1312,10 @@ void isub(){
 	frame_atual->pc++;
 }
 
-void lsub(){
-
+void lsub() {
 	//construindo o primeiro operador
 	int32_t operator1Low = desempilhar_operando();
 	int32_t operator1High = desempilhar_operando();
-
 	int64_t op1;
 	op1 = operator1High;
 	op1 <<= 32;
@@ -1423,7 +1403,6 @@ void dsub(){
 }
 
 void imul(){
-
 	int32_t operator1 = desempilhar_operando();
 	int32_t operator2 = desempilhar_operando();
 	int32_t result = operator1*operator2;
@@ -1872,8 +1851,7 @@ void iushr(){
 }
 
 
-void lushr(){
-
+void lushr() {
 	//long shift left
 	int32_t shift = desempilhar_operando();
 	shift6Bits(shift);
@@ -1893,11 +1871,9 @@ void lushr(){
 	empilhar_operando(result1);
 	empilhar_operando(result2);
 	frame_atual->pc++;
-
 }
 
 void iand(){
-
 	int32_t operator1 = desempilhar_operando();
 	int32_t operator2 = desempilhar_operando();
 	int32_t result = operator1&operator2;
@@ -1906,7 +1882,6 @@ void iand(){
 }
 
 void land(){
-
 	int32_t operator1Low = desempilhar_operando();
 	int32_t operator1High = desempilhar_operando();
 	int64_t op1 = operator1High;
@@ -2529,21 +2504,20 @@ void ins_goto(){
 
 }
 
-void jsr(){
-
-	//jump to subroutine at branchoffset (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2) and place the return address on the stack
+void jsr() {
+	// jump to subroutine at branchoffset 
+	// (signed short constructed from unsigned bytes branchbyte1 << 8 + branchbyte2) and place the return address on the stack
 	int32_t branchOffset = calculateOffset();
 	int32_t returnAdress = frame_atual->pc+3;
 	empilhar_operando(returnAdress);
 	frame_atual->pc = frame_atual->pc + branchOffset;
 }
 
-void ret(){
-
+void ret() {
 	//continue execution from address taken from a local variable #index (the asymmetry with jsr is intentional)
 	int32_t index = frame_atual->code[frame_atual->pc+1];
 	int32_t offset = frame_atual->fields[index];
-	frame_atual->pc = frame_atual->pc+offset;
+	frame_atual->pc = frame_atual->pc + offset;
 	frame_atual->pc += 2;
 }
 
@@ -2630,8 +2604,6 @@ void putstatic(){
 	desempilhar_operando();
 
 	frame_atual->pc +=3;
-
-
 }
 
 void getfield(){
@@ -3069,6 +3041,9 @@ void goto_w(){
 void jsr_w(){
 
 }
+
+
+// ------------------------------------------------------------------------------------
 
 int32_t shift5Bits(int32_t shift){
 	shift = shift & 0x1f;
