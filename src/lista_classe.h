@@ -17,11 +17,6 @@ typedef struct ClassList{
 }lista_classe;
 
 /**
- * Shows the list of classes. Used for debugging
- */
-void dumpClassList();
-
-/**
  * Puts a new classList in the classFile list
  * @param classFile classFile reference
  */
