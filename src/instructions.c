@@ -2167,7 +2167,6 @@ void d2f(){
 }
 
 void i2b(){
-
 	int32_t integer = desempilhar_operando();
 	int8_t byte = (int8_t) integer;
 	empilhar_operando(byte);

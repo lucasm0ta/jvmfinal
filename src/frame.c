@@ -8,37 +8,29 @@
 pilha_frame* criar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code) {
     pilha_frame* pf = NULL;
     pf = (pilha_frame*) calloc(1, sizeof(pilha_frame));
-
     pf->node = (frame*) calloc(1, sizeof(frame));
     return pf;
 }
 
-
 void empilhar_frame(Cp_info *cp, ClassFile *classe, Code_attribute *code, struct pilha_frame *pf) {
     pf->next = cabeca;
     cabeca = pf;
-
     frame* new_frame = cabeca->node;
     frame_atual = cabeca->node;
-
     new_frame->pc = 0;
-
     new_frame->classe = classe;
     new_frame->constantPool = cp;
     new_frame->max_stack = code->max_stack;
     new_frame->max_locals = code->max_locals;
     new_frame->code_length = code->code_length;
     new_frame->code = code->code;
-
     new_frame->fields = (uint32_t*) calloc(new_frame->max_locals, sizeof(uint32_t));
-
     new_frame->operandStack = (operandStack*) calloc(1, sizeof(operandStack));
     new_frame->operandStack->operands = (uint32_t*) calloc(new_frame->max_stack, sizeof(uint32_t));
     new_frame->operandStack->depth = 0;
 }
-/**
-* Retira um frame do topo da pilha, libera seu espaço de memoria
-*/
+
+
 void desempilhar_frame() {
 
     if(cabeca->next != NULL) {
@@ -84,12 +76,12 @@ void free_frame(struct pilha_frame* pf) {
 
 void empilhar_operando(int32_t value) {
 
+
     if(frame_atual->operandStack->depth >= frame_atual->max_stack) {
         printf("Erro, stack overflow\n");
     }
 
     frame_atual->operandStack->depth += 1;
-
     frame_atual->operandStack->operands[frame_atual->operandStack->depth - 1] = value;
 }
 
