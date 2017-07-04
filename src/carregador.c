@@ -420,7 +420,7 @@ void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 	int pos = 0;
 	int last = 0;
 	while(nomeArquivo[pos] != '\0') {
-		if(nomeArquivo[pos] == '/')
+		if(nomeArquivo[pos] == '/' || nomeArquivo[pos] == '\\')
 			last = pos;
 		pos++;
 	}
@@ -433,7 +433,7 @@ void verificar_nome_classe_artigo(ClassFile *classFile, char *nomeArquivo){
 	pos = 0;
 	last = 0;
 	while(nomeClassept[pos] != '\0') {
-		if(nomeClassept[pos] == '/')
+		if(nomeClassept[pos] == '/' || nomeArquivo[pos] == '\\')
 			last = pos;
 		pos++;
 	}
