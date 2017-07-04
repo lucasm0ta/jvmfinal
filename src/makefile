@@ -1,29 +1,29 @@
-all: instructions instructionMapper classLoader classList objectManager classViewer switchViewer lookupSwitchViewer tableSwitchViewer frame methodArea array main
+all: instrucoes_base decodificador carregador lista_classe ger_objeto exibidor switchView lookupSwitchView tableSwitchView frame_manager metodos array main
 
 
-main: classLoader.o classViewer.o instructionMapper.o methodArea.o array.o instructions.o frame.o classList.o objectManager.o
-	gcc main.c -o jvm classViewer.o classLoader.o classList.o methodArea.o objectManager.o frame.o instructionMapper.o array.o instructions.o switchViewer.o tableswitchViewer.o lookupswitchViewer.o -lm -std=c99 -w
-classViewer:
-	gcc classViewer.c -o classViewer.o -c -std=c99 -w
-switchViewer:
-	gcc switchViewer.c -o switchViewer.o -c -std=c99 -w
-lookupSwitchViewer:
-	gcc lookupswitchViewer.c -o lookupswitchViewer.o -c -std=c99 -w
-tableSwitchViewer:
-	gcc tableswitchViewer.c -o tableswitchViewer.o -c -std=c99 -w
-classLoader:
-	gcc classLoader.c -o classLoader.o -c -std=c99 -w
-instructionMapper:
-	gcc instructionMapper.c -o instructionMapper.o -c -std=c99 -w
-instructions:
-	gcc instructions.c -o instructions.o -c -std=c99 -w
-frame:
-	gcc frame.c -o frame.o -c -std=c99 -w
-methodArea:
-	gcc methodArea.c -o methodArea.o -c -std=c99 -w
+main: carregador.o exibidor.o decodificador.o metodos.o array.o instrucoes_base.o frame_manager.o lista_classe.o ger_objeto.o
+	gcc main.c -o jvm exibidor.o carregador.o lista_classe.o metodos.o ger_objeto.o frame_manager.o decodificador.o array.o instrucoes_base.o switchView.o tableswitchView.o lookupswitchView.o -lm -std=c99 -w
+exibidor:
+	gcc exibidor.c -o exibidor.o -c -std=c99 -w
+switchView:
+	gcc switchView.c -o switchView.o -c -std=c99 -w
+lookupSwitchView:
+	gcc lookupswitchView.c -o lookupswitchView.o -c -std=c99 -w
+tableSwitchView:
+	gcc tableswitchView.c -o tableswitchView.o -c -std=c99 -w
+carregador:
+	gcc carregador.c -o carregador.o -c -std=c99 -w
+decodificador:
+	gcc decodificador.c -o decodificador.o -c -std=c99 -w
+instrucoes_base:
+	gcc instrucoes_base.c -o instrucoes_base.o -c -std=c99 -w
+frame_manager:
+	gcc frame_manager.c -o frame_manager.o -c -std=c99 -w
+metodos:
+	gcc metodos.c -o metodos.o -c -std=c99 -w
 array:
 	gcc array.c -o array.o -c -std=c99 -w
-objectManager:
-	gcc objectManager.c -o objectManager.o -c -std=c99 -w
-classList:
-	gcc classList.c -o classList.o -c -std=c99 -w
+ger_objeto:
+	gcc ger_objeto.c -o ger_objeto.o -c -std=c99 -w
+lista_classe:
+	gcc lista_classe.c -o lista_classe.o -c -std=c99 -w
